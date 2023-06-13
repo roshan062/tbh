@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 15px 0 10px 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 15px;
+  display: inline-block;
+  color: #faf8f8;
+  margin: 0px 0 0 50px;
+  padding: 0;
+  transform: rotate(-50deg);
+}
+
+.logo p {
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.logo p span {
+  font-weight: 100;
+  color: grey;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon img {
+  width: 30px;
+  height: 25px;
+  filter: invert(100%);
+}
+
+.menu-icon .line:nth-child(1) {
+  top: 0;
+}
+
+.menu-icon .line:nth-child(2) {
+  top: 7px;
+}
+
+.menu-icon .line:nth-child(3) {
+  bottom: 0;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+  color: white;
+  margin-right: 10px;
+}
+
+.nav-items li:last-child {
+  margin-right: 0;
+}
+
+.nav-items a {
+  font-weight: 800;
+  text-decoration: none;
+  color: #faf8f8;
+}
+
+.search-icon {
+  display: inline-block;
+  color: #faf8f8;
+  margin: 1px 50px 0 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  * {
+    text-align: left;
+  }
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: 40px 0 10px 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    /* right: 10px; */
+  }
+
+  .nav-items {
+    display: none;
+    margin-left: 35%;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    overflow-y: hidden;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+  .nav-items.open {
+    display: flex;
+    overflow-x: hidden;
+  }
+
+  .search-icon {
+    display: none;
+  }
+}
