@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './MiddleBody.css'
+import './ArticleOne.css'
 
-const MiddleBody = () => {
+const ArticleOne = () => {
 
     const [data, setData] = useState('');
 
@@ -14,7 +14,6 @@ const MiddleBody = () => {
             const response = await fetch('http://13.53.142.82:5500/article/145');
             const jsonData = await response.json();
             setData(jsonData);
-            console.log(jsonData.head_title)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -22,7 +21,6 @@ const MiddleBody = () => {
 
     function imageUrl(url) {
         let modifiedUrl;
-
         if (data) {
             const ip = "http://13.53.142.82/";
             modifiedUrl = ip + url.replace("localhost/", "");
@@ -177,4 +175,4 @@ const MiddleBody = () => {
     )
 }
 
-export default MiddleBody
+export default ArticleOne
