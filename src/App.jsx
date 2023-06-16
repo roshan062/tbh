@@ -1,21 +1,30 @@
 import './App.css'
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
 import ArticleOne from './pages/ArticleOne'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
 import ArticleThree from './pages/ArticleThree'
+import ArticleFour from './pages/ArticleFour'
 import ArticleFive from './pages/ArticleFive'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      {/* <ArticleOne /> */}
-      {/* <ArticleThree /> */}
-      <ArticleFive />
+      <Routes>
+        <Route path='/' >
+          <Route index element={<HomePage />} />
+          <Route path='/1' element={<ArticleOne />} />
+          <Route path='/3' element={<ArticleThree />} />
+          <Route path='/4' element={<ArticleFour />} />
+          <Route path='/5' element={<ArticleFive />} />
+        </Route>
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

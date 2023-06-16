@@ -24,14 +24,13 @@ const ArticleOne = () => {
         if (data) {
             const ip = "http://13.53.142.82/";
             modifiedUrl = ip + url.replace("localhost/", "");
-            console.log(ip + (data.subheadings[0].image.replace("localhost/", "")))
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
-                return (<img src={modifiedUrl} className='article-image' />)
+                return (<img src={modifiedUrl} className='article-imagee' />)
             } else {
-                return (<video controls className='video-player'>
+                return (<video controls className='video-playerr'>
                     <source src={modifiedUrl} type="video/mp4" />
                 </video>)
             }
@@ -55,10 +54,10 @@ const ArticleOne = () => {
         ) : (
             <p>Loading data...</p>
         )}
-        <div className="image-text">
-            <div class="container">
-                <div class="box"><p>NEWS</p></div>
-                <div class="box2"></div>
+        <div className="image-textt">
+            <div class="containerr">
+                <div class="boxx"><p>NEWS</p></div>
+                <div class="boxx2"></div>
             </div>
             <h1 className="heading-text">
                 {data.head_title}!!

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './ArticleFive.css'
 
 const ArticleFive = () => {
@@ -26,24 +26,46 @@ const ArticleFive = () => {
             const ip = "http://13.53.142.82/";
             modifiedUrl = ip + url.replace("localhost/", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
                 return (<img src={modifiedUrl} className='article-image' />)
             } else {
-                return (<video controls className='video-player'>
-                    <source src={modifiedUrl} type="video/mp4" />
-                </video>)
+                return (
+                    <div className="video-player-container">
+                        <video
+                            ref={videoRef}
+                            className="video-player"
+                            src={modifiedUrl}
+                            onClick={togglePlay}
+                        />
+                        {!isPlaying && (
+                            <button className="play-button" onClick={togglePlay}>
+                                ▶️
+                            </button>
+                        )}
+                    </div>
+                )
             }
 
         }
     }
 
-    // const paragraphs = data.description.split('<p>').filter(Boolean);
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+        const video = videoRef.current;
+        if (video.paused) {
+            video.play();
+            setIsPlaying(true);
+        } else {
+            video.pause();
+            setIsPlaying(false);
+        }
+    };
 
     return (<>
         {data ? (<>
-
             {imageUrl(data.image)}
         </>
         ) : (
@@ -61,13 +83,6 @@ const ArticleFive = () => {
             ) : (
                 <p>Loading data...</p>
             )}
-
-            {/* {paragraphs.map((paragraph, index) => (
-                <div
-                    key={index}
-                    dangerouslySetInnerHTML={{ __html: `<p>${paragraph}</p><br>` }}
-                />
-            ))} */}
 
         </section>
     </>
