@@ -8,6 +8,7 @@ import ArticleFour from './pages/ArticleFour'
 import ArticleFive from './pages/ArticleFive'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ArticleTwo from './pages/ArticleTwo'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' >
           <Route index element={<HomePage />} />
           <Route path='/1' element={<ArticleOne />} />
+          <Route path='/2' element={<ArticleTwo />} />
           <Route path='/3' element={<ArticleThree />} />
           <Route path='/4' element={<ArticleFour />} />
           <Route path='/5' element={<ArticleFive />} />

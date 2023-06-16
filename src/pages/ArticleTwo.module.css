@@ -1,0 +1,159 @@
+main {
+  background-color: black;
+}
+
+.article_image {
+  width: 100%;
+  height: 590px;
+  display: block;
+}
+
+.video_player {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.image_text {
+  position: absolute;
+  top: 55%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+}
+
+.heading_text {
+  font-size: 80px;
+  line-height: 0.8;
+  color: white;
+  text-align: left;
+  margin: -120px 0 10px 135px;
+  width: 40%;
+
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.title_grid {
+  padding: 60px 0px 100px 0px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+}
+
+.subtitle {
+  width: 50%;
+  margin: 100px 0px 100px 80px;
+  text-align: left;
+}
+
+.middletext {
+  width: 60%;
+  margin: 100px 0 100px 0px;
+  text-align: left;
+}
+
+.middlemedia {
+  transform: translateY(4px);
+}
+
+.quote_divider {
+  padding: 60px 0px 100px 0px;
+  display: grid;
+  grid-template-columns: 50% 40%;
+  justify-content: space-evenly;
+  text-align: left;
+  background-color: black;
+  color: white;
+  border: 10px solid rgb(12, 0, 0);
+}
+
+.quote_section {
+  width: 40%;
+  margin: 50px 0px 0px 250px;
+  text-align: right;
+  font-size: 16px;
+}
+
+.lowertext {
+  width: 40%;
+  margin: 50px 0px 0px 0px;
+  text-align: left;
+}
+
+.carousel {
+  width: 60%;
+  height: auto;
+  margin: 0px auto 100px auto;
+}
+
+.footer_border {
+  height: 1px;
+  display: inline-block;
+  width: 100vw;
+  border-bottom: 1px solid rgb(185, 233, 241);
+}
+
+/* For mobile screens */
+@media (max-width: 767px) {
+  .article_image {
+    height: auto;
+  }
+
+  .video_player {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image_text {
+    position: absolute;
+    top: 34%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .heading_text {
+    font-size: 2.6rem;
+    line-height: 0.8;
+    color: white;
+    text-align: left;
+    margin: -70px 0 0 440px;
+    width: 40%;
+  }
+
+  .subtitle {
+    width: 70%;
+    margin: 30px 0 30px 32px;
+    text-align: left;
+  }
+
+  .middletext {
+    width: 70%;
+    margin: 0px 0 100px 32px;
+    text-align: left;
+  }
+
+  .quote_section {
+    width: 70%;
+    margin: 25px 0 40px 32px;
+    text-align: left;
+  }
+
+  .lowertext {
+    width: 70%;
+    margin: 0px 0 100px 32px;
+    text-align: left;
+  }
+
+  .carousel {
+    width: 100%;
+    height: auto;
+    margin: 10px 0px 50px 0px;
+  }
+}

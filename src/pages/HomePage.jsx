@@ -56,19 +56,28 @@ const HomePage = () => {
             <br />
             <br />
 
+            <Link to="/2">
+                Article Two
+            </Link>
+            <br />
+            <br />
+
             <Link to="/3">
                 Article Three
             </Link>
             <br />
+            <br />
 
-            {/* <Link to="/4">
-                Article One
-            </Link> */}
+            <Link to="/4">
+                Article Four
+            </Link>
+            <br />
             <br />
 
             <Link to="/5">
                 Article Five
             </Link>
+            <br />
             <br />
 
             <Link to="/">
