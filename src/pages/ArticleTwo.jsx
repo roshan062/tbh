@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ArticleTwo.module.css';
-import ImageSlider from '../components/ImageSlider';
+// import ImageSlider from '../components/ImageSlider';
+import Carousel from '../components/Carousel';
 
 const ArticleTwo = () => {
 
@@ -15,7 +16,6 @@ const ArticleTwo = () => {
             const response = await fetch('http://13.53.142.82:5500/article/2/152');
             const jsonData = await response.json();
             setData(jsonData);
-            // console.log(jsonData)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -107,18 +107,13 @@ const ArticleTwo = () => {
 
         <section className={styles.carousel}>
             {data ? (<>
-                <ImageSlider images={data.images} />
+                <Carousel images={data.images} />
 
             </>
             ) : (
                 <p>Loading carousel...</p>
             )}
         </section>
-        {/* <pagination>
-            <p>⬅️</p>
-            <p></p>
-            <p>➡️</p>
-        </pagination> */}
         <border className={styles.footer_border}></border>
     </main>
     )

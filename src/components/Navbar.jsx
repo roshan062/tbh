@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar.css';
+import styles from './Navbar.module.css';
 import menuImage from '/menu.png';
 
 const Navbar = () => {
@@ -10,8 +10,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
-            <div className="logo">
+        <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
+            <div className={styles.logo}>
                 <p>
                     <span>The</span>
                     <br />
@@ -20,10 +20,11 @@ const Navbar = () => {
                     House
                 </p>
             </div>
-            <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+            <div className={`${styles.menu_icon} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
                 <img src={menuImage} alt="Menu" />
             </div>
-            <ul className={`nav-items ${isMenuOpen ? 'open' : ''}`}>
+            <ul className={`${styles.nav_items} ${isMenuOpen ? styles.open : ''}`}>
+
                 <li>
                     <a href="/">HOME</a>
                 </li>
@@ -43,7 +44,7 @@ const Navbar = () => {
                     <a href="/contact">THE BIG MOUTH</a>
                 </li>
             </ul>
-            <div className="search-icon">
+            <div className={styles.search_icon}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </div>
         </nav>

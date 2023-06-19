@@ -1,0 +1,17 @@
+.article_cards {
+  margin: 50px 50px 50px 50px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-row-gap: 50px;
+}
+
+.image_container {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}

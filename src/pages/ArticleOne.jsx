@@ -55,9 +55,9 @@ const ArticleOne = () => {
             <p>Loading data...</p>
         )}
         <div className="image-textt">
-            <div class="containerr">
-                <div class="boxx"><p>NEWS</p></div>
-                <div class="boxx2"></div>
+            <div className="containerr">
+                <div className="boxx"><p>NEWS</p></div>
+                <div className="boxx2"></div>
             </div>
             <h1 className="heading-text">
                 {data.head_title}!!

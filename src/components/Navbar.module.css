@@ -41,30 +41,30 @@ header {
   color: grey;
 }
 
-.menu-icon {
+.menu_icon {
   display: none;
   cursor: pointer;
 }
 
-.menu-icon img {
+.menu_icon img {
   width: 30px;
   height: 25px;
   filter: invert(100%);
 }
 
-.menu-icon .line:nth-child(1) {
+.menu_icon .line:nth-child(1) {
   top: 0;
 }
 
-.menu-icon .line:nth-child(2) {
+.menu_icon .line:nth-child(2) {
   top: 7px;
 }
 
-.menu-icon .line:nth-child(3) {
+.menu_icon .line:nth-child(3) {
   bottom: 0;
 }
 
-.nav-items {
+.nav_items {
   list-style: none;
   display: flex;
   gap: 40px;
@@ -72,22 +72,22 @@ header {
   padding: 0;
 }
 
-.nav-items li {
+.nav_items li {
   color: white;
   margin-right: 10px;
 }
 
-.nav-items li:last-child {
+.nav_items li:last-child {
   margin-right: 0;
 }
 
-.nav-items a {
+.nav_items a {
   font-weight: 800;
   text-decoration: none;
   color: #faf8f8;
 }
 
-.search-icon {
+.search_icon {
   display: inline-block;
   color: #faf8f8;
   margin: 1px 50px 0 0;
@@ -109,7 +109,7 @@ header {
     display: none;
   }
 
-  .menu-icon {
+  .menu_icon {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -117,7 +117,7 @@ header {
     /* right: 10px; */
   }
 
-  .nav-items {
+  .nav_items {
     display: none;
     margin-left: 35%;
     flex-direction: column;
@@ -132,12 +132,12 @@ header {
   html {
     overflow-x: hidden;
   }
-  .nav-items.open {
+  .nav_items.open {
     display: flex;
     overflow-x: hidden;
   }
 
-  .search-icon {
+  .search_icon {
     display: none;
   }
 }

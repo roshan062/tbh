@@ -1,19 +1,19 @@
 import React from 'react'
-import './Footer.css'
+import styles from './Footer.module.css'
 
 const Footer = () => {
     return (
         <>
-            <footer className='footer'>
-                <div className='footer-logo'>
+            <footer className={styles.footer}>
+                <div className={styles.footer_logo}>
                     <div>
                         <h2>The <br />Big <br />House</h2>
                     </div>
-                    <div className='footer-title'>
+                    <div className={styles.footer_title}>
                         <h2> The Big is a charity transforming the lives of care leaver and at-risk young people
                             through the power of performance.</h2>
                     </div>
-                    <div className='footer-references'>
+                    <div className={styles.footer_references}>
                         <div>BIG HOUSE
                             <p>About</p>
                             <p>Jobs</p>
@@ -49,7 +49,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className='copyright-social'><p>©️The Big House Theatre</p><p>Insta Twitter Facebook</p></div>
+                <div className={styles.copyright_social}><p>©️The Big House Theatre</p><p>Insta Twitter Facebook</p></div>
             </footer>
         </>
     )
