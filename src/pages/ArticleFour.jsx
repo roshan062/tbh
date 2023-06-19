@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styles from './ArticleFour.module.css';
-// import ImageSlider from '../components/ImageSlider';
 import Carousel from '../components/Carousel';
 
 const ArticleFour = () => {
@@ -103,17 +102,6 @@ const ArticleFour = () => {
                 <p>Loading data...</p>
             )}
         </section>
-
-
-        {/* <section className={styles.carousel}>
-            {data ? (<>
-                <ImageSlider images={data.images} />
-
-            </>
-            ) : (
-                <p>Loading carousel...</p>
-            )}
-        </section> */}
 
         <section className={styles.carousel}>
             {data ? (<>

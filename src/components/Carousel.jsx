@@ -29,11 +29,10 @@ const Carousel = ({ images }) => {
             <button className={styles.pre_btn} onClick={btnpressprev}><p>&lt;</p></button>
             <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button>
             <div className={styles.product_container}>
-
                 {updatedImageUrls.map((slideImage, index) => (
                     <div key={index}>
                         {console.log(slideImage)}
-                        <img src={slideImage} className={styles.article_image} alt='carouse-img' />
+                        <img src={slideImage} className={styles.article_image} alt='carousel-img' />
                     </div>
                 ))}
             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './ArticleFive.css'
+import styles from './ArticleFive.module.css'
 
 const ArticleFive = () => {
 
@@ -28,18 +28,18 @@ const ArticleFive = () => {
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
 
             if (isImage) {
-                return (<img src={modifiedUrl} className='article-image' />)
+                return (<img src={modifiedUrl} className={styles.article_image} />)
             } else {
                 return (
-                    <div className="video-player-container">
+                    <div className={styles.video_player_container}>
                         <video
                             ref={videoRef}
-                            className="video-player"
+                            className={styles.video_player}
                             src={modifiedUrl}
                             onClick={togglePlay}
                         />
                         {!isPlaying && (
-                            <button className="play-button" onClick={togglePlay}>
+                            <button className={styles.play_button} onClick={togglePlay}>
                                 ▶️
                             </button>
                         )}
@@ -72,11 +72,11 @@ const ArticleFive = () => {
             <p>Loading video/image...</p>
         )}
 
-        <section className='title-section'>
+        <section className={styles.title_section}>
             <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
         </section>
 
-        <section className='middletext'>
+        <section className={styles.middletext}>
             {data ? (<>
                 <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
             </>

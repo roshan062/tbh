@@ -106,10 +106,6 @@
   text-align: left;
 }
 
-.carousel {
-  height: auto;
-}
-
 /* For mobile screens */
 @media (max-width: 767px) {
   .article_image {

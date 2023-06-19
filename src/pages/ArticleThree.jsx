@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ArticleThree.css'
+import styles from './ArticleThree.module.css'
 
 const ArticleThree = () => {
 
@@ -29,9 +29,9 @@ const ArticleThree = () => {
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
-                return (<img src={modifiedUrl} className='article-image' />)
+                return (<img src={modifiedUrl} className={styles.article_image} />)
             } else {
-                return (<video controls className='video-player'>
+                return (<video controls className={styles.video_player}>
                     <source src={modifiedUrl} type="video/mp4" />
                 </video>)
             }
@@ -47,22 +47,22 @@ const ArticleThree = () => {
         ) : (
             <p>Loading data...</p>
         )}
-        <div className="image-text">
-            <div className="container">
-                <div className="box"><p>WORKSHOP</p></div>
-                <div className="box2"></div>
+        <div className={styles.image_text}>
+            <div className={styles.container}>
+                <div className={styles.box}><p>WORKSHOP</p></div>
+                <div className={styles.box2}></div>
             </div>
-            <h1 className="heading-text">
+            <h1 className={styles.heading_text}>
                 {data.head_title}
             </h1>
             <p dangerouslySetInnerHTML={{ __html: data.title }}></p>
         </div>
 
-        <section className='title-section'>
+        <section className={styles.title_section}>
             <h1>{data.head_title}</h1>
         </section>
 
-        <section className='middletext'>
+        <section className={styles.middletext}>
             {data ? (<>
                 <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
             </>
@@ -71,7 +71,7 @@ const ArticleThree = () => {
             )}
         </section>
 
-        <section className='quote-section'>
+        <section className={styles.quote_section}>
             {data ? (<>
                 <div dangerouslySetInnerHTML={{ __html: data.quote_2 }}></div>
             </>
@@ -89,7 +89,7 @@ const ArticleThree = () => {
             )}
         </section>
 
-        <section className='quote-section'>
+        <section className={styles.quote_section}>
             {data ? (<>
                 <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
             </>
@@ -98,7 +98,7 @@ const ArticleThree = () => {
             )}
         </section>
 
-        <section className='prologue'>
+        <section className={styles.prologue}>
 
             <h2 className='l-arrow'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 512 512" id="left-arrow"><path d="M189.8 349.7c3.1-3.1 3-8 0-11.3L123.4 264H408c4.4 
