@@ -1,0 +1,134 @@
+.article_image {
+  width: 100%;
+  height: 590px;
+  display: block;
+}
+
+.image_text_container {
+  position: absolute;
+  top: 150px;
+  left: 370px;
+  z-index: 1;
+  max-width: 500px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 70px;
+  font-weight: 800;
+}
+
+.image_text_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.image_text {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  padding: 30px;
+  display: inline-block;
+}
+
+.mission {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: black;
+}
+
+.mission :first-child {
+  text-align: start;
+  justify-content: right;
+  margin: 100px 100px 0 200px;
+  font-size: medium;
+}
+
+.mission :nth-child(2) {
+  text-transform: uppercase;
+  justify-content: left;
+  margin: 200px 250px 0 100px;
+  text-align: left;
+  font-size: x-large;
+}
+
+.do_it {
+  height: 90vh;
+  width: 100%;
+  color: black;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  background-color: white;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+}
+
+.box {
+  position: relative;
+  top: 55px;
+  left: 450px;
+  width: 80%;
+  height: 80px;
+  background-color: transparent;
+  border: 1.5px solid #0c0000;
+  box-sizing: border-box;
+}
+
+.box p {
+  margin: 22px 0 0 10px;
+  font-size: x-large;
+  color: rgb(13, 1, 1);
+  font-weight: 900;
+}
+
+.box2 {
+  position: relative;
+  top: -15px;
+  left: 470px;
+  width: 80%;
+  height: 80px;
+  background-color: transparent;
+  border: 1.5px solid #11ebeb;
+  box-sizing: border-box;
+}
+
+.box2:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 50px;
+  background-color: rgb(12, 1, 1);
+}
+
+.big_work_commit_collab {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.big_work_commit_collab .item {
+  padding: 0 20px 0 40px;
+  text-align: left;
+}
+
+.big_work_commit_collab .item h2,
+.big_work_commit_collab .item p {
+  margin-bottom: 10px;
+}
+
+.both_carousel_container {
+  position: relative;
+}
+
+.big_b_design {
+}

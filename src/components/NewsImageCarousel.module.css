@@ -1,0 +1,6 @@
+.container {
+  align-items: center;
+  height: 95vh;
+  font-family: system-ui;
+  background-color: rgb(5, 5, 0);
+}

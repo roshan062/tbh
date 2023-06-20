@@ -47,12 +47,12 @@ const HomePage = () => {
                     <p>Api's data not fetched</p>
                 )
             }
-
-
-            <div>
+            <div className={styles.image_container}>
                 <Link to='/home' className={styles.link}>HomeOne </Link>
             </div>
         </div>
+
+
     )
 }
 
