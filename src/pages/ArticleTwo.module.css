@@ -61,6 +61,17 @@ main {
   transform: translateY(4px);
 }
 
+.play_button {
+  position: absolute;
+  top: 47%;
+  left: 53%;
+  transform: translate(-150%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  font-size: x-large;
+}
+
 .quote_divider {
   padding: 60px 0px 100px 0px;
   display: grid;

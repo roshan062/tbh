@@ -48,6 +48,10 @@ const HomePage = () => {
                 )
             }
 
+
+            <div>
+                <Link to='/home' className={styles.link}>HomeOne </Link>
+            </div>
         </div>
     )
 }

@@ -9,6 +9,7 @@ import ArticleFive from './pages/ArticleFive'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ArticleTwo from './pages/ArticleTwo'
+import HomeOne from './pages/HomeOne'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/3' element={<ArticleThree />} />
           <Route path='/4' element={<ArticleFour />} />
           <Route path='/5' element={<ArticleFive />} />
+          <Route path='/home' element={<HomeOne />} />
         </Route>
       </Routes>
       <Footer />

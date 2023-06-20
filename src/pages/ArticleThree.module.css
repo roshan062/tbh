@@ -10,6 +10,17 @@
   height: auto;
 }
 
+.play_button {
+  position: absolute;
+  top: 47%;
+  left: 53%;
+  transform: translate(-150%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  font-size: x-large;
+}
+
 .image_text {
   position: absolute;
   top: 45%;

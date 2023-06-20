@@ -20,6 +20,20 @@ const ArticleFive = () => {
         }
     };
 
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+        const video = videoRef.current;
+        if (video.paused) {
+            video.play();
+            setIsPlaying(true);
+        } else {
+            video.pause();
+            setIsPlaying(false);
+        }
+    };
+
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
@@ -49,20 +63,6 @@ const ArticleFive = () => {
 
         }
     }
-
-    const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const togglePlay = () => {
-        const video = videoRef.current;
-        if (video.paused) {
-            video.play();
-            setIsPlaying(true);
-        } else {
-            video.pause();
-            setIsPlaying(false);
-        }
-    };
 
     return (<>
         {data ? (<>

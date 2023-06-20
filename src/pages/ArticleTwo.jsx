@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './ArticleTwo.module.css';
-// import ImageSlider from '../components/ImageSlider';
 import Carousel from '../components/Carousel';
 
 const ArticleTwo = () => {
@@ -21,6 +20,20 @@ const ArticleTwo = () => {
         }
     };
 
+    const videoref = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const status = videoref.current;
+    function togglePlay() {
+        if (isPlaying) {
+            status.pause();
+            setIsPlaying(false);
+        }
+        else {
+            status.play();
+            setIsPlaying(true);
+        }
+    }
+
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
@@ -32,9 +45,18 @@ const ArticleTwo = () => {
             if (isImage) {
                 return (<img src={modifiedUrl} className={styles.article_image} />)
             } else {
-                return (<video controls className={styles.video_player}>
-                    <source src={modifiedUrl} type="video/mp4" />
-                </video>)
+                return (
+                    <div>
+                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
+                            <source src={modifiedUrl} type="video/mp4" />
+                        </video>
+                        {!isPlaying && (
+                            <button className={styles.play_button} onClick={togglePlay}>
+                                ▶️
+                            </button>
+                        )}
+                    </div>
+                )
             }
 
         }
@@ -114,7 +136,7 @@ const ArticleTwo = () => {
                 <p>Loading carousel...</p>
             )}
         </section>
-        <border className={styles.footer_border}></border>
+        <p className={styles.footer_border}></p>
     </main>
     )
 }

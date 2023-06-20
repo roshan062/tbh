@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleThree.module.css'
 
 const ArticleThree = () => {
@@ -20,6 +20,20 @@ const ArticleThree = () => {
         }
     };
 
+    const videoref = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const status = videoref.current;
+    function togglePlay() {
+        if (isPlaying) {
+            status.pause();
+            setIsPlaying(false);
+        }
+        else {
+            status.play();
+            setIsPlaying(true);
+        }
+    }
+
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
@@ -31,9 +45,18 @@ const ArticleThree = () => {
             if (isImage) {
                 return (<img src={modifiedUrl} className={styles.article_image} />)
             } else {
-                return (<video controls className={styles.video_player}>
-                    <source src={modifiedUrl} type="video/mp4" />
-                </video>)
+                return (
+                    <div>
+                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
+                            <source src={modifiedUrl} type="video/mp4" />
+                        </video>
+                        {!isPlaying && (
+                            <button className={styles.play_button} onClick={togglePlay}>
+                                ▶️
+                            </button>
+                        )}
+                    </div>
+                )
             }
 
         }
