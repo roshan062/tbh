@@ -128,7 +128,53 @@
 
 .both_carousel_container {
   position: relative;
+  overflow: hidden;
 }
 
 .big_b_design {
+  font-family: "Public Sans", sans-serif;
+}
+
+.blue_b {
+  font-size: 1200px;
+  position: absolute;
+  top: -100px;
+  left: -300px;
+  color: blue;
+  font-family: "Public Sans", sans-serif;
+  /* transform: scaleX(1.5); */
+  transform: rotate(-20deg) scaleX(1.1);
+  /* -webkit-text-stroke: 2px white;
+  -webkit-text-fill-color: transparent; */
+}
+
+.white_b {
+  font-size: 1300px;
+  position: absolute;
+  top: -250px;
+  left: 0px;
+  color: white;
+  font-family: "Public Sans", sans-serif;
+  transform: rotate(-30deg) scaleX(1.1);
+}
+
+.red_b {
+  font-size: 1200px;
+  position: absolute;
+  top: -40px;
+  left: 800px;
+  color: red;
+  font-family: "Public Sans", sans-serif;
+  transform: rotate(-40deg) scaleX(1.1) scaleY(1.1);
+  overflow-x: hidden;
+}
+.red_bb {
+  font-size: 1200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 1600px;
+  width: 1600px;
+  transform: rotate(-40deg) scaleX(1.1) scaleY(1.1);
+  overflow-x: hidden;
 }

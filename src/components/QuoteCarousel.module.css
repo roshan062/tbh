@@ -25,6 +25,7 @@
   line-height: 1.2;
   text-align: center;
   transition: transform 0.2s;
+  z-index: 10;
 }
 
 .carousel__item.active {
@@ -73,4 +74,5 @@
 .carousel__quote {
   font-style: italic;
   line-height: 1.5;
+  /* z-index: 11; */
 }

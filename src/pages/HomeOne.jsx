@@ -2,7 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './HomeOne.module.css';
 import { BsArrowUpRight } from 'react-icons/bs';
 import QuoteCarousel from '../components/QuoteCarousel';
-import NewsImageCarousel from '../components/NewsImageCarousel';
+import ImageTextCarousel from '../components/ImageTextCarousel';
+import SuggestionArticle from '../components/SuggestionArticle';
+
 
 const HomeOne = () => {
     const [data, setData] = useState('');
@@ -139,10 +141,12 @@ const HomeOne = () => {
             <section className={styles.both_carousel_container}>
                 <div>
                     {data ? (<>
-                        <NewsImageCarousel />
+                        <ImageTextCarousel />
+
                     </>
                     ) : (
-                        < NewsImageCarousel />
+                        <ImageTextCarousel />
+
 
                     )}
                 </div>
@@ -153,6 +157,33 @@ const HomeOne = () => {
                     </>
                     ) : (
                         < QuoteCarousel />
+
+                    )}
+                </div>
+                <div >
+                    {/* <img src="/red-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
+                    {/* <img src="/blue-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
+                    {/* <img src="/white-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
+                </div>
+
+                <div className={styles.big_b_design}>
+                    {/* <img className={styles.red_bb} src="/red-b.svg" alt="Letter B" /> */}
+
+                    <p className={styles.blue_b}>B</p>
+                    <p className={styles.white_b}>B</p>
+                    <p className={styles.red_b}>B</p>
+                </div>
+            </section>
+
+            <section>
+                <div>
+                    {data ? (<>
+                        <SuggestionArticle />
+
+                    </>
+                    ) : (
+                        <SuggestionArticle />
+
 
                     )}
                 </div>
