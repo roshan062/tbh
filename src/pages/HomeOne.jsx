@@ -73,69 +73,84 @@ const HomeOne = () => {
                     {imageUrl(data.image)}
                 </>
                 ) : (
-                    <p>Loading data...</p>
+                    <>
+                        <img src='./blank.jpeg' alt='top-image' className={styles.article_image} />
+                        {/* <p>Loading data...</p> */}
+                    </>
                 )}
             </section>
 
             <section>
-                {data ? (<>
-                    <div className={styles.image_text_container}>
-                        <div className={styles.image_text}>Incredible theatre comes from care</div>
+                {/* {data ? (<> */}
+                <div className={styles.image_text_container}>
+                    <div className={styles.image_text}>Incredible theatre comes from care</div>
+                </div>
+                {/* </> */}
+                {/* ) : ( */}
+                {/* <p>Loading data...</p> */}
+                {/* )} */}
+            </section>
+
+            <section className={styles.b_design}>
+
+                {/* {data ? (<> */}
+                <div className={styles.mission}>
+                    <div className={styles.container}>
+                        <div className={styles.box}><p>OUR MISSION</p></div>
+                        <div className={styles.box2}></div>
                     </div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
-            </section>
-
-            <section>
-                {data ? (<>
-                    <div className={styles.mission}>
-                        <div>The Big House has a simple mission:</div>
-                        <div>To Enable care Leavers and at risk young people to fulfill their potential.</div>
-                    </div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
-            </section>
-
-            <section>
-                {data ? (<>
-                    <div className={styles.do_it}>
-                        <div>
-                            <div className={styles.container}>
-                                <div className={styles.box}><p>HOW WE DO IT</p></div>
-                                <div className={styles.box2}></div>
-                            </div>
+                    <div className={styles.missiontext_container}>
+                        <div className={styles.left}>
+                            <p>The Big House has a mission:</p>
+                            <h2>TO EMPOWER CARE LEAVERS AND AT RISK YOUNG PEOPLE TO</h2>
                         </div>
-                        <div className={styles.big_work_commit_collab}>
-                            <div className={styles.item}>
-                                <h2>Big Work</h2>
-                                <p>The Big House works with young people who have been through the care system
-                                    and are finding life dificult. We provide a platform for them to participate in
-                                    the making of theatre and to have their voice heard.</p>
-                                <h3>More About Us <BsArrowUpRight /></h3>
-                            </div>
-                            <div className={styles.item}>
-                                <h2>Big Commitment</h2>
-                                <p>The Big House works with young people who have been through the care system
-                                    and are finding life dificult. We provide a platform for them to participate in
-                                    the making of theatre and to have their voice heard.</p>
-                                <h3>Become A Member <BsArrowUpRight /></h3></div>
-                            <div className={styles.item}>
-                                <h2>Big Collaborations</h2>
-                                <p>The Big House works with young people who have been through the care system
-                                    and are finding life dificult. We provide a platform for them to participate in
-                                    the making of theatre and to have their voice heard.</p>
-                                <h3>Get Involved <BsArrowUpRight /></h3>
-                            </div>
+                        <div className={styles.right}>
+                            <li>Transforming young lives through power of performance.</li>
+                            <li>Unlocking potential, unleashing creativity</li>
+                            <li>Building supportive</li>
+                            <li>Producing art and artist</li>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
+                </div>
+                {/* </> */}
+                {/* ) : ( */}
+                {/* <p>Loading data...</p> */}
+                {/* )} */}
+            </section>
+
+            <section>
+                {/* {data ? (<> */}
+                <div className={styles.do_it}>
+                    <div className={styles.item}>
+                        <h2>Big Work</h2>
+                        <p>The Big House works with young people who have been through the care system
+                            and are finding life dificult. We provide a platform for them to participate in
+                            the making of theatre and to have their voice heard.</p>
+                        <h3>More About Us <BsArrowUpRight /></h3>
+                    </div>
+                    <div className={styles.img_item}><img src='' alt='pic' /></div>
+                    <div className={styles.img_item}><img src='' alt='pic' /></div>
+                    <div className={styles.item}>
+                        <h2>Big Commitment</h2>
+                        <p>The Big House works with young people who have been through the care system
+                            and are finding life dificult. We provide a platform for them to participate in
+                            the making of theatre and to have their voice heard.</p>
+                        <h3>Become A Member <BsArrowUpRight /></h3>
+                    </div>
+                    <div className={styles.item}>
+                        <h2>Big Collaborations</h2>
+                        <p>The Big House works with young people who have been through the care system
+                            and are finding life dificult. We provide a platform for them to participate in
+                            the making of theatre and to have their voice heard.</p>
+                        <h3>Get Involved <BsArrowUpRight /></h3>
+                    </div>
+                    <div className={styles.img_item}><img src='' alt='pic' /></div>
+
+                </div>
+                {/* </> */}
+                {/* ) : ( */}
+                {/* <p>Loading data...</p> */}
+                {/* )} */}
             </section>
 
             <section className={styles.both_carousel_container}>
@@ -159,19 +174,6 @@ const HomeOne = () => {
                         < QuoteCarousel />
 
                     )}
-                </div>
-                <div >
-                    {/* <img src="/red-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
-                    {/* <img src="/blue-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
-                    {/* <img src="/white-b.svg" alt="Letter B" style={{ width: '256px', height: '256px' }} /> */}
-                </div>
-
-                <div className={styles.big_b_design}>
-                    {/* <img className={styles.red_bb} src="/red-b.svg" alt="Letter B" /> */}
-
-                    <p className={styles.blue_b}>B</p>
-                    <p className={styles.white_b}>B</p>
-                    <p className={styles.red_b}>B</p>
                 </div>
             </section>
 

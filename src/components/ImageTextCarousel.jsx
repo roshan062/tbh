@@ -28,7 +28,7 @@ const QuoteCarousel = () => {
         {
             title: "NO MANS LAND",
             quote:
-                "Door.com has been great. I feel like I got to work with a specialist at each point in the process. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing. Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful."
+                "Door.com has been great. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing. Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful."
         },
         {
             title: "NO MANS LAND",
@@ -71,7 +71,7 @@ const QuoteCarousel = () => {
                                     <h3>More Info <BsArrowUpRight /></h3>
                                 </Link>
                                 <Link to='' className={styles.link}>
-                                    <h3>BOOK NOW <BsArrowUpRight /></h3>
+                                    <h3>Book Now <BsArrowUpRight /></h3>
                                 </Link>
 
                             </blockquote>

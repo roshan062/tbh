@@ -34,96 +34,124 @@
 }
 
 .mission {
-  height: 100vh;
+  background-image: url("./3xB-Animation.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120vh;
   width: 100%;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 1fr auto;
   background-color: black;
+  position: relative;
 }
 
-.mission :first-child {
+.mission .missiontext_container {
+  grid-row: 2/3;
   text-align: start;
   justify-content: right;
-  margin: 100px 100px 0 200px;
+  /* margin: 300px 100px 0 200px; */
   font-size: medium;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.mission :nth-child(2) {
-  text-transform: uppercase;
+.mission .missiontext_container .left {
+  grid-column: 1/2;
   justify-content: left;
-  margin: 200px 250px 0 100px;
+  margin: 10px 50px 0 100px;
+  /* padding: 50px 150px 0 50px; */
   text-align: left;
   font-size: x-large;
 }
+.mission .missiontext_container .right {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-self: flex-end;
+  margin: 50px 50px 100px 50px;
+  text-align: left;
+  font-size: 14px;
+  list-style-type: square;
+}
+.mission .missiontext_container .right ::marker {
+  color: red;
+}
+.mission .missiontext_container .left h2 {
+  font-size: 45px;
+  margin: 20px 20px 0 0;
+}
 
-.do_it {
-  height: 90vh;
+.mission .container {
+  grid-row: 1/2;
+  position: absolute;
+  left: 300px;
+}
+
+.mission .container .box {
+  position: relative;
+  top: 50px;
+  left: 0px;
   width: 100%;
-  color: black;
-  display: grid;
-  grid-template-rows: 50% 50%;
-  background-color: white;
-}
-
-.container {
-  position: relative;
-  width: 300px;
-}
-
-.box {
-  position: relative;
-  top: 55px;
-  left: 450px;
-  width: 80%;
   height: 80px;
   background-color: transparent;
-  border: 1.5px solid #0c0000;
+  border: 1.5px solid #e4e1e1;
   box-sizing: border-box;
 }
 
-.box p {
-  margin: 22px 0 0 10px;
+.mission .container .box p {
+  margin: 32px 0 0 27px;
   font-size: x-large;
-  color: rgb(13, 1, 1);
+  color: rgb(244, 237, 237);
   font-weight: 900;
 }
 
-.box2 {
+.mission .container .box2 {
   position: relative;
   top: -15px;
-  left: 470px;
-  width: 80%;
+  left: 15px;
+  width: 100%;
   height: 80px;
   background-color: transparent;
   border: 1.5px solid #11ebeb;
   box-sizing: border-box;
 }
 
-.box2:before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 45%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 50px;
-  background-color: rgb(12, 1, 1);
+.mission .container .box2:before {
+  position: relative;
+  /* content: "i"; */
+  top: -30px;
+  left: 10px;
+  height: 70px;
+  width: 20px;
+  background-color: rgb(247, 246, 246);
 }
 
-.big_work_commit_collab {
+.do_it {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 500px);
+  gap: 10px;
+  background-color: black;
+  color: white;
 }
 
-.big_work_commit_collab .item {
-  padding: 0 20px 0 40px;
+.do_it .item {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  row-gap: 20px;
+  justify-content: center;
+  margin: 0 50px 0 150px;
   text-align: left;
 }
 
-.big_work_commit_collab .item h2,
-.big_work_commit_collab .item p {
-  margin-bottom: 10px;
+.do_it .img_item {
+  margin: 100px 50px 0 0px;
+  width: 60%;
+  height: 70%;
 }
 
 .both_carousel_container {
@@ -131,50 +159,156 @@
   overflow: hidden;
 }
 
-.big_b_design {
-  font-family: "Public Sans", sans-serif;
-}
+@media (max-width: 900px) {
+  .article_image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-.blue_b {
-  font-size: 1200px;
-  position: absolute;
-  top: -100px;
-  left: -300px;
-  color: blue;
-  font-family: "Public Sans", sans-serif;
-  /* transform: scaleX(1.5); */
-  transform: rotate(-20deg) scaleX(1.1);
-  /* -webkit-text-stroke: 2px white;
-  -webkit-text-fill-color: transparent; */
-}
+  .image_text_container {
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    z-index: 1;
+    max-width: 300px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+  }
 
-.white_b {
-  font-size: 1300px;
-  position: absolute;
-  top: -250px;
-  left: 0px;
-  color: white;
-  font-family: "Public Sans", sans-serif;
-  transform: rotate(-30deg) scaleX(1.1);
-}
+  .image_text_container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
-.red_b {
-  font-size: 1200px;
-  position: absolute;
-  top: -40px;
-  left: 800px;
-  color: red;
-  font-family: "Public Sans", sans-serif;
-  transform: rotate(-40deg) scaleX(1.1) scaleY(1.1);
-  overflow-x: hidden;
-}
-.red_bb {
-  font-size: 1200px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1600px;
-  width: 1600px;
-  transform: rotate(-40deg) scaleX(1.1) scaleY(1.1);
-  overflow-x: hidden;
+  .image_text {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    padding: 30px;
+    display: inline-block;
+  }
+
+  .mission {
+    background-image: url("./3xB-Animation.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 130vh;
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr auto;
+    background-color: black;
+    position: relative;
+  }
+
+  .mission .missiontext_container {
+    grid-row: 2/3;
+    text-align: left;
+    font-size: medium;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .mission .missiontext_container .left {
+    grid-row: 1/2;
+    justify-content: left;
+    width: 100%;
+    padding-top: 200px;
+  }
+  .mission .missiontext_container .right {
+    grid-row: 2/3;
+    width: 100vw;
+    row-gap: 20px;
+    text-align: left;
+    font-size: 14px;
+    list-style-type: square;
+    margin-left: -260px;
+  }
+  .mission .missiontext_container .right ::marker {
+    color: red;
+  }
+  .mission .missiontext_container .left h2 {
+    font-size: 35px;
+    /* margin: 20px 0px 0 0; */
+  }
+
+  .mission .container {
+    grid-row: 1/2;
+    position: absolute;
+    left: 100px;
+  }
+
+  .mission .container .box {
+    position: relative;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1.5px solid #e4e1e1;
+    box-sizing: border-box;
+  }
+
+  .mission .container .box p {
+    padding: 0px 20px 5px 10px;
+    font-size: 15px;
+    color: rgb(244, 237, 237);
+    font-weight: 900;
+  }
+
+  .mission .container .box2 {
+    position: relative;
+    top: 3px;
+    left: 15px;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1.5px solid #11ebeb;
+    box-sizing: border-box;
+  }
+
+  .mission .container .box2::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: aliceblue;
+    color: white;
+  }
+
+  .do_it {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 6);
+    gap: 50px;
+    background-color: black;
+    color: white;
+  }
+
+  .do_it .item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    margin: 0 50px 0 10px;
+    text-align: left;
+  }
+
+  .do_it .img_item {
+    margin: 0px 50px 10px 100px;
+    width: 250px;
+    height: 250px;
+  }
+  .both_carousel_container {
+    position: relative;
+    overflow: hidden;
+  }
 }

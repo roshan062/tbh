@@ -3,10 +3,10 @@
   display: grid;
   height: 110vh;
   font-family: system-ui;
-  /* justify-content: center; */
   background-color: black;
   color: white;
   position: relative;
+  padding-bottom: 150px;
 }
 
 .hanging_container {
@@ -54,4 +54,102 @@
   width: 175px;
   height: 2px;
   background-color: rgb(230, 223, 223);
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 30px;
+  margin: 260px 40px 60px 40px;
+}
+
+.article_cards {
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.534);
+}
+
+.show_more span {
+  color: #11ebeb;
+  font-size: 50px;
+}
+@media (max-width: 900px) {
+  .suggestion_article {
+    align-items: center;
+    height: 250vh;
+    font-family: system-ui;
+    background-color: black;
+    color: white;
+    position: relative;
+    padding-bottom: 400px;
+  }
+
+  .hanging_container {
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    width: 300px;
+  }
+
+  .box {
+    position: relative;
+    top: 75px;
+    left: 170px;
+    width: 60%;
+    height: 60px;
+    background-color: transparent;
+    border: 1.5px solid #f7f1f1;
+    box-sizing: border-box;
+  }
+
+  .box p {
+    margin: 2px 0 0 10px;
+    font-size: 30px;
+    color: rgb(242, 241, 241);
+    font-weight: 700;
+  }
+
+  .box2 {
+    position: relative;
+    top: 5px;
+    left: 160px;
+    width: 60%;
+    height: 60px;
+    background-color: transparent;
+    border: 1.5px solid #11ebeb;
+    box-sizing: border-box;
+  }
+
+  .box2:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -50%;
+    transform: translateX(-50%);
+    width: 175px;
+    height: 2px;
+    background-color: rgb(230, 223, 223);
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .article_cards {
+    height: 330px;
+    width: 60vw;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.534);
+  }
+
+  .show_more {
+    margin: auto auto;
+  }
+
+  .show_more span {
+    color: #11ebeb;
+    font-size: 50px;
+    margin-left: 30%;
+  }
 }
