@@ -9,10 +9,10 @@ const SuggestionArticle = () => {
                 <div className={styles.box2}></div>
             </div>
             <div className={styles.grid_container}>
-                <div className={styles.article_cards}>Column 1</div>
-                <div className={styles.article_cards}>Column 2</div>
-                <div className={styles.article_cards}>Column 3</div>
-                <div className={styles.article_cards}>Column 4</div>
+                <div className={styles.article_cards}>Article 2</div>
+                <div className={styles.article_cards}>Article 1</div>
+                <div className={styles.article_cards}>Article 3</div>
+                <div className={styles.article_cards}>Article 4</div>
             </div>
 
             <div className={styles.show_more}>

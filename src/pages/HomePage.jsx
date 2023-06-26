@@ -50,6 +50,9 @@ const HomePage = () => {
             <div className={styles.image_container}>
                 <Link to='/home' className={styles.link}>HomeOne </Link>
             </div>
+            <div className={styles.image_container}>
+                <Link to='/about' className={styles.link}>About Us </Link>
+            </div>
         </div>
 
 

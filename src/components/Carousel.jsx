@@ -9,9 +9,9 @@ const Carousel = ({ images }) => {
         const updatedUrl = obj.image.replace('localhost', ip);
         return updatedUrl;
     });
+
+
     let box = document.querySelector(`.${styles.product_container}`);
-
-
     const btnpressprev = () => {
         let width = box.clientWidth;
         box.scrollLeft = box.scrollLeft - 500;

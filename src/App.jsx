@@ -10,6 +10,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ArticleTwo from './pages/ArticleTwo'
 import HomeOne from './pages/HomeOne'
+import AboutUs from './pages/AboutUs'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/4' element={<ArticleFour />} />
           <Route path='/5' element={<ArticleFive />} />
           <Route path='/home' element={<HomeOne />} />
+          <Route path='/about' element={<AboutUs />} />
         </Route>
       </Routes>
       <Footer />

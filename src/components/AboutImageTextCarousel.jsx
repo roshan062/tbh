@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BsArrowUpRight } from 'react-icons/bs';
-import styles from './ImageTextCarousel.module.css'
+import styles from './AboutImageTextCarousel.module.css'
 import { Link } from 'react-router-dom'
 
-const ImageTextCarousel = () => {
+const AboutImageTextCarousel = () => {
     const [activeSlide, setActiveSlide] = useState(1);
 
     useEffect(() => {
@@ -24,19 +24,20 @@ const ImageTextCarousel = () => {
         return () => clearInterval(intervalId);
     }, []);
 
+
     const reviews = [
         {
-            title: "NO MANS LAND",
+            title: "A BIT OF BACK HISTORY",
             quote:
                 "Door.com has been great. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing. Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful."
         },
         {
-            title: "NO MANS LAND",
+            title: "A BIT OF BACK HISTORY",
             quote:
                 "I have bought and sold ten homes. This has been the most rewarding experience of them all. True professionalism and insight as well as great customer service makes me a believer in the Door.com business model."
         },
         {
-            title: "NO MANS LAND",
+            title: "A BIT OF BACK HISTORY",
             quote:
                 "The entire experience from onboarding to the sale of our home has been professional, expedited quickly, and I saved close to $14,000 in commissions. I will absolutely be using Door.com for the sale of my next property."
         }
@@ -49,7 +50,7 @@ const ImageTextCarousel = () => {
     return (
         <div className={styles.container}>
             <div className={styles.hanging_container}>
-                <div className={styles.box}><p>WHAT'S GOING DOWN</p></div>
+                <div className={styles.box}><p>OUR HISTORY</p></div>
                 <div className={styles.box2}></div>
             </div>
 
@@ -69,9 +70,6 @@ const ImageTextCarousel = () => {
                                 <p>"{quote}"</p>
                                 <Link to='' className={styles.link}>
                                     <h3>More Info <BsArrowUpRight /></h3>
-                                </Link>
-                                <Link to='' className={styles.link}>
-                                    <h3>Book Now <BsArrowUpRight /></h3>
                                 </Link>
 
                             </blockquote>
@@ -95,4 +93,4 @@ const ImageTextCarousel = () => {
     );
 };
 
-export default ImageTextCarousel;
+export default AboutImageTextCarousel;
