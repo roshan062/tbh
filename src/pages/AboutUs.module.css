@@ -55,6 +55,11 @@
   padding: 20px 50px 20px 50px;
 }
 
+.video_image_container {
+  min-height: 50vh;
+  background-color: black;
+}
+
 .work {
   position: relative;
   min-height: 100vh;
@@ -119,7 +124,6 @@
 
 .work_grid_container .item {
   min-height: 200px;
-  /* width: auto; */
 }
 
 .item1 {
@@ -175,6 +179,144 @@
 .role_grid_container .item2 .links h3 {
   margin: 10px 0 30px 0;
   cursor: pointer;
+}
+
+.tabbed_carousel {
+  min-height: 80vh;
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+.tabbed_carousel_container {
+  padding: 200px 0 200px 0;
+}
+
+.tabbed_carousel .hanging_container {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  width: 300px;
+}
+
+.tabbed_carousel .box {
+  position: relative;
+  top: 35px;
+  left: 480px;
+  width: 70%;
+  height: 60px;
+  background-color: transparent;
+  border: 1.5px solid #f7f1f1;
+  box-sizing: border-box;
+}
+
+.tabbed_carousel .box p {
+  margin: 22px 0 0 10px;
+  font-size: 20px;
+  color: rgb(242, 241, 241);
+  font-weight: 900;
+}
+
+.tabbed_carousel .box2 {
+  position: relative;
+  top: -15px;
+  left: 460px;
+  width: 70%;
+  height: 60px;
+  background-color: transparent;
+  border: 1.5px solid #11ebeb;
+  box-sizing: border-box;
+}
+
+.tabbed_carousel .box2:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: -108%;
+  transform: translateX(-50%);
+  width: 447px;
+  height: 1px;
+  background-color: rgb(230, 223, 223);
+}
+
+.tab_carousel_switcher span {
+  padding: 5px 10px 5px 10px;
+  margin: 0 0 0 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.carousel_container {
+  min-height: 100vh;
+  background-color: black;
+  padding: 50px 0 50px 0;
+  color: white;
+  position: relative;
+}
+
+.carousel_container p {
+  margin: 100px 0px 0 0;
+}
+
+.carousel_container .hanging_container {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  width: 300px;
+}
+
+.carousel_container .box {
+  position: relative;
+  top: 35px;
+  left: 530px;
+  width: 70%;
+  height: 60px;
+  background-color: transparent;
+  border: 1.5px solid #f7f1f1;
+  box-sizing: border-box;
+}
+
+.carousel_container .box p {
+  margin: 22px 0 0 10px;
+  font-size: 20px;
+  color: rgb(242, 241, 241);
+  font-weight: 900;
+}
+
+.carousel_container .box2 {
+  position: relative;
+  top: -15px;
+  left: 510px;
+  width: 70%;
+  height: 60px;
+  background-color: transparent;
+  border: 1.5px solid #11ebeb;
+  box-sizing: border-box;
+}
+
+.carousel_container .box2:before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: -120%;
+  transform: translateX(-50%);
+  width: 497px;
+  height: 1px;
+  background-color: rgb(230, 223, 223);
+}
+
+.full_image_carousel {
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  height: 80%;
+  width: 50%;
+  z-index: 11;
 }
 
 @media (max-width: 900px) {

@@ -4,10 +4,18 @@ import AboutImageTextCarousel from '../components/AboutImageTextCarousel';
 import { RotatingLines } from 'react-loader-spinner'
 import Pie from '../components/Pie'
 import { BsArrowUpRight } from 'react-icons/bs';
+import FullImageCarousel from '../components/FullImageCarousel';
+import TabbedMultiCarousel from '../components/TabbedMultiCarousel';
 
 
 const AboutUs = () => {
     const [data, setData] = useState('');
+    const [activeIndex, setActiveIndex] = useState(1);
+    const handleButtonClick = (index) => {
+        setActiveIndex(index);
+        console.log("clicked on " + index + " slide.")
+    };
+
 
     useEffect(() => {
         fetchData();
@@ -111,7 +119,7 @@ const AboutUs = () => {
             </section>
 
 
-            <section>
+            <section className={styles.video_image_container}>
                 {data ? (<>
                     {imageUrl(data.image)}
                 </>
@@ -174,7 +182,59 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
+            </section>
 
+            <section className={styles.tabbed_carousel}>
+                <div className={styles.hanging_container}>
+                    <div className={styles.box}><p>PEOPLE</p></div>
+                    <div className={styles.box2}></div>
+                </div>
+                <div className={styles.tabbed_carousel_container}>
+                    {/* <p className={styles.tab_carousel_switcher} ref={elementRef} onClick={tabCarouselClick}> */}
+                    <p className={styles.tab_carousel_switcher}>
+                        <span onClick={() => handleButtonClick(1)} >TEAM</span>
+                        <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
+                        <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
+                    </p>
+                    {activeIndex === 1 && (
+                        <TabbedMultiCarousel />
+                    )}
+                    {activeIndex === 2 && (
+                        <TabbedMultiCarousel />
+                    )}
+                    {activeIndex === 3 && (
+                        <TabbedMultiCarousel />
+                    )}
+                    {/* <TabbedMultiCarousel /> */}
+
+
+                </div>
+            </section>
+
+
+            <section className={styles.carousel_container}>
+                <div className={styles.hanging_container}>
+                    <div className={styles.box}><p>MEMBERS</p></div>
+                    <div className={styles.box2}></div>
+                </div>
+                <p>The people we do it for and who we couldn't do it without.</p>
+                <div className={`${styles.full_image_carousel}`}>
+                    {/* <div className={styles.overlay}> */}
+                    <img src="./3xB-Animation.png" alt="Overlay Image" className={styles.overlay} />
+                    {/* </div> */}
+                    <FullImageCarousel />
+                </div>
+
+                {/* </>
+                ) : (
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                )} */}
             </section>
         </>
     )

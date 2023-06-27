@@ -1,0 +1,43 @@
+.article_image {
+  height: 290px;
+  margin: 30px 40px 20px 40px;
+}
+
+.product_carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.product_container {
+  margin: 40px 0 40px 0;
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.pre_btn,
+.next_btn {
+  border: none;
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  top: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.next_btn {
+  right: 0;
+}
+
+.next_btn p,
+.pre_btn p {
+  font-size: 50px;
+  background-color: rgb(11, 11, 11);
+  color: rgb(247, 244, 244);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
