@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom'
-import styles from './HomePage.module.css'
+import styles from './ArticleHome.module.css'
 
 
-const HomePage = () => {
+const ArticleHome = () => {
     const [data, setData] = useState('');
 
     useEffect(() => {
@@ -47,16 +47,10 @@ const HomePage = () => {
                     <p>Api's data not fetched</p>
                 )
             }
-            <div className={styles.image_container}>
-                <Link to='/home' className={styles.link}>HomeOne </Link>
-            </div>
-            <div className={styles.image_container}>
-                <Link to='/about' className={styles.link}>About Us </Link>
-            </div>
         </div>
 
 
     )
 }
 
-export default HomePage
+export default ArticleHome

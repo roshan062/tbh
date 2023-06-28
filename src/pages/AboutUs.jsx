@@ -104,7 +104,7 @@ const AboutUs = () => {
                 {/* )} */}
             </section>
 
-            <section>
+            <section className={styles.img_text_carousel_section}>
                 <div>
                     {data ? (<>
                         <AboutImageTextCarousel />
@@ -145,7 +145,8 @@ const AboutUs = () => {
                 <div className={styles.work_grid_container}>
                     <div className={`${styles.item} ${styles.item1}`}><p>OUR MISSION IS WORKING</p></div>
                     <div className={`${styles.item} ${styles.item2}`}><p>We have already placed xx young people in placement lroen ipsum
-                        simplle text of just ot bkus used temoporay. </p></div>
+                        simplle text of just ot bkus used temoporay. </p>
+                    </div>
                     <div className={`${styles.item} ${styles.item3}`}>
                         <img src='' alt='image' />
                     </div>
@@ -166,6 +167,46 @@ const AboutUs = () => {
                 </div>
             </section>
 
+
+            <section className={styles.tabbed_carousel}>
+                <div className={styles.hanging_container}>
+                    <div className={styles.box}><p>PEOPLE</p></div>
+                    <div className={styles.box2}></div>
+                </div>
+                <div className={styles.tabbed_carousel_container}>
+                    <p className={styles.tab_carousel_switcher}>
+                        <span onClick={() => handleButtonClick(1)} >TEAM</span>
+                        <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
+                        <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
+                    </p>
+                    {activeIndex === 1 && (
+                        <TabbedMultiCarousel />
+                    )}
+                    {activeIndex === 2 && (
+                        <TabbedMultiCarousel />
+                    )}
+                    {activeIndex === 3 && (
+                        <TabbedMultiCarousel />
+                    )}
+
+                </div>
+            </section>
+
+
+            <section className={styles.carousel_container}>
+                <div className={styles.hanging_container}>
+                    <div className={styles.box}><p>MEMBERS</p></div>
+                    <div className={styles.box2}></div>
+                </div>
+                <p>The people we do it for and who we couldn't do it without.</p>
+                <div className={`${styles.full_image_carousel}`}>
+                    <img src="./3b.svg" alt="Overlay Image" className={styles.overlay} />
+                    <FullImageCarousel />
+                </div>
+            </section>
+
+
+
             <section>
                 <div className={styles.role_grid_container}>
                     <div className={styles.item1}>
@@ -182,59 +223,6 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section className={styles.tabbed_carousel}>
-                <div className={styles.hanging_container}>
-                    <div className={styles.box}><p>PEOPLE</p></div>
-                    <div className={styles.box2}></div>
-                </div>
-                <div className={styles.tabbed_carousel_container}>
-                    {/* <p className={styles.tab_carousel_switcher} ref={elementRef} onClick={tabCarouselClick}> */}
-                    <p className={styles.tab_carousel_switcher}>
-                        <span onClick={() => handleButtonClick(1)} >TEAM</span>
-                        <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
-                        <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
-                    </p>
-                    {activeIndex === 1 && (
-                        <TabbedMultiCarousel />
-                    )}
-                    {activeIndex === 2 && (
-                        <TabbedMultiCarousel />
-                    )}
-                    {activeIndex === 3 && (
-                        <TabbedMultiCarousel />
-                    )}
-                    {/* <TabbedMultiCarousel /> */}
-
-
-                </div>
-            </section>
-
-
-            <section className={styles.carousel_container}>
-                <div className={styles.hanging_container}>
-                    <div className={styles.box}><p>MEMBERS</p></div>
-                    <div className={styles.box2}></div>
-                </div>
-                <p>The people we do it for and who we couldn't do it without.</p>
-                <div className={`${styles.full_image_carousel}`}>
-                    {/* <div className={styles.overlay}> */}
-                    <img src="./3xB-Animation.png" alt="Overlay Image" className={styles.overlay} />
-                    {/* </div> */}
-                    <FullImageCarousel />
-                </div>
-
-                {/* </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )} */}
             </section>
         </>
     )

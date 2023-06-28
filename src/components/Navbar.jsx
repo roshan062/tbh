@@ -32,10 +32,10 @@ const Navbar = () => {
                     <a href="/about">ABOUT US</a>
                 </li>
                 <li>
-                    <a href="/services">THEATRE</a>
+                    <a href="/theatre">THEATRE</a>
                 </li>
                 <li>
-                    <a href="/portfolio">TBH MEANS BUSINESS</a>
+                    <a href="/articles">ARTICLES</a>
                 </li>
                 <li>
                     <a href="/blog">GET INVOLVED</a>

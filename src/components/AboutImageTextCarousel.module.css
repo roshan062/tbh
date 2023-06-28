@@ -166,7 +166,7 @@
     height: 120vh;
     font-family: system-ui;
     justify-content: center;
-    background-color: rgb(14, 14, 1);
+    background-color: black;
     color: white;
     position: relative;
   }
@@ -180,10 +180,10 @@
 
   .box {
     position: relative;
-    top: 45px;
+    top: 65px;
     left: 110px;
     width: 60%;
-    height: 60px;
+    height: 50px;
     background-color: transparent;
     border: 1.5px solid #f7f1f1;
     box-sizing: border-box;
@@ -198,10 +198,10 @@
 
   .box2 {
     position: relative;
-    top: -25px;
+    top: 5px;
     left: 100px;
     width: 60%;
-    height: 60px;
+    height: 50px;
     background-color: transparent;
     border: 1.5px solid #11ebeb;
     box-sizing: border-box;
@@ -210,11 +210,11 @@
   .box2:before {
     content: "";
     position: absolute;
-    top: -67px;
+    top: -57px;
     left: 45%;
     transform: translateX(-50%);
     width: 1px;
-    height: 65px;
+    height: 55px;
     background-color: rgb(230, 223, 223);
   }
 

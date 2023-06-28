@@ -72,6 +72,7 @@
 .show_more span {
   color: #11ebeb;
   font-size: 50px;
+  cursor: pointer;
 }
 @media (max-width: 900px) {
   .suggestion_article {
@@ -151,5 +152,6 @@
     color: #11ebeb;
     font-size: 50px;
     margin-left: 30%;
+    cursor: pointer;
   }
 }
