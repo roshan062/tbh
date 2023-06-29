@@ -71,7 +71,6 @@
   grid-row: 2/3;
   text-align: start;
   justify-content: right;
-  /* margin: 300px 100px 0 200px; */
   font-size: medium;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -81,7 +80,6 @@
   grid-column: 1/2;
   justify-content: left;
   margin: 10px 50px 0 100px;
-  /* padding: 50px 150px 0 50px; */
   text-align: left;
   font-size: x-large;
 }
@@ -98,10 +96,6 @@
 }
 .mission .missiontext_container .right ::marker {
   color: rgb(237, 17, 171);
-}
-.mission .missiontext_container .left h2 {
-  font-size: 45px;
-  margin: 20px 20px 0 0;
 }
 
 .mission .container {
@@ -168,6 +162,11 @@
   text-align: left;
 }
 
+.do_it .item a {
+  color: white;
+  text-decoration: none;
+}
+
 .do_it .img_item {
   margin: 100px 50px 0 0px;
   width: 60%;
@@ -182,7 +181,7 @@
 @media (max-width: 900px) {
   .article_image {
     width: 100%;
-    height: auto;
+    height: 300px;
     display: block;
   }
 
@@ -250,14 +249,10 @@
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin-left: -260px;
+    margin-left: -190px;
   }
   .mission .missiontext_container .right ::marker {
     color: rgb(241, 33, 168);
-  }
-  .mission .missiontext_container .left h2 {
-    font-size: 35px;
-    /* margin: 20px 0px 0 0; */
   }
 
   .mission .container {

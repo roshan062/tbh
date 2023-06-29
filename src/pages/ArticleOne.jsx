@@ -3,6 +3,8 @@ import styles from './ArticleOne.module.css';
 
 const ArticleOne = () => {
     const [data, setData] = useState('');
+    // const ip = import.meta.env.VITE_IP || 'default value';
+    // const api = ip + ":5500/article/145";
 
     useEffect(() => {
         fetchData();
@@ -11,6 +13,7 @@ const ArticleOne = () => {
     const fetchData = async () => {
         try {
             const response = await fetch('http://13.53.142.82:5500/article/145');
+            // const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {

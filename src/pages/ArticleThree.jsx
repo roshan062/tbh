@@ -2,8 +2,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleThree.module.css'
 
 const ArticleThree = () => {
-
     const [data, setData] = useState('');
+    // const ip = import.meta.env.VITE_IP || 'default value';
+    // const api = ip + ":5500/article/3/151";
 
     useEffect(() => {
         fetchData();
@@ -12,6 +13,7 @@ const ArticleThree = () => {
     const fetchData = async () => {
         try {
             const response = await fetch('http://13.53.142.82:5500/article/3/151');
+            // const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
             console.log(jsonData)

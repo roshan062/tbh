@@ -5,6 +5,8 @@ import styles from './ArticleHome.module.css'
 
 const ArticleHome = () => {
     const [data, setData] = useState('');
+    // const ip = import.meta.env.VITE_IP || 'default value';
+    // const api = ip + ":5500/articles";
 
     useEffect(() => {
         fetchData();
@@ -13,6 +15,7 @@ const ArticleHome = () => {
     const fetchData = async () => {
         try {
             const response = await fetch('http://13.53.142.82:5500/articles');
+            // const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {

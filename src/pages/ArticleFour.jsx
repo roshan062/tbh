@@ -3,8 +3,9 @@ import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
 
 const ArticleFour = () => {
-
     const [data, setData] = useState('');
+    // const ip = import.meta.env.VITE_IP || 'default value';
+    // const api = ip + ":5500/article/4/150";
 
     useEffect(() => {
         fetchData();
@@ -13,6 +14,7 @@ const ArticleFour = () => {
     const fetchData = async () => {
         try {
             const response = await fetch('http://13.53.142.82:5500/article/4/150');
+            // const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
             // console.log(jsonData)

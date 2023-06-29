@@ -4,18 +4,23 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import QuoteCarousel from '../components/QuoteCarousel';
 import ImageTextCarousel from '../components/ImageTextCarousel';
 import SuggestionArticle from '../components/SuggestionArticle';
+import { RotatingLines } from 'react-loader-spinner'
 
 
 const HomeOne = () => {
     const [data, setData] = useState('');
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/home";
 
+
+    //fetching url data on page load
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://13.53.142.82:5500/article/4/150');
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
             // console.log(jsonData)
@@ -23,6 +28,14 @@ const HomeOne = () => {
             console.error('Error fetching data:', error);
         }
     };
+
+
+    // Getting Image url after replacing localhost by ip
+    const cleanImgUrl = function (fetchedUrl) {
+        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        return modifiedUrl;
+    }
+
 
     const videoref = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -38,17 +51,21 @@ const HomeOne = () => {
         }
     }
 
+    //Returning image/video element after verifying the url extension
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            const ip = "http://13.53.142.82/";
-            modifiedUrl = ip + url.replace("localhost/", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
+            // const ip = "http://13.53.142.82/";
+            modifiedUrl = ip + url.replace("localhost", "");
+            console.log(modifiedUrl)
+            // const isImage = modifiedUrl && modifiedUrl.endsWith('.png');
+            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
                 return (<img src={modifiedUrl} className={styles.article_image} />)
-            } else {
+            }
+            else {
                 return (
                     <div>
                         <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
@@ -62,117 +79,148 @@ const HomeOne = () => {
                     </div>
                 )
             }
-
         }
     }
     return (
         <>
             <section>
                 {data ? (<>
-
-                    {imageUrl(data.image)}
+                    {imageUrl(data.homepage_elements[0].image)}
                 </>
                 ) : (
                     <>
-                        <img src='./blank.jpeg' alt='top-image' className={styles.article_image} />
-                        {/* <p>Loading data...</p> */}
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
                     </>
                 )}
             </section>
 
             <section>
-                {/* {data ? (<> */}
-                <div className={styles.image_text_container}>
-                    <div className={styles.image_text}>Incredible theatre comes from care</div>
-                </div>
-                {/* </> */}
-                {/* ) : ( */}
-                {/* <p>Loading data...</p> */}
-                {/* )} */}
+                {data ? (<>
+                    <div className={styles.image_text_container}>
+                        <div className={styles.image_text}>{data.homepage_elements[0].hero_text}</div>
+                    </div>
+                </>
+                ) : (<>
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                </>
+                )}
             </section>
 
             <section className={styles.b_design}>
 
-                {/* {data ? (<> */}
-                <div className={styles.mission}>
-                    <div className={styles.container}>
-                        <div className={styles.box}><p>OUR MISSION</p></div>
-                        <div className={styles.box2}></div>
-                    </div>
-                    <div className={styles.missiontext_container}>
-                        <div className={styles.left}>
-                            <p>The Big House has a mission:</p>
-                            <h2>TO EMPOWER CARE LEAVERS AND AT RISK YOUNG PEOPLE TO</h2>
+                {data ? (<>
+                    <div className={styles.mission}>
+                        <div className={styles.container}>
+                            <div className={styles.box}><p>OUR MISSION</p></div>
+                            <div className={styles.box2}></div>
                         </div>
-                        <div className={styles.right}>
-                            <li>Transforming young lives through power of performance.</li>
-                            <li>Unlocking potential, unleashing creativity</li>
-                            <li>Building supportive</li>
-                            <li>Producing art and artist</li>
+                        <div className={styles.missiontext_container}>
+                            <div className={styles.left} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_text }}>
+                            </div>
+                            <div className={styles.right} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_list }}>
+                            </div>
                         </div>
                     </div>
-                </div>
-                {/* </> */}
-                {/* ) : ( */}
-                {/* <p>Loading data...</p> */}
-                {/* )} */}
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
             </section>
 
             <section>
-                {/* {data ? (<> */}
-                <div className={styles.do_it}>
-                    <div className={styles.item}>
-                        <h2>Big Work</h2>
-                        <p>The Big House works with young people who have been through the care system
-                            and are finding life dificult. We provide a platform for them to participate in
-                            the making of theatre and to have their voice heard.</p>
-                        <h3>More About Us <BsArrowUpRight /></h3>
-                    </div>
-                    <div className={styles.img_item}><img src='' alt='pic' /></div>
-                    <div className={styles.img_item}><img src='' alt='pic' /></div>
-                    <div className={styles.item}>
-                        <h2>Big Commitment</h2>
-                        <p>The Big House works with young people who have been through the care system
-                            and are finding life dificult. We provide a platform for them to participate in
-                            the making of theatre and to have their voice heard.</p>
-                        <h3>Become A Member <BsArrowUpRight /></h3>
-                    </div>
-                    <div className={styles.item}>
-                        <h2>Big Collaborations</h2>
-                        <p>The Big House works with young people who have been through the care system
-                            and are finding life dificult. We provide a platform for them to participate in
-                            the making of theatre and to have their voice heard.</p>
-                        <h3>Get Involved <BsArrowUpRight /></h3>
-                    </div>
-                    <div className={styles.img_item}><img src='' alt='pic' /></div>
+                {data ? (<>
+                    <div className={styles.do_it}>
+                        <div className={styles.item}>
+                            <h2>{data.homepage_elements[0].heading1}</h2>
+                            <p>{data.homepage_elements[0].description1}</p>
+                            <a href={data.homepage_elements[0].link1}> <h3> <BsArrowUpRight /></h3></a>
+                        </div>
+                        <div className={styles.img_item}>
+                            <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' />
+                        </div>
+                        <div className={styles.img_item}>
+                            <img src={cleanImgUrl(data.homepage_elements[0].image2)} alt='pic' />
+                        </div>
+                        <div className={styles.item}>
+                            <h2>{data.homepage_elements[0].heading2}</h2>
+                            <p>{data.homepage_elements[0].description2}</p>
+                            <a href={data.homepage_elements[0].link2}> <h3> <BsArrowUpRight /></h3></a>
+                        </div>
+                        <div className={styles.item}>
+                            <h2>{data.homepage_elements[0].heading3}</h2>
+                            <p>{data.homepage_elements[0].description3}</p>
+                            <a href={data.homepage_elements[0].link3}> <h3> <BsArrowUpRight /></h3></a>
+                        </div>
+                        <div className={styles.img_item}>
+                            <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' />
+                        </div>
 
-                </div>
-                {/* </> */}
-                {/* ) : ( */}
-                {/* <p>Loading data...</p> */}
-                {/* )} */}
+                    </div>
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
             </section>
 
             <section className={styles.both_carousel_container}>
                 <div>
                     {data ? (<>
-                        <ImageTextCarousel />
-
+                        <ImageTextCarousel slides={data.slides} />
                     </>
                     ) : (
-                        <ImageTextCarousel />
-
-
+                        <>
+                            <RotatingLines
+                                strokeColor="grey"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="76"
+                                visible={true}
+                            />
+                        </>
                     )}
                 </div>
 
                 <div>
                     {data ? (<>
-                        <QuoteCarousel />
+                        <QuoteCarousel testimonial={data.testimonials} />
                     </>
-                    ) : (
-                        < QuoteCarousel />
-
+                    ) : (<>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
                     )}
                 </div>
             </section>
@@ -183,10 +231,15 @@ const HomeOne = () => {
                         <SuggestionArticle />
 
                     </>
-                    ) : (
-                        <SuggestionArticle />
-
-
+                    ) : (<>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
                     )}
                 </div>
             </section>
