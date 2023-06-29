@@ -57,7 +57,7 @@ const HomeOne = () => {
         if (data) {
             // const ip = "http://13.53.142.82/";
             modifiedUrl = ip + url.replace("localhost", "");
-            console.log(modifiedUrl)
+            console.log("modifies url" + modifiedUrl)
             // const isImage = modifiedUrl && modifiedUrl.endsWith('.png');
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
@@ -156,10 +156,10 @@ const HomeOne = () => {
                             <a href={data.homepage_elements[0].link1}> <h3> <BsArrowUpRight /></h3></a>
                         </div>
                         <div className={styles.img_item}>
-                            <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' />
+                            <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' className={styles.selfimg} />
                         </div>
                         <div className={styles.img_item}>
-                            <img src={cleanImgUrl(data.homepage_elements[0].image2)} alt='pic' />
+                            <img src={cleanImgUrl(data.homepage_elements[0].image2)} alt='pic' className={styles.selfimg} />
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading2}</h2>
@@ -172,7 +172,7 @@ const HomeOne = () => {
                             <a href={data.homepage_elements[0].link3}> <h3> <BsArrowUpRight /></h3></a>
                         </div>
                         <div className={styles.img_item}>
-                            <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' />
+                            <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' className={styles.selfimg} />
                         </div>
 
                     </div>

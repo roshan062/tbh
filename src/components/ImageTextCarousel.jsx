@@ -60,7 +60,7 @@ const ImageTextCarousel = ({ slides }) => {
 
                             </blockquote>
                             <div className={styles.carousel_img}>
-                                <img src={image} alt="Image of Carousel" />
+                                <img src={image} alt="Image of Carousel" className={styles.selfimg} />
                             </div>
                         </li>
                     );

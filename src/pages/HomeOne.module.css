@@ -173,6 +173,11 @@
   height: 70%;
 }
 
+.do_it .img_item .selfimg {
+  height: 100%;
+  width: 100%;
+}
+
 .both_carousel_container {
   position: relative;
   overflow: hidden;
@@ -318,10 +323,16 @@
   }
 
   .do_it .img_item {
-    margin: 0px 50px 10px 100px;
+    margin: 0px 0 10px 12%;
     width: 250px;
     height: 250px;
   }
+
+  .do_it .img_item .selfimg {
+    height: 150%;
+    width: 150%;
+  }
+
   .both_carousel_container {
     position: relative;
     overflow: hidden;

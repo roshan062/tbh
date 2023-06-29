@@ -5,8 +5,8 @@ import styles from './ArticleHome.module.css'
 
 const ArticleHome = () => {
     const [data, setData] = useState('');
-    // const ip = import.meta.env.VITE_IP || 'default value';
-    // const api = ip + ":5500/articles";
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/articles";
 
     useEffect(() => {
         fetchData();
@@ -14,8 +14,7 @@ const ArticleHome = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://13.53.142.82:5500/articles');
-            // const response = await fetch(api);
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {
@@ -33,7 +32,7 @@ const ArticleHome = () => {
                         {data.map((api, index) => {
                             if (api.type == 0) return
                             const ref = `/${api.type}`;
-                            let url = api.image.replace("localhost", "http://13.53.142.82")
+                            let url = api.image.replace("localhost", ip)
                             return (
                                 <div key={index} >
                                     <Link to={ref} className={styles.link}>

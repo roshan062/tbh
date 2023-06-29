@@ -3,8 +3,8 @@ import styles from './ArticleOne.module.css';
 
 const ArticleOne = () => {
     const [data, setData] = useState('');
-    // const ip = import.meta.env.VITE_IP || 'default value';
-    // const api = ip + ":5500/article/145";
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/article/145";
 
     useEffect(() => {
         fetchData();
@@ -12,8 +12,7 @@ const ArticleOne = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://13.53.142.82:5500/article/145');
-            // const response = await fetch(api);
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {
@@ -38,8 +37,7 @@ const ArticleOne = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            const ip = "http://13.53.142.82/";
-            modifiedUrl = ip + url.replace("localhost/", "");
+            modifiedUrl = ip + url.replace("localhost", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

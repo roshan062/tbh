@@ -91,6 +91,11 @@
   transform: translateX(110%);
 }
 
+.selfimg {
+  height: 280px;
+  width: 400px;
+}
+
 .carousel__indicator {
   display: grid;
   grid-gap: 1rem;
@@ -226,6 +231,17 @@
     transform: translateX(110%);
   }
 
+  .carousel_img {
+    margin: 40px 0 10px 20px;
+  }
+
+  .selfimg {
+    height: 230px;
+    width: 350px;
+    transform: translateY(-100px);
+    margin-left: 40px;
+  }
+
   .carousel__indicator {
     display: grid;
     grid-gap: 1rem;
@@ -254,6 +270,7 @@
     line-height: 1.5;
     padding: 30px 10px 10px 10px;
     text-align: left;
+    transform: translateY(140px);
   }
 
   .carousel__quote h3 {
@@ -264,9 +281,5 @@
 
   .link {
     color: white;
-  }
-
-  .carousel_img {
-    margin: 40px 0 10px 20px;
   }
 }

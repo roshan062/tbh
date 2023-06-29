@@ -3,8 +3,8 @@ import styles from './ArticleFive.module.css'
 
 const ArticleFive = () => {
     const [data, setData] = useState('');
-    // const ip = import.meta.env.VITE_IP || 'default value';
-    // const api = ip + ":5500/article/5/149";
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/article/5/149";
 
     useEffect(() => {
         fetchData();
@@ -12,8 +12,7 @@ const ArticleFive = () => {
 
     const fetchData = async () => {
         try {
-            // const response = await fetch(api);
-            const response = await fetch('http://13.53.142.82:5500/article/5/149');
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
             console.log(jsonData)
@@ -39,8 +38,7 @@ const ArticleFive = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            const ip = "http://13.53.142.82/";
-            modifiedUrl = ip + url.replace("localhost/", "");
+            modifiedUrl = ip + url.replace("localhost", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
 
             if (isImage) {

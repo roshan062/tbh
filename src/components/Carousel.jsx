@@ -3,7 +3,7 @@ import styles from './Carousel.module.css'
 
 
 const Carousel = ({ images }) => {
-    let ip = 'http://13.53.142.82';
+    const ip = import.meta.env.VITE_IP || 'default value';
 
     const updatedImageUrls = images.map((obj) => {
         const updatedUrl = obj.image.replace('localhost', ip);

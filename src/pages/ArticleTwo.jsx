@@ -4,8 +4,8 @@ import Carousel from '../components/Carousel';
 
 const ArticleTwo = () => {
     const [data, setData] = useState('');
-    // const ip = import.meta.env.VITE_IP || 'default value';
-    // const api = ip + ":5500/article/2/152";
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/article/2/152";
 
     useEffect(() => {
         fetchData();
@@ -13,8 +13,7 @@ const ArticleTwo = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://13.53.142.82:5500/article/2/152');
-            // const response = await fetch(api);
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {
@@ -39,8 +38,7 @@ const ArticleTwo = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            const ip = "http://13.53.142.82/";
-            modifiedUrl = ip + url.replace("localhost/", "");
+            modifiedUrl = ip + url.replace("localhost", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
