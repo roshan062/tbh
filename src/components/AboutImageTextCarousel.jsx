@@ -3,13 +3,19 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import styles from './AboutImageTextCarousel.module.css'
 import { Link } from 'react-router-dom'
 
-const AboutImageTextCarousel = () => {
+const AboutImageTextCarousel = ({ slides }) => {
     const [activeSlide, setActiveSlide] = useState(1);
+
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const cleanImgUrl = function (fetchedUrl) {
+        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        return modifiedUrl;
+    }
 
     useEffect(() => {
         let current = 1;
         const cycleReviews = () => {
-            if (current === 3) {
+            if (current === slides.length) {
                 current = 1;
             } else {
                 current += 1;
@@ -19,29 +25,11 @@ const AboutImageTextCarousel = () => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 5000);
+        }, 2000);
 
         return () => clearInterval(intervalId);
     }, []);
 
-
-    const reviews = [
-        {
-            title: "A BIT OF BACK HISTORY",
-            quote:
-                "Door.com has been great. Plus, I'm amazed at the flat-fee for the sale! Great way to save at closing. Door.com has been great. I feel like I got to work with a specialist at each point in the process. Everyone was very professional and very helpful."
-        },
-        {
-            title: "A BIT OF BACK HISTORY",
-            quote:
-                "I have bought and sold ten homes. This has been the most rewarding experience of them all. True professionalism and insight as well as great customer service makes me a believer in the Door.com business model."
-        },
-        {
-            title: "A BIT OF BACK HISTORY",
-            quote:
-                "The entire experience from onboarding to the sale of our home has been professional, expedited quickly, and I saved close to $14,000 in commissions. I will absolutely be using Door.com for the sale of my next property."
-        }
-    ];
 
     const handleIndicatorClick = (slideIndex) => {
         setActiveSlide(slideIndex);
@@ -55,8 +43,8 @@ const AboutImageTextCarousel = () => {
             </div>
 
             <ul className={styles.carousel__list}>
-                {reviews.map((review, index) => {
-                    const { title, quote } = review;
+                {slides.map((slides, index) => {
+                    const { heading, description, link, image } = slides;
                     const count = index + 1;
                     return (
                         <li
@@ -66,22 +54,21 @@ const AboutImageTextCarousel = () => {
                             key={count}
                         >
                             <blockquote className={styles.carousel__quote}>
-                                <h2>{title}</h2>
-                                <p>"{quote}"</p>
-                                <Link to='' className={styles.link}>
+                                <h2>{heading}</h2>
+                                <p>{description}</p>
+                                <Link to={link} className={styles.link}>
                                     <h3>More Info <BsArrowUpRight /></h3>
                                 </Link>
-
                             </blockquote>
                             <div className={styles.carousel_img}>
-                                <img src="" alt="Image of Carousel" />
+                                <img src={cleanImgUrl(image)} alt="carousel-image" />
                             </div>
                         </li>
                     );
                 })}
             </ul>
             <div className={styles.carousel__indicator}>
-                {reviews.map((_, index) => (
+                {slides.map((_, index) => (
                     <span
                         key={index}
                         className={`${styles.carousel__dot} ${index + 1 === activeSlide ? styles.active : ""}`}

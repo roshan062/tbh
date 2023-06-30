@@ -151,7 +151,10 @@ const HomeOne = () => {
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading1}</h2>
                             <p>{data.homepage_elements[0].description1}</p>
-                            <a href={data.homepage_elements[0].link1}> <h3> <BsArrowUpRight /></h3></a>
+                            {
+                                (data.homepage_elements[0].link1) && <a href={data.homepage_elements[0].link1}>
+                                    <h3> Become A Member<BsArrowUpRight /></h3></a>
+                            }
                         </div>
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' className={styles.selfimg} />
@@ -162,12 +165,16 @@ const HomeOne = () => {
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading2}</h2>
                             <p>{data.homepage_elements[0].description2}</p>
-                            <a href={data.homepage_elements[0].link2}> <h3> <BsArrowUpRight /></h3></a>
+                            {(data.homepage_elements[0].link2) && <a href={data.homepage_elements[0].link2}>
+                                <h3> Become A Member<BsArrowUpRight /></h3></a>
+                            }
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading3}</h2>
                             <p>{data.homepage_elements[0].description3}</p>
-                            <a href={data.homepage_elements[0].link3}> <h3> <BsArrowUpRight /></h3></a>
+                            {data.homepage_elements[0].link3 && <a href={data.homepage_elements[0].link3}>
+                                <h3>Get Involved <BsArrowUpRight /></h3></a>
+                            }
                         </div>
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' className={styles.selfimg} />

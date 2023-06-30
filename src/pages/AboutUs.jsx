@@ -11,9 +11,11 @@ import TabbedMultiCarousel from '../components/TabbedMultiCarousel';
 const AboutUs = () => {
     const [data, setData] = useState('');
     const [activeIndex, setActiveIndex] = useState(1);
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const api = ip + ":5500/aboutus";
+
     const handleButtonClick = (index) => {
         setActiveIndex(index);
-        console.log("clicked on " + index + " slide.")
     };
 
 
@@ -23,7 +25,7 @@ const AboutUs = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://13.53.142.82:5500/articles');
+            const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
         } catch (error) {
@@ -45,11 +47,12 @@ const AboutUs = () => {
         }
     }
 
+
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            const ip = "http://13.53.142.82/";
-            modifiedUrl = ip + url.replace("localhost/", "");
+            modifiedUrl = ip + url.replace("localhost", "");
+
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
@@ -69,8 +72,12 @@ const AboutUs = () => {
                     </div>
                 )
             }
-
         }
+    }
+
+    function percentageParsing(value) {
+        const percentageValue = parseFloat(value);
+        return percentageValue
     }
 
     return (
@@ -78,42 +85,56 @@ const AboutUs = () => {
             <section>
                 {data ? (<>
 
-                    {imageUrl(data.image)}
+                    {imageUrl(data['aboutus_elements'][0]['image'])}
                 </>
                 ) : (
                     <>
-                        <img src='./blank.jpeg' alt='top-image' className={styles.article_image} />
-                        {/* <p>Loading data...</p> */}
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
                     </>
                 )}
             </section>
 
             <section>
-                {/* {data ? (<> */}
-                <div className={styles.image_text_container}>
-                    <div className={styles.image_text}>ABOUT</div>
-                    <div className={styles.spanText}>
-                        <span>HISTORY</span>
-                        <span>IMPACT</span>
-                        <span>PEOPLE</span>
+                {data ? (<>
+                    <div className={styles.image_text_container}>
+                        <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
+                        <div className={styles.spanText}>
+                            <span>HISTORY</span>
+                            <span>IMPACT</span>
+                            <span>PEOPLE</span>
+                        </div>
                     </div>
-                </div>
-                {/* </> */}
-                {/* ) : ( */}
-                {/* <p>Loading data...</p> */}
-                {/* )} */}
+                </>
+                ) : (
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                )}
             </section>
 
             <section className={styles.img_text_carousel_section}>
                 <div>
                     {data ? (<>
-                        <AboutImageTextCarousel />
-
+                        <AboutImageTextCarousel slides={data.history_slides} />
                     </>
                     ) : (
-                        <AboutImageTextCarousel />
-
-
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
                     )}
                 </div>
             </section>
@@ -121,7 +142,8 @@ const AboutUs = () => {
 
             <section className={styles.video_image_container}>
                 {data ? (<>
-                    {imageUrl(data.image)}
+                    <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} />
+                    <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
                 </>
                 ) : (
                     <RotatingLines
@@ -137,92 +159,132 @@ const AboutUs = () => {
 
 
             <section className={styles.work}>
-                <div className={styles.hanging_container}>
-                    <div className={styles.box}><p>IMPACT</p></div>
-                    <div className={styles.box2}></div>
-                </div>
-
-                <div className={styles.work_grid_container}>
-                    <div className={`${styles.item} ${styles.item1}`}><p>OUR MISSION IS WORKING</p></div>
-                    <div className={`${styles.item} ${styles.item2}`}><p>We have already placed xx young people in placement lroen ipsum
-                        simplle text of just ot bkus used temoporay. </p>
+                {data ? (<>
+                    <div className={styles.hanging_container}>
+                        <div className={styles.box}><p>IMPACT</p></div>
+                        <div className={styles.box2}></div>
                     </div>
-                    <div className={`${styles.item} ${styles.item3}`}>
-                        <img src='' alt='image' />
+                    <div className={styles.work_grid_container}>
+                        <div className={`${styles.item} ${styles.item1}`}><p>{data.aboutus_elements[0].mission_heading}</p></div>
+                        <div className={`${styles.item} ${styles.item2}`}><p>{data.aboutus_elements[0].mission_description}</p>
+                        </div>
+                        <div className={`${styles.item} ${styles.item3}`}>
+                            <img src='' alt='image' />
+                        </div>
+                        <div className={`${styles.item} ${styles.item4}`}>
+                            <div>
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data1)} colour="#009FE3" />
+                                <p>{data.aboutus_elements[0].data_desc1}</p>
+                            </div>
+                            <div>
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data2)} colour="#009FE3" />
+                                <p>{data.aboutus_elements[0].data_desc2}</p>
+                            </div>
+                            <div>
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data3)} colour="#009FE3" />
+                                <p>{data.aboutus_elements[0].data_desc3}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className={`${styles.item} ${styles.item4}`}>
-                        <div>
-                            <Pie percentage={80} colour="#009FE3" />
-                            <p>The not offend and reoffered within 18 months of completing a project</p>
-                        </div>
-                        <div>
-                            <Pie percentage={100} colour="#009FE3" />
-                            <p>The not offend and reoffered within 18 months of completing a project</p>
-                        </div>
-                        <div>
-                            <Pie percentage={75} colour="#009FE3" />
-                            <p>The not offend and reoffered within 18 months of completing a project</p>
-                        </div>
-                    </div>
-                </div>
+                </>
+                ) : (
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                )}
             </section>
 
 
             <section className={styles.tabbed_carousel}>
-                <div className={styles.hanging_container}>
-                    <div className={styles.box}><p>PEOPLE</p></div>
-                    <div className={styles.box2}></div>
-                </div>
-                <div className={styles.tabbed_carousel_container}>
-                    <p className={styles.tab_carousel_switcher}>
-                        <span onClick={() => handleButtonClick(1)} >TEAM</span>
-                        <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
-                        <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
-                    </p>
-                    {activeIndex === 1 && (
-                        <TabbedMultiCarousel />
-                    )}
-                    {activeIndex === 2 && (
-                        <TabbedMultiCarousel />
-                    )}
-                    {activeIndex === 3 && (
-                        <TabbedMultiCarousel />
-                    )}
-
-                </div>
+                {data ? (<>
+                    <div className={styles.hanging_container}>
+                        <div className={styles.box}><p>PEOPLE</p></div>
+                        <div className={styles.box2}></div>
+                    </div>
+                    <div className={styles.tabbed_carousel_container}>
+                        <p className={styles.tab_carousel_switcher}>
+                            <span onClick={() => handleButtonClick(1)} >TEAM</span>
+                            <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
+                            <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
+                        </p>
+                        {activeIndex === 1 && (
+                            <TabbedMultiCarousel slides={data.teams} />
+                        )}
+                        {activeIndex === 2 && (
+                            <TabbedMultiCarousel slides={data.creatives} />
+                        )}
+                        {activeIndex === 3 && (
+                            <TabbedMultiCarousel slides={data.trustees} />
+                        )}
+                    </div>
+                </>) : (<>
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                </>)}
             </section>
 
 
             <section className={styles.carousel_container}>
-                <div className={styles.hanging_container}>
-                    <div className={styles.box}><p>MEMBERS</p></div>
-                    <div className={styles.box2}></div>
-                </div>
-                <p>The people we do it for and who we couldn't do it without.</p>
-                <div className={`${styles.full_image_carousel}`}>
-                    <img src="./3b.svg" alt="Overlay Image" className={styles.overlay} />
-                    <FullImageCarousel />
-                </div>
+                {data ? (<>
+                    <div className={styles.hanging_container}>
+                        <div className={styles.box}><p>MEMBERS</p></div>
+                        <div className={styles.box2}></div>
+                    </div>
+                    <p>{data.aboutus_elements[0].member_description}</p>
+                    <div className={`${styles.full_image_carousel}`}>
+                        <img src="./3b.svg" alt="Overlay Image" className={styles.overlay} />
+                        <FullImageCarousel slides={data.member_slides} />
+                    </div>
+                </>
+                ) : (
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                )}
             </section>
 
 
 
             <section>
-                <div className={styles.role_grid_container}>
-                    <div className={styles.item1}>
-                        <p>BUT WE STILL NEED YOU</p>
-                        <h1>HOW DO YOU WANT TO PLAY YOU PART</h1>
-                    </div>
-                    <div className={styles.item2}>
-                        <img src='' alt='image' />
-                        <div className={styles.links}>
-                            <h3>DONATE <BsArrowUpRight /></h3>
-                            <h3>BECOME A MEMBER <BsArrowUpRight /></h3>
-                            <h3>SUPPORT US<BsArrowUpRight /></h3>
-                            <h3>WORK WITH US <BsArrowUpRight /></h3>
+                {data ? (<>
+                    <div className={styles.role_grid_container}>
+                        <div className={styles.item1}>
+                            <p>{data.aboutus_elements[0].data_slide_heading}</p>
+                            <h1>{data.aboutus_elements[0].links_sec_heading}</h1>
+                        </div>
+                        <div className={styles.item2}>
+                            <img src='' alt='image' />
+                            <div className={styles.links}>
+                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight /></h3></a>
+                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight /></h3></a>
+                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight /></h3></a>
+                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight /></h3></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </>
+                ) : (
+                    <RotatingLines
+                        strokeColor="grey"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="76"
+                        visible={true}
+                    />
+                )}
             </section>
         </>
     )

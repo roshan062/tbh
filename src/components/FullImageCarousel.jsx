@@ -1,20 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-const FullImageCarousel = () => {
+const FullImageCarousel = ({ slides }) => {
+
+    const ip = import.meta.env.VITE_IP || 'default value';
+    const cleanImgUrl = function (fetchedUrl) {
+        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        return modifiedUrl;
+    }
+
     return (
         <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
-            <div>
-                <img src="./md-img1.png" alt="Image 1" style={{ height: "90vh" }} />
-            </div>
-            <div>
-                <img src="./md-img1.png" alt="Image 2" style={{ height: "90vh" }} />
-            </div>
-            <div>
-                <img src="./md-img1.png" alt="Image 3" style={{ height: "90vh" }} />
-            </div>
+            {slides.map((item) => {
+                return (
+                    <div key={item.id}>
+                        <img src={cleanImgUrl(item.image)} alt="Image 2" style={{ height: "90vh" }} />
+                    </div>
+                )
+            })}
         </Carousel>
     );
 };
