@@ -241,7 +241,7 @@ const AboutUs = () => {
                     </div>
                     <p>{data.aboutus_elements[0].member_description}</p>
                     <div className={`${styles.full_image_carousel}`}>
-                        <img src="./3b.svg" alt="Overlay Image" className={styles.overlay} />
+                        <img src="./3b.svg" alt="3b-design-image" className={styles.overlay} />
                         <FullImageCarousel slides={data.member_slides} />
                     </div>
                 </>
