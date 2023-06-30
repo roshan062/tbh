@@ -55,10 +55,8 @@ const HomeOne = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            // const ip = "http://13.53.142.82/";
             modifiedUrl = ip + url.replace("localhost", "");
             console.log("modifies url" + modifiedUrl)
-            // const isImage = modifiedUrl && modifiedUrl.endsWith('.png');
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

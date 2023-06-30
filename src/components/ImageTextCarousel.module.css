@@ -19,7 +19,7 @@
 .box {
   position: relative;
   top: 55px;
-  left: 180px;
+  left: 123px;
   width: 80%;
   height: 80px;
   background-color: transparent;
@@ -37,7 +37,7 @@
 .box2 {
   position: relative;
   top: -15px;
-  left: 200px;
+  left: 135px;
   width: 80%;
   height: 80px;
   background-color: transparent;
@@ -158,7 +158,7 @@
   .box {
     position: relative;
     top: 45px;
-    left: 110px;
+    left: 20px;
     width: 60%;
     height: 60px;
     background-color: transparent;
@@ -176,7 +176,7 @@
   .box2 {
     position: relative;
     top: -25px;
-    left: 100px;
+    left: 30px;
     width: 60%;
     height: 60px;
     background-color: transparent;

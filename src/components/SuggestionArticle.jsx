@@ -47,8 +47,10 @@ const SuggestionArticle = () => {
                                     <div key={index} className={styles.article_cards}>
                                         <Link to={ref} className={styles.link}>
                                             <img src={url} className={styles.image_container} />
-                                            <p>ARTICLE {ref} </p><br />
                                         </Link>
+                                        <div className={styles.cards_content}>
+                                            <p>{api.head_title}</p>
+                                        </div>
                                         <Outlet />
                                     </div>
                                 );

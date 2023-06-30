@@ -58,30 +58,29 @@
 
 .grid_container {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(4, 280px);
-  /* grid-template-rows: 1fr auto; */
+  grid-template-columns: repeat(4, 250px);
   grid-template-rows: auto;
   gap: 30px;
-  margin: 260px 0px 60px 20px;
+  margin: 260px auto 60px auto;
 }
 
 .article_cards {
-  height: 320px;
-  background-color: rgba(255, 255, 255, 0.534);
+  height: 470px;
+  background-color: rgb(239, 232, 232);
+  color: black;
 }
 
 .image_container {
-  height: 320px;
-  width: 280px;
-  /* background-position: center; */
+  height: 280px;
+  width: 250px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.image_container ~ p {
-  transform: translateY(-40px);
-  color: white;
+.cards_content {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 20px 20px 20px;
 }
 
 .show_more span {
