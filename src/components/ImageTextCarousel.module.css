@@ -107,7 +107,7 @@
 }
 
 .carousel__dot {
-  background-color: white;
+  background-color: rgba(35, 33, 33, 0.998);
   border-radius: 50%;
   border: 0.0625rem solid #696a6b;
   display: block;
@@ -117,7 +117,7 @@
 }
 
 .carousel__dot.active {
-  background-color: #696a6b;
+  background-color: #f9fbfd;
 }
 
 .carousel__quote {
@@ -146,6 +146,7 @@
     background-color: rgb(14, 14, 1);
     color: white;
     position: relative;
+    padding-bottom: 50px;
   }
 
   .hanging_container {

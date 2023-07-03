@@ -1,37 +1,36 @@
-import React from 'react'
-import styles from './Carousel.module.css'
+import React, { useRef } from 'react'
+import styles from './BrandCarousel.module.css'
 
 
-const Carousel = ({ images }) => {
+const BrandCarousel = ({ images }) => {
+    const boxx = useRef(null)
     const ip = import.meta.env.VITE_IP || 'default value';
 
-    const updatedImageUrls = images.map((obj) => {
-        const updatedUrl = obj.image.replace('localhost', ip);
-        return updatedUrl;
-    });
+    const cleanImgUrl = function (fetchedUrl) {
+        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        return modifiedUrl;
+    }
 
-
-    let box = document.querySelector(`.${styles.product_container}`);
     const btnpressprev = () => {
+        let box = boxx.current;
         let width = box.clientWidth;
         box.scrollLeft = box.scrollLeft - 500;
-        console.log(width)
     }
 
     const btnpressnext = () => {
+        let box = boxx.current;
         let width = box.clientWidth;
         box.scrollLeft = box.scrollLeft + 500;
-        console.log(width)
     }
 
     return (
         <div className={styles.product_carousel}>
             <button className={styles.pre_btn} onClick={btnpressprev}><p>&lt;</p></button>
             <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button>
-            <div className={styles.product_container}>
-                {updatedImageUrls.map((slideImage, index) => (
+            <div className={styles.product_container} ref={boxx}>
+                {images.map((slideImage, index) => (
                     <div key={index}>
-                        <img src={slideImage} className={styles.article_image} alt='carousel-img' />
+                        <img src={cleanImgUrl(slideImage.partner_image)} className={styles.article_image} alt='carousel-img' />
                     </div>
                 ))}
             </div>
@@ -40,4 +39,4 @@ const Carousel = ({ images }) => {
     )
 }
 
-export default Carousel
+export default BrandCarousel

@@ -159,7 +159,7 @@ const HomeOne = () => {
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' className={styles.selfimg} />
                         </div>
-                        <div className={styles.img_item}>
+                        <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
                             <img src={cleanImgUrl(data.homepage_elements[0].image2)} alt='pic' className={styles.selfimg} />
                         </div>
                         <div className={styles.item}>

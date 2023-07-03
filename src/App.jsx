@@ -11,6 +11,7 @@ import ArticleTwo from './pages/ArticleTwo'
 import HomeOne from './pages/HomeOne'
 import AboutUs from './pages/AboutUs'
 import ArticleHome from './pages/ArticleHome'
+import GetInvolved from './pages/GetInvolved'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/4' element={<ArticleFour />} />
           <Route path='/5' element={<ArticleFive />} />
           <Route path='/about' element={<AboutUs />} />
+          <Route path='/get-involved' element={<GetInvolved />} />
         </Route>
       </Routes>
       <Footer />

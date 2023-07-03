@@ -38,7 +38,7 @@ const Navbar = () => {
                     <a href="/articles">ARTICLES</a>
                 </li>
                 <li>
-                    <a href="/blog">GET INVOLVED</a>
+                    <a href="/get-involved">GET INVOLVED</a>
                 </li>
                 <li>
                     <a href="/contact">THE BIG MOUTH</a>

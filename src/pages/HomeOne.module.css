@@ -173,6 +173,10 @@
   height: 70%;
 }
 
+.do_it_middle_image {
+  padding-left: 130px;
+}
+
 .do_it .img_item .selfimg {
   height: 100%;
   width: 100%;
@@ -327,6 +331,10 @@
     margin: 0px 0 10px 12%;
     width: 250px;
     height: 250px;
+  }
+
+  .do_it_middle_image {
+    padding-left: 0px;
   }
 
   .do_it .img_item .selfimg {
