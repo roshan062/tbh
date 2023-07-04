@@ -170,7 +170,99 @@ const GetInvolved = () => {
                 )}
             </section>
 
+            <section>
+                {data ? (<>
+                    <div className={styles.oppurtunities}>
+                        <div className={styles.oppurtunities_left}>
+                            <h1>Current Oppurtunities</h1>
+                            <p>{data.get_involved_elements[0].co_para}</p>
+                            {data.get_involved_elements[0].co_app_form_link && <a href={data.get_involved_elements[0].co_app_form_link}>
+                                <h3>Download Application Form <BsArrowUpRight /></h3></a>
+                            }
+                        </div>
+                        <div className={styles.oppurtunities_right}>
+                            {data.jobs.map((items, index) => {
+                                let { job_title: title, job_desc: desc, closing_date: date } = items;
+                                return <div key={index}>
+                                    <br />   <h2 className={styles.title}>{title}</h2>
+                                    <p>{date}</p><br />
+                                    <p>{desc}</p><br />
+                                </div>
+                            })}
 
+                        </div>
+                    </div>
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
+            </section>
+
+
+            <section>
+                {data ? (<>
+                    <div className={styles.volunteer}>
+                        <div className={styles.volunteer_left}>
+                            <h1>Volunteer</h1><br />
+                            <p>{data.get_involved_elements[0].volunteer_para1}</p>
+                            <br />
+                            <p>{data.get_involved_elements[0].volunteer_para2}</p>
+                            <br />
+                            {data.get_involved_elements[0].volunteer_link && <a href={data.get_involved_elements[0].volunteer_link}>
+                                <h3>Volunteer Form <BsArrowUpRight /></h3></a>
+                            }
+                        </div>
+                        <div>
+                            <img src={cleanImgUrl(data.get_involved_elements[0].volunteer_image)} alt='pic' className={styles.volunteer_img} />
+
+                        </div>
+                    </div>
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
+            </section>
+
+            <section>
+                {data ? (<>
+                    <div className={styles.partnership}>
+                        <div className={styles.container}>
+                            <div className={styles.box}><p>PARTNERSHIPS</p></div>
+                            <div className={styles.box2}></div>
+                        </div>
+                        <p className={styles.partner_heading}>{data.get_involved_elements[0].partner_heading}</p>
+                        <BrandCarousel images={data.partners} />
+                        <p className={styles.partner_content}>{data.get_involved_elements[0].partner_content}</p>
+                    </div>
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
+            </section>
         </>
     )
 }
