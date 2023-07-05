@@ -13,14 +13,20 @@
   display: flex;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 .each_card {
   background-color: white;
   margin: 0 10px 0 10px;
   width: 20%;
-  height: 350px;
+  height: 360px;
   color: black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.each_card:hover {
+  transform: scale(1.1);
 }
 
 .each_card img {

@@ -6,6 +6,10 @@
   font-family: system-ui;
   justify-content: center;
   background-color: #00e6d4;
+  background-image: url("./Mask Group 28.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .carousel__list {
@@ -16,8 +20,8 @@
   grid-template-rows: 1fr auto;
   max-width: 100%;
   overflow: hidden;
-  padding: 0 0 0 0rem;
   list-style-type: none;
+  padding-top: 80px;
 }
 
 .carousel__item {
@@ -49,7 +53,6 @@
   grid-row: 2;
   justify-self: center;
   align-items: start;
-  /* margin-top: 15rem; */
 }
 
 .carousel__dot {
@@ -76,7 +79,6 @@
 .carousel__quote {
   font-style: italic;
   line-height: 1.5;
-  /* z-index: 11; */
 }
 
 @media (max-width: 900px) {
@@ -100,6 +102,7 @@
     overflow: hidden;
     padding: 0 0 0 0rem;
     list-style-type: none;
+    padding-top: 80px;
   }
 
   .carousel__item {
@@ -132,7 +135,6 @@
     grid-row: 2;
     justify-self: center;
     align-items: start;
-    /* margin-top: 15rem; */
   }
 
   .carousel__dot {

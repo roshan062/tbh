@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './HomeOne.module.css';
+import styless from '../App.module.css'
 import { BsArrowUpRight } from 'react-icons/bs';
 import QuoteCarousel from '../components/QuoteCarousel';
 import ImageTextCarousel from '../components/ImageTextCarousel';
@@ -56,7 +57,6 @@ const HomeOne = () => {
         let modifiedUrl;
         if (data) {
             modifiedUrl = ip + url.replace("localhost", "");
-            console.log("modifies url" + modifiedUrl)
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
@@ -153,30 +153,36 @@ const HomeOne = () => {
                             <p>{data.homepage_elements[0].description1}</p>
                             {
                                 (data.homepage_elements[0].link1) && <a href={data.homepage_elements[0].link1}>
-                                    <h3> Become A Member<BsArrowUpRight /></h3></a>
+                                    <h3> Become A Member<BsArrowUpRight className={styless.icon_color} /></h3></a>
                             }
                         </div>
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.homepage_elements[0].image1)} alt='pic' className={styles.selfimg} />
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                         </div>
                         <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                             <img src={cleanImgUrl(data.homepage_elements[0].image2)} alt='pic' className={styles.selfimg} />
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading2}</h2>
                             <p>{data.homepage_elements[0].description2}</p>
                             {(data.homepage_elements[0].link2) && <a href={data.homepage_elements[0].link2}>
-                                <h3> Become A Member<BsArrowUpRight /></h3></a>
+                                <h3> Become A Member<BsArrowUpRight className={styless.icon_color} /></h3></a>
                             }
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading3}</h2>
                             <p>{data.homepage_elements[0].description3}</p>
                             {data.homepage_elements[0].link3 && <a href={data.homepage_elements[0].link3}>
-                                <h3>Get Involved <BsArrowUpRight /></h3></a>
+                                <h3>Get Involved <BsArrowUpRight className={styless.icon_color} /></h3></a>
                             }
                         </div>
                         <div className={styles.img_item}>
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                             <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' className={styles.selfimg} />
                         </div>
 

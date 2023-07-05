@@ -28,7 +28,7 @@
 }
 
 .box p {
-  margin: 22px 0 0 0px;
+  margin: 22px 0 0 40px;
   font-size: 30px;
   color: rgb(242, 241, 241);
   font-weight: 700;
@@ -83,10 +83,15 @@
   padding: 20px 20px 20px 20px;
 }
 
+.show_more {
+  margin: 0 auto 0 auto;
+}
+
 .show_more span {
   color: #11ebeb;
   font-size: 50px;
   cursor: pointer;
+  padding-left: 20px;
 }
 @media (max-width: 900px) {
   .suggestion_article {
@@ -96,7 +101,7 @@
     background-color: black;
     color: white;
     position: relative;
-    padding-bottom: 400px;
+    padding-bottom: 100px;
   }
 
   .hanging_container {
@@ -161,7 +166,6 @@
   .image_container {
     height: 330px;
     width: 300px;
-    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -172,14 +176,11 @@
     text-align: center;
   }
 
-  .show_more {
-    margin: auto auto;
-  }
-
   .show_more span {
     color: #11ebeb;
     font-size: 50px;
     margin-left: 30%;
     cursor: pointer;
+    padding-left: 0;
   }
 }

@@ -54,7 +54,7 @@
 }
 
 .mission {
-  background-image: url("./3xB-Animation.png");
+  background-image: url("./Mask Group 29.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 120vh;
@@ -171,15 +171,32 @@
   margin: 100px 50px 0 0px;
   width: 60%;
   height: 70%;
+  position: relative;
 }
 
 .do_it_middle_image {
-  padding-left: 130px;
+  transform: translateX(150px);
 }
 
 .do_it .img_item .selfimg {
   height: 100%;
   width: 100%;
+}
+
+.img_item .rectangle_overlay_image_red {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  height: 110%;
+  width: 110%;
+}
+
+.img_item .rectangle_overlay_image_blue {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  height: 110%;
+  width: 110%;
 }
 
 .both_carousel_container {
@@ -224,9 +241,6 @@
   }
 
   .mission {
-    background-image: url("./3xB-Animation.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 130vh;
     width: 100%;
     color: white;
@@ -312,34 +326,50 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(1fr, 6);
-    gap: 50px;
+    grid-template-rows: auto auto auto auto auto auto;
+    row-gap: 150px;
     background-color: black;
     color: white;
+    padding-bottom: 200px;
   }
 
   .do_it .item {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
     justify-content: center;
     margin: 0 50px 0 10px;
     text-align: left;
   }
 
   .do_it .img_item {
-    margin: 0px 0 10px 12%;
+    margin: 0px 0 10px 16%;
     width: 250px;
     height: 250px;
   }
 
   .do_it_middle_image {
-    padding-left: 0px;
+    transform: translateX(0);
   }
 
   .do_it .img_item .selfimg {
-    height: 150%;
-    width: 150%;
+    height: 130%;
+    width: 130%;
+  }
+
+  .img_item .rectangle_overlay_image_red {
+    position: absolute;
+    top: -12px;
+    left: -16px;
+    height: 125%;
+    width: 140%;
+  }
+
+  .img_item .rectangle_overlay_image_blue {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 122%;
+    width: 135%;
   }
 
   .both_carousel_container {

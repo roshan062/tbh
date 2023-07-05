@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './AboutUs.module.css';
+import styless from '../App.module.css'
 import AboutImageTextCarousel from '../components/AboutImageTextCarousel';
 import { RotatingLines } from 'react-loader-spinner'
 import Pie from '../components/Pie'
@@ -80,6 +81,21 @@ const AboutUs = () => {
         return percentageValue
     }
 
+    const scrollToSection = (whereTo) => {
+        if (whereTo == "history") {
+            const section = document.getElementById('history');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (whereTo === "impact") {
+            const section = document.getElementById('impact');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (whereTo === "people") {
+            const section = document.getElementById('people');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             <section>
@@ -105,9 +121,9 @@ const AboutUs = () => {
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
-                            <span>HISTORY</span>
-                            <span>IMPACT</span>
-                            <span>PEOPLE</span>
+                            <span onClick={() => scrollToSection("history")}>HISTORY</span>
+                            <span onClick={() => scrollToSection("impact")}>IMPACT</span>
+                            <span onClick={() => scrollToSection("people")}>PEOPLE</span>
                         </div>
                     </div>
                 </>
@@ -122,7 +138,7 @@ const AboutUs = () => {
                 )}
             </section>
 
-            <section className={styles.img_text_carousel_section}>
+            <section className={styles.img_text_carousel_section} id='history'>
                 <div>
                     {data ? (<>
                         <AboutImageTextCarousel slides={data.history_slides} />
@@ -158,7 +174,7 @@ const AboutUs = () => {
 
 
 
-            <section className={styles.work}>
+            <section className={styles.work} id='impact'>
                 {data ? (<>
                     <div className={styles.hanging_container}>
                         <div className={styles.box}><p>IMPACT</p></div>
@@ -199,7 +215,7 @@ const AboutUs = () => {
             </section>
 
 
-            <section className={styles.tabbed_carousel}>
+            <section className={styles.tabbed_carousel} id='people'>
                 {data ? (<>
                     <div className={styles.hanging_container}>
                         <div className={styles.box}><p>PEOPLE</p></div>
@@ -268,10 +284,10 @@ const AboutUs = () => {
                         <div className={styles.item2}>
                             <img src='' alt='image' />
                             <div className={styles.links}>
-                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight /></h3></a>
-                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight /></h3></a>
-                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight /></h3></a>
-                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight /></h3></a>
+                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
                             </div>
                         </div>
                     </div>

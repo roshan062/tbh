@@ -13,22 +13,22 @@
   z-index: 11;
   position: absolute;
   top: 0;
-  width: 300px;
+  width: 330px;
 }
 
 .box {
   position: relative;
-  top: 55px;
+  top: 45px;
   left: 123px;
   width: 80%;
-  height: 80px;
+  height: 70px;
   background-color: transparent;
   border: 1.5px solid #f7f1f1;
   box-sizing: border-box;
 }
 
 .box p {
-  margin: 22px 0 0 10px;
+  margin: 22px 0 0 18px;
   font-size: 20px;
   color: rgb(242, 241, 241);
   font-weight: 900;
@@ -39,7 +39,7 @@
   top: -15px;
   left: 135px;
   width: 80%;
-  height: 80px;
+  height: 70px;
   background-color: transparent;
   border: 1.5px solid #11ebeb;
   box-sizing: border-box;
@@ -254,7 +254,7 @@
   }
 
   .carousel__dot {
-    background-color: white;
+    background-color: rgba(35, 33, 33, 0.998);
     border-radius: 50%;
     border: 0.0625rem solid #696a6b;
     display: block;
@@ -264,7 +264,7 @@
   }
 
   .carousel__dot.active {
-    background-color: #696a6b;
+    background-color: #f9fbfd;
   }
 
   .carousel__quote {

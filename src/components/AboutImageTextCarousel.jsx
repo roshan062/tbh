@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BsArrowUpRight } from 'react-icons/bs';
 import styles from './AboutImageTextCarousel.module.css'
+import styless from '../App.module.css'
 import { Link } from 'react-router-dom'
 
 const AboutImageTextCarousel = ({ slides }) => {
@@ -57,7 +58,7 @@ const AboutImageTextCarousel = ({ slides }) => {
                                 <h2>{heading}</h2>
                                 <p>{description}</p>
                                 <Link to={link} className={styles.link}>
-                                    <h3>More Info <BsArrowUpRight /></h3>
+                                    <h3>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>
