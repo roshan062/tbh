@@ -36,6 +36,14 @@ const AboutImageTextCarousel = ({ slides }) => {
         setActiveSlide(slideIndex);
     };
 
+    const handleRightClick = (slideIndex) => {
+        if (slideIndex < slides.length) setActiveSlide(slideIndex + 1);
+    };
+
+    const handleLeftClick = (slideIndex) => {
+        if (slideIndex > 1) setActiveSlide(slideIndex - 1);
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.hanging_container}>
@@ -54,6 +62,9 @@ const AboutImageTextCarousel = ({ slides }) => {
                                 }`}
                             key={count}
                         >
+                            <img src="./Carousel Arrow -L.png" alt="left_arrow_img" className={styles.left_arrow}
+                                onClick={() => handleLeftClick(index + 1)}
+                            />
                             <blockquote className={styles.carousel__quote}>
                                 <h2>{heading}</h2>
                                 <p>{description}</p>
@@ -64,6 +75,9 @@ const AboutImageTextCarousel = ({ slides }) => {
                             <div className={styles.carousel_img}>
                                 <img src={cleanImgUrl(image)} alt="carousel-image" />
                             </div>
+                            <img src="./Carousel Arrow -R.png" alt="right_arrow_img" className={styles.right_arrow}
+                                onClick={() => handleRightClick(index + 1)}
+                            />
                         </li>
                     );
                 })}

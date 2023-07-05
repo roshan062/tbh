@@ -66,6 +66,7 @@
   overflow: hidden;
   padding: 10rem 0 0 0rem;
   list-style-type: none;
+  position: relative;
 }
 
 .carousel__item {
@@ -77,6 +78,24 @@
   z-index: 10;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.left_arrow {
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.right_arrow {
+  position: absolute;
+  top: 130px;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
 }
 
 .carousel__item.active {
@@ -205,6 +224,7 @@
     overflow: hidden;
     padding: 6rem 0 0 0rem;
     list-style-type: none;
+    position: relative;
   }
 
   .carousel__item {
@@ -215,6 +235,24 @@
     display: grid;
     grid-template-rows: 2fr 550px;
     grid-template-columns: auto;
+  }
+
+  .left_arrow {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .right_arrow {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
   }
 
   .carousel__item.active {
