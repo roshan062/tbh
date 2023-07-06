@@ -22,8 +22,6 @@ const SuggestionArticle = () => {
         }
     };
 
-
-
     return (
         <div className={styles.suggestion_article}>
             <div className={styles.hanging_container}>
@@ -31,10 +29,6 @@ const SuggestionArticle = () => {
                 <div className={styles.box2}></div>
             </div>
             <div className={styles.grid_container}>
-                {/* <div className={styles.article_cards}><img src='' alt='pic' /></div>
-                <div className={styles.article_cards}>Article 1</div>
-                <div className={styles.article_cards}>Article 3</div>
-                <div className={styles.article_cards}>Article 4</div> */}
                 {
                     data ? (
                         <>

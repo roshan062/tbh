@@ -1,0 +1,109 @@
+.workshop_cards {
+  align-items: center;
+  display: grid;
+  min-height: 110vh;
+  font-family: system-ui;
+  background-color: black;
+  color: white;
+  position: relative;
+  padding-bottom: 150px;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: auto;
+  gap: 30px;
+  margin: 20px auto 60px auto;
+  row-gap: 150px;
+}
+
+.article_cards {
+  height: 370px;
+  background-color: black;
+}
+
+.image_container {
+  height: 280px;
+  width: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards_content {
+  padding: 20px 20px 20px 0px;
+}
+
+.cards_content .title {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.cards_content .focus {
+  font-weight: 100;
+}
+
+.up_arrow {
+  margin: 15px 0 0 0;
+  color: white;
+}
+
+.show_more {
+  margin: 0 auto 0 auto;
+}
+
+.show_more span {
+  color: #11ebeb;
+  font-size: 50px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+@media (max-width: 900px) {
+  .suggestion_article {
+    align-items: center;
+    min-height: 250vh;
+    font-family: system-ui;
+    background-color: black;
+    color: white;
+    position: relative;
+    padding-bottom: 100px;
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .article_cards {
+    height: 300px;
+    width: 60vw;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.534);
+  }
+
+  .image_container {
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .image_container ~ p {
+    transform: translateY(-40px);
+    color: white;
+    text-align: center;
+  }
+
+  .show_more {
+    padding: 100px 0 0 0;
+  }
+
+  .show_more span {
+    color: #11ebeb;
+    font-size: 50px;
+    margin-left: 30%;
+    cursor: pointer;
+    padding-left: 0;
+  }
+}

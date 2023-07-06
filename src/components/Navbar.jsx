@@ -34,11 +34,14 @@ const Navbar = () => {
                 <li>
                     <a href="/theatre">THEATRE</a>
                 </li>
-                <li>
+                {/* <li>
                     <a href="/articles">ARTICLES</a>
-                </li>
+                </li> */}
                 <li>
                     <a href="/get-involved">GET INVOLVED</a>
+                </li>
+                <li>
+                    <a href="/business">TBH MEANS BUSINESS</a>
                 </li>
                 <li>
                     <a href="/contact">THE BIG MOUTH</a>

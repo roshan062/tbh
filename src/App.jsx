@@ -12,6 +12,7 @@ import HomeOne from './pages/HomeOne'
 import AboutUs from './pages/AboutUs'
 import ArticleHome from './pages/ArticleHome'
 import GetInvolved from './pages/GetInvolved'
+import Business from './pages/Business'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/5' element={<ArticleFive />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/get-involved' element={<GetInvolved />} />
+          <Route path='/business' element={<Business />} />
         </Route>
       </Routes>
       <Footer />

@@ -15,6 +15,8 @@ const AboutUs = () => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/aboutus";
 
+
+    //For tabbed carousel switcher
     const handleButtonClick = (index) => {
         setActiveIndex(index);
     };
