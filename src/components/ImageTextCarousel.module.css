@@ -84,8 +84,8 @@
   position: absolute;
   top: 130px;
   left: 0px;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
 }
 
@@ -93,8 +93,8 @@
   position: absolute;
   top: 130px;
   right: 0;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
 }
 
@@ -126,9 +126,9 @@
 }
 
 .carousel__dot {
-  background-color: rgba(35, 33, 33, 0.998);
-  border-radius: 50%;
-  border: 0.0625rem solid #696a6b;
+  background-color: #01070d;
+  border-radius: 0%;
+  border: 0.0625rem solid #f5f9fd;
   display: block;
   height: 0.5rem;
   width: 0.5rem;
@@ -136,7 +136,7 @@
 }
 
 .carousel__dot.active {
-  background-color: #f9fbfd;
+  background-color: #00e6d4;
 }
 
 .carousel__quote {
@@ -289,20 +289,6 @@
     justify-self: center;
     align-items: start;
     margin-top: 1rem;
-  }
-
-  .carousel__dot {
-    background-color: rgba(35, 33, 33, 0.998);
-    border-radius: 50%;
-    border: 0.0625rem solid #696a6b;
-    display: block;
-    height: 0.5rem;
-    width: 0.5rem;
-    cursor: pointer;
-  }
-
-  .carousel__dot.active {
-    background-color: #f9fbfd;
   }
 
   .carousel__quote {

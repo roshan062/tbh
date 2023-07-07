@@ -56,17 +56,17 @@
 }
 
 .carousel__dot {
-  background-color: white;
-  border-radius: 50%;
-  border: 0.0625rem solid #696a6b;
+  background-color: #00e6d4;
+  border-radius: 0%;
+  border: 0.0925rem solid #696a6b;
   display: block;
-  height: 0.5rem;
-  width: 0.5rem;
+  height: 0.2rem;
+  width: 0.6rem;
   cursor: pointer;
 }
 
 .carousel__dot.active {
-  background-color: #696a6b;
+  background-color: #2d3333;
 }
 
 .carousel__name {
@@ -135,20 +135,6 @@
     grid-row: 2;
     justify-self: center;
     align-items: start;
-  }
-
-  .carousel__dot {
-    background-color: white;
-    border-radius: 50%;
-    border: 0.0625rem solid #696a6b;
-    display: block;
-    height: 0.5rem;
-    width: 0.5rem;
-    cursor: pointer;
-  }
-
-  .carousel__dot.active {
-    background-color: #696a6b;
   }
 
   .carousel__name {

@@ -113,9 +113,9 @@ const Business = () => {
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
-                            <span onClick={() => scrollToSection("workshops")}>WORKSHOPS</span>
-                            <span onClick={() => scrollToSection("venuehire")}>VENUE HIRE</span>
-                            <span onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</span>
+                            <div onClick={() => scrollToSection("workshops")}>WORKSHOPS</div>
+                            <div onClick={() => scrollToSection("venuehire")}>VENUE HIRE</div>
+                            <div onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</div>
                         </div>
                     </div>
                 </>
@@ -239,7 +239,53 @@ const Business = () => {
                 )}
             </section>
 
+            <section>
+                {data ? (<>
+                    <BusinessImageTextCarousel slides={data.space_slides} enquiry={data.get_involved_elements[0].make_inquiry_link} />
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
+            </section>
 
+            <section>
+                {data ? (<>
+                    <div className={styles.partnership_container} id='partnerships'>
+                        <div className={styles.partnership_image}>
+                            {imageUrl(data.get_involved_elements[0].partnership_image)}
+                        </div>
+                        <div className={styles.partnership_text}>
+                            <div className={styles.hanging_container}>
+                                <div className={styles.box}><p>PARTNERSHIPS</p></div>
+                                <div className={styles.box2}></div>
+                            </div>
+                            <p className={styles.content}>
+                                {data.get_involved_elements[0].partnership_content}
+                            </p>
+                            <h2>Get Involved <BsArrowUpRight className={styless.icon_color} /></h2>
+                        </div>
+                    </div>
+                </>
+                ) : (
+                    <>
+                        <RotatingLines
+                            strokeColor="grey"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="76"
+                            visible={true}
+                        />
+                    </>
+                )}
+            </section>
         </>
     )
 }

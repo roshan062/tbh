@@ -32,7 +32,7 @@
   max-width: 500px;
   text-transform: uppercase;
   color: white;
-  font-size: 70px;
+  font-size: 4.375em;
   font-weight: 800;
 }
 
@@ -149,8 +149,10 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 500px);
   gap: 10px;
+  row-gap: 30px;
   background-color: black;
   color: white;
+  padding-bottom: 120px;
 }
 
 .do_it .item {
@@ -158,8 +160,16 @@
   flex-direction: column;
   row-gap: 20px;
   justify-content: center;
-  margin: 0 50px 0 150px;
+  margin: 0 70px 0 100px;
   text-align: left;
+}
+
+.do_it .item h2 {
+  font-size: 35px;
+}
+
+.do_it .item p {
+  font-size: 20px;
 }
 
 .do_it .item a {
@@ -179,24 +189,24 @@
 }
 
 .do_it .img_item .selfimg {
-  height: 100%;
-  width: 100%;
+  height: 120%;
+  width: 120%;
 }
 
 .img_item .rectangle_overlay_image_red {
   position: absolute;
   top: -15px;
   left: -20px;
-  height: 110%;
-  width: 110%;
+  height: 130%;
+  width: 130%;
 }
 
 .img_item .rectangle_overlay_image_blue {
   position: absolute;
   top: 10px;
   left: 20px;
-  height: 110%;
-  width: 110%;
+  height: 130%;
+  width: 130%;
 }
 
 .both_carousel_container {
