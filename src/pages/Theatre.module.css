@@ -1,0 +1,172 @@
+.article_image {
+  width: 100%;
+  height: 590px;
+  display: block;
+}
+
+.video_player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play_button {
+  position: absolute;
+  top: 47%;
+  left: 53%;
+  transform: translate(-150%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  font-size: x-large;
+}
+
+.image_textt {
+  position: absolute;
+  height: auto;
+  top: 48%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+}
+
+.containerr {
+  position: relative;
+  width: 300px;
+}
+
+.boxx {
+  position: relative;
+  top: 10px;
+  left: 300px;
+  width: 80%;
+  height: 70px;
+  background-color: transparent;
+  border: 1px solid #fbf8f8;
+  box-sizing: border-box;
+}
+
+.boxx p {
+  margin: 12px 0 0 -30px;
+  font-size: x-large;
+  color: white;
+}
+
+.boxx2 {
+  position: relative;
+  top: -70px;
+  left: 290px;
+  width: 80%;
+  height: 70px;
+  background-color: transparent;
+  border: 1px solid #00ffff;
+  box-sizing: border-box;
+}
+
+.boxx2:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: rgb(237, 233, 233);
+}
+
+.heading_text {
+  font-size: 80px;
+  line-height: 0.8;
+  color: white;
+  text-align: left;
+  margin: 0 0 0 285px;
+  width: 40%;
+
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.more_info {
+  color: white;
+  padding: 20px 320px 0 0;
+}
+
+@media (max-width: 767px) {
+  .article_image {
+    width: 100%;
+    height: 300px;
+    display: block;
+  }
+
+  .image_textt {
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .video_playerr {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .containerr {
+    position: relative;
+    width: 300px;
+  }
+
+  .boxx {
+    position: relative;
+    top: 10px;
+    left: 330px;
+    width: 40%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #fbf8f8;
+    box-sizing: border-box;
+  }
+
+  .boxx p {
+    margin: 14px 0 0 35px;
+    font-size: medium;
+    color: white;
+  }
+
+  .boxx2 {
+    position: relative;
+    top: -20px;
+    left: 340px;
+    width: 40%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #00ffff;
+    box-sizing: border-box;
+  }
+
+  .boxx2:before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background-color: rgb(237, 233, 233);
+  }
+
+  .heading_text {
+    font-size: 3rem;
+    line-height: 0.8;
+    color: white;
+    text-align: left;
+    margin: 0 0 0 335px;
+    width: 40%;
+  }
+}

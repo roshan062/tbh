@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './AboutUs.module.css';
 import styless from '../App.module.css'
 import AboutImageTextCarousel from '../components/AboutImageTextCarousel';
-import { RotatingLines } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner'
 import Pie from '../components/Pie'
 import { BsArrowUpRight } from 'react-icons/bs';
 import FullImageCarousel from '../components/FullImageCarousel';
@@ -99,27 +99,13 @@ const AboutUs = () => {
     };
 
     return (
-        <>
-            <section>
-                {data ? (<>
-
+        <main>
+            {data ? (<>
+                <section>
                     {imageUrl(data['aboutus_elements'][0]['image'])}
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
@@ -128,56 +114,21 @@ const AboutUs = () => {
                             <span onClick={() => scrollToSection("people")}>PEOPLE</span>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
-            <section className={styles.img_text_carousel_section} id='history'>
-                <div>
-                    {data ? (<>
-                        <AboutImageTextCarousel slides={data.history_slides} />
-                    </>
-                    ) : (
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    )}
-                </div>
-            </section>
+                <section className={styles.img_text_carousel_section} id='history'>
+                    <AboutImageTextCarousel slides={data.history_slides} />
+                </section>
 
 
-            <section className={styles.video_image_container}>
-                {data ? (<>
+                <section className={styles.video_image_container}>
                     <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} />
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
 
 
-            <section className={styles.work} id='impact'>
-                {data ? (<>
+                <section className={styles.work} id='impact'>
                     <div className={styles.hanging_container}>
                         <div className={styles.box}><p>IMPACT</p></div>
                         <div className={styles.box2}></div>
@@ -204,21 +155,10 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
 
-            <section className={styles.tabbed_carousel} id='people'>
-                {data ? (<>
+                <section className={styles.tabbed_carousel} id='people'>
                     <div className={styles.hanging_container}>
                         <div className={styles.box}><p>PEOPLE</p></div>
                         <div className={styles.box2}></div>
@@ -239,20 +179,10 @@ const AboutUs = () => {
                             <TabbedMultiCarousel slides={data.trustees} />
                         )}
                     </div>
-                </>) : (<>
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                </>)}
-            </section>
+                </section>
 
 
-            <section className={styles.carousel_container}>
-                {data ? (<>
+                <section className={styles.carousel_container}>
                     <div className={styles.hanging_container}>
                         <div className={styles.box}><p>MEMBERS</p></div>
                         <div className={styles.box2}></div>
@@ -262,22 +192,11 @@ const AboutUs = () => {
                         <img src="./3b.svg" alt="3b-design-image" className={styles.overlay} />
                         <FullImageCarousel slides={data.member_slides} />
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
 
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.role_grid_container}>
                         <div className={styles.item1}>
                             <p>{data.aboutus_elements[0].data_slide_heading}</p>
@@ -293,18 +212,23 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
+                </section>
+            </>
+            ) : (
+                <div className={styless.spinner}>
+                    <ColorRing
+                        className={styless.spinner}
                         visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                     />
-                )}
-            </section>
-        </>
+                </div>
+            )}
+        </main>
     )
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './Business.module.css'
 import styless from '../App.module.css'
 import { BsArrowUpRight } from 'react-icons/bs';
-import { RotatingLines } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner'
 import WorkshopCards from '../components/WorkshopCards'
 import BusinessTestimonialCarousel from '../components/BusinessTestimonialCarousel'
 import BusinessImageTextCarousel from '../components/BusinessImageTextCarousel'
@@ -89,27 +89,13 @@ const Business = () => {
     };
 
     return (
-        <>
-            <section>
-                {data ? (<>
-
+        <main>
+            {data ? (<>
+                <section>
                     {imageUrl(data['get_involved_elements'][0]['bg_image'])}
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
@@ -118,20 +104,9 @@ const Business = () => {
                             <div onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</div>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div id='workshops' className={styles.workshops}>
                         <div className={styles.hanging_container}>
                             <div className={styles.box}><p>WORKSHOPS</p></div>
@@ -142,60 +117,21 @@ const Business = () => {
                             <p className={styles.workshop_content}>{data.get_involved_elements[0].workshop_slide_content}</p>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.workshop_cards}>
                         <WorkshopCards />
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.workshop_cards}>
                         <BusinessTestimonialCarousel testimonial={data.testimonials} />
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div id='venuehire' className={styles.venuehire}>
                         <div className={styles.hanging_container}>
                             <div className={styles.box}><p>VENUE HIRE</p></div>
@@ -206,58 +142,19 @@ const Business = () => {
                             <p className={styles.venue_hire_content}>{data.get_involved_elements[0].venue_hire_content}</p>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.venuehire_image_video}>
                         {imageUrl(data.get_involved_elements[0].venue_hire_image)}
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <BusinessImageTextCarousel slides={data.space_slides} enquiry={data.get_involved_elements[0].make_inquiry_link} />
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.partnership_container} id='partnerships'>
                         <div className={styles.partnership_image}>
                             {imageUrl(data.get_involved_elements[0].partnership_image)}
@@ -273,20 +170,23 @@ const Business = () => {
                             <h2>Get Involved <BsArrowUpRight className={styless.icon_color} /></h2>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
-        </>
+                </section>
+            </>
+            ) : (
+                <div className={styless.spinner}>
+                    <ColorRing
+                        className={styless.spinner}
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                    />
+                </div>
+            )}
+        </main>
     )
 }
 

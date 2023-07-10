@@ -44,7 +44,7 @@ const Navbar = () => {
                     <a href="/business">TBH MEANS BUSINESS</a>
                 </li>
                 <li>
-                    <a href="/contact">THE BIG MOUTH</a>
+                    <a href="/big-mouth">THE BIG MOUTH</a>
                 </li>
             </ul>
             <div className={styles.search_icon}>

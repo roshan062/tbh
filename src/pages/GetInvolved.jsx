@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './GetInvolved.module.css';
-import { RotatingLines } from 'react-loader-spinner'
+import styless from '../App.module.css'
+import { ColorRing } from 'react-loader-spinner'
 import { BsArrowUpRight } from 'react-icons/bs';
 import BrandCarousel from '../components/BrandCarousel';
 
@@ -62,27 +63,13 @@ const GetInvolved = () => {
 
 
     return (
-        <>
-            <section>
-                {data ? (<>
-
+        <main>
+            {data ? (<>
+                <section>
                     {imageUrl(data['get_involved_elements'][0]['bg_image'])}
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
@@ -91,20 +78,9 @@ const GetInvolved = () => {
                             <span>WORK WITH US</span>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.do_it}>
                         {/* First Part */}
                         <div className={`${styles.item} ${styles.text_design_container}`}>
@@ -156,22 +132,9 @@ const GetInvolved = () => {
                         </div>
 
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.oppurtunities}>
                         <div className={styles.oppurtunities_left}>
                             <h1>Current Oppurtunities</h1>
@@ -192,23 +155,10 @@ const GetInvolved = () => {
 
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.volunteer}>
                         <div className={styles.volunteer_left}>
                             <h1>Volunteer</h1><br />
@@ -225,22 +175,9 @@ const GetInvolved = () => {
 
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.partnership}>
                         <div className={styles.container}>
                             <div className={styles.box}><p>PARTNERSHIPS</p></div>
@@ -250,20 +187,23 @@ const GetInvolved = () => {
                         <BrandCarousel images={data.partners} />
                         <p className={styles.partner_content}>{data.get_involved_elements[0].partner_content}</p>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
-        </>
+                </section>
+            </>
+            ) : (
+                <div className={styless.spinner}>
+                    <ColorRing
+                        className={styless.spinner}
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                    />
+                </div>
+            )}
+        </main>
     )
 }
 

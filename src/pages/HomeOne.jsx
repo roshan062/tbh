@@ -105,6 +105,7 @@ const HomeOne = () => {
                             </div>
                         </div>
                     </div>
+                    <img src='./Mask Group 29.png' alt='pic' className={styles.b_img} />
                 </section>
 
                 <section>
