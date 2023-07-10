@@ -5,6 +5,7 @@ import { Link, Outlet } from 'react-router-dom'
 
 const SuggestionArticle = () => {
     const [data, setData] = useState('');
+    const [totalArticles, setTotalArticles] = useState(4);
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/articles";
 
@@ -33,7 +34,7 @@ const SuggestionArticle = () => {
                     data ? (
                         <>
                             {data.map((api, index) => {
-                                if (index > 4) return
+                                if (index > totalArticles) return
                                 if (api.type == 0) return
                                 const ref = `/${api.type}`;
                                 let url = api.image.replace("localhost", ip)
@@ -58,7 +59,7 @@ const SuggestionArticle = () => {
             </div>
 
             <div className={styles.show_more}>
-                <p><span>+</span><br />Show More</p>
+                <p onClick={() => setTotalArticles(totalArticles + 4)}><span>+</span><br />Show More</p>
             </div>
         </div>
     )

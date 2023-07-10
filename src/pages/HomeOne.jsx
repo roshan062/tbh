@@ -5,7 +5,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import QuoteCarousel from '../components/QuoteCarousel';
 import ImageTextCarousel from '../components/ImageTextCarousel';
 import SuggestionArticle from '../components/SuggestionArticle';
-import { RotatingLines } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner'
 
 
 const HomeOne = () => {
@@ -80,45 +80,19 @@ const HomeOne = () => {
         }
     }
     return (
-        <>
-            <section>
-                {data ? (<>
+        <main>
+            {data ? (<>
+                <section>
                     {imageUrl(data.homepage_elements[0].image)}
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.homepage_elements[0].hero_text}</div>
                     </div>
-                </>
-                ) : (<>
-                    <RotatingLines
-                        strokeColor="grey"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="76"
-                        visible={true}
-                    />
-                </>
-                )}
-            </section>
+                </section>
 
-            <section className={styles.b_design}>
-
-                {data ? (<>
+                <section className={styles.b_design}>
                     <div className={styles.mission}>
                         <div className={styles.container}>
                             <div className={styles.box}><p>OUR MISSION</p></div>
@@ -131,22 +105,9 @@ const HomeOne = () => {
                             </div>
                         </div>
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section>
-                {data ? (<>
+                <section>
                     <div className={styles.do_it}>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading1}</h2>
@@ -185,76 +146,33 @@ const HomeOne = () => {
                             <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                             <img src={cleanImgUrl(data.homepage_elements[0].image3)} alt='pic' className={styles.selfimg} />
                         </div>
-
                     </div>
-                </>
-                ) : (
-                    <>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                )}
-            </section>
+                </section>
 
-            <section className={styles.both_carousel_container}>
-                <div>
-                    {data ? (<>
-                        <ImageTextCarousel slides={data.slides} />
-                    </>
-                    ) : (
-                        <>
-                            <RotatingLines
-                                strokeColor="grey"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="76"
-                                visible={true}
-                            />
-                        </>
-                    )}
+                <section className={styles.both_carousel_container}>
+                    <ImageTextCarousel slides={data.slides} />
+                    <QuoteCarousel testimonial={data.testimonials} />
+                </section>
+
+                <section>
+                    <SuggestionArticle />
+                </section>
+            </>
+            ) : (
+                <div className={styless.spinner}>
+                    <ColorRing
+                        className={styless.spinner}
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                    />
                 </div>
-
-                <div>
-                    {data ? (<>
-                        <QuoteCarousel testimonial={data.testimonials} />
-                    </>
-                    ) : (<>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                    )}
-                </div>
-            </section>
-
-            <section>
-                <div>
-                    {data ? (<>
-                        <SuggestionArticle />
-
-                    </>
-                    ) : (<>
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
-                            visible={true}
-                        />
-                    </>
-                    )}
-                </div>
-            </section>
-        </>
+            )}
+        </main>
     )
 }
 
