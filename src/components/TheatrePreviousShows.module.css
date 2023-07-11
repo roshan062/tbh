@@ -136,6 +136,7 @@
     z-index: 11;
     position: absolute;
     top: 0;
+    left: 0;
     width: 300px;
   }
 
@@ -151,10 +152,10 @@
   }
 
   .box p {
-    margin: 2px 0 0 10px;
-    font-size: 30px;
+    margin: 8px 0 0 10px;
+    font-size: 18px;
     color: rgb(242, 241, 241);
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .box2 {
@@ -186,7 +187,7 @@
 
   .article_cards {
     height: 330px;
-    width: 60vw;
+    width: 300px;
     margin: 20px auto;
     background-color: rgba(255, 255, 255, 0.534);
   }
