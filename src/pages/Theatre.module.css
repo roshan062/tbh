@@ -39,6 +39,13 @@
   width: 300px;
 }
 
+.down_arrow {
+  height: 40px;
+  width: 40px;
+  margin: 60px auto 0 45%;
+  transform: translateY(-140px);
+}
+
 .boxx {
   position: relative;
   top: 10px;
@@ -120,6 +127,13 @@
   .containerr {
     position: relative;
     width: 300px;
+  }
+
+  .down_arrow {
+    height: 20px;
+    width: 20px;
+    margin: 30px auto 0 45%;
+    transform: translateY(-60px);
   }
 
   .boxx {

@@ -14,12 +14,14 @@ import ArticleHome from './pages/ArticleHome'
 import GetInvolved from './pages/GetInvolved'
 import Business from './pages/Business'
 import Theatre from './pages/Theatre'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
   return (
     <BrowserRouter>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path='/' >
           <Route index element={<HomeOne />} />
@@ -29,9 +31,9 @@ function App() {
           <Route path='/3' element={<ArticleThree />} />
           <Route path='/4' element={<ArticleFour />} />
           <Route path='/5' element={<ArticleFive />} />
-          <Route path='/aboutt' element={<AboutUs />} />
-          <Route path='/get-involvedd' element={<GetInvolved />} />
-          <Route path='/businesss' element={<Business />} />
+          <Route path='/about' element={<AboutUs />} />
+          <Route path='/get-involved' element={<GetInvolved />} />
+          <Route path='/business' element={<Business />} />
           <Route path='/theatre' element={<Theatre />} />
         </Route>
       </Routes>

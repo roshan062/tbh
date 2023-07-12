@@ -77,6 +77,7 @@ const GetInvolved = () => {
                             <span>BECOME A MEMBER</span>
                             <span>WORK WITH US</span>
                         </div>
+                        <img className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 

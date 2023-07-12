@@ -1,0 +1,9 @@
+.img {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 90vh;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1;
+}

@@ -32,9 +32,6 @@ const WorkshopCards = () => {
                     data ? (
                         <>
                             {data.workshops.map((item, index) => {
-                                {/* if (index > 4) return */ }
-                                {/* if (api.type == 0) return */ }
-                                {/* const ref = `/${api.type}`; */ }
                                 let url = item.image.replace("localhost", ip)
                                 return (
                                     <div key={item.id} className={styles.article_cards}>

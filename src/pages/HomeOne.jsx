@@ -89,6 +89,7 @@ const HomeOne = () => {
                 <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.homepage_elements[0].hero_text}</div>
+                        <img className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 

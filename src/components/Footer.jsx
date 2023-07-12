@@ -1,5 +1,10 @@
 import React from 'react'
 import styles from './Footer.module.css'
+import { FaLinkedinIn } from 'react-icons/fa';
+import { SlSocialInstagram } from 'react-icons/sl';
+import { BsTwitter } from 'react-icons/bs';
+import { FaFacebookF } from 'react-icons/fa';
+
 
 const Footer = () => {
     return (
@@ -49,7 +54,14 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.copyright_social}><p>©️The Big House Theatre</p><p>Insta Twitter Facebook</p></div>
+                <div className={styles.copyright_social}><p>©️The Big House Theatre</p>
+                    <div className={styles.footer_social_icons}>
+                        <FaLinkedinIn />
+                        <SlSocialInstagram />
+                        <BsTwitter />
+                        <FaFacebookF />
+                    </div>
+                </div>
             </footer>
         </>
     )

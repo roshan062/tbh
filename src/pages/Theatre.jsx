@@ -85,6 +85,7 @@ const Theatre = () => {
                         <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
                         <h3 className={styles.more_info}>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
                     </div>
+                    <img className={styles.down_arrow} src='./down-arrow.png' />
                 </section>
 
                 <section>
