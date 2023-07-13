@@ -113,7 +113,7 @@ const AboutUs = () => {
                             <span onClick={() => scrollToSection("impact")}>IMPACT</span>
                             <span onClick={() => scrollToSection("people")}>PEOPLE</span>
                         </div>
-                        <img className={styles.down_arrow} src='./down-arrow.png' />
+                        <img onClick={() => scrollToSection("history")} className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 

@@ -61,6 +61,12 @@ const GetInvolved = () => {
         }
     }
 
+    const scrollToSection = (whereTo) => {
+        if (whereTo == "support") {
+            const section = document.getElementById('support');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     return (
         <main>
@@ -77,12 +83,12 @@ const GetInvolved = () => {
                             <span>BECOME A MEMBER</span>
                             <span>WORK WITH US</span>
                         </div>
-                        <img className={styles.down_arrow} src='./down-arrow.png' />
+                        <img onClick={() => scrollToSection("support")} className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 
                 <section>
-                    <div className={styles.do_it}>
+                    <div className={styles.do_it} id='support'>
                         {/* First Part */}
                         <div className={`${styles.item} ${styles.text_design_container}`}>
                             <div className={styles.container}>

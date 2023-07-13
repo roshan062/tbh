@@ -42,8 +42,9 @@
 .down_arrow {
   height: 40px;
   width: 40px;
-  margin: 60px auto 0 45%;
+  margin: 60px auto 0 50%;
   transform: translateY(-140px);
+  cursor: pointer;
 }
 
 .boxx {

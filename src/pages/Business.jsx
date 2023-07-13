@@ -103,7 +103,7 @@ const Business = () => {
                             <div onClick={() => scrollToSection("venuehire")}>VENUE HIRE</div>
                             <div onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</div>
                         </div>
-                        <img className={styles.down_arrow} src='./down-arrow.png' />
+                        <img onClick={() => scrollToSection("workshops")} className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 

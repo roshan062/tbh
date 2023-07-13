@@ -60,7 +60,8 @@
 .down_arrow {
   height: 40px;
   width: 40px;
-  margin: 90px auto 0 45%;
+  margin: 90px auto 0 48%;
+  cursor: pointer;
 }
 
 .video_image_container {

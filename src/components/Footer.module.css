@@ -46,6 +46,7 @@
 
 .footer_social_icons {
   width: 150px;
+  margin-right: 50px;
   display: flex;
   justify-content: space-between;
 }

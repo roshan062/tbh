@@ -25,8 +25,7 @@ header {
 .logo {
   font-size: 15px;
   display: inline-block;
-  color: #faf8f8;
-  margin: 0px 0 0 50px;
+  margin: -4px 0 0 50px;
   padding: 0;
   transform: rotate(-50deg);
 }
@@ -34,6 +33,7 @@ header {
 .logo p {
   font-weight: 700;
   line-height: 0.9;
+  color: white;
 }
 
 .logo p span {

@@ -79,6 +79,13 @@ const HomeOne = () => {
             }
         }
     }
+
+    const scrollToSection = (whereTo) => {
+        if (whereTo == "mission") {
+            const section = document.getElementById('mission');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
     return (
         <main>
             {data ? (<>
@@ -89,11 +96,11 @@ const HomeOne = () => {
                 <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.homepage_elements[0].hero_text}</div>
-                        <img className={styles.down_arrow} src='./down-arrow.png' />
+                        <img onClick={() => scrollToSection("mission")} className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 
-                <section className={styles.b_design}>
+                <section className={styles.b_design} id='mission'>
                     <div className={styles.mission}>
                         <div className={styles.container}>
                             <div className={styles.box}><p>OUR MISSION</p></div>

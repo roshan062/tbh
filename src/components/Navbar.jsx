@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 import menuImage from '/menu.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,39 +13,41 @@ const Navbar = () => {
     return (
         <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
             <div className={styles.logo}>
-                <p>
-                    <span>The</span>
-                    <br />
-                    Big
-                    <br />
-                    House
-                </p>
+                <Link to='/'>
+                    <p>
+                        <span>The</span>
+                        <br />
+                        Big
+                        <br />
+                        House
+                    </p>
+                </Link>
+
             </div>
             <div className={`${styles.menu_icon} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
                 <img src={menuImage} alt="Menu" />
             </div>
             <ul className={`${styles.nav_items} ${isMenuOpen ? styles.open : ''}`}>
-
                 <li>
-                    <a href="/">HOME</a>
+                    <Link to='/'>HOME</Link>
                 </li>
                 <li>
-                    <a href="/about">ABOUT US</a>
+                    <Link to='/about'>ABOUT</Link>
                 </li>
                 <li>
-                    <a href="/theatre">THEATRE</a>
+                    <Link to='/theatre'>THEATRE</Link>
                 </li>
                 {/* <li>
                     <a href="/articles">ARTICLES</a>
                 </li> */}
                 <li>
-                    <a href="/get-involved">GET INVOLVED</a>
+                    <Link to='/get-involved'>GET INVOLVED</Link>
                 </li>
                 <li>
-                    <a href="/business">TBH MEANS BUSINESS</a>
+                    <Link to='/business'>TBH MEANS BUSINESS</Link>
                 </li>
                 <li>
-                    <a href="/big-mouth">THE BIG MOUTH</a>
+                    <Link to='/big-mouth'>THE BIG MOUTH</Link>
                 </li>
             </ul>
             <div className={styles.search_icon}>
