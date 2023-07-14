@@ -35,7 +35,6 @@ const TheatrePreviousShows = () => {
                             <div className={styles.box2}></div>
                         </div>
                         <div className={styles.grid_container}>
-
                             {data.map((api, index) => {
                                 if (index > totalArticles) return
                                 if (api.type == 0) return
@@ -51,7 +50,6 @@ const TheatrePreviousShows = () => {
                                 );
                             })
                             }
-
                         </div>
 
                         <div className={styles.show_more}>
