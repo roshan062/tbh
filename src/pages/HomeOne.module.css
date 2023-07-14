@@ -95,9 +95,6 @@
   50% {
     transform: rotateX(180deg);
   }
-  70% {
-    /* transform: rotateY(180deg); */
-  }
   90% {
     transform: rotateY(90deg);
   }
@@ -340,7 +337,7 @@
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin-left: -90px;
+    margin-left: -190px;
   }
   .mission .missiontext_container .right ::marker {
     color: rgb(241, 33, 168);

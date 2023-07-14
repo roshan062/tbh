@@ -6,12 +6,17 @@ import { ColorRing } from 'react-loader-spinner'
 import WorkshopCards from '../components/WorkshopCards'
 import BusinessTestimonialCarousel from '../components/BusinessTestimonialCarousel'
 import BusinessImageTextCarousel from '../components/BusinessImageTextCarousel'
-
+import { useLocation } from 'react-router-dom';
 
 const Business = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/get-tbh-means-business";
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
 
     useEffect(() => {

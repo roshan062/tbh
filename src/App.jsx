@@ -1,23 +1,30 @@
-import styles from './App.module.css'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+//Articles
+import ArticleTwo from './pages/ArticleTwo'
 import ArticleOne from './pages/ArticleOne'
 import ArticleThree from './pages/ArticleThree'
 import ArticleFour from './pages/ArticleFour'
 import ArticleFive from './pages/ArticleFive'
+
+//Footer or Navbar
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import ArticleTwo from './pages/ArticleTwo'
+
+//Pages
 import HomeOne from './pages/HomeOne'
 import AboutUs from './pages/AboutUs'
 import ArticleHome from './pages/ArticleHome'
 import GetInvolved from './pages/GetInvolved'
 import Business from './pages/Business'
 import Theatre from './pages/Theatre'
+import BigMouth from './pages/BigMouth'
+
+//Functionality
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -35,6 +42,7 @@ function App() {
           <Route path='/get-involved' element={<GetInvolved />} />
           <Route path='/business' element={<Business />} />
           <Route path='/theatre' element={<Theatre />} />
+          <Route path='/big-mouth' element={<BigMouth />} />
         </Route>
       </Routes>
       <Footer />

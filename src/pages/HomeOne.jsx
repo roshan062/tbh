@@ -6,12 +6,17 @@ import QuoteCarousel from '../components/QuoteCarousel';
 import ImageTextCarousel from '../components/ImageTextCarousel';
 import SuggestionArticle from '../components/SuggestionArticle';
 import { ColorRing } from 'react-loader-spinner'
-
+import { useLocation } from 'react-router-dom';
 
 const HomeOne = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/home";
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
 
     //fetching url data on page load

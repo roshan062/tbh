@@ -1,16 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './GetInvolved.module.css';
 import styless from '../App.module.css'
 import { ColorRing } from 'react-loader-spinner'
 import { BsArrowUpRight } from 'react-icons/bs';
 import BrandCarousel from '../components/BrandCarousel';
-
+import { useLocation } from 'react-router-dom';
 
 const GetInvolved = () => {
     const [data, setData] = useState('');
 
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/get-involved";
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
 
     useEffect(() => {
@@ -66,7 +71,16 @@ const GetInvolved = () => {
             const section = document.getElementById('support');
             section.scrollIntoView({ behavior: 'smooth' });
         }
-    }
+        if (whereTo === "member") {
+            const section = document.getElementById('member');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (whereTo === "work") {
+            const section = document.getElementById('work');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
 
     return (
         <main>
@@ -79,18 +93,18 @@ const GetInvolved = () => {
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
-                            <span>SUPPORT US</span>
-                            <span>BECOME A MEMBER</span>
-                            <span>WORK WITH US</span>
+                            <span onClick={() => scrollToSection("support")}>SUPPORT US</span>
+                            <span onClick={() => scrollToSection("member")}>BECOME A MEMBER</span>
+                            <span onClick={() => scrollToSection("work")}>WORK WITH US</span>
                         </div>
                         <img onClick={() => scrollToSection("support")} className={styles.down_arrow} src='./down-arrow.png' />
                     </div>
                 </section>
 
                 <section>
-                    <div className={styles.do_it} id='support'>
+                    <div className={styles.do_it}>
                         {/* First Part */}
-                        <div className={`${styles.item} ${styles.text_design_container}`}>
+                        <div className={`${styles.item} ${styles.text_design_container}`} id='support'>
                             <div className={styles.container}>
                                 <div className={styles.box}><p>SUPPORT US</p></div>
                                 <div className={styles.box2}></div>
@@ -110,7 +124,7 @@ const GetInvolved = () => {
                         <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].become_member_image)} alt='pic' className={styles.selfimg} />
                         </div>
-                        <div className={`${styles.item} ${styles.text_design_container}`}>
+                        <div className={`${styles.item} ${styles.text_design_container}`} id='member'>
                             <div className={styles.container}>
                                 <div className={styles.box}><p>BECOME A MEMBER</p></div>
                                 <div className={styles.box2}></div>
@@ -122,7 +136,7 @@ const GetInvolved = () => {
                             }
                         </div>
                         {/* Third Part */}
-                        <div className={`${styles.item} ${styles.text_design_container}`}>
+                        <div className={`${styles.item} ${styles.text_design_container}`} id='work'>
                             <div className={styles.container}>
                                 <div className={styles.box}><p>WORK WITH US</p></div>
                                 <div className={styles.box2}></div>

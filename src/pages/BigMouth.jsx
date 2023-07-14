@@ -1,15 +1,16 @@
-import React, { useEffect, useState, useRef } from 'react';
-import styles from './Theatre.module.css';
+import React, { useState, useEffect } from 'react'
+import styles from './BigMouth.module.css';
+import styless from '../App.module.css'
 import { ColorRing } from 'react-loader-spinner'
 import { BsArrowUpRight } from 'react-icons/bs';
-import styless from '../App.module.css'
-import TheatrePreviousShows from '../components/TheatrePreviousShows';
 import { useLocation } from 'react-router-dom';
 
-const Theatre = () => {
+const BigMouth = () => {
+
     const [data, setData] = useState('');
+
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/article/145";
+    const api = ip + ":5500/big-mouth";
 
     const location = useLocation();
     useEffect(() => {
@@ -17,7 +18,6 @@ const Theatre = () => {
     }, [location]);
 
 
-    //fetching url data on page load
     useEffect(() => {
         fetchData();
     }, []);
@@ -27,37 +27,29 @@ const Theatre = () => {
             const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
-            // console.log(jsonData)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
-    function togglePlay() {
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
+
+    const cleanImgUrl = function (fetchedUrl) {
+        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        return modifiedUrl;
     }
+
 
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
             modifiedUrl = ip + url.replace("localhost", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
+
+            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
                 return (<img src={modifiedUrl} className={styles.article_image} />)
-            }
-            else {
+            } else {
                 return (
                     <div>
                         <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
@@ -74,36 +66,11 @@ const Theatre = () => {
         }
     }
 
-    const scrollToSection = (whereTo) => {
-        if (whereTo == "shows") {
-            const section = document.getElementById('shows');
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
     return (
         <main>
             {data ? (<>
                 <section>
-                    {imageUrl(data.image)}
-                </section>
 
-                <section>
-                    <div className={styles['image_textt']}>
-                        <div className={styles['containerr']}>
-                            <div className={styles['boxx']}>
-                                <p>BOOKING NOW...</p>
-                            </div>
-                            <div className={styles['boxx2']}></div>
-                        </div>
-                        <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
-                        <h3 className={styles.more_info}>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
-                    </div>
-                    <img onClick={() => scrollToSection("shows")} className={styles.down_arrow} src='./down-arrow.png' />
-                </section>
-
-                <section id='shows'>
-                    <TheatrePreviousShows />
                 </section>
             </>
             ) : (
@@ -124,4 +91,4 @@ const Theatre = () => {
     )
 }
 
-export default Theatre
+export default BigMouth
