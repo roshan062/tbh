@@ -119,10 +119,14 @@ const GetInvolved = () => {
                         </div>
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].support_us_image)} alt='pic' className={styles.selfimg} />
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                         </div>
                         {/* Second Part */}
                         <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].become_member_image)} alt='pic' className={styles.selfimg} />
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                         </div>
                         <div className={`${styles.item} ${styles.text_design_container}`} id='member'>
                             <div className={styles.container}>
@@ -150,6 +154,8 @@ const GetInvolved = () => {
                         </div>
                         <div className={styles.img_item}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].work_w_us_image)} alt='pic' className={styles.selfimg} />
+                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                         </div>
 
                     </div>
