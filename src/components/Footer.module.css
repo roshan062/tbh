@@ -28,6 +28,7 @@
   width: 60%;
   height: 30px;
   border: 0.3px solid white;
+  color: white;
 }
 
 .subscribe input::placeholder {

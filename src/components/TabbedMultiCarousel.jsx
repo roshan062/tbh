@@ -5,8 +5,9 @@ const TabbedMultiCarousel = ({ slides }) => {
     const elementRef = useRef(null);
 
     const ip = import.meta.env.VITE_IP || 'default value';
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = ip + fetchedUrl.replace("localhost", "");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel", "");
         return modifiedUrl;
     }
     const btnpressprev = () => {

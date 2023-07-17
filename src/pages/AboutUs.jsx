@@ -14,6 +14,7 @@ const AboutUs = () => {
     const [activeIndex, setActiveIndex] = useState(1);
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/aboutus";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
 
     //For tabbed carousel switcher
@@ -54,7 +55,7 @@ const AboutUs = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = ip + url.replace("localhost", "");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
 
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');

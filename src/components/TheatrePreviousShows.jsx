@@ -9,6 +9,7 @@ const TheatrePreviousShows = () => {
     const [data, setData] = useState('');
     const [totalArticles, setTotalArticles] = useState(4);
     const ip = import.meta.env.VITE_IP || 'default value';
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const api = ip + ":5500/articles";
 
     useEffect(() => {
@@ -39,7 +40,7 @@ const TheatrePreviousShows = () => {
                                 if (index > totalArticles) return
                                 if (api.type == 0) return
                                 const ref = `/${api.type}`;
-                                let url = api.image.replace("localhost", ip)
+                                let url = api.image.replace("localhost/Admin_panel", imageIP)
                                 return (
                                     <div key={index} className={styles.article_cards} data-title={api.head_title}>
                                         <Link to={ref} className={styles.link}>

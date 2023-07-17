@@ -9,6 +9,7 @@ const WorkshopCards = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/get-tbh-means-business";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
@@ -32,7 +33,7 @@ const WorkshopCards = () => {
                     data ? (
                         <>
                             {data.workshops.map((item, index) => {
-                                let url = item.image.replace("localhost", ip)
+                                let url = item.image.replace("localhost/Admin_panel", imageIP)
                                 return (
                                     <div key={item.id} className={styles.article_cards}>
                                         <img src={url} className={styles.image_container} />

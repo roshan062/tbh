@@ -12,6 +12,7 @@ const Business = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/get-tbh-means-business";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const location = useLocation();
     useEffect(() => {
@@ -52,8 +53,7 @@ const Business = () => {
         // console.log(url)
         let modifiedUrl;
         if (data) {
-            modifiedUrl = ip + url.replace("localhost", "");
-            // console.log(modifiedUrl)
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
 
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');

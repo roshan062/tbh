@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 const Theatre = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const api = ip + ":5500/article/145";
 
     const location = useLocation();
@@ -50,7 +51,7 @@ const Theatre = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = ip + url.replace("localhost", "");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

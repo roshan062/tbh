@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 const ImageTextCarousel = ({ slides }) => {
     const [activeSlide, setActiveSlide] = useState(1);
     const ip = import.meta.env.VITE_IP || 'default value';
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         let current = 1;
@@ -48,7 +49,7 @@ const ImageTextCarousel = ({ slides }) => {
             <ul className={styles.carousel__list}>
                 {slides.map((review, index) => {
                     let { heading, description, link, image } = review;
-                    image = image.replace('localhost', ip)
+                    image = image.replace('localhost/Admin_panel', imageIP)
                     const count = index + 1;
                     return (
                         <li

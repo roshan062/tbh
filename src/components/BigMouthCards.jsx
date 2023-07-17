@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import styles from './SuggestionArticle.module.css'
+import styles from './BigMouthCards.module.css'
 import { Link, Outlet } from 'react-router-dom'
 
 
-const SuggestionArticle = () => {
+const BigMouthCards = () => {
     const [data, setData] = useState('');
-    const [totalArticles, setTotalArticles] = useState(4);
+    const [totalArticles, setTotalArticles] = useState(3);
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + ":5500/articles";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
@@ -26,10 +26,6 @@ const SuggestionArticle = () => {
 
     return (
         <div className={styles.suggestion_article}>
-            <div className={styles.hanging_container}>
-                <div className={styles.box}><p>NEWS</p></div>
-                <div className={styles.box2}></div>
-            </div>
             <div className={styles.grid_container}>
                 {
                     data ? (
@@ -44,9 +40,7 @@ const SuggestionArticle = () => {
                                         <Link to={ref} className={styles.link}>
                                             <img src={url} className={styles.image_container} />
                                         </Link>
-                                        <div className={styles.cards_content}>
-                                            <p>{api.head_title}</p>
-                                        </div>
+
                                         <Outlet />
                                     </div>
                                 );
@@ -66,4 +60,4 @@ const SuggestionArticle = () => {
     )
 }
 
-export default SuggestionArticle
+export default BigMouthCards
