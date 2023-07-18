@@ -109,7 +109,8 @@ const BigMouth = () => {
                     <h1>THE HOME OF OUR <span>NEWS HIT</span> CONTENT</h1>
                 </div>
                 <div className={styles.home_news_element}>
-                    <img src='./md-img1.png' alt='img' className={styles.selfimg} />
+                    <img src='https://mannyadmin.bechocar.com/uploads/people_image.jpg' alt='img' className={styles.selfimg} />
+                    {/* <img src='./md-img1.png' alt='img' className={styles.selfimg} /> */}
                     <img className={styles.red_square} src='./Rectangle 1620.png' alt='square_element' />
                 </div>
             </section>
