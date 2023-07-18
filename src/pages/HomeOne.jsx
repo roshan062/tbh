@@ -12,7 +12,7 @@ const HomeOne = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/home";
-    console.log("url of requested api: " + api);
+    // console.log("url of requested api: " + api);
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const location = useLocation();
@@ -28,7 +28,8 @@ const HomeOne = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch(api);
+            // const response = await fetch(api);
+            const response = await fetch('https://manny.bechocar.com/home');
             const jsonData = await response.json();
             setData(jsonData);
             // console.log(jsonData)
