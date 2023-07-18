@@ -12,6 +12,7 @@ const HomeOne = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/home";
+    console.log("url of requested api: " + api);
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const location = useLocation();
