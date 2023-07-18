@@ -10,7 +10,7 @@ const GetInvolved = () => {
     const [data, setData] = useState('');
 
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/get-involved";
+    const api = ip + "/get-involved";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const location = useLocation();

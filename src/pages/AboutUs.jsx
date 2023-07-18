@@ -13,7 +13,7 @@ const AboutUs = () => {
     const [data, setData] = useState('');
     const [activeIndex, setActiveIndex] = useState(1);
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/aboutus";
+    const api = ip + "/aboutus";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
 

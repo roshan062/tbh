@@ -5,7 +5,8 @@ import Carousel from '../components/Carousel';
 const ArticleTwo = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/article/2/152";
+    const api = ip + "/article/2/152";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
@@ -38,7 +39,7 @@ const ArticleTwo = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = ip + url.replace("localhost", "");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

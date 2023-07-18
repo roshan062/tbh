@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styles from './WorkshopCards.module.css'
+import styless from '../App.module.css'
 import { Link, Outlet } from 'react-router-dom'
-import { RotatingLines } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner'
 import { BsArrowUpRight } from 'react-icons/bs';
 
 
 const WorkshopCards = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/get-tbh-means-business";
+    const api = ip + "/get-tbh-means-business";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
@@ -51,12 +52,15 @@ const WorkshopCards = () => {
                             }
                         </>
                     ) : (
-                        <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="76"
+                        <ColorRing
+                            className={styless.spinner}
                             visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="blocks-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="blocks-wrapper"
+                            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                         />
                     )
                 }

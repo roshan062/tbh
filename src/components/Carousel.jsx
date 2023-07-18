@@ -4,9 +4,9 @@ import styles from './Carousel.module.css'
 
 const Carousel = ({ images }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
-
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const updatedImageUrls = images.map((obj) => {
-        const updatedUrl = obj.image.replace('localhost', ip);
+        const updatedUrl = obj.image.replace('localhost/Admin_panel', imageIP);
         return updatedUrl;
     });
 

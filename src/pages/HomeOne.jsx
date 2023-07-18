@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 const HomeOne = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/home";
+    const api = ip + "/home";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const location = useLocation();

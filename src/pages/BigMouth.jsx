@@ -11,7 +11,7 @@ const BigMouth = () => {
     const [data, setData] = useState('');
 
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/big-mouth";
+    const api = ip + "/big-mouth";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
 
@@ -110,7 +110,6 @@ const BigMouth = () => {
                 </div>
                 <div className={styles.home_news_element}>
                     <img src='https://mannyadmin.bechocar.com/uploads/people_image.jpg' alt='img' className={styles.selfimg} />
-                    {/* <img src='./md-img1.png' alt='img' className={styles.selfimg} /> */}
                     <img className={styles.red_square} src='./Rectangle 1620.png' alt='square_element' />
                 </div>
             </section>
