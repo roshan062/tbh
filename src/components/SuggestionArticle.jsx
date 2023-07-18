@@ -7,7 +7,7 @@ const SuggestionArticle = () => {
     const [data, setData] = useState('');
     const [totalArticles, setTotalArticles] = useState(4);
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/articles";
+    const api = ip + "/articles";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {

@@ -4,7 +4,8 @@ import styles from './ArticleFive.module.css'
 const ArticleFive = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/article/5/149";
+    const api = ip + "/article/5/149";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
@@ -38,7 +39,7 @@ const ArticleFive = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = ip + url.replace("localhost", "");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
 
             if (isImage) {

@@ -10,7 +10,7 @@ const Theatre = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
-    const api = ip + ":5500/article/145";
+    const api = ip + "/article/145";
 
     const location = useLocation();
     useEffect(() => {

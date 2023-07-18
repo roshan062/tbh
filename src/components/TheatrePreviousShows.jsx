@@ -10,7 +10,7 @@ const TheatrePreviousShows = () => {
     const [totalArticles, setTotalArticles] = useState(4);
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
-    const api = ip + ":5500/articles";
+    const api = ip + "/articles";
 
     useEffect(() => {
         fetchData();

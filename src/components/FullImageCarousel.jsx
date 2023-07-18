@@ -3,8 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 const FullImageCarousel = ({ slides }) => {
-
-    // const ip = import.meta.env.VITE_IP || 'default value';
+    const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const cleanImgUrl = function (fetchedUrl) {
         const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel", "");

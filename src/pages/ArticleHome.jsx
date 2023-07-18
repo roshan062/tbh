@@ -6,7 +6,8 @@ import styles from './ArticleHome.module.css'
 const ArticleHome = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + ":5500/articles";
+    const api = ip + "/articles";
+    const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
@@ -32,7 +33,7 @@ const ArticleHome = () => {
                         {data.map((api, index) => {
                             if (api.type == 0) return
                             const ref = `/${api.type}`;
-                            let url = api.image.replace("localhost", ip)
+                            let url = api.image.replace("localhost/Admin_panel", imageIP)
                             return (
                                 <div key={index} >
                                     <Link to={ref} className={styles.link}>
