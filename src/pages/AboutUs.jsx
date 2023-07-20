@@ -7,6 +7,7 @@ import Pie from '../components/Pie'
 import { BsArrowUpRight } from 'react-icons/bs';
 import FullImageCarousel from '../components/FullImageCarousel';
 import TabbedMultiCarousel from '../components/TabbedMultiCarousel';
+import { useLocation } from 'react-router-dom';
 
 
 const AboutUs = () => {
@@ -21,6 +22,11 @@ const AboutUs = () => {
     const handleButtonClick = (index) => {
         setActiveIndex(index);
     };
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location])
 
 
     useEffect(() => {
