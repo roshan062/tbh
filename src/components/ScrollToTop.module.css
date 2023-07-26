@@ -7,3 +7,10 @@
   cursor: pointer;
   z-index: 1;
 }
+
+@media (max-width: 450px) {
+  .img {
+    top: 88vh;
+    right: 30px;
+  }
+}
