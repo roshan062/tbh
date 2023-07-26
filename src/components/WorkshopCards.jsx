@@ -34,7 +34,7 @@ const WorkshopCards = () => {
                     data ? (
                         <>
                             {data.workshops.map((item, index) => {
-                                let url = item.image.replace("localhost/Admin_panel", imageIP)
+                                let url = item.image.replace("localhost/", imageIP)
                                 return (
                                     <div key={item.id} className={styles.article_cards}>
                                         <img src={url} className={styles.image_container} />

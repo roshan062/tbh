@@ -38,7 +38,7 @@ const ArticleOne = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
+            modifiedUrl = imageIP + url.replace("localhost/", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

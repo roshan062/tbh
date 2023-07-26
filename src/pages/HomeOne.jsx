@@ -39,7 +39,7 @@ const HomeOne = () => {
 
     // Getting Image url after replacing localhost by ip
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel", "");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
         return modifiedUrl;
     }
 
@@ -63,7 +63,6 @@ const HomeOne = () => {
         let modifiedUrl;
         if (data) {
             modifiedUrl = imageIP + url.replace("localhost/", "");
-            console.log(modifiedUrl)
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

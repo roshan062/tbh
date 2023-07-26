@@ -37,7 +37,7 @@ const BigMouth = () => {
 
 
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel", "");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
         return modifiedUrl;
     }
 
@@ -61,7 +61,7 @@ const BigMouth = () => {
         console.log("modified url: ", url)
         if (data) {
             if (url.includes('localhost')) {
-                modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
+                modifiedUrl = imageIP + url.replace("localhost/", "");
             }
             else {
                 modifiedUrl = url;

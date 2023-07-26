@@ -51,7 +51,7 @@ const Theatre = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
+            modifiedUrl = imageIP + url.replace("localhost/", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

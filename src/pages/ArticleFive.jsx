@@ -39,7 +39,7 @@ const ArticleFive = () => {
     function imageUrl(url) {
         let modifiedUrl;
         if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/Admin_panel", "");
+            modifiedUrl = imageIP + url.replace("localhost/", "");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
 
             if (isImage) {
