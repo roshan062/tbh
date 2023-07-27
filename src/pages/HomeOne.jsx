@@ -13,7 +13,7 @@ const HomeOne = () => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/home";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
-
+    console.log("api to fetch: ", api)
     const location = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
