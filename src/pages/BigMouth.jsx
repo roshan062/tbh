@@ -126,7 +126,7 @@ const BigMouth = () => {
 
             </section>
 
-            <section>
+            <section className={styles.bigmouth_cards_section}>
                 <BigMouthCards />
             </section>
 

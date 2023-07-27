@@ -84,6 +84,9 @@
 }
 
 @media (max-width: 900px) {
+  .bigmouth_cards_section {
+  }
+
   .article_image {
     width: 100%;
     height: 300px;
