@@ -93,8 +93,8 @@
 
   .image_text_container {
     position: absolute;
-    top: 30vh;
-    left: 22vw;
+    top: 25vh;
+    left: 15%;
     text-transform: uppercase;
     z-index: 1;
   }
@@ -118,13 +118,13 @@
 
   .home_news_content {
     color: white;
-    font-size: 2em;
-    margin: 20px 40px 20px;
+    font-size: 1.5em;
+    margin: 0px 0 40px 20px;
   }
 
   .home_news_element .selfimg {
     height: 50vh;
-    width: 70vw;
+    width: 68vw;
     margin-left: 60px;
   }
 
@@ -132,8 +132,19 @@
     position: relative;
     top: -345px;
     left: -5px;
-    height: 55vh;
+    height: 56vh;
     width: 75vw;
     margin-left: 50px;
+  }
+
+  .video_image_container {
+    min-height: 40vh;
+    background-color: black;
+    text-align: center;
+  }
+
+  .self_video {
+    height: 120%;
+    width: 100%;
   }
 }

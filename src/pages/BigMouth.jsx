@@ -118,7 +118,7 @@ const BigMouth = () => {
             <section className={styles.video_image_container}>
                 {/* <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} /> */}
                 {/* {imageUrl('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')} */}
-                <video ref={videoref} onClick={togglePlay} controls height='70%' width='80%'>
+                <video ref={videoref} onClick={togglePlay} controls height='70%' width='80%' className={styles.self_video}>
                     <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
                         type="video/mp4"
                     />
