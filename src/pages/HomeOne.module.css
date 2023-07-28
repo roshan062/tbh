@@ -213,7 +213,7 @@
 }
 
 .do_it .item h2 {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .do_it .item p {
@@ -408,6 +408,14 @@
     text-align: left;
   }
 
+  .do_it .item h2 {
+    font-size: 25px;
+  }
+
+  .do_it .item p {
+    font-size: 17px;
+  }
+
   .do_it .img_item {
     margin: 0px 0 10px 16%;
     width: 250px;
@@ -419,8 +427,8 @@
   }
 
   .do_it .img_item .selfimg {
-    height: 130%;
-    width: 130%;
+    height: 290px;
+    width: 320px;
   }
 
   .img_item .rectangle_overlay_image_red {

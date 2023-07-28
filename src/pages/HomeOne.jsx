@@ -129,7 +129,7 @@ const HomeOne = () => {
                             <p>{data.homepage_elements[0].description1}</p>
                             {
                                 (data.homepage_elements[0].link1) && <a href={data.homepage_elements[0].link1}>
-                                    <h3> Become A Member<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                    <h4> Become A Member<BsArrowUpRight className={styless.icon_color} /></h4></a>
                             }
                         </div>
                         <div className={styles.img_item}>
@@ -146,14 +146,14 @@ const HomeOne = () => {
                             <h2>{data.homepage_elements[0].heading2}</h2>
                             <p>{data.homepage_elements[0].description2}</p>
                             {(data.homepage_elements[0].link2) && <a href={data.homepage_elements[0].link2}>
-                                <h3> Become A Member<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <h4> Become A Member<BsArrowUpRight className={styless.icon_color} /></h4></a>
                             }
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading3}</h2>
                             <p>{data.homepage_elements[0].description3}</p>
                             {data.homepage_elements[0].link3 && <a href={data.homepage_elements[0].link3}>
-                                <h3>Get Involved <BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <h4>Get Involved <BsArrowUpRight className={styless.icon_color} /></h4></a>
                             }
                         </div>
                         <div className={styles.img_item}>
