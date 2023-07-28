@@ -27,7 +27,7 @@
 .image_text_container {
   position: absolute;
   top: 150px;
-  left: 370px;
+  right: 30vw;
   z-index: 1;
   max-width: 500px;
   text-transform: uppercase;
@@ -53,12 +53,12 @@
   display: inline-block;
 }
 
-.down_arrow {
+/* .down_arrow {
   height: 40px;
   width: 40px;
   margin: 60px auto 0 45%;
   cursor: pointer;
-}
+} */
 
 .b_design {
   position: relative;
@@ -128,7 +128,8 @@
   justify-content: left;
   margin: 10px 50px 0 100px;
   text-align: left;
-  font-size: x-large;
+  font-size: 35px;
+  text-transform: uppercase;
 }
 .mission .missiontext_container .right {
   grid-column: 2/3;
@@ -136,7 +137,7 @@
   flex-direction: column;
   row-gap: 20px;
   align-self: flex-end;
-  margin: 50px 50px 100px 50px;
+  margin: 50px 50px 100px 100px;
   text-align: left;
   font-size: 14px;
   list-style-type: square;
@@ -207,7 +208,7 @@
   flex-direction: column;
   row-gap: 20px;
   justify-content: center;
-  margin: 0 70px 0 100px;
+  margin: 120px 70px 0 100px;
   text-align: left;
 }
 
@@ -236,8 +237,8 @@
 }
 
 .do_it .img_item .selfimg {
-  height: 120%;
-  width: 120%;
+  height: 450px;
+  width: 450px;
 }
 
 .img_item .rectangle_overlay_image_red {
@@ -271,7 +272,9 @@
   .image_text_container {
     position: absolute;
     top: 12%;
-    left: 20%;
+    left: 20vw;
+    margin-left: auto;
+    margin-right: auto;
     z-index: 1;
     max-width: 300px;
     text-transform: uppercase;
@@ -297,18 +300,18 @@
     display: inline-block;
   }
 
-  .down_arrow {
+  /* .down_arrow {
     height: 20px;
     width: 20px;
     margin: 30px auto 0 45%;
-  }
+  } */
 
   .mission {
     height: 130vh;
     width: 100%;
     color: white;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr auto;
     background-color: black;
     position: relative;
@@ -319,14 +322,15 @@
     text-align: left;
     font-size: medium;
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: auto 1fr;
   }
 
   .mission .missiontext_container .left {
     grid-row: 1/2;
     justify-content: left;
-    width: 100%;
-    padding-top: 200px;
+    width: 90vw;
+    padding-top: 50px;
+    font-size: 22px;
     margin-left: 20px;
   }
   .mission .missiontext_container .right {
@@ -336,7 +340,7 @@
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin-left: -190px;
+    margin-left: -480px;
   }
   .mission .missiontext_container .right ::marker {
     color: rgb(241, 33, 168);
@@ -442,11 +446,11 @@
 }
 
 @media (max-width: 425px) {
-  .down_arrow {
+  /* .down_arrow {
     height: 20px;
     width: 20px;
     margin: 30px auto 0 35%;
-  }
+  } */
 
   .mission {
     height: 100vh;
@@ -472,7 +476,9 @@
     justify-content: left;
     width: 160%;
     padding-top: 50px;
-    margin-left: 20px;
+    margin-left: 18px;
+    margin-right: 20px;
+    font-size: 20px;
   }
   .mission .missiontext_container .right {
     grid-row: 2/3;
@@ -507,11 +513,11 @@
 }
 
 @media (max-width: 385px) {
-  .down_arrow {
+  /* .down_arrow {
     height: 20px;
     width: 20px;
     margin: 30px auto 0 35%;
-  }
+  } */
 
   .mission .missiontext_container .left {
     grid-row: 1/2;

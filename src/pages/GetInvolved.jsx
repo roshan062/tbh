@@ -98,7 +98,7 @@ const GetInvolved = () => {
                             <span onClick={() => scrollToSection("member")}>BECOME A MEMBER</span>
                             <span onClick={() => scrollToSection("work")}>WORK WITH US</span>
                         </div>
-                        <img onClick={() => scrollToSection("support")} className={styles.down_arrow} src='./down-arrow.png' />
+                        {/* <img onClick={() => scrollToSection("support")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
                 </section>
 

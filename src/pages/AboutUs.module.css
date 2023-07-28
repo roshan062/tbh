@@ -57,12 +57,12 @@
   cursor: pointer;
 }
 
-.down_arrow {
+/* .down_arrow {
   height: 40px;
   width: 40px;
   margin: 90px auto 0 48%;
   cursor: pointer;
-}
+} */
 
 .video_image_container {
   min-height: 50vh;
@@ -157,7 +157,7 @@
 }
 
 .item3 {
-  text-align: center;
+  padding-left: 200px;
 }
 
 .item4 {
@@ -392,11 +392,11 @@
     padding: 20px 0px 20px 0px;
   }
 
-  .down_arrow {
+  /* .down_arrow {
     height: 20px;
     width: 20px;
     margin: 30px auto 0 45%;
-  }
+  } */
 
   .video_image_desc {
     color: #009fe3;
@@ -484,7 +484,7 @@
   }
 
   .item3 {
-    min-height: 200px;
+    padding-left: 0px;
     text-align: center;
   }
 

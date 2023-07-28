@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [activeMenu, setActiveMenu] = useState('home');
 
+    const handleMenuClick = (menu) => {
+        setActiveMenu(menu);
+    };
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
@@ -28,26 +32,23 @@ const Navbar = () => {
                 <img src={menuImage} alt="Menu" />
             </div>
             <ul className={`${styles.nav_items} ${isMenuOpen ? styles.open : ''}`}>
-                <li>
-                    <Link to='/'>HOME</Link>
+                <li className={`${activeMenu === 'home' ? styles.active : ''}`}>
+                    <Link to='/' onClick={() => handleMenuClick('home')}>HOME</Link>
                 </li>
-                <li>
-                    <Link to='/about'>ABOUT</Link>
+                <li className={`${activeMenu === 'about' ? styles.active : ''}`}>
+                    <Link to='/about' onClick={() => handleMenuClick('about')}>ABOUT</Link>
                 </li>
-                <li>
-                    <Link to='/theatre'>THEATRE</Link>
+                <li className={`${activeMenu === 'theatre' ? styles.active : ''}`}>
+                    <Link to='/theatre' onClick={() => handleMenuClick('theatre')}>THEATRE</Link>
                 </li>
-                {/* <li>
-                    <a href="/articles">ARTICLES</a>
-                </li> */}
-                <li>
-                    <Link to='/get-involved'>GET INVOLVED</Link>
+                <li className={`${activeMenu === 'involved' ? styles.active : ''}`}>
+                    <Link to='/get-involved' onClick={() => handleMenuClick('involved')}>GET INVOLVED</Link>
                 </li>
-                <li>
-                    <Link to='/business'>TBH MEANS BUSINESS</Link>
+                <li className={`${activeMenu === 'business' ? styles.active : ''}`}>
+                    <Link to='/business' onClick={() => handleMenuClick('business')}>TBH MEANS BUSINESS</Link>
                 </li>
-                <li>
-                    <Link to='/big-mouth'>THE BIG MOUTH</Link>
+                <li className={`${activeMenu === 'bigmouth' ? styles.active : ''}`}>
+                    <Link to='/big-mouth' onClick={() => handleMenuClick('bigmouth')}>THE BIG MOUTH</Link>
                 </li>
             </ul>
             <div className={styles.search_icon}>

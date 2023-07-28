@@ -77,6 +77,12 @@ header {
   margin-right: 10px;
 }
 
+.nav_items li.active {
+  background-color: #223140;
+  border-radius: 5px;
+  padding: 10px 10px 5px 10px;
+}
+
 .nav_items li:last-child {
   margin-right: 0;
 }

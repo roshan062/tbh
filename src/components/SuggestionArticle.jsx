@@ -39,13 +39,19 @@ const SuggestionArticle = () => {
                                 if (api.type == 0) return
                                 const ref = `/${api.type}`;
                                 let url = api.image.replace("localhost/", imageIP)
+                                let newDescription = api.description.substring(0, 200)
                                 return (
                                     <div key={index} className={styles.article_cards}>
                                         <Link to={ref} className={styles.link}>
                                             <img src={url} className={styles.image_container} />
                                         </Link>
                                         <div className={styles.cards_content}>
-                                            <p>{api.head_title}</p>
+                                            <Link to={ref} className={styles.link}>
+                                                <p className={styles.card_title}>{api.head_title}</p>
+                                            </Link>
+                                            {/* <div className={styles.card_description} dangerouslySetInnerHTML={{ __html: api.description }}> */}
+                                            <div className={styles.card_description} dangerouslySetInnerHTML={{ __html: newDescription }}>
+                                            </div>
                                         </div>
                                         <Outlet />
                                     </div>

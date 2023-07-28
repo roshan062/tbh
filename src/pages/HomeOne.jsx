@@ -13,7 +13,7 @@ const HomeOne = () => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/home";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
-    console.log("api to fetch: ", api)
+    // console.log("api to fetch: ", api)
     const location = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -63,7 +63,6 @@ const HomeOne = () => {
         let modifiedUrl;
         if (data) {
             modifiedUrl = imageIP + url.replace("localhost/", "");
-            console.log(modifiedUrl)
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
@@ -103,7 +102,7 @@ const HomeOne = () => {
                 <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.homepage_elements[0].hero_text}</div>
-                        <img onClick={() => scrollToSection("mission")} className={styles.down_arrow} src='./down-arrow.png' />
+                        {/* <img onClick={() => scrollToSection("mission")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
                 </section>
 

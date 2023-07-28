@@ -120,7 +120,7 @@ const AboutUs = () => {
                             <span onClick={() => scrollToSection("impact")}>IMPACT</span>
                             <span onClick={() => scrollToSection("people")}>PEOPLE</span>
                         </div>
-                        <img onClick={() => scrollToSection("history")} className={styles.down_arrow} src='./down-arrow.png' />
+                        {/* <img onClick={() => scrollToSection("history")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
                 </section>
 
@@ -131,6 +131,9 @@ const AboutUs = () => {
 
                 <section className={styles.video_image_container}>
                     <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} />
+                    {/* <div>
+                        {imageUrl(data.aboutus_elements[0].video_link_embed)}
+                    </div> */}
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
                 </section>
 
@@ -146,7 +149,11 @@ const AboutUs = () => {
                         <div className={`${styles.item} ${styles.item2}`}><p>{data.aboutus_elements[0].mission_description}</p>
                         </div>
                         <div className={`${styles.item} ${styles.item3}`}>
-                            <img src='' alt='image' />
+                            <img src="https://example.com/image.jpg" alt='image' height='300px' width='300px'
+                                onError={(e) => {
+                                    e.target.src = "./md-img1.png";
+                                }}
+                            />
                         </div>
                         <div className={`${styles.item} ${styles.item4}`}>
                             <div>

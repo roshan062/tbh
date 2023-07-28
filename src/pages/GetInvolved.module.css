@@ -57,12 +57,12 @@
   cursor: pointer;
 }
 
-.down_arrow {
+/* .down_arrow {
   height: 40px;
   width: 40px;
   margin: 90px 0 0 0;
   cursor: pointer;
-}
+} */
 
 .do_it {
   display: grid;
@@ -324,11 +324,11 @@
     padding: 20px 0px 20px 0px;
   }
 
-  .down_arrow {
+  /* .down_arrow {
     height: 20px;
     width: 20px;
     margin: 30px 0 0 20%;
-  }
+  } */
 
   .do_it {
     height: auto;

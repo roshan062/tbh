@@ -89,7 +89,7 @@ const Theatre = () => {
                     {imageUrl(data.image)}
                 </section>
 
-                <section>
+                <section >
                     <div className={styles['image_textt']}>
                         <div className={styles['containerr']}>
                             <div className={styles['boxx']}>
@@ -98,9 +98,10 @@ const Theatre = () => {
                             <div className={styles['boxx2']}></div>
                         </div>
                         <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
+                        <div className={styles.description} dangerouslySetInnerHTML={{ __html: data.description }} />
                         <h3 className={styles.more_info}>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
                     </div>
-                    <img onClick={() => scrollToSection("shows")} className={styles.down_arrow} src='./down-arrow.png' />
+                    {/* <img onClick={() => scrollToSection("shows")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                 </section>
 
                 <section id='shows'>

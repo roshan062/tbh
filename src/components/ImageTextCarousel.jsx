@@ -22,7 +22,7 @@ const ImageTextCarousel = ({ slides }) => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(intervalId);
     }, []);
@@ -33,10 +33,12 @@ const ImageTextCarousel = ({ slides }) => {
 
     const handleRightClick = (slideIndex) => {
         if (slideIndex < 3) setActiveSlide(slideIndex + 1);
+        else if (slideIndex == slides.length) setActiveSlide(1)
     };
 
     const handleLeftClick = (slideIndex) => {
         if (slideIndex > 1) setActiveSlide(slideIndex - 1);
+        else if (slideIndex == 1) setActiveSlide(slides.length)
     };
 
     return (
