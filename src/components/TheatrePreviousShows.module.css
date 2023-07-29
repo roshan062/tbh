@@ -178,6 +178,7 @@
   .grid_container {
     display: grid;
     grid-template-columns: 1fr;
+    margin: 180px auto 60px auto;
   }
 
   .article_cards {
