@@ -216,7 +216,7 @@
   .image_textt {
     position: absolute;
     width: 70vw;
-    top: 30%;
+    top: 20%;
     left: 65%;
     z-index: 1;
   }
@@ -225,7 +225,7 @@
   .image_textt {
     position: absolute;
     width: 80vw;
-    top: 30%;
+    top: 20%;
     left: 44%;
     z-index: 1;
   }
