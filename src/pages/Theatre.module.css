@@ -123,8 +123,9 @@
 
   .image_textt {
     position: absolute;
+    width: 90vw;
     top: 30%;
-    left: 70%;
+    left: 48%;
     z-index: 1;
   }
 
@@ -206,7 +207,7 @@
 
   .more_info {
     color: white;
-    padding: 20px 710px 0 0;
+    padding: 10px 10px 0 0;
     font-size: 10px;
   }
 }
@@ -214,24 +215,64 @@
 @media only screen and (max-width: 550px) and (min-width: 430px) {
   .image_textt {
     position: absolute;
+    width: 70vw;
     top: 30%;
-    left: 90%;
+    left: 65%;
     z-index: 1;
   }
 }
 @media (max-width: 430px) {
   .image_textt {
     position: absolute;
+    width: 80vw;
     top: 30%;
-    left: 100%;
+    left: 44%;
     z-index: 1;
+  }
+
+  .heading_text {
+    font-size: 1.5rem;
+    line-height: 0.8;
+    color: white;
+    text-align: left;
+    margin: 0 0 0 0px;
+    width: 60%;
+  }
+
+  .description {
+    color: white;
+    font-weight: 300;
+    font-size: 12px;
+    width: 60%;
+    text-align: left;
+    padding: 35px 0 0 0;
   }
 }
 @media (max-width: 380px) {
   .image_textt {
     position: absolute;
+    width: 90vw;
     top: 30%;
-    left: 110%;
+    left: 45%;
     z-index: 1;
+    padding-left: 15%;
+  }
+
+  .heading_text {
+    font-size: 1.2rem;
+    line-height: 0.8;
+    color: white;
+    text-align: left;
+    margin: 0 0 0 0px;
+    width: 70%;
+  }
+
+  .description {
+    color: white;
+    font-weight: 300;
+    font-size: 12px;
+    width: 70%;
+    text-align: left;
+    padding: 35px 0 0 0;
   }
 }
