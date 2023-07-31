@@ -105,7 +105,8 @@ const GetInvolved = () => {
                 <section>
                     <div className={styles.do_it}>
                         {/* First Part */}
-                        <div className={`${styles.item} ${styles.text_design_container}`} id='support'>
+                        {/* <div className={styles.first_do_it}> */}
+                        <div className={`${styles.item} ${styles.first_do_it} ${styles.text_design_container}`} id='support'>
                             <div className={styles.container}>
                                 <div className={styles.box}><p>SUPPORT US</p></div>
                                 <div className={styles.box2}></div>
@@ -118,11 +119,12 @@ const GetInvolved = () => {
                                     <h3>Way To Support Us<BsArrowUpRight /></h3></a>
                             }
                         </div>
-                        <div className={styles.img_item}>
+                        <div className={`${styles.img_item} ${styles.first_do_it}`}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].support_us_image)} alt='pic' className={styles.selfimg} />
                             <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
                             <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                         </div>
+                        {/* </div> */}
                         {/* Second Part */}
                         <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].become_member_image)} alt='pic' className={styles.selfimg} />
@@ -198,7 +200,7 @@ const GetInvolved = () => {
                                 <h3>Volunteer Form <BsArrowUpRight /></h3></a>
                             }
                         </div>
-                        <div>
+                        <div className={styles.volunteer_right}>
                             <img src={cleanImgUrl(data.get_involved_elements[0].volunteer_image)} alt='pic' className={styles.volunteer_img} />
 
                         </div>

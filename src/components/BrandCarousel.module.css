@@ -1,6 +1,7 @@
 .article_image {
   height: 90px;
-  margin: 30px 40px 20px 40px;
+  margin: 20px 20px 20px 20px;
+  border-radius: 50%;
 }
 
 .product_carousel {
@@ -40,4 +41,10 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
+}
+
+.brand_img_container {
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 15px 0 15px;
 }

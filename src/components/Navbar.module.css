@@ -80,7 +80,10 @@ header {
 .nav_items li.active {
   background-color: #223140;
   border-radius: 5px;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 10px 0px 10px;
+  text-decoration: underline;
+  text-decoration-color: rgb(6, 117, 172);
+  text-underline-offset: 0.2em;
 }
 
 .nav_items li:last-child {

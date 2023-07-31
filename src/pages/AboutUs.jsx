@@ -218,7 +218,11 @@ const AboutUs = () => {
                             <h1>{data.aboutus_elements[0].links_sec_heading}</h1>
                         </div>
                         <div className={styles.item2}>
-                            <img src='' alt='image' />
+                            <img src='' alt='image' className={styles.role_grid_container_img}
+                                onError={(e) => {
+                                    e.target.src = "./md-img1.png";
+                                }}
+                            />
                             <div className={styles.links}>
                                 <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
                                 <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>

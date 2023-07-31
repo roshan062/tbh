@@ -30,8 +30,12 @@ const BrandCarousel = ({ images }) => {
             <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button>
             <div className={styles.product_container} ref={boxx}>
                 {images.map((slideImage, index) => (
-                    <div key={index}>
-                        <img src={cleanImgUrl(slideImage.partner_image)} className={styles.article_image} alt='carousel-img' />
+                    <div key={index} className={styles.brand_img_container}>
+                        <img src={cleanImgUrl(slideImage.partner_image)} className={styles.article_image} alt='carousel-img'
+                            onError={(e) => {
+                                e.target.src = "./md-img1.png";
+                            }}
+                        />
                     </div>
                 ))}
             </div>
