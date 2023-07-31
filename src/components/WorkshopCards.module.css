@@ -11,7 +11,7 @@
 
 .grid_container {
   display: grid;
-  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(3, 350px);
   grid-template-rows: auto;
   gap: 30px;
   margin: 20px auto 60px auto;
@@ -19,13 +19,13 @@
 }
 
 .article_cards {
-  height: 370px;
+  height: 400px;
   background-color: black;
 }
 
 .image_container {
   height: 280px;
-  width: 250px;
+  width: 350px;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 2px;

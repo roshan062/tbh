@@ -42,7 +42,7 @@
   display: inline-block;
   width: 35%;
   font-size: 60px;
-  margin: 0 0 0 350px;
+  margin: 10vh 0 0 350px;
   text-align: center;
 }
 
@@ -53,13 +53,6 @@
   column-gap: 60px;
   font-size: 25px;
 }
-
-/* .down_arrow {
-  height: 40px;
-  width: 40px;
-  margin: 60px auto 0 48%;
-  cursor: pointer;
-} */
 
 .spanText div {
   background-color: rgba(0, 0, 0, 0.3);
@@ -210,10 +203,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   color: white;
-  padding: 0px 0 100px 0;
-}
-
-.partnership_image {
+  padding: 0px 0 0px 0;
 }
 
 .partnership_text {
@@ -306,12 +296,6 @@
     grid-template-rows: auto;
     font-size: 10px;
   }
-
-  /* .down_arrow {
-    height: 20px;
-    width: 20px;
-    margin: 10px auto 0 45%;
-  } */
 
   .spanText div {
     text-align: center;

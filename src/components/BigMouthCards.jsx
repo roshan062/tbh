@@ -38,7 +38,11 @@ const BigMouthCards = () => {
                                 return (
                                     <div key={index} className={styles.article_cards}>
                                         <Link to={ref} className={styles.link}>
-                                            <img src={url} className={styles.image_container} />
+                                            <img src={url} className={styles.image_container}
+                                                onError={(e) => {
+                                                    e.target.src = "./md-img1.png";
+                                                }}
+                                            />
                                         </Link>
 
                                         <Outlet />

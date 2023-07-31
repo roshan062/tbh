@@ -44,7 +44,11 @@ const TheatrePreviousShows = () => {
                                 return (
                                     <div key={index} className={styles.article_cards} data-title={api.head_title}>
                                         <Link to={ref} className={styles.link}>
-                                            <img src={url} className={styles.image_container} />
+                                            <img src={url} className={styles.image_container}
+                                                onError={(e) => {
+                                                    e.target.src = "./md-img1.png";
+                                                }}
+                                            />
                                         </Link>
                                         <Outlet />
                                     </div>

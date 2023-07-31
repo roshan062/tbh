@@ -27,7 +27,7 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(intervalId);
     }, []);
@@ -74,7 +74,11 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>
-                                <img src={cleanImgUrl(image)} alt="carousel-image" />
+                                <img src={cleanImgUrl(image)} alt="carousel-image"
+                                    onError={(e) => {
+                                        e.target.src = "./md-img1.png";
+                                    }}
+                                />
                             </div>
                             <img src="./Carousel Arrow -R.png" alt="right_arrow_img" className={styles.right_arrow}
                                 onClick={() => handleRightClick(index + 1)}

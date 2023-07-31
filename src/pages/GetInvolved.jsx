@@ -105,62 +105,65 @@ const GetInvolved = () => {
                 <section>
                     <div className={styles.do_it}>
                         {/* First Part */}
-                        {/* <div className={styles.first_do_it}> */}
-                        <div className={`${styles.item} ${styles.first_do_it} ${styles.text_design_container}`} id='support'>
-                            <div className={styles.container}>
-                                <div className={styles.box}><p>SUPPORT US</p></div>
-                                <div className={styles.box2}></div>
+                        <div className={styles.first_do_it}>
+                            <div className={`${styles.item} ${styles.text_design_container}`} id='support'>
+                                <div className={styles.container}>
+                                    <div className={styles.box}><p>SUPPORT US</p></div>
+                                    <div className={styles.box2}></div>
+                                </div>
+                                <h2>Static Heading</h2>
+                                <p>{data.get_involved_elements[0].supportus_para1}</p>
+                                <p>{data.get_involved_elements[0].supportus_para2}</p>
+                                {
+                                    (data.get_involved_elements[0].support_us_link) && <a href={data.get_involved_elements[0].support_us_link}>
+                                        <h3>Way To Support Us<BsArrowUpRight /></h3></a>
+                                }
                             </div>
-                            <h2>Static Heading</h2>
-                            <p>{data.get_involved_elements[0].supportus_para1}</p>
-                            <p>{data.get_involved_elements[0].supportus_para2}</p>
-                            {
-                                (data.get_involved_elements[0].support_us_link) && <a href={data.get_involved_elements[0].support_us_link}>
-                                    <h3>Way To Support Us<BsArrowUpRight /></h3></a>
-                            }
+                            <div className={`${styles.img_item} ${styles.first_do_it}`}>
+                                <img src={cleanImgUrl(data.get_involved_elements[0].support_us_image)} alt='pic' className={styles.selfimg} />
+                                <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                                <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
+                            </div>
                         </div>
-                        <div className={`${styles.img_item} ${styles.first_do_it}`}>
-                            <img src={cleanImgUrl(data.get_involved_elements[0].support_us_image)} alt='pic' className={styles.selfimg} />
-                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
-                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
-                        </div>
-                        {/* </div> */}
                         {/* Second Part */}
-                        <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
-                            <img src={cleanImgUrl(data.get_involved_elements[0].become_member_image)} alt='pic' className={styles.selfimg} />
-                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
-                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
-                        </div>
-                        <div className={`${styles.item} ${styles.text_design_container}`} id='member'>
-                            <div className={styles.container}>
-                                <div className={styles.box}><p>BECOME A MEMBER</p></div>
-                                <div className={styles.box2}></div>
+                        <div className={styles.second_do_it}>
+                            <div className={`${styles.img_item} ${styles.do_it_middle_image}`}>
+                                <img src={cleanImgUrl(data.get_involved_elements[0].become_member_image)} alt='pic' className={styles.selfimg} />
+                                <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                                <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
                             </div>
-                            <h2>Static Heading2</h2>
-                            <p>{data.get_involved_elements[0].become_member_content}</p>
-                            {(data.get_involved_elements[0].become_member_link) && <a href={data.get_involved_elements[0].become_member_link}>
-                                <h3> Become A Member<BsArrowUpRight /></h3></a>
-                            }
+                            <div className={`${styles.item} ${styles.text_design_container}`} id='member'>
+                                <div className={styles.container}>
+                                    <div className={styles.box}><p>BECOME A MEMBER</p></div>
+                                    <div className={styles.box2}></div>
+                                </div>
+                                <h2>Static Heading2</h2>
+                                <p>{data.get_involved_elements[0].become_member_content}</p>
+                                {(data.get_involved_elements[0].become_member_link) && <a href={data.get_involved_elements[0].become_member_link}>
+                                    <h3> Become A Member<BsArrowUpRight /></h3></a>
+                                }
+                            </div>
                         </div>
                         {/* Third Part */}
-                        <div className={`${styles.item} ${styles.text_design_container}`} id='work'>
-                            <div className={styles.container}>
-                                <div className={styles.box}><p>WORK WITH US</p></div>
-                                <div className={styles.box2}></div>
+                        <div className={styles.third_do_it}>
+                            <div className={`${styles.item} ${styles.text_design_container}`} id='work'>
+                                <div className={styles.container}>
+                                    <div className={styles.box}><p>WORK WITH US</p></div>
+                                    <div className={styles.box2}></div>
+                                </div>
+                                <h2>Static Heading3</h2>
+                                <p>{data.get_involved_elements[0].work_w_us_para1}</p>
+                                <p>{data.get_involved_elements[0].work_w_us_para2}</p>
+                                {data.get_involved_elements[0].work_w_us_link && <a href={data.get_involved_elements[0].work_w_us_link}>
+                                    <h3>Get In Touch <BsArrowUpRight /></h3></a>
+                                }
                             </div>
-                            <h2>Static Heading3</h2>
-                            <p>{data.get_involved_elements[0].work_w_us_para1}</p>
-                            <p>{data.get_involved_elements[0].work_w_us_para2}</p>
-                            {data.get_involved_elements[0].work_w_us_link && <a href={data.get_involved_elements[0].work_w_us_link}>
-                                <h3>Get In Touch <BsArrowUpRight /></h3></a>
-                            }
+                            <div className={styles.img_item}>
+                                <img src={cleanImgUrl(data.get_involved_elements[0].work_w_us_image)} alt='pic' className={styles.selfimg} />
+                                <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
+                                <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
+                            </div>
                         </div>
-                        <div className={styles.img_item}>
-                            <img src={cleanImgUrl(data.get_involved_elements[0].work_w_us_image)} alt='pic' className={styles.selfimg} />
-                            <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
-                            <img className={styles.rectangle_overlay_image_red} src='./Rectangle 1620.png' alt="Overlay Image 2" />
-                        </div>
-
                     </div>
                 </section>
 
