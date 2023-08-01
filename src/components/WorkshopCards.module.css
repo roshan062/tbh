@@ -43,6 +43,7 @@
 
 .rectangle_overlay_image_blue:hover {
   transform: translateX(10px) translateY(-10px);
+  filter: drop-shadow(16px 16px 20px rgb(190, 39, 158)) invert(25%);
 }
 
 .cards_content {
