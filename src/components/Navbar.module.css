@@ -123,12 +123,11 @@ header {
     top: 5px;
     left: 5px;
     display: inline-block;
-    /* right: 10px; */
   }
 
   .nav_items {
     display: none;
-    margin-left: 35%;
+    margin-left: 30%;
     flex-direction: column;
     margin-top: 20px;
     justify-content: center;

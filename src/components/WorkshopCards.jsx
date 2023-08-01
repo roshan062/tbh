@@ -38,7 +38,6 @@ const WorkshopCards = () => {
                                 return (
                                     <div key={item.id} className={styles.article_cards}>
                                         <img src={url} className={styles.image_container} />
-                                        {/* <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" /> */}
                                         <div className={styles.cards_content}>
                                             <p className={styles.title}>{item.title}</p>
                                             <p className={styles.focus}>{item.workshop_focus}</p>
@@ -46,6 +45,7 @@ const WorkshopCards = () => {
                                                 <BsArrowUpRight className={styles.up_arrow} />
                                             </Link>
                                         </div>
+                                        <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
                                         <Outlet />
                                     </div>
                                 );

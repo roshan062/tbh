@@ -54,7 +54,7 @@
   font-size: 25px;
 }
 
-.spanText div {
+.spanText span {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 20px 30px 20px 30px;
   cursor: pointer;
@@ -290,16 +290,19 @@
   }
 
   .spanText {
-    margin: -10px 30px 0px 30px;
+    margin: 10px 5vw 0px 5vw;
     display: grid;
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     font-size: 10px;
+    column-gap: 30px;
   }
 
-  .spanText div {
-    text-align: center;
+  .spanText span {
     background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    margin: 20px 0px 0 0px;
   }
 
   .workshops {
@@ -353,6 +356,6 @@
 
   .partnership_text .content {
     padding: 80px 0 30px 0;
-    transform: translateY(-50px);
+    transform: translateY(-30px);
   }
 }

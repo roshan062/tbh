@@ -27,7 +27,7 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 10000);
+        }, 15000);
 
         return () => clearInterval(intervalId);
     }, []);

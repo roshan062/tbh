@@ -96,6 +96,19 @@ const Business = () => {
         }
     };
 
+    const styleLastWord = (text) => {
+        const lastSpaceIndex = text.lastIndexOf('brochure');
+        const restOfText = text.slice(0, lastSpaceIndex);
+        const lastWord = text.slice(lastSpaceIndex);
+        // console.log(lastWord)
+        return (
+            <>
+                {restOfText}{' '}
+                <a href='www.example.com' style={{ color: '#00E6D4', fontWeight: 'bold', textDecoration: 'none' }}>{lastWord}</a>
+            </>
+        );
+    };
+
     return (
         <main>
             {data ? (<>
@@ -107,9 +120,9 @@ const Business = () => {
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
-                            <div onClick={() => scrollToSection("workshops")}>WORKSHOPS</div>
-                            <div onClick={() => scrollToSection("venuehire")}>VENUE HIRE</div>
-                            <div onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</div>
+                            <span onClick={() => scrollToSection("workshops")}>WORKSHOPS</span>
+                            <span onClick={() => scrollToSection("venuehire")}>VENUE HIRE</span>
+                            <span onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</span>
                         </div>
                         {/* <img onClick={() => scrollToSection("workshops")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
@@ -174,7 +187,7 @@ const Business = () => {
                                 <div className={styles.box2}></div>
                             </div>
                             <p className={styles.content}>
-                                {data.get_involved_elements[0].partnership_content}
+                                {styleLastWord(data.get_involved_elements[0].partnership_content)}
                             </p>
                             <h2>Get Involved <BsArrowUpRight className={styless.icon_color} /></h2>
                         </div>
