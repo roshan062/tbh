@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import menuImage from '/menu.png';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,16 @@ const Navbar = () => {
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
+        // localStorage.setItem('activeMenu', menu);
     };
+
+    // useEffect(() => {
+    //     const storedActiveMenu = localStorage.getItem('activeMenu');
+    //     if (storedActiveMenu) {
+    //         setActiveMenu(storedActiveMenu);
+    //     }
+    // }, []);
+
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };

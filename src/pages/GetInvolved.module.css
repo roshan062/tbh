@@ -27,7 +27,8 @@
 .image_text_container {
   position: absolute;
   top: 150px;
-  left: 4vw;
+  left: 50%;
+  transform: translate(-50%, 0%);
   z-index: 1;
   text-transform: uppercase;
   color: white;
@@ -53,8 +54,6 @@
 
 .spanText span {
   background-color: rgba(0, 0, 0, 0.3);
-  /* backdrop-filter: blur(10px); */
-  /* backdrop-filter: invert(20%); */
   padding: 20px 30px 20px 30px;
   cursor: pointer;
 }
@@ -237,7 +236,7 @@
 
 .partnership {
   min-height: 100vh;
-  background-color: rgb(253, 244, 244);
+  background-color: #faf9f6;
 }
 
 .partnership .container {
@@ -305,8 +304,9 @@
 
   .image_text_container {
     position: absolute;
-    top: 50px;
-    left: 0%;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
     width: 100vw;
     z-index: 1;
     text-transform: uppercase;
