@@ -45,7 +45,7 @@ const Navbar = () => {
                     <Link to='/' onClick={() => handleMenuClick('home')}>HOME</Link>
                 </li>
                 <li className={`${activeMenu === 'about' ? styles.active : ''}`}>
-                    <Link to='/about' onClick={() => handleMenuClick('about')}>ABOUT</Link>
+                    <Link to='/about' onClick={() => handleMenuClick('about')}>ABOUT US</Link>
                 </li>
                 <li className={`${activeMenu === 'theatre' ? styles.active : ''}`}>
                     <Link to='/theatre' onClick={() => handleMenuClick('theatre')}>THEATRE</Link>
