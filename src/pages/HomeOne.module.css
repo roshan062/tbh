@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@font-face {
+  font-family: "uni-sans-heavy";
+  src: url("./fonts/Uni Sans Heavy.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "uni-sans-thin";
+  src: url("./fonts/Uni Sans Thin.otf") format("opentype"); /* OTF */
+}
+@font-face {
+  font-family: "core-sansd77";
+  src: url("./fonts/CoreSansD77CnBlack.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+
 .article_image {
   width: 100%;
   height: 590px;
@@ -35,7 +51,7 @@
   text-transform: uppercase;
   color: white;
   font-size: 4.375em;
-  font-weight: 800;
+  font-family: "uni-sans-heavy", sans-serif;
 }
 
 .image_text_container::before {
@@ -125,6 +141,9 @@
   text-align: left;
   font-size: 35px;
   text-transform: uppercase;
+  font-family: "core-sansd77";
+  /* font-family: "Roboto"; */
+  font-weight: 100;
 }
 .mission .missiontext_container .right {
   grid-column: 2/3;
@@ -136,6 +155,7 @@
   text-align: left;
   font-size: 14px;
   list-style-type: square;
+  font-family: "Roboto", sans-serif;
 }
 .mission .missiontext_container .right ::marker {
   color: rgb(237, 17, 171);
@@ -151,7 +171,7 @@
   position: relative;
   top: 50px;
   left: -200px;
-  width: 100%;
+  width: 105%;
   height: 80px;
   background-color: transparent;
   border: 1.5px solid #e4e1e1;
@@ -159,9 +179,10 @@
 }
 
 .mission .container .box p {
-  margin: 32px 0 0 22px;
+  margin: 32px 0 0 20px;
   font-size: x-large;
   color: rgb(244, 237, 237);
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
 
@@ -169,7 +190,7 @@
   position: relative;
   top: -15px;
   left: -190px;
-  width: 100%;
+  width: 105%;
   height: 80px;
   background-color: transparent;
   border: 1.5px solid #11ebeb;
@@ -209,10 +230,18 @@
 
 .do_it .item h2 {
   font-size: 30px;
+  font-family: "Roboto", sans-serif;
 }
 
 .do_it .item p {
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.do_it .item h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 .do_it .item a {

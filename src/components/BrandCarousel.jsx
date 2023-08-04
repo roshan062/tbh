@@ -33,7 +33,7 @@ const BrandCarousel = ({ images }) => {
                     <div key={index} className={styles.brand_img_container}>
                         <img src={cleanImgUrl(slideImage.partner_image)} className={styles.article_image} alt='carousel-img'
                             onError={(e) => {
-                                e.target.src = "./md-img1.png";
+                                e.target.src = "./wolkwagen.png";
                             }}
                         />
                     </div>

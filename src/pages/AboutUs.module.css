@@ -62,11 +62,27 @@
   min-height: 50vh;
   background-color: black;
   text-align: center;
+  position: relative;
 }
 
-.video_image_container iframe {
+.self_video {
+  height: 90vh;
   width: 98vw;
-  min-height: 90vh;
+  object-fit: cover;
+}
+
+.content_video_play_button img {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 47%;
+  left: 53%;
+  transform: translate(-150%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  font-size: x-large;
+  cursor: pointer;
 }
 
 .video_image_desc {
@@ -156,7 +172,12 @@
 }
 
 .item3 {
-  padding-left: 200px;
+  padding-left: 100px;
+}
+
+.impact_selfimg {
+  height: 260px;
+  width: 100%;
 }
 
 .item4 {
@@ -399,9 +420,9 @@
     padding: 10px 0px 10px 0px;
   }
 
-  .video_image_container iframe {
-    max-width: 100vw;
-    min-height: 50vh;
+  .self_video {
+    height: 120%;
+    width: 100%;
   }
 
   .video_image_desc {
@@ -411,6 +432,20 @@
     width: 80%;
     margin: 0 auto 0px auto;
     text-align: center;
+  }
+
+  .content_video_play_button img {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 35%;
+    left: 58%;
+    transform: translate(-150%, -50%);
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    font-size: x-large;
+    cursor: pointer;
   }
 
   .work {
@@ -487,6 +522,11 @@
   .item3 {
     padding-left: 0px;
     text-align: center;
+  }
+
+  .impact_selfimg {
+    height: 260px;
+    max-width: 400px;
   }
 
   .item4 {

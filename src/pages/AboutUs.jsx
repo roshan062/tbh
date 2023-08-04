@@ -45,8 +45,8 @@ const AboutUs = () => {
 
     const videoref = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
     function togglePlay() {
+        const status = videoref.current;
         if (isPlaying) {
             status.pause();
             setIsPlaying(false);
@@ -55,6 +55,12 @@ const AboutUs = () => {
             status.play();
             setIsPlaying(true);
         }
+    }
+
+
+    let Vsource;
+    if (data) {
+        Vsource = data.aboutus_elements[0].video_link_embed
     }
 
 
@@ -111,7 +117,6 @@ const AboutUs = () => {
                 <section>
                     {imageUrl(data['aboutus_elements'][0]['image'])}
                 </section>
-
                 <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
@@ -130,10 +135,23 @@ const AboutUs = () => {
 
 
                 <section className={styles.video_image_container}>
-                    <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} />
+                    {/* <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} /> */}
                     {/* <div>
                         {imageUrl(data.aboutus_elements[0].video_link_embed)}
                     </div> */}
+                    <video ref={videoref} onClick={togglePlay} height='' width=''
+                        poster='./about-video-thumbnail.jpg'
+                        className={styles.self_video}>
+                        <source
+                            src={Vsource}
+                            type="video/mp4"
+                        />
+                    </video>
+                    {!isPlaying && (
+                        <button className={styles.content_video_play_button} >
+                            <img src='play-btn.png' onClick={togglePlay} />
+                        </button>
+                    )}
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
                 </section>
 
@@ -149,9 +167,9 @@ const AboutUs = () => {
                         <div className={`${styles.item} ${styles.item2}`}><p>{data.aboutus_elements[0].mission_description}</p>
                         </div>
                         <div className={`${styles.item} ${styles.item3}`}>
-                            <img src="https://example.com/image.jpg" alt='image' height='300px' width='300px'
+                            <img src="https://example.com/image.jpg" alt='image' className={styles.impact_selfimg}
                                 onError={(e) => {
-                                    e.target.src = "./md-img1.png";
+                                    e.target.src = "./about-mission-working.jpg";
                                 }}
                             />
                         </div>
@@ -220,7 +238,7 @@ const AboutUs = () => {
                         <div className={styles.item2}>
                             <img src='' alt='image' className={styles.role_grid_container_img}
                                 onError={(e) => {
-                                    e.target.src = "./md-img1.png";
+                                    e.target.src = "./about-need.jpg";
                                 }}
                             />
                             <div className={styles.links}>

@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
 .footer {
   background-color: black;
   color: white;
   height: auto;
   padding: 50px 50px 20px 100px;
   border-top: 1px solid #00e6d4;
+  font-family: "Roboto";
 }
 
 .footer_logo {
