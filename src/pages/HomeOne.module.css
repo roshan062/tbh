@@ -52,6 +52,7 @@
   color: white;
   font-size: 4.375em;
   font-family: "uni-sans-heavy", sans-serif;
+  font-weight: 100;
 }
 
 .image_text_container::before {
