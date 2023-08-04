@@ -65,7 +65,7 @@
 }
 
 .image_text {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(12, 12, 12, 0.502);
   color: #ffffff;
   margin: 0 auto 0 auto;
   display: inline-block;
@@ -138,8 +138,9 @@
   grid-column: 1/2;
   justify-content: left;
   margin: 10px 50px 0 100px;
+  padding: 0 50px 0 0;
   text-align: left;
-  font-size: 35px;
+  font-size: 40px;
   text-transform: uppercase;
   /* font-family: "core-sansd77"; */
   font-family: "Roboto";

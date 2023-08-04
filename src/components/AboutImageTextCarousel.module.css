@@ -111,8 +111,8 @@
 }
 
 .carousel_img img {
-  height: 270px;
-  width: auto;
+  height: 300px;
+  width: 400px;
 }
 
 .carousel__indicator {
@@ -309,5 +309,10 @@
 
   .carousel_img {
     margin: 30px auto 10px auto;
+  }
+
+  .carousel_img img {
+    height: 50%;
+    max-width: 400px;
   }
 }
