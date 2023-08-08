@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styles from './BigMouthCards.module.css'
+import styless from '../App.module.css'
 import { Link, Outlet } from 'react-router-dom'
-
+import { ColorRing } from 'react-loader-spinner'
 
 const BigMouthCards = () => {
     const [data, setData] = useState('');
@@ -52,7 +53,18 @@ const BigMouthCards = () => {
                             }
                         </>
                     ) : (
-                        <p>Api's data not fetched</p>
+                        <div className={styless.spinner}>
+                            <ColorRing
+                                className={styless.spinner}
+                                visible={true}
+                                height="80"
+                                width="80"
+                                ariaLabel="blocks-loading"
+                                wrapperStyle={{}}
+                                wrapperClass="blocks-wrapper"
+                                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                            />
+                        </div>
                     )
                 }
             </div>

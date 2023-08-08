@@ -27,9 +27,9 @@
 .image_textt {
   position: absolute;
   height: auto;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%, -50%);
+  top: 0%;
+  left: 1%;
+  transform: translate(0%, 22%);
   z-index: 1;
   text-align: center;
 }
@@ -39,14 +39,6 @@
   width: 300px;
   left: -270px;
 }
-
-/* .down_arrow {
-  height: 40px;
-  width: 40px;
-  margin: 60px auto 0 50%;
-  transform: translateY(-140px);
-  cursor: pointer;
-} */
 
 .boxx {
   position: relative;
@@ -63,6 +55,8 @@
   margin: 12px 0 0 -30px;
   font-size: x-large;
   color: white;
+  font-family: "system-ui";
+  font-weight: 500;
 }
 
 .boxx2 {
@@ -107,11 +101,14 @@
   width: 50%;
   text-align: left;
   padding: 35px 0 0 0;
+  font-family: "Roboto";
 }
 
 .more_info {
   color: white;
-  padding: 20px 710px 0 0;
+  padding: 10px 0px 0 0px;
+  text-align: left;
+  font-family: "Roboto";
 }
 
 @media (max-width: 767px) {
@@ -124,8 +121,11 @@
   .image_textt {
     position: absolute;
     width: 90vw;
-    top: 30%;
-    left: 48%;
+    /* top: 30%;
+    left: 48%; */
+    top: 0%;
+    left: 1%;
+    transform: translate(0%, 20%);
     z-index: 1;
   }
 
@@ -140,13 +140,6 @@
     width: 300px;
     left: -320px;
   }
-
-  /* .down_arrow {
-    height: 20px;
-    width: 20px;
-    margin: 30px auto 0 45%;
-    transform: translateY(-60px);
-  } */
 
   .boxx {
     position: relative;
@@ -215,18 +208,21 @@
 @media only screen and (max-width: 550px) and (min-width: 430px) {
   .image_textt {
     position: absolute;
-    width: 70vw;
-    top: 20%;
-    left: 65%;
+    width: 150vw;
+    /* top: 20%;
+    left: 65%; */
+    top: 0%;
+    left: 1%;
+    transform: translate(0%, 20%);
     z-index: 1;
   }
 }
 @media (max-width: 430px) {
   .image_textt {
     position: absolute;
-    width: 80vw;
-    top: 25%;
-    left: 44%;
+    top: 0%;
+    left: 1%;
+    transform: translate(0%, 20%);
     z-index: 1;
   }
 
@@ -244,34 +240,6 @@
     font-weight: 300;
     font-size: 12px;
     width: 60%;
-    text-align: left;
-    padding: 35px 0 0 0;
-  }
-}
-@media (max-width: 380px) {
-  .image_textt {
-    position: absolute;
-    width: 90vw;
-    top: 30%;
-    left: 45%;
-    z-index: 1;
-    padding-left: 15%;
-  }
-
-  .heading_text {
-    font-size: 1.2rem;
-    line-height: 0.8;
-    color: white;
-    text-align: left;
-    margin: 0 0 0 0px;
-    width: 70%;
-  }
-
-  .description {
-    color: white;
-    font-weight: 300;
-    font-size: 12px;
-    width: 70%;
     text-align: left;
     padding: 35px 0 0 0;
   }

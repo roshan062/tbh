@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@font-face {
+  font-family: "uni-sans-heavy";
+  src: url("./fonts/Uni Sans Heavy.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "uni-sans-thin";
+  src: url("./fonts/Uni Sans Thin.otf") format("opentype"); /* OTF */
+}
+@font-face {
+  font-family: "core-sansd77";
+  src: url("./fonts/CoreSansD77CnBlack.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+
 .article_image {
   width: 100%;
   height: 590px;
@@ -33,6 +49,7 @@
   z-index: 1;
   text-transform: uppercase;
   color: white;
+  font-family: "uni-sans-heavy", sans-serif;
   font-weight: 800;
   text-align: center;
 }
@@ -66,6 +83,7 @@
   gap: 10px;
   background-color: black;
   color: white;
+  font-family: "system-ui";
 }
 
 .first_do_it {
@@ -150,7 +168,8 @@
   margin: 22px 0 0 22px;
   font-size: 18px;
   color: rgb(244, 237, 237);
-  font-weight: 900;
+  font-family: "system-ui";
+  font-weight: 700;
 }
 
 .text_design_container .container .box2 {
@@ -183,6 +202,7 @@
   grid-template-rows: auto;
   color: white;
   padding: 100px 50px 50px 50px;
+  font-family: "system-ui";
 }
 
 .oppurtunities a {
@@ -204,6 +224,10 @@
   padding-left: 150px;
 }
 
+.oppurtunities_right .date {
+  font-style: italic;
+}
+
 .oppurtunities_right .title {
   color: #11ebeb;
 }
@@ -218,6 +242,7 @@
   padding: 10px 50px 50px 50px;
   justify-content: center;
   align-items: center;
+  font-family: "system-ui";
 }
 
 .volunteer_left {
@@ -238,6 +263,7 @@
 .partnership {
   min-height: 100vh;
   background-color: #faf9f6;
+  font-family: "system-ui";
 }
 
 .partnership .container {
@@ -256,10 +282,10 @@
 }
 
 .partnership .container .box p {
-  margin: 22px 0 0 22px;
+  margin: 22px 0 0 42px;
   font-size: x-large;
   color: rgb(14, 0, 0);
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .partnership .container .box2 {
@@ -293,6 +319,7 @@
 .partner_content {
   margin: 20px auto 20px auto;
   width: 50%;
+  text-align: center;
 }
 
 @media (max-width: 900px) {

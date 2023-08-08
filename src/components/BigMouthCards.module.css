@@ -89,5 +89,6 @@
     margin-left: 30%;
     cursor: pointer;
     padding-left: 0;
+    font-family: "system-ui";
   }
 }

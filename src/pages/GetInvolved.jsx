@@ -98,7 +98,6 @@ const GetInvolved = () => {
                             <span onClick={() => scrollToSection("member")}>BECOME A MEMBER</span>
                             <span onClick={() => scrollToSection("work")}>WORK WITH US</span>
                         </div>
-                        {/* <img onClick={() => scrollToSection("support")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
                 </section>
 
@@ -111,8 +110,7 @@ const GetInvolved = () => {
                                     <div className={styles.box}><p>SUPPORT US</p></div>
                                     <div className={styles.box2}></div>
                                 </div>
-                                <h2>Static Heading</h2>
-                                <p>{data.get_involved_elements[0].supportus_para1}</p>
+                                <h2>{data.get_involved_elements[0].supportus_para1}</h2>
                                 <p>{data.get_involved_elements[0].supportus_para2}</p>
                                 {
                                     (data.get_involved_elements[0].support_us_link) && <a href={data.get_involved_elements[0].support_us_link}>
@@ -137,7 +135,7 @@ const GetInvolved = () => {
                                     <div className={styles.box}><p>BECOME A MEMBER</p></div>
                                     <div className={styles.box2}></div>
                                 </div>
-                                <h2>Static Heading2</h2>
+                                <h2>{data.get_involved_elements[0].become_member_heading}</h2>
                                 <p>{data.get_involved_elements[0].become_member_content}</p>
                                 {(data.get_involved_elements[0].become_member_link) && <a href={data.get_involved_elements[0].become_member_link}>
                                     <h3> Become A Member<BsArrowUpRight /></h3></a>
@@ -151,8 +149,7 @@ const GetInvolved = () => {
                                     <div className={styles.box}><p>WORK WITH US</p></div>
                                     <div className={styles.box2}></div>
                                 </div>
-                                <h2>Static Heading3</h2>
-                                <p>{data.get_involved_elements[0].work_w_us_para1}</p>
+                                <h2>{data.get_involved_elements[0].work_w_us_para1}</h2>
                                 <p>{data.get_involved_elements[0].work_w_us_para2}</p>
                                 {data.get_involved_elements[0].work_w_us_link && <a href={data.get_involved_elements[0].work_w_us_link}>
                                     <h3>Get In Touch <BsArrowUpRight /></h3></a>
@@ -173,7 +170,7 @@ const GetInvolved = () => {
                             <h1>Current Oppurtunities</h1>
                             <p>{data.get_involved_elements[0].co_para}</p>
                             {data.get_involved_elements[0].co_app_form_link && <a href={data.get_involved_elements[0].co_app_form_link}>
-                                <h3>Download Application Form <BsArrowUpRight /></h3></a>
+                                <h3>Download application form <BsArrowUpRight /></h3></a>
                             }
                         </div>
                         <div className={styles.oppurtunities_right}>
@@ -181,7 +178,7 @@ const GetInvolved = () => {
                                 let { job_title: title, job_desc: desc, closing_date: date } = items;
                                 return <div key={index}>
                                     <br />   <h2 className={styles.title}>{title}</h2>
-                                    <p>{date}</p><br />
+                                    <p className={styles.date}>Closing date: {date}</p><br />
                                     <p>{desc}</p><br />
                                 </div>
                             })}

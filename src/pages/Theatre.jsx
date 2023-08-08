@@ -101,7 +101,6 @@ const Theatre = () => {
                         <div className={styles.description} dangerouslySetInnerHTML={{ __html: data.description }} />
                         <p className={styles.more_info}>More Info <BsArrowUpRight className={styless.icon_color} /></p>
                     </div>
-                    {/* <img onClick={() => scrollToSection("shows")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                 </section>
 
                 <section id='shows'>

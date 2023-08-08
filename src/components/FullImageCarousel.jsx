@@ -15,7 +15,7 @@ const FullImageCarousel = ({ slides }) => {
             {slides.map((item) => {
                 return (
                     <div key={item.id}>
-                        <img src={cleanImgUrl(item.image)} alt="Image 2" style={{ height: "90vh" }} />
+                        <img src={cleanImgUrl(item.image)} alt="Image 2" style={{ maxHeight: "90vh" }} />
                     </div>
                 )
             })}
