@@ -95,7 +95,7 @@ const BigMouth = () => {
 
             <section>
                 {/* {imageUrl(data[''][0][''])} */}
-                <img src='./blank.jpeg' className={styles.article_image} />
+                <img src='./images/bigmouth/header.png' className={styles.article_image} />
             </section>
 
             <section>
@@ -109,7 +109,7 @@ const BigMouth = () => {
                     <h1>THE HOME OF OUR <span>NEWS HIT</span> CONTENT</h1>
                 </div>
                 <div className={styles.home_news_element}>
-                    <img src='https://mannyadmin.bechocar.com/uploads/people_image.jpg' alt='img' className={styles.selfimg} />
+                    <img src='./blank.jpeg' alt='img' className={styles.selfimg} />
                     <img className={styles.red_square} src='./Rectangle 1620.png' alt='square_element' />
                 </div>
             </section>
@@ -119,7 +119,8 @@ const BigMouth = () => {
                 {/* <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} /> */}
                 {/* {imageUrl('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')} */}
                 <video ref={videoref} onClick={togglePlay} height='' width=''
-                    poster='https://mannyadmin.bechocar.com/uploads/people_image.jpg'
+                    // poster='https://mannyadmin.bechocar.com/uploads/people_image.jpg'
+                    poster='./images/bigmouth/video-banner.png'
                     className={styles.self_video}>
                     <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
                         type="video/mp4"
