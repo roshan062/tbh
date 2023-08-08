@@ -276,14 +276,14 @@
     grid-template-columns: repeat(3, 1fr);
     justify-self: center;
     align-items: start;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+    margin-top: 0.1rem;
+    margin-bottom: 5em;
   }
 
   .carousel__dot {
-    background-color: white;
-    border-radius: 50%;
-    border: 0.0625rem solid #696a6b;
+    background-color: #01070d;
+    border-radius: 0%;
+    border: 0.0625rem solid #f5f9fd;
     display: block;
     height: 0.5rem;
     width: 0.5rem;
@@ -291,7 +291,7 @@
   }
 
   .carousel__dot.active {
-    background-color: #696a6b;
+    background-color: #00e4d6;
   }
 
   .carousel__quote {
