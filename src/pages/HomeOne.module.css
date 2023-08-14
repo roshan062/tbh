@@ -336,7 +336,7 @@
   }
 
   .mission {
-    max-height: 90vh;
+    max-height: 80vh;
     width: 100%;
     color: white;
     display: grid;
@@ -358,7 +358,7 @@
     grid-row: 1/2;
     justify-content: left;
     width: 90vw;
-    padding-top: 150px;
+    padding-top: 0px;
     font-size: 22px;
     margin-left: 20px;
   }
@@ -500,14 +500,14 @@
     text-align: left;
     font-size: medium;
     display: grid;
-    grid-template-rows: 200px 300px;
+    grid-template-rows: 200px 200px;
   }
 
   .mission .missiontext_container .left {
     grid-row: 1/2;
     justify-content: left;
     width: 160%;
-    padding-top: 150px;
+    padding-top: 50px;
     margin-left: 18px;
     margin-right: 20px;
     font-size: 20px;
@@ -518,7 +518,7 @@
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin: 50px 50px 100px 50px;
+    margin: 0px 50px 100px 50px;
     margin-left: -190px;
   }
 
@@ -555,7 +555,7 @@
     width: 100%;
     color: white;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1fr 10fr;
     grid-template-columns: 1fr auto;
     background-color: black;
     position: relative;
@@ -566,8 +566,8 @@
     text-align: left;
     font-size: medium;
     display: grid;
-    /* grid-template-rows: 200px 300px; */
-    grid-template-rows: auto auto;
+    grid-template-rows: 150px 250px;
+    /* grid-template-rows: auto auto; */
   }
 
   .mission .missiontext_container .left {
@@ -585,8 +585,7 @@
     text-align: left;
     font-size: clamp(12px, 4vw, 24px);
     list-style-type: square;
-    margin: 50px 80px 100px 50px;
-    /* margin-left: -120px; */
+    margin: 0px 80px 50px 50px;
     margin-left: -40%;
   }
 
@@ -609,5 +608,26 @@
     left: 10px;
     height: 75vw;
     width: 65vw;
+  }
+}
+
+@media (max-width: 250px) {
+  .mission .missiontext_container .left {
+    grid-row: 1/2;
+    justify-content: left;
+    width: 90vw;
+    padding-top: 50px;
+    margin-left: 10px;
+    font-size: clamp(8px, 4vw, 24px);
+  }
+
+  .mission .missiontext_container .right {
+    grid-row: 2/3;
+    width: 80vw;
+    text-align: left;
+    font-size: clamp(12px, 4vw, 24px);
+    list-style-type: square;
+    margin: 0px 80px 100px 50px;
+    margin-left: -100%;
   }
 }

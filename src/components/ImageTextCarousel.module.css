@@ -163,13 +163,17 @@
   .container {
     align-items: center;
     display: grid;
-    height: 120vh;
+    max-height: 100vh;
     font-family: system-ui;
     justify-content: center;
     background-color: rgb(14, 14, 1);
     color: white;
     position: relative;
     padding-bottom: 50px;
+  }
+
+  .carousel__list {
+    padding: 1rem 0 0 0rem;
   }
 
   .hanging_container {
