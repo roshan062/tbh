@@ -357,7 +357,7 @@
     z-index: 11;
     position: absolute;
     top: 0;
-    max-width: 300px;
+    max-width: 120vw;
   }
 
   .box {
