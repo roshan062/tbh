@@ -184,6 +184,19 @@
 }
 
 @media (max-width: 450px) {
+  .footer_area {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-row-gap: 50px;
+    padding: 50px 0 50px 0;
+  }
+
+  .quick_links {
+    text-align: left;
+    padding-left: 0px;
+  }
+
   .subscribe {
     grid-column: 1/3;
     grid-row: 3/4;
@@ -194,6 +207,14 @@
   .subscribe {
     grid-column: 1/3;
     grid-row: 3/4;
-    width: 45%;
+    width: 40%;
+  }
+
+  .subscribe input::placeholder {
+    color: transparent;
+  }
+
+  .subscribe button {
+    width: 110%;
   }
 }
