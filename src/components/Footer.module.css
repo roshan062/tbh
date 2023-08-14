@@ -190,3 +190,10 @@
     width: 65%;
   }
 }
+@media (max-width: 290px) {
+  .subscribe {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    width: 45%;
+  }
+}

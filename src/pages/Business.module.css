@@ -181,7 +181,8 @@
   margin: 22px 0 0 30px;
   font-size: 20px;
   color: rgb(242, 241, 241);
-  font-weight: 900;
+  font-family: "system-ui";
+  font-weight: 600;
 }
 
 .venuehire .box2 {
@@ -210,10 +211,14 @@
   margin: 100px 0 20px 0;
   color: white;
   width: 70%;
+  font-family: "system-ui";
+  font-weight: 500;
 }
 
 .venue_hire_content {
   color: white;
+  font-family: "system-ui";
+  font-weight: 500;
 }
 
 .partnership_container {
@@ -260,7 +265,8 @@
   margin: 22px 0 0 30px;
   font-size: 20px;
   color: rgb(242, 241, 241);
-  font-weight: 900;
+  font-family: "system-ui";
+  font-weight: 500;
 }
 
 .partnership_container .box2 {

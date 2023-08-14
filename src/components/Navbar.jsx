@@ -9,15 +9,15 @@ const Navbar = () => {
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
-        // localStorage.setItem('activeMenu', menu);
+        localStorage.setItem('activeMenu', menu);
     };
 
-    // useEffect(() => {
-    //     const storedActiveMenu = localStorage.getItem('activeMenu');
-    //     if (storedActiveMenu) {
-    //         setActiveMenu(storedActiveMenu);
-    //     }
-    // }, []);
+    useEffect(() => {
+        const storedActiveMenu = localStorage.getItem('activeMenu');
+        if (storedActiveMenu) {
+            setActiveMenu(storedActiveMenu);
+        }
+    }, []);
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);

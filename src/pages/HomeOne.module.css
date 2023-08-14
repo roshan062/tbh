@@ -133,6 +133,7 @@
   font-size: medium;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 100px;
 }
 
 .mission .missiontext_container .left {
@@ -143,7 +144,6 @@
   text-align: left;
   font-size: 40px;
   text-transform: uppercase;
-  /* font-family: "core-sansd77"; */
   font-family: "Roboto";
   font-weight: 100;
 }
@@ -155,7 +155,7 @@
   align-self: flex-end;
   margin: 50px 50px 100px 100px;
   text-align: left;
-  font-size: 14px;
+  font-size: 19px;
   list-style-type: square;
   font-family: "Roboto", sans-serif;
 }
@@ -264,23 +264,23 @@
 
 .do_it .img_item .selfimg {
   height: 450px;
-  width: 450px;
+  width: 35vw;
 }
 
 .img_item .rectangle_overlay_image_red {
   position: absolute;
   top: -15px;
-  left: -20px;
-  height: 130%;
-  width: 130%;
+  left: -15px;
+  height: 132%;
+  width: 125%;
 }
 
 .img_item .rectangle_overlay_image_blue {
   position: absolute;
-  top: 10px;
-  left: 20px;
+  top: 6px;
+  left: 0px;
   height: 130%;
-  width: 130%;
+  width: 125%;
 }
 
 .both_carousel_container {
@@ -291,13 +291,13 @@
 @media (max-width: 900px) {
   .article_image {
     width: 100%;
-    height: 300px;
+    height: auto;
     display: block;
   }
 
   .image_text_container {
     position: absolute;
-    top: 12%;
+    top: 20vw;
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
@@ -305,7 +305,7 @@
     max-width: 300px;
     text-transform: uppercase;
     color: white;
-    font-size: 30px;
+    font-size: 5vw;
     font-weight: 800;
   }
 
@@ -324,10 +324,19 @@
     color: #ffffff;
     padding: 30px;
     display: inline-block;
+    text-align: center;
+  }
+
+  .mission .container .box p {
+    margin: 22px 0 0 20px;
+    font-size: x-large;
+    color: rgb(244, 237, 237);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
   }
 
   .mission {
-    height: 130vh;
+    max-height: 90vh;
     width: 100%;
     color: white;
     display: grid;
@@ -349,7 +358,7 @@
     grid-row: 1/2;
     justify-content: left;
     width: 90vw;
-    padding-top: 50px;
+    padding-top: 150px;
     font-size: 22px;
     margin-left: 20px;
   }
@@ -385,7 +394,7 @@
 
   .mission .container .box p {
     padding: 0px 20px 5px 10px;
-    font-size: 15px;
+    font-size: clamp(10px, 4vw, 24px);
     color: rgb(244, 237, 237);
     font-weight: 900;
   }
@@ -424,7 +433,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 50px 0 10px;
+    margin: 0 10px 0 10px;
     text-align: left;
   }
 
@@ -437,8 +446,9 @@
   }
 
   .do_it .img_item {
-    margin: 0px 0 10px 16%;
-    width: 250px;
+    /* margin: 0px 0 10px 16%; */
+    margin: 0px auto 10px auto;
+    max-width: 250px;
     height: 250px;
   }
 
@@ -473,10 +483,10 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 500px) {
   .mission {
-    height: 100vh;
-    width: 100%;
+    height: auto;
+    width: auto;
     color: white;
     display: grid;
     grid-template-rows: 1fr 6fr;
@@ -497,7 +507,7 @@
     grid-row: 1/2;
     justify-content: left;
     width: 160%;
-    padding-top: 50px;
+    padding-top: 150px;
     margin-left: 18px;
     margin-right: 20px;
     font-size: 20px;
@@ -529,48 +539,75 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    height: 110%;
-    width: 110%;
+    height: 106%;
+    width: 106%;
   }
 }
 
 @media (max-width: 385px) {
+  .image_text_container {
+    text-align: center;
+    font-size: clamp(16px, 4vw, 24px);
+  }
+
+  .mission {
+    height: 100vh;
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr auto;
+    background-color: black;
+    position: relative;
+  }
+
+  .mission .missiontext_container {
+    grid-row: 2/3;
+    text-align: left;
+    font-size: medium;
+    display: grid;
+    /* grid-template-rows: 200px 300px; */
+    grid-template-rows: auto auto;
+  }
+
   .mission .missiontext_container .left {
     grid-row: 1/2;
     justify-content: left;
     width: 150%;
     padding-top: 50px;
-    margin-left: 20px;
+    margin-left: 10px;
+    font-size: clamp(8px, 4vw, 24px);
   }
 
   .mission .missiontext_container .right {
     grid-row: 2/3;
     width: 90vw;
     text-align: left;
-    font-size: 14px;
+    font-size: clamp(12px, 4vw, 24px);
     list-style-type: square;
     margin: 50px 80px 100px 50px;
-    margin-left: -190px;
+    /* margin-left: -120px; */
+    margin-left: -40%;
   }
 
   .do_it .img_item .selfimg {
-    height: 80%;
-    width: 80%;
+    height: 70vw;
+    width: 60vw;
   }
 
   .img_item .rectangle_overlay_image_red {
     position: absolute;
     top: -12px;
     left: -16px;
-    height: 90%;
-    width: 90%;
+    height: 80vw;
+    width: 70vw;
   }
 
   .img_item .rectangle_overlay_image_blue {
     position: absolute;
     top: 10px;
     left: 10px;
-    height: 90%;
-    width: 90%;
+    height: 75vw;
+    width: 65vw;
   }
 }
