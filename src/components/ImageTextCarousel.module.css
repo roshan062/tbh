@@ -184,12 +184,6 @@
     width: 300px;
   }
 
-  /* @media (max-height: 680px) {
-    .container {
-      min-height: 800px;
-    }
-  } */
-
   .box {
     position: relative;
     top: 45px;
@@ -295,13 +289,6 @@
     width: 350px;
     transform: translateY(-120px);
     margin: 0 auto 0 auto;
-  }
-
-  @media (max-height: 550px) {
-    .selfimg {
-      height: 50%;
-      width: 60vh;
-    }
   }
 
   .carousel__indicator {
