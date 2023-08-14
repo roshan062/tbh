@@ -229,7 +229,7 @@
     margin: 6px 0 0 20px;
     font-size: 20px;
     color: rgb(242, 241, 241);
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .box2 {
@@ -305,7 +305,7 @@
 
 @media (max-width: 220px) {
   .grid_container {
-    margin: 20px auto 60px auto;
+    margin: 110px auto 60px auto;
   }
 
   .hanging_container {
@@ -324,10 +324,10 @@
   }
 
   .box p {
-    margin: 12px 0 0 20px;
+    margin: 12px 0 0 14px;
     font-size: 12px;
     color: rgb(242, 241, 241);
-    font-weight: 300;
+    font-weight: 600;
   }
 
   .box2 {
