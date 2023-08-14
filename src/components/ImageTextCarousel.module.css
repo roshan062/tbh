@@ -4,6 +4,7 @@
   align-items: center;
   display: grid;
   height: 100vh;
+  min-height: 800px;
   font-family: system-ui;
   justify-content: center;
   background-color: black;
