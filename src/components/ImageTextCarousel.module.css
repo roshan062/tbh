@@ -165,7 +165,6 @@
   .container {
     align-items: center;
     display: grid;
-    max-height: 100vh;
     min-height: 800px;
     font-family: system-ui;
     justify-content: center;

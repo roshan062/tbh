@@ -1,8 +1,8 @@
 .suggestion_article {
   align-items: center;
   display: grid;
-  max-height: 1800px;
-  /* min-height: 110vh; */
+  max-height: auto;
+  min-height: 110vh;
   font-family: system-ui;
   background-color: black;
   color: white;
@@ -207,6 +207,15 @@
   }
 }
 
+@media (max-width: 650px) {
+  .grid_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 40px 0 40px;
+    margin: 160px auto 60px auto;
+  }
+}
+
 @media (max-width: 450px) {
   .hanging_container {
     z-index: 11;
@@ -253,13 +262,6 @@
     width: 100px;
     height: 2px;
     background-color: rgb(230, 223, 223);
-  }
-
-  .grid_container {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 0 10px 0 10px;
-    margin: 160px auto 60px auto;
   }
 }
 
