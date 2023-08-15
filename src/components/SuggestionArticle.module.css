@@ -1,7 +1,8 @@
 .suggestion_article {
   align-items: center;
   display: grid;
-  min-height: 110vh;
+  max-height: 1800px;
+  /* min-height: 110vh; */
   font-family: system-ui;
   background-color: black;
   color: white;

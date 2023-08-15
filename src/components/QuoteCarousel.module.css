@@ -5,6 +5,7 @@
   display: grid;
   grid-template-rows: 3fr 1fr;
   height: 80vh;
+  max-height: 900px;
   font-family: system-ui;
   justify-content: center;
   background-color: #00e6d4;

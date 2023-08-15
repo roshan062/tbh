@@ -10,6 +10,7 @@
   background-color: black;
   color: white;
   position: relative;
+  max-height: 500px;
 }
 
 .hanging_container {

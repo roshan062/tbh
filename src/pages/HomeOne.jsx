@@ -93,7 +93,7 @@ const HomeOne = () => {
         }
     }
     return (
-        <main>
+        <main className={styles.home_container}>
             {data ? (<>
                 <section>
                     {imageUrl(data.homepage_elements[0].image)}
@@ -168,7 +168,7 @@ const HomeOne = () => {
                     <QuoteCarousel testimonial={data.testimonials} />
                 </section>
 
-                <section>
+                <section className={styles.suggestion_article}>
                     <SuggestionArticle />
                 </section>
             </>
