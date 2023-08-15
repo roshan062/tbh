@@ -280,10 +280,12 @@
 }
 
 .do_it .img_item .selfimg {
-  height: 35vw;
-  max-height: 405px;
+  height: 34vw;
+  max-height: 425px;
   width: 35vw;
   max-width: 500px;
+  padding-top: 7px;
+  padding-left: 8px;
 }
 
 .img_item .rectangle_overlay_image_red {
