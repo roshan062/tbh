@@ -19,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
   }
 }
 
@@ -137,7 +138,7 @@
 }
 
 .b_img:hover {
-  animation: imageAnimation 2s linear;
+  /* animation: imageAnimation 2s linear; */
 }
 
 .mission .missiontext_container {
