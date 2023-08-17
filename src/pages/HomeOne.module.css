@@ -80,7 +80,6 @@
 } */
 
 .image_text {
-  /* background-color: rgba(12, 12, 12, 0.502); */
   color: #ffffff;
   margin: 0 auto 0 auto;
   display: inline-block;
@@ -198,15 +197,13 @@
 }
 .mission .missiontext_container .right ul {
   list-style-type: square;
+  padding-left: 0;
+  line-height: 1.2;
 }
 .mission .missiontext_container .right ul ::marker {
-  color: rgb(237, 17, 171);
-  /* background-color: #01070d; */
-  border-radius: 0%;
-  border: 0.0625rem solid #f5f9fd;
-  display: block;
-  height: 0.5rem;
-  width: 0.5rem;
+  color: #e6007e;
+  border: 2px solid #e6007e;
+  font-size: 30px;
 }
 
 .mission .container {

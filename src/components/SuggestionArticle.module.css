@@ -105,6 +105,7 @@
 .card_title {
   cursor: pointer;
   transition: text-decoration 1.2s ease;
+  font-weight: 600;
 }
 
 .article_cards:hover .card_title,
@@ -129,7 +130,7 @@
   position: absolute;
   right: 20px;
   bottom: 10px;
-  transition: transform 0.2s ease;
+  transition: transform 0.4s ease;
 }
 
 .article_cards:hover .arrow_icon {
@@ -138,6 +139,10 @@
 
 .show_more {
   margin: 0 auto 0 auto;
+}
+
+.show_more:hover {
+  color: #00e6d4;
 }
 
 .show_more span {
