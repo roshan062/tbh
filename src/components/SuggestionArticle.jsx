@@ -73,7 +73,7 @@ const SuggestionArticle = () => {
             </div>
 
             <div className={styles.show_more}>
-                <p onClick={() => setTotalArticles(totalArticles + 4)}><span>+</span><br />Show More</p>
+                <p onClick={() => setTotalArticles(totalArticles + 4)}><span className={styles.plus}>+</span><br />Show More</p>
             </div>
         </div>
     )

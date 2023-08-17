@@ -153,10 +153,10 @@
 
 .b_img {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 80%;
-  width: 90%;
+  top: 10%;
+  left: 10%;
+  height: 70%;
+  width: 60%;
 }
 
 .b_img:hover {
