@@ -32,7 +32,7 @@ const ImageTextCarousel = ({ slides }) => {
     };
 
     const handleRightClick = (slideIndex) => {
-        if (slideIndex < 3) setActiveSlide(slideIndex + 1);
+        if (slideIndex < slides.length) setActiveSlide(slideIndex + 1);
         else if (slideIndex == slides.length) setActiveSlide(1)
     };
 
@@ -64,13 +64,13 @@ const ImageTextCarousel = ({ slides }) => {
                                 onClick={() => handleLeftClick(index + 1)}
                             />
                             <blockquote className={styles.carousel__quote}>
-                                <h2>{heading}</h2>
+                                <h1 className={styles.heading}>{heading}</h1>
                                 <p>"{description}"</p>
                                 <Link to={link} className={styles.link}>
-                                    <h3>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
+                                    <h3>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
                                 </Link>
                                 <Link to={link} className={styles.link}>
-                                    <h3>Book Now <BsArrowUpRight className={styless.icon_color} /></h3>
+                                    <h3>Book Now <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
                                 </Link>
 
                             </blockquote>

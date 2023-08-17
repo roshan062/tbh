@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './SuggestionArticle.module.css'
 import { Link, Outlet } from 'react-router-dom'
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
 const SuggestionArticle = () => {
@@ -45,7 +46,8 @@ const SuggestionArticle = () => {
                                         <Link to={ref} className={styles.link}>
                                             <img src={url} className={styles.image_container}
                                                 onError={(e) => {
-                                                    e.target.src = "./md-img1.png";
+                                                    e.target.src = "./md-img1.png"
+
                                                 }}
                                             />
                                         </Link>
@@ -58,6 +60,7 @@ const SuggestionArticle = () => {
                                             </div>
                                         </div>
                                         <Outlet />
+                                        <AiOutlineArrowRight className={`${styles.arrow_icon}`} />
                                     </div>
                                 );
                             })

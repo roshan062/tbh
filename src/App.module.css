@@ -6,6 +6,11 @@
 .icon_color {
   color: #00e6d4;
   padding: 0 0 0 5px;
+  transition: transform 0.2s ease;
+}
+
+.icon_color:hover {
+  /* transform: translateX(10px) translateY(-5px); */
 }
 
 .spinner {

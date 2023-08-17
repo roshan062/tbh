@@ -79,10 +79,10 @@
   grid-row: 1;
   line-height: 1.2;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 1.5s;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .left_arrow {
@@ -116,8 +116,8 @@
 }
 
 .selfimg {
-  height: 280px;
-  width: 400px;
+  height: 420px;
+  width: 450px;
 }
 
 .carousel__indicator {
@@ -149,12 +149,26 @@
   padding: 10px 0 0 50px;
   text-align: left;
   font-family: "Roboto";
+  margin: auto 0 auto 40px;
+}
+
+.carousel__quote .heading {
+  font-size: 55px;
+  line-height: 1;
 }
 
 .carousel__quote h3 {
   display: inline-block;
   padding-top: 20px;
   padding-right: 20px;
+}
+
+.carousel__quote h3:hover {
+  color: #00e6d4;
+}
+
+.carousel__quote h3:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
 }
 
 .link {
@@ -288,7 +302,7 @@
   .selfimg {
     height: 230px;
     width: 350px;
-    transform: translateY(-120px);
+    transform: translateY(-60px);
     margin: 0 auto 0 auto;
   }
 
@@ -307,6 +321,11 @@
     padding: 30px 10px 10px 10px;
     text-align: left;
     transform: translateY(140px);
+  }
+
+  .carousel__quote .heading {
+    font-size: 40px;
+    line-height: 1;
   }
 
   .carousel__quote h3 {
@@ -333,6 +352,11 @@
     padding: 30px 10px 10px 10px;
     text-align: left;
     transform: translateY(140px);
+  }
+
+  .carousel__quote .heading {
+    font-size: 30px;
+    line-height: 1;
   }
 
   .carousel__quote h3 {
@@ -363,7 +387,6 @@
 
   .box p {
     margin: 10px 0 0 12px;
-    /* font-size: 14px; */
     font-size: clamp(8px, 5vw, 16px);
     color: rgb(242, 241, 241);
     font-weight: 500;
@@ -395,7 +418,6 @@
     height: 180px;
     width: 80vw;
     transform: translateY(0px);
-    /* margin-left: 10px; */
   }
 
   .carousel__indicator {

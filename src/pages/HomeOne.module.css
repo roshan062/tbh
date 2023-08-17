@@ -69,7 +69,7 @@
   font-weight: 800;
 }
 
-.image_text_container::before {
+/* .image_text_container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -77,13 +77,35 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-}
+} */
 
 .image_text {
-  background-color: rgba(12, 12, 12, 0.502);
+  /* background-color: rgba(12, 12, 12, 0.502); */
   color: #ffffff;
   margin: 0 auto 0 auto;
   display: inline-block;
+}
+
+.image_text span {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+}
+
+.image_text span:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.502);
+  z-index: -1;
+  transform: scaleY(1.1);
+}
+
+.image_text :nth-child(2) {
+  color: #11ebeb;
 }
 
 .b_design {
@@ -134,8 +156,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 90%;
 }
 
 .b_img:hover {
@@ -156,10 +178,10 @@
 .mission .missiontext_container .left {
   grid-column: 1/2;
   justify-content: left;
-  margin: 10px 50px 0 100px;
+  margin: 10px 20px 0 100px;
   padding: 0 50px 0 0;
   text-align: left;
-  font-size: 40px;
+  font-size: 35px;
   text-transform: uppercase;
   font-family: "Roboto";
   font-weight: 100;
@@ -169,7 +191,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  margin: 300px 50px 100px 100px;
+  margin: 350px 50px 100px 100px;
   text-align: left;
   font-size: 19px;
   font-family: "Roboto", sans-serif;
@@ -179,6 +201,12 @@
 }
 .mission .missiontext_container .right ul ::marker {
   color: rgb(237, 17, 171);
+  /* background-color: #01070d; */
+  border-radius: 0%;
+  border: 0.0625rem solid #f5f9fd;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 .mission .container {
@@ -263,6 +291,14 @@
 .do_it .item h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+}
+
+.do_it .item h4:hover {
+  color: #00e6d4;
+}
+
+.do_it .item h4:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
 }
 
 .do_it .item a {
@@ -357,7 +393,7 @@
   }
 
   .image_text {
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
     color: #ffffff;
     padding: 30px;
     display: inline-block;
@@ -560,6 +596,27 @@
     margin: 40px 50px 100px -44%;
   }
 
+  @media (max-width: 450px) {
+    .mission .missiontext_container .right {
+      grid-row: 2/3;
+      width: 90vw;
+      text-align: left;
+      font-size: 14px;
+      list-style-type: square;
+      margin: 40px 50px 100px -50%;
+    }
+  }
+  @media (max-width: 420px) {
+    .mission .missiontext_container .right {
+      grid-row: 2/3;
+      width: 90vw;
+      text-align: left;
+      font-size: 14px;
+      list-style-type: square;
+      margin: 40px 50px 100px -55%;
+    }
+  }
+
   .do_it {
     row-gap: 50px;
     padding-bottom: 150px;
@@ -629,7 +686,7 @@
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin: 0px 50px 100px -44%;
+    margin: 50px 50px 100px -46%;
   }
 
   .do_it .img_item .selfimg {
