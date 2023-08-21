@@ -112,7 +112,7 @@ const AboutUs = () => {
     };
 
     return (
-        <main>
+        <main className={styles.home_container}>
             {data ? (<>
                 <section>
                     {imageUrl(data['aboutus_elements'][0]['image'])}
@@ -149,6 +149,9 @@ const AboutUs = () => {
                     {!isPlaying && (
                         <button className={styles.content_video_play_button} >
                             <img src='play-btn.png' onClick={togglePlay} />
+                            {/* <img className={styles.yellow_play} src='y-p.png' onClick={togglePlay} />
+                            <img className={styles.pink_circle} src='p-c.png' onClick={togglePlay} />
+                            <img className={styles.pink_play} src='p-p.png' onClick={togglePlay} /> */}
                         </button>
                     )}
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
@@ -197,9 +200,9 @@ const AboutUs = () => {
                     </div>
                     <div className={styles.tabbed_carousel_container}>
                         <p className={styles.tab_carousel_switcher}>
-                            <span onClick={() => handleButtonClick(1)} >TEAM</span>
-                            <span onClick={() => handleButtonClick(2)}  >CREATIVES</span>
-                            <span onClick={() => handleButtonClick(3)} >TRUSTEES</span>
+                            <span className={`${activeIndex === 1 ? styles.active : ''}`} onClick={() => handleButtonClick(1)} >TEAM</span>
+                            <span className={`${activeIndex === 2 ? styles.active : ''}`} onClick={() => handleButtonClick(2)}  >CREATIVES</span>
+                            <span className={`${activeIndex === 3 ? styles.active : ''}`} onClick={() => handleButtonClick(3)} >TRUSTEES</span>
                         </p>
                         {activeIndex === 1 && (
                             <TabbedMultiCarousel slides={data.teams} />
@@ -241,10 +244,10 @@ const AboutUs = () => {
                                 }}
                             />
                             <div className={styles.links}>
-                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
-                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
-                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
-                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight className={styless.icon_color} /></h3></a>
+                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
+                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
+                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
+                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                             </div>
                         </div>
                     </div>

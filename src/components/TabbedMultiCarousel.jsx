@@ -31,9 +31,13 @@ const TabbedMultiCarousel = ({ slides }) => {
                     const { name, description, image } = item;
                     return (
                         <div key={index} className={styles.each_card}>
-                            <img src={cleanImgUrl(image)} className={styles.article_image} alt='carousel-img' />
-                            <h3>{name}</h3>
-                            <p>{description}</p>
+                            <img src={cleanImgUrl(image)} className={styles.article_image} alt='carousel-img'
+                                onError={(e) => {
+                                    e.target.src = "./images/about/ziyad marar.jpg";
+                                }}
+                            />
+                            <h3 className={styles.title}>{name}</h3>
+                            <p className={styles.desc}>{description}</p>
                         </div>
                     )
                 })}

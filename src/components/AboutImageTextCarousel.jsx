@@ -67,10 +67,10 @@ const AboutImageTextCarousel = ({ slides }) => {
                                 onClick={() => handleLeftClick(index + 1)}
                             />
                             <blockquote className={styles.carousel__quote}>
-                                <h2>{heading}</h2>
-                                <p>{description}</p>
+                                <h2 className={styles.heading}>{heading}</h2>
+                                <p className={styles.desc}>{description}</p>
                                 <Link to={link} className={styles.link}>
-                                    <h3>More Info <BsArrowUpRight className={styless.icon_color} /></h3>
+                                    <h3>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>
