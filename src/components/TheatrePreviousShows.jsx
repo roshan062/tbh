@@ -7,7 +7,7 @@ import { ColorRing } from 'react-loader-spinner'
 
 const TheatrePreviousShows = () => {
     const [data, setData] = useState('');
-    const [totalArticles, setTotalArticles] = useState(4);
+    const [totalArticles, setTotalArticles] = useState(3);
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const api = ip + "/articles";
@@ -58,7 +58,7 @@ const TheatrePreviousShows = () => {
                         </div>
 
                         <div className={styles.show_more}>
-                            <p onClick={() => setTotalArticles(totalArticles + 4)}><span>+</span><br />Show More</p>
+                            <p onClick={() => setTotalArticles(totalArticles + 3)}><span>+</span><br />Show More</p>
                         </div>
                     </>
                 ) : (

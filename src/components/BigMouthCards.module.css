@@ -18,10 +18,22 @@
   margin: 260px auto 60px auto;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .article_cards {
   height: 250px;
   background-color: rgb(239, 232, 232);
   color: black;
+  animation: fadeIn 0.4s ease-in;
 }
 
 .image_container {
