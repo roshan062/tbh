@@ -1,3 +1,17 @@
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+}
+
+.home_container {
+  max-width: 1500px;
+  position: relative;
+}
+
 .article_image {
   width: 100%;
   height: 590px;
@@ -29,9 +43,12 @@
   height: auto;
   top: 0%;
   left: 1%;
-  transform: translate(0%, 22%);
+  transform: translate(0%, 7%);
   z-index: 1;
   text-align: center;
+  padding-left: 2vw;
+  max-width: 1000px;
+  width: 40vw;
 }
 
 .containerr {
@@ -87,7 +104,7 @@
   color: white;
   text-align: left;
   margin: 0 0 0 5px;
-  width: 50%;
+  width: 100%;
 
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
@@ -98,7 +115,7 @@
   color: white;
   font-weight: 300;
   font-size: 18px;
-  width: 50%;
+  width: 70%;
   text-align: left;
   padding: 35px 0 0 0;
   font-family: "Roboto";
@@ -111,7 +128,15 @@
   font-family: "Roboto";
 }
 
-@media (max-width: 767px) {
+.more_info:hover {
+  color: #00e6d4;
+}
+
+.more_info:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
+}
+
+@media (max-width: 900px) {
   .article_image {
     width: 100%;
     height: 300px;
@@ -121,11 +146,9 @@
   .image_textt {
     position: absolute;
     width: 90vw;
-    /* top: 30%;
-    left: 48%; */
     top: 0%;
     left: 1%;
-    transform: translate(0%, 20%);
+    transform: translate(0%, 8%);
     z-index: 1;
   }
 
@@ -181,7 +204,7 @@
   }
 
   .heading_text {
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 0.8;
     color: white;
     text-align: left;
@@ -193,7 +216,7 @@
     color: white;
     font-weight: 300;
     font-size: 12px;
-    width: 40%;
+    width: 50%;
     text-align: left;
     padding: 35px 0 0 0;
   }
@@ -205,24 +228,12 @@
   }
 }
 
-@media only screen and (max-width: 550px) and (min-width: 430px) {
-  .image_textt {
-    position: absolute;
-    width: 150vw;
-    /* top: 20%;
-    left: 65%; */
-    top: 0%;
-    left: 1%;
-    transform: translate(0%, 20%);
-    z-index: 1;
-  }
-}
 @media (max-width: 430px) {
   .image_textt {
     position: absolute;
     top: 0%;
     left: 1%;
-    transform: translate(0%, 20%);
+    transform: translate(0%, 8%);
     z-index: 1;
   }
 
@@ -242,5 +253,29 @@
     width: 60%;
     text-align: left;
     padding: 35px 0 0 0;
+  }
+}
+
+@media (max-width: 300px) {
+  .image_textt {
+    position: absolute;
+    top: 0%;
+    left: 1%;
+    transform: translate(0%, 8%);
+    z-index: 1;
+    width: 100vw;
+  }
+
+  .heading_text {
+    width: 80%;
+  }
+
+  .description {
+    color: white;
+    font-weight: 300;
+    font-size: 12px;
+    width: 90%;
+    text-align: left;
+    padding: 20px 0 0 0;
   }
 }

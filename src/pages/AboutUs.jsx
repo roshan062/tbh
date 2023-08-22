@@ -149,9 +149,6 @@ const AboutUs = () => {
                     {!isPlaying && (
                         <button className={styles.content_video_play_button} >
                             <img src='play-btn.png' onClick={togglePlay} />
-                            {/* <img className={styles.yellow_play} src='y-p.png' onClick={togglePlay} />
-                            <img className={styles.pink_circle} src='p-c.png' onClick={togglePlay} />
-                            <img className={styles.pink_play} src='p-p.png' onClick={togglePlay} /> */}
                         </button>
                     )}
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>

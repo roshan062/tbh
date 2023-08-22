@@ -56,7 +56,8 @@ const Theatre = () => {
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image} />)
+                return (<img src={modifiedUrl} className={styles.article_image}
+                />)
             }
             else {
                 return (
@@ -83,13 +84,13 @@ const Theatre = () => {
     }
 
     return (
-        <main>
+        <main className={styles.home_container}>
             {data ? (<>
                 <section>
                     {imageUrl(data.image)}
                 </section>
 
-                <section >
+                <section className={styles.top}>
                     <div className={styles['image_textt']}>
                         <div className={styles['containerr']}>
                             <div className={styles['boxx']}>
@@ -99,7 +100,7 @@ const Theatre = () => {
                         </div>
                         <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
                         <div className={styles.description} dangerouslySetInnerHTML={{ __html: data.description }} />
-                        <p className={styles.more_info}>More Info <BsArrowUpRight className={styless.icon_color} /></p>
+                        <p className={styles.more_info}>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></p>
                     </div>
                 </section>
 
