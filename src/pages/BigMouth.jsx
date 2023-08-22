@@ -90,7 +90,7 @@ const BigMouth = () => {
     }
 
     return (
-        <main>
+        <main className={styles.home_container}>
             {/* {data ? (<> */}
 
             <section>

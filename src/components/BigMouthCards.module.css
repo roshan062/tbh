@@ -1,7 +1,8 @@
 .suggestion_article {
   align-items: center;
   display: grid;
-  min-height: 110vh;
+  min-height: 800px;
+  max-height: 4000px;
   font-family: system-ui;
   background-color: black;
   color: white;
@@ -46,15 +47,27 @@
   cursor: pointer;
   padding-left: 20px;
 }
+
+@media (max-width: 1200px) {
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: auto;
+    gap: 30px;
+    margin: 260px auto 60px auto;
+  }
+}
+
 @media (max-width: 900px) {
   .suggestion_article {
     align-items: center;
-    min-height: 250vh;
+    max-height: 4000px;
     font-family: system-ui;
     background-color: black;
     color: white;
     position: relative;
     padding-bottom: 100px;
+    padding-top: 100px;
   }
 
   .grid_container {
@@ -64,14 +77,14 @@
   }
 
   .article_cards {
-    height: 330px;
+    height: 50vw;
     width: 80vw;
     margin: 20px auto;
     background-color: rgba(255, 255, 255, 0.534);
   }
 
   .image_container {
-    height: 330px;
+    height: 50vw;
     width: 80vw;
     background-repeat: no-repeat;
     background-size: cover;
