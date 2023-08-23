@@ -38,11 +38,28 @@
   padding-left: 30px;
 }
 
+.subscribe:hover input::placeholder {
+  color: #00e6d4;
+}
+
+.subscribe:hover input {
+  border: 0.3px solid #00e6d4;
+}
+
+.subscribe:hover button {
+  color: white;
+  background-color: #00e6d4;
+}
+
 .subscribe button {
   height: 32px;
   width: 100px;
-  border: 10px solid white;
+  border: none;
+  border-radius: 0%;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  transform: translateY(-1px);
 }
 
 .footer_area {
@@ -101,6 +118,10 @@
 
 .footer_social_icons a {
   color: white;
+}
+
+.footer_social_icons a:hover {
+  color: #00e6d4;
 }
 
 .copyright {

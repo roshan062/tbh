@@ -114,7 +114,7 @@ const GetInvolved = () => {
                                 <p>{data.get_involved_elements[0].supportus_para2}</p>
                                 {
                                     (data.get_involved_elements[0].support_us_link) && <a href={data.get_involved_elements[0].support_us_link}>
-                                        <h3>Way To Support Us<BsArrowUpRight /></h3></a>
+                                        <h3 className={styles.link}>Way To Support Us<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                                 }
                             </div>
                             <div className={`${styles.img_item} ${styles.first_do_it}`}>
@@ -138,7 +138,7 @@ const GetInvolved = () => {
                                 <h2>{data.get_involved_elements[0].become_member_heading}</h2>
                                 <p>{data.get_involved_elements[0].become_member_content}</p>
                                 {(data.get_involved_elements[0].become_member_link) && <a href={data.get_involved_elements[0].become_member_link}>
-                                    <h3> Become A Member<BsArrowUpRight /></h3></a>
+                                    <h3 className={styles.link}> Become A Member<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                                 }
                             </div>
                         </div>
@@ -152,7 +152,7 @@ const GetInvolved = () => {
                                 <h2>{data.get_involved_elements[0].work_w_us_para1}</h2>
                                 <p>{data.get_involved_elements[0].work_w_us_para2}</p>
                                 {data.get_involved_elements[0].work_w_us_link && <a href={data.get_involved_elements[0].work_w_us_link}>
-                                    <h3>Get In Touch <BsArrowUpRight /></h3></a>
+                                    <h3 className={styles.link}>Get In Touch <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                                 }
                             </div>
                             <div className={styles.img_item}>
@@ -167,10 +167,10 @@ const GetInvolved = () => {
                 <section>
                     <div className={styles.oppurtunities}>
                         <div className={styles.oppurtunities_left}>
-                            <h1>Current Oppurtunities</h1>
+                            <h1 className={styles.heading}>Current Oppurtunities</h1>
                             <p>{data.get_involved_elements[0].co_para}</p>
                             {data.get_involved_elements[0].co_app_form_link && <a href={data.get_involved_elements[0].co_app_form_link}>
-                                <h3>Download application form <BsArrowUpRight /></h3></a>
+                                <h3 className={styles.download_link}>Download application form <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                             }
                         </div>
                         <div className={styles.oppurtunities_right}>
@@ -197,7 +197,7 @@ const GetInvolved = () => {
                             <p>{data.get_involved_elements[0].volunteer_para2}</p>
                             <br />
                             {data.get_involved_elements[0].volunteer_link && <a href={data.get_involved_elements[0].volunteer_link}>
-                                <h3>Volunteer Form <BsArrowUpRight /></h3></a>
+                                <h3 className={styles.volunteer_form_link}>Volunteer Form <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
                             }
                         </div>
                         <div className={styles.volunteer_right}>
