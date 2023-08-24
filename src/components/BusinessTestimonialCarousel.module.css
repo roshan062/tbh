@@ -2,7 +2,7 @@
   align-items: center;
   display: grid;
   grid-template-rows: 3fr 1fr;
-  min-height: 600px;
+  min-height: 750px;
   max-height: 800px;
   font-family: system-ui;
   justify-content: center;

@@ -116,17 +116,15 @@ const Business = () => {
 
                 <section>
                     <div className={styles.image_text_container}>
-                        <div className={styles.image_text}>
-                            {data.get_involved_elements[0].hero_content}
 
-                        </div>
-                        {/* <div className={styles.image_text}>
-                            {data.get_involved_elements[0].hero_content.split('').map((word, index) => (
+                        <div className={styles.image_text}>
+                            {data.get_involved_elements[0].hero_content.split(' ').map((word, index) => (
                                 <span key={index} >
-                                    {word}
+                                    {word + " "}
+                                    {console.log(word)}
                                 </span>
                             ))}
-                        </div> */}
+                        </div>
 
                         <div className={styles.spanText}>
                             <span onClick={() => scrollToSection("workshops")}>WORKSHOPS</span>
