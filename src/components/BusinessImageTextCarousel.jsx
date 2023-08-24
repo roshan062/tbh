@@ -63,14 +63,14 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
                                 }`}
                             key={id}
                         >
-                            <img src="./Carousel Arrow -L.png" alt="left_arrow_img" className={styles.left_arrow}
+                            <img src="./la.png" alt="left_arrow_img" className={styles.left_arrow}
                                 onClick={() => handleLeftClick(index + 1)}
                             />
                             <blockquote className={styles.carousel__quote}>
-                                <h2>{heading}</h2>
+                                <h2 className={styles.heading}>{heading}</h2>
                                 <p>{content}</p>
                                 <Link to={enquiry} className={styles.link}>
-                                    <h3>Make Enquiry <BsArrowUpRight className={styless.icon_color} /></h3>
+                                    <h3>Make Enquiry <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>
@@ -80,7 +80,7 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
                                     }}
                                 />
                             </div>
-                            <img src="./Carousel Arrow -R.png" alt="right_arrow_img" className={styles.right_arrow}
+                            <img src="./ra.png" alt="right_arrow_img" className={styles.right_arrow}
                                 onClick={() => handleRightClick(index + 1)}
                             />
                         </li>

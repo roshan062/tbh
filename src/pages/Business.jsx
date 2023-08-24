@@ -50,7 +50,6 @@ const Business = () => {
     }
 
     function imageUrl(url) {
-        // console.log(url)
         let modifiedUrl;
         if (data) {
             modifiedUrl = imageIP + url.replace("localhost/", "");
@@ -100,17 +99,16 @@ const Business = () => {
         const lastSpaceIndex = text.lastIndexOf('brochure');
         const restOfText = text.slice(0, lastSpaceIndex);
         const lastWord = text.slice(lastSpaceIndex);
-        // console.log(lastWord)
         return (
             <>
                 {restOfText}{' '}
-                <a href='www.example.com' style={{ color: '#00E6D4', fontWeight: 'bold', textDecoration: 'none' }}>{lastWord}</a>
+                <a href='www.example.com' style={{ color: '#009FE3', fontWeight: 'bold', textDecoration: 'none' }}>{lastWord}</a>
             </>
         );
     };
 
     return (
-        <main>
+        <main className={styles.home_container}>
             {data ? (<>
                 <section>
                     {imageUrl(data['get_involved_elements'][0]['bg_image'])}
@@ -118,13 +116,23 @@ const Business = () => {
 
                 <section>
                     <div className={styles.image_text_container}>
-                        <div className={styles.image_text}>{data.get_involved_elements[0].hero_content}</div>
+                        <div className={styles.image_text}>
+                            {data.get_involved_elements[0].hero_content}
+
+                        </div>
+                        {/* <div className={styles.image_text}>
+                            {data.get_involved_elements[0].hero_content.split('').map((word, index) => (
+                                <span key={index} >
+                                    {word}
+                                </span>
+                            ))}
+                        </div> */}
+
                         <div className={styles.spanText}>
                             <span onClick={() => scrollToSection("workshops")}>WORKSHOPS</span>
                             <span onClick={() => scrollToSection("venuehire")}>VENUE HIRE</span>
                             <span onClick={() => scrollToSection("partnerships")}>PARTNERSHIPS</span>
                         </div>
-                        {/* <img onClick={() => scrollToSection("workshops")} className={styles.down_arrow} src='./down-arrow.png' /> */}
                     </div>
                 </section>
 
@@ -189,7 +197,10 @@ const Business = () => {
                             <p className={styles.content}>
                                 {styleLastWord(data.get_involved_elements[0].partnership_content)}
                             </p>
-                            <h2>Get Involved <BsArrowUpRight className={styless.icon_color} /></h2>
+                            <h2 className={styles.get_link}>
+                                <span>
+                                    Get Involved <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} />
+                                </span></h2>
                         </div>
                     </div>
                 </section>

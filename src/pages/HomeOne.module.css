@@ -560,7 +560,7 @@
     text-align: left;
     font-size: medium;
     display: grid;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 200px 300px;
   }
 
   .mission .missiontext_container .left {

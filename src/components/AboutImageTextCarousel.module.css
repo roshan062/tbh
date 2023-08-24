@@ -90,6 +90,9 @@
   left: 0px;
   height: 30px;
   width: 30px;
+  padding: 10px 0 10px 10px;
+  background-color: #1c2222e9;
+  transition: background-color 0.4s ease;
   cursor: pointer;
 }
 
@@ -103,7 +106,14 @@
   right: 0;
   height: 30px;
   width: 30px;
+  padding: 10px 10px 10px 0px;
+  transition: background-color 0.4s ease;
   cursor: pointer;
+  background-color: #1c2222ed;
+}
+
+.right_arrow:hover {
+  background-color: #00e4d6;
 }
 
 .carousel__item.active {

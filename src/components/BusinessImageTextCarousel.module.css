@@ -1,7 +1,8 @@
 .container {
   align-items: center;
   display: grid;
-  height: 100vh;
+  min-height: 700px;
+  max-height: 900px;
   font-family: system-ui;
   justify-content: center;
   background-color: rgb(14, 14, 1);
@@ -43,7 +44,7 @@
   width: 70%;
   height: 60px;
   background-color: transparent;
-  border: 1.5px solid #11ebeb;
+  border: 1.5px solid #009fe3;
   box-sizing: border-box;
 }
 
@@ -76,10 +77,10 @@
   grid-row: 1;
   line-height: 1.2;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 1.2s;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .left_arrow {
@@ -89,6 +90,12 @@
   height: 30px;
   width: 30px;
   cursor: pointer;
+  padding: 10px 0 10px 10px;
+  transition: background-color 0.4s ease;
+}
+
+.left_arrow:hover {
+  background-color: #00e4d6;
 }
 
 .right_arrow {
@@ -98,6 +105,24 @@
   height: 30px;
   width: 30px;
   cursor: pointer;
+  padding: 10px 10px 10px 0px;
+  transition: background-color 0.4s ease;
+}
+
+.right_arrow:hover {
+  background-color: #00e4d6;
+}
+
+.link h3:hover {
+  color: #009fe3;
+}
+
+.arrow_icon {
+  color: #009fe3;
+}
+
+.link:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
 }
 
 .carousel__item.active {
@@ -113,8 +138,8 @@
 }
 
 .carousel_img img {
-  height: 370px;
-  width: auto;
+  height: 420px;
+  width: 450px;
 }
 
 .carousel__indicator {
@@ -124,7 +149,7 @@
   grid-row: 2;
   justify-self: center;
   align-items: start;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .carousel__dot {
@@ -145,7 +170,12 @@
   line-height: 1.5;
   padding: 10px 0 0 50px;
   text-align: left;
-  margin: auto 0 auto 0;
+  margin: auto 0 auto 40px;
+}
+
+.carousel__quote .heading {
+  font-size: 55px;
+  line-height: 1;
 }
 
 .carousel__quote h3 {
@@ -162,12 +192,14 @@
   .container {
     align-items: center;
     display: grid;
-    min-height: 150vh;
+    min-height: 800px;
+    max-height: none;
     font-family: system-ui;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(14, 14, 1);
     color: white;
     position: relative;
+    padding-bottom: 50px;
   }
 
   .hanging_container {
@@ -233,10 +265,10 @@
   .carousel__item {
     line-height: 1.2;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 1.2s;
     z-index: 10;
     display: grid;
-    grid-template-rows: 2fr 550px;
+    grid-template-rows: 1fr 550px;
     grid-template-columns: auto;
   }
 
@@ -282,7 +314,7 @@
 
   .carousel__quote {
     line-height: 1.5;
-    padding: 250px 10px 10px 10px;
+    padding: 25% 10px 10px 0px;
     text-align: left;
   }
 
@@ -297,9 +329,24 @@
   }
 
   .carousel_img {
-    margin: 30px auto 10px auto;
+    margin: 40px 0 10px 0px;
+    text-align: center;
   }
 
   .carousel_img img {
+    height: auto;
+    width: 70%;
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel_img {
+    margin: 40% 0 10px 0px;
+    text-align: center;
+  }
+
+  .carousel__quote .heading {
+    font-size: 35px;
   }
 }

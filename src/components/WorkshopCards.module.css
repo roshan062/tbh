@@ -1,7 +1,8 @@
 .workshop_cards {
   align-items: center;
   display: grid;
-  min-height: 110vh;
+  min-height: 800px;
+  max-height: 2000px;
   font-family: system-ui;
   background-color: black;
   color: white;
@@ -38,7 +39,7 @@
 
 .article_cards:hover::after {
   opacity: 0.6;
-  background-color: #00e6d4;
+  background-color: #009fe3;
 }
 
 .image_container {
@@ -55,7 +56,7 @@
   height: 295px;
   width: 312px;
   transition: transform 0.3s ease;
-  border: 1px solid #00e6d4;
+  border: 1px solid #009fe3;
 }
 
 .article_cards:hover .rectangle_overlay_image_blue {
@@ -63,11 +64,12 @@
 }
 
 .article_cards:hover .title {
-  color: #00e6d4;
+  color: #009fe3;
+  text-decoration: underline;
 }
 
 .article_cards:hover .up_arrow {
-  color: #00e6d4;
+  color: #009fe3;
   transform: translateX(10px) translateY(-5px);
 }
 
@@ -95,16 +97,16 @@
 }
 
 .show_more span {
-  color: #11ebeb;
+  color: #009fe3;
   font-size: 50px;
   cursor: pointer;
   padding-left: 20px;
 }
 
 @media (max-width: 900px) {
-  .suggestion_article {
+  .workshop_cards {
     align-items: center;
-    min-height: 250vh;
+    max-height: none;
     font-family: system-ui;
     background-color: black;
     color: white;

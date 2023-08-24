@@ -107,7 +107,6 @@ const HomeOne = () => {
                                     {word}
                                 </span>
                             ))}
-
                         </div>
                     </div>
                 </section>

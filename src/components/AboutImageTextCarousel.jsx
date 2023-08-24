@@ -63,7 +63,7 @@ const AboutImageTextCarousel = ({ slides }) => {
                                 }`}
                             key={count}
                         >
-                            <img src="./Carousel Arrow -L.png" alt="left_arrow_img" className={styles.left_arrow}
+                            <img src="./la.png" alt="left_arrow_img" className={styles.left_arrow}
                                 onClick={() => handleLeftClick(index + 1)}
                             />
                             <blockquote className={styles.carousel__quote}>
@@ -76,7 +76,7 @@ const AboutImageTextCarousel = ({ slides }) => {
                             <div className={styles.carousel_img}>
                                 <img src={cleanImgUrl(image)} alt="carousel-image" />
                             </div>
-                            <img src="./Carousel Arrow -R.png" alt="right_arrow_img" className={styles.right_arrow}
+                            <img src="./ra.png" alt="right_arrow_img" className={styles.right_arrow}
                                 onClick={() => handleRightClick(index + 1)}
                             />
                         </li>
