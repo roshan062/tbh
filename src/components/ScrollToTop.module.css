@@ -16,7 +16,9 @@
 
 @media (max-width: 450px) {
   .img {
-    top: 90vh;
+    top: 93vh;
     right: 30px;
+    height: 40px;
+    width: 40px;
   }
 }
