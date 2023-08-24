@@ -30,8 +30,10 @@
 
 .article_image {
   width: 100%;
-  max-height: 800px;
-  height: 590px;
+  /* max-height: 800px;
+  height: 590px; */
+  height: 50vw;
+  max-height: 650px;
   display: block;
 }
 
