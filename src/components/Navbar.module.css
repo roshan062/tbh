@@ -5,6 +5,17 @@
   padding: 0;
 }
 
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,6 +25,7 @@
   z-index: 999;
   padding: 15px 0 10px 0;
   font-family: "Roboto";
+  /* animation: fadeIn 1s ease-in-out both; */
 }
 
 header {
@@ -117,6 +129,11 @@ header {
     top: 0;
     z-index: 999;
     padding: 40px 0 10px 0;
+    /* animation: fadeIn 0.9s forwards; */
+  }
+
+  .navbar.open {
+    /* animation: fadeIn 0.6s ease-in-out both; */
   }
 
   .logo {
@@ -140,6 +157,7 @@ header {
     text-align: center;
     padding: 20px 0;
     overflow-y: hidden;
+    /* animation: fadeIn 1s ease-in-out both; */
   }
 
   html {
