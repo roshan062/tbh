@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
+import { useLocation } from 'react-router-dom';
 
 const ArticleFour = () => {
     const [data, setData] = useState('');
@@ -11,6 +12,11 @@ const ArticleFour = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     const fetchData = async () => {
         try {

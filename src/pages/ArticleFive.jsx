@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFive.module.css'
+import { useLocation } from 'react-router-dom';
 
 const ArticleFive = () => {
     const [data, setData] = useState('');
@@ -10,6 +11,11 @@ const ArticleFive = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     const fetchData = async () => {
         try {

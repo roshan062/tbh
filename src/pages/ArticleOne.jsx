@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleOne.module.css';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
+import { useLocation } from 'react-router-dom';
 
 
 const ArticleOne = () => {
@@ -13,6 +14,11 @@ const ArticleOne = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     const fetchData = async () => {
         try {

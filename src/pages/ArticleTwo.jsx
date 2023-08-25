@@ -3,6 +3,7 @@ import styles from './ArticleTwo.module.css';
 import Carousel from '../components/Carousel';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
+import { useLocation } from 'react-router-dom';
 
 const ArticleTwo = () => {
     const [data, setData] = useState('');
@@ -13,6 +14,12 @@ const ArticleTwo = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const location = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
 
     const fetchData = async () => {
         try {
