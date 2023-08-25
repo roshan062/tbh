@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './ArticleTwo.module.css';
 import Carousel from '../components/Carousel';
+import { ColorRing } from 'react-loader-spinner'
+import styless from '../App.module.css'
 
 const ArticleTwo = () => {
     const [data, setData] = useState('');
@@ -52,9 +54,8 @@ const ArticleTwo = () => {
                             <source src={modifiedUrl} type="video/mp4" />
                         </video>
                         {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
+                            <img src='./play-btn.png' alt='play-button-img'
+                                className={styles.play_button} onClick={togglePlay}></img>
                         )}
                     </div>
                 )
@@ -63,81 +64,75 @@ const ArticleTwo = () => {
         }
     }
 
-    return (<main>
+    return (<main className={styles.home_container}>
         {data ? (<>
 
             {imageUrl(data.image)}
-        </>
-        ) : (
-            <p>Loading data...</p>
-        )}
-        <div className={styles.image_text}>
-            <h1 className={styles.heading_text}>
-                {data.head_title}
-            </h1>
-        </div>
 
-        <section className={styles.title_grid}>
-            <section className={styles.subtitle}>
-                {data ? (<>
+            <div className={styles.image_text}>
+                <h1 className={styles.heading_text}>
+                    {data.head_title}
+                </h1>
+            </div>
+
+            <section className={styles.title_grid}>
+                <section className={styles.subtitle}>
+
                     <div dangerouslySetInnerHTML={{ __html: data.title }}></div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
-            </section>
-            <section className={styles.middletext}>
-                {data ? (<>
+
+                </section>
+                <section className={styles.middletext}>
+
                     <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
+
+                </section>
             </section>
-        </section>
 
 
-        <section className={styles.middlemedia}>
-            {data && data.media ? (<>
+            <section className={styles.middlemedia}>
+
                 {imageUrl(data.media)}
-            </>
-            ) : (
-                <p></p>
-            )}
-        </section>
+
+            </section>
 
 
-        <section className={styles.quote_divider}>
-            <section className={styles.quote_section}>
-                {data ? (<>
+            <section className={styles.quote_divider}>
+                <section className={styles.quote_section}>
+
                     <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
-            </section>
 
-            <section className={styles.lowertext}>
-                {data ? (<>
+                </section>
+
+                <section className={styles.lowertext}>
+
                     <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
-                </>
-                ) : (
-                    <p>Loading data...</p>
-                )}
+
+                </section>
+
             </section>
 
-        </section>
+            <section className={styles.carousel}>
 
-        <section className={styles.carousel}>
-            {data ? (<>
                 <Carousel images={data.images} />
 
-            </>
-            ) : (
-                <p>Loading carousel...</p>
-            )}
-        </section>
-        <p className={styles.footer_border}></p>
+
+            </section>
+
+        </>
+        ) : (
+            <div className={styless.spinner}>
+                <ColorRing
+                    className={styless.spinner}
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="blocks-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="blocks-wrapper"
+                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                />
+            </div>
+        )}
     </main>
     )
 }

@@ -86,12 +86,12 @@ const HomeOne = () => {
         }
     }
 
-    const scrollToSection = (whereTo) => {
-        if (whereTo == "mission") {
-            const section = document.getElementById('mission');
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
+    // const scrollToSection = (whereTo) => {
+    //     if (whereTo == "mission") {
+    //         const section = document.getElementById('mission');
+    //         section.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // }
     return (
         <main className={styles.home_container}>
             {data ? (<>

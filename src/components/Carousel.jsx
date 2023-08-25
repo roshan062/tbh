@@ -15,19 +15,25 @@ const Carousel = ({ images }) => {
     const btnpressprev = () => {
         let width = box.clientWidth;
         box.scrollLeft = box.scrollLeft - 500;
-        console.log(width)
+        // console.log(width)
     }
 
     const btnpressnext = () => {
         let width = box.clientWidth;
         box.scrollLeft = box.scrollLeft + 500;
-        console.log(width)
+        // console.log(width)
     }
 
     return (
         <div className={styles.product_carousel}>
-            <button className={styles.pre_btn} onClick={btnpressprev}><p>&lt;</p></button>
-            <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button>
+            {/* <button className={styles.pre_btn} onClick={btnpressprev}><p>&lt;</p></button> */}
+            <img src="./la.png" alt="left_arrow_img" className={styles.pre_btn}
+                onClick={btnpressprev}
+            />
+            <img src="./ra.png" alt="left_arrow_img" className={styles.next_btn}
+                onClick={btnpressnext}
+            />
+            {/* <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button> */}
             <div className={styles.product_container}>
                 {updatedImageUrls.map((slideImage, index) => (
                     <div key={index}>

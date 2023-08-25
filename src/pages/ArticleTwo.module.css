@@ -1,5 +1,32 @@
-main {
-  background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@font-face {
+  font-family: "uni-sans-heavy";
+  src: url("./fonts/Uni Sans Heavy.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "uni-sans-thin";
+  src: url("./fonts/Uni Sans Thin.otf") format("opentype"); /* OTF */
+}
+@font-face {
+  font-family: "core-sansd77";
+  src: url("./fonts/CoreSansD77CnBlack.otf") format("opentype"); /* OTF */
+  font-weight: bolder;
+}
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+}
+
+.home_container {
+  max-width: 1500px;
+  background-color: white;
+  position: relative;
 }
 
 .article_image {
@@ -16,11 +43,12 @@ main {
 
 .image_text {
   position: absolute;
-  top: 55%;
-  left: 20%;
+  top: 9%;
+  left: 40%;
   transform: translate(-50%, -50%);
   z-index: 1;
   color: white;
+  width: 60%;
 }
 
 .heading_text {
@@ -28,12 +56,10 @@ main {
   line-height: 0.8;
   color: white;
   text-align: left;
-  margin: -120px 0 10px 135px;
+  margin: 0px 0 10px 0px;
   width: 40%;
-
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  color: rgb(173, 7, 85);
+  font-family: "system-ui";
 }
 
 .title_grid {
@@ -49,6 +75,12 @@ main {
   width: 50%;
   margin: 100px 0px 100px 80px;
   text-align: left;
+  font-size: 30px;
+}
+
+.subtitle h2 {
+  font-weight: 600;
+  font-family: "Roboto";
 }
 
 .middletext {
@@ -69,7 +101,9 @@ main {
   z-index: 1;
   background-color: transparent;
   border: 0;
-  font-size: x-large;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
 }
 
 .quote_divider {
@@ -81,6 +115,7 @@ main {
   background-color: black;
   color: white;
   border: 10px solid rgb(12, 0, 0);
+  min-height: 300px;
 }
 
 .quote_section {
@@ -120,24 +155,32 @@ main {
   }
 
   .image_text {
-    position: absolute;
-    top: 34%;
-    left: -10%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    top: 5%;
   }
 
   .heading_text {
-    font-size: 2.6rem;
+    font-size: 9vw;
     line-height: 0.8;
     color: white;
     text-align: left;
-    margin: -70px 0 0 440px;
+    margin: 0px 0 10px 0px;
     width: 40%;
+    color: rgb(241, 88, 159);
+    font-family: "system-ui";
+  }
+
+  .title_grid {
+    padding: 60px 0px 100px 0px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
   }
 
   .subtitle {
-    width: 70%;
+    width: 90%;
     margin: 30px 0 30px 32px;
     text-align: left;
   }
@@ -163,6 +206,54 @@ main {
   .carousel {
     width: 100%;
     height: auto;
-    margin: 10px 0px 50px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .subtitle {
+    width: 50%;
+    margin: 100px 0px 100px 30px;
+    text-align: left;
+    font-size: 8vw;
+  }
+
+  .play_button {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .quote_divider {
+    padding: 60px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    justify-content: space-evenly;
+    text-align: left;
+    background-color: black;
+    color: white;
+    border: 10px solid rgb(12, 0, 0);
+    min-height: 300px;
+  }
+
+  .quote_section {
+    width: 70%;
+    margin: 25px 0 40px 32px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .lowertext {
+    width: 70%;
+    margin: 0px 0 100px 32px;
+    text-align: left;
   }
 }
