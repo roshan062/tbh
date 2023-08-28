@@ -39,6 +39,20 @@
   color: #bff605;
 }
 
+.video_icon {
+  position: absolute;
+  top: 9%;
+  right: 10%;
+  height: 40px;
+  width: 40px;
+  color: white;
+  transition: color 0.4s ease;
+}
+
+.article_cards:hover .video_icon {
+  color: #bff605;
+}
+
 .image_container {
   height: 250px;
   width: 350px;

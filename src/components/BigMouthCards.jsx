@@ -3,6 +3,7 @@ import styles from './BigMouthCards.module.css'
 import styless from '../App.module.css'
 import { Link, Outlet } from 'react-router-dom'
 import { ColorRing } from 'react-loader-spinner'
+import { FaVideo } from 'react-icons/fa';
 
 const BigMouthCards = () => {
     const [data, setData] = useState('');
@@ -53,7 +54,9 @@ const BigMouthCards = () => {
                                                     e.target.src = "./md-img1.png";
                                                 }}
                                             />
-
+                                            {/* <img className={styles.video_icon} src='./images/bigmouth/v-icon.png' alt='video-icon' /> */}
+                                            {/* <i class="fa-solid fa-video"></i> */}
+                                            <FaVideo className={`${styles.video_icon}`} />
                                             <img className={styles.rectangle_overlay_image_red} src='./images/bigmouth/red-rec.png' alt="red-img" />
                                             <img className={styles.rectangle_overlay_image_yellow} src='./images/bigmouth/yellow-rec.png' alt="yellow-img" />
                                         </Link>
