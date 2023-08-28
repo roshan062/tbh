@@ -117,40 +117,50 @@
   position: relative;
 }
 
-@keyframes imageAnimation {
-  0% {
-    transform: rotateX(0deg);
-  }
-  20% {
-    /* transform: rotateY(10deg); */
-  }
-  30% {
-    transform: rotateX(90deg);
-  }
-  40% {
-    transform: rotateX(90deg);
-  }
-  50% {
-    /* transform: rotateX(180deg); */
-  }
-  90% {
-    transform: rotateY(90deg);
-  }
-  100% {
-    transform: rotateX(360deg);
-  }
-}
-
-.b_img {
+.blue_img,
+.white_img,
+.red_img,
+.three_xb_img {
   position: absolute;
-  top: 10%;
-  left: 10%;
-  height: 70%;
-  width: 60%;
+  transition: transform 1s ease;
 }
 
-.b_img:hover {
-  /* animation: imageAnimation 2s linear; */
+.three_xb_img {
+  display: none;
+}
+
+.blue_img {
+  top: 0%;
+  left: -20%;
+  height: 100%;
+  width: 80%;
+}
+
+.b_design:hover .blue_img {
+  transform: translateX(-250px);
+}
+
+.white_img {
+  top: -50%;
+  left: -25%;
+  height: 120%;
+  width: 80%;
+  transform: rotate(+5deg);
+}
+
+.b_design:hover .white_img {
+  transform: translate(300px, 450px);
+}
+
+.red_img {
+  top: -10%;
+  right: 0%;
+  height: 100%;
+  width: 80%;
+}
+
+.b_design:hover .red_img {
+  transform: translateX(250px);
 }
 
 .mission .missiontext_container {
@@ -206,15 +216,15 @@
   position: relative;
   top: 50px;
   left: -200px;
-  width: 105%;
-  height: 80px;
+  width: 115%;
+  height: 70px;
   background-color: transparent;
   border: 1.5px solid #e4e1e1;
   box-sizing: border-box;
 }
 
 .mission .container .box p {
-  margin: 32px 0 0 20px;
+  margin: 25px 0 0 20px;
   font-size: x-large;
   color: rgb(244, 237, 237);
   font-family: "Roboto", sans-serif;
@@ -223,10 +233,10 @@
 
 .mission .container .box2 {
   position: relative;
-  top: -15px;
+  top: -10px;
   left: -190px;
-  width: 105%;
-  height: 80px;
+  width: 115%;
+  height: 70px;
   background-color: transparent;
   border: 1.5px solid #11ebeb;
   box-sizing: border-box;
@@ -235,7 +245,7 @@
 .box2:before {
   content: "";
   position: absolute;
-  top: -70px;
+  top: -66px;
   left: 47%;
   transform: translateX(-50%);
   width: 2px;
@@ -384,6 +394,40 @@
     padding: 30px;
     display: inline-block;
     text-align: center;
+  }
+
+  .blue_img {
+    top: 0%;
+    left: 10%;
+    height: 60%;
+    width: 80%;
+  }
+
+  .b_design:hover .blue_img {
+    transform: translateX(-150px);
+  }
+
+  .white_img {
+    top: -50%;
+    left: -30%;
+    height: 80%;
+    width: 80%;
+    transform: rotate(+5deg);
+  }
+
+  .b_design:hover .white_img {
+    transform: translate(300px, 450px);
+  }
+
+  .red_img {
+    top: 10%;
+    right: 24%;
+    height: 60%;
+    width: 80%;
+  }
+
+  .b_design:hover .red_img {
+    transform: translateX(170px);
   }
 
   .mission .container .box p {
@@ -554,6 +598,20 @@
     grid-template-columns: 1fr auto;
     background-color: black;
     position: relative;
+  }
+
+  .red_img,
+  .blue_img,
+  .white_img {
+    display: none;
+  }
+
+  .three_xb_img {
+    top: 0%;
+    left: 0%;
+    height: 70%;
+    width: 100%;
+    display: block;
   }
 
   .mission .missiontext_container {

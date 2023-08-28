@@ -38,8 +38,12 @@ const BigMouthCards = () => {
                                 let url = api.image.replace("localhost/", imageIP)
                                 return (
                                     <div key={index} className={styles.article_cards}>
+                                        <h1 className={styles.head_title}>
+                                            {api.head_title}
+                                        </h1>
                                         <Link
                                             // to={ref} 
+
                                             className={styles.link}>
                                             <img
                                                 // src={url}
@@ -49,6 +53,9 @@ const BigMouthCards = () => {
                                                     e.target.src = "./md-img1.png";
                                                 }}
                                             />
+
+                                            <img className={styles.rectangle_overlay_image_red} src='./images/bigmouth/red-rec.png' alt="red-img" />
+                                            <img className={styles.rectangle_overlay_image_yellow} src='./images/bigmouth/yellow-rec.png' alt="yellow-img" />
                                         </Link>
 
                                         <Outlet />

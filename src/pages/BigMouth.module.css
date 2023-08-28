@@ -69,7 +69,6 @@
   background-color: rgba(225, 18, 135, 0.514);
   color: #ffffff;
   padding: 10px;
-  /* font-size: 510%; */
   font-size: 5.2em;
   text-align: center;
 }
@@ -120,10 +119,16 @@
   max-height: 800px;
 }
 
+.self_video:hover {
+  cursor: pointer;
+  filter: brightness(50%);
+}
+
 .self_video {
   height: 90%;
   width: 98%;
   object-fit: cover;
+  transition: filter 0.2s ease;
 }
 
 .content_video_play_button img {

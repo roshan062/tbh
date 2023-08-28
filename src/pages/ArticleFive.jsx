@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFive.module.css'
 import { useLocation } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner'
+import styless from '../App.module.css'
 
 const ArticleFive = () => {
     const [data, setData] = useState('');
@@ -22,7 +24,6 @@ const ArticleFive = () => {
             const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
-            console.log(jsonData)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -71,28 +72,33 @@ const ArticleFive = () => {
         }
     }
 
-    return (<>
+    return (<main className={styles.home_container}>
         {data ? (<>
             {imageUrl(data.image)}
+
+            <section className={styles.title_section}>
+                <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
+            </section>
+
+            <section className={styles.middletext}>
+                <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
+            </section>
         </>
         ) : (
-            <p>Loading video/image...</p>
+            <div className={styless.spinner}>
+                <ColorRing
+                    className={styless.spinner}
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="blocks-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="blocks-wrapper"
+                    colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                />
+            </div>
         )}
-
-        <section className={styles.title_section}>
-            <h1 dangerouslySetInnerHTML={{ __html: data.title }}></h1>
-        </section>
-
-        <section className={styles.middletext}>
-            {data ? (<>
-                <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
-            </>
-            ) : (
-                <p>Loading data...</p>
-            )}
-
-        </section>
-    </>
+    </main>
     )
 }
 
