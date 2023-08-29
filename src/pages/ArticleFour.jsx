@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
 import { useLocation } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner'
+import styless from '../App.module.css'
 
 const ArticleFour = () => {
     const [data, setData] = useState('');
@@ -69,79 +71,72 @@ const ArticleFour = () => {
         }
     }
 
-    return (<>
-        {data ? (<>
+    return (
+        <main className={styles.home_container}>
+            {data ? (
+                <>
 
-            {imageUrl(data.image)}
-        </>
-        ) : (
-            <p>Loading data...</p>
-        )}
-        <div className={styles.image_text}>
-            <div className={styles.container}>
-                <div className={styles.box}><p>THE BIG MOUTH</p></div>
-                <div className={styles.box2}></div>
-            </div>
-            <h1 className={styles.heading_text}>
-                {data.head_title}
-            </h1>
-            <p dangerouslySetInnerHTML={{ __html: data.title }}></p>
-        </div>
+                    {imageUrl(data.image)}
 
-        <section className={styles.subtitle}>
-            {data ? (<>
-                <div dangerouslySetInnerHTML={{ __html: data.title }}></div>
-            </>
+                    <div className={styles.image_text}>
+                        <div className={styles.container}>
+                            <div className={styles.box}><p>THE BIG MOUTH</p></div>
+                            <div className={styles.box2}></div>
+                        </div>
+                        <h1 className={styles.heading_text}>
+                            {data.head_title}
+                        </h1>
+                        {/* <p dangerouslySetInnerHTML={{ __html: data.title }}></p> */}
+                    </div>
+
+                    <section className={styles.subtitle}>
+
+                        <div dangerouslySetInnerHTML={{ __html: data.title }}></div>
+
+                    </section>
+                    <section className={styles.middletext}>
+
+                        <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
+
+                    </section>
+
+                    <section>
+
+                        {imageUrl(data.media)}
+
+                    </section>
+
+                    <section className={styles.quote_section}>
+
+                        <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
+
+                    </section>
+
+                    <section className={styles.lowertext}>
+
+                        <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
+
+                    </section>
+
+                    <section className={styles.carousel}>
+                        <Carousel images={data.images} />
+                    </section>
+                </>
             ) : (
-                <p>Loading data...</p>
+                <div className={styless.spinner}>
+                    <ColorRing
+                        className={styless.spinner}
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                    />
+                </div>
             )}
-        </section>
-        <section className={styles.middletext}>
-            {data ? (<>
-                <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
-            </>
-            ) : (
-                <p>Loading data...</p>
-            )}
-        </section>
-
-        <section>
-            {data && data.media ? (<>
-                {imageUrl(data.media)}
-            </>
-            ) : (
-                <p></p>
-            )}
-        </section>
-
-        <section className={styles.quote_section}>
-            {data ? (<>
-                <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-            </>
-            ) : (
-                <p>Loading data...</p>
-            )}
-        </section>
-
-        <section className={styles.lowertext}>
-            {data ? (<>
-                <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
-            </>
-            ) : (
-                <p>Loading data...</p>
-            )}
-        </section>
-
-        <section className={styles.carousel}>
-            {data ? (<>
-                <Carousel images={data.images} />
-
-            </>
-            ) : (
-                <p>Loading carousel...</p>
-            )}
-        </section>
-    </>
+        </main>
     )
 }
 

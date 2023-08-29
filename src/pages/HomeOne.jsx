@@ -124,9 +124,9 @@ const HomeOne = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <img src='./b-animate-img/blue-b.png' alt='pic' className={styles.blue_img} />
+                    <img src='./b-animate-img/blue-b.png' alt='pic' className={styles.blue_img} />
                     <img src='./b-animate-img/white-b.png' alt='pic' className={styles.white_img} />
-                    <img src='./b-animate-img/red-b.png' alt='pic' className={styles.red_img} /> */}
+                    <img src='./b-animate-img/red-b.png' alt='pic' className={styles.red_img} />
                     <img src='./b-animate-img/3xb.png' alt='pic' className={styles.three_xb_img} />
                 </section>
 
