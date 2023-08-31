@@ -112,6 +112,7 @@ const HomeOne = () => {
                             <div className={styles.box2}></div>
                         </div>
                         <div className={styles.missiontext_container}>
+                            {/* <p className={styles.para}>The Big House has a mission:</p> */}
                             <div className={styles.left} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_text }}>
                             </div>
                             <div className={styles.right} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_list }}>

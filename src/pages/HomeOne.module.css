@@ -169,9 +169,14 @@
   justify-content: right;
   font-size: medium;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   grid-template-rows: auto;
   padding-top: 100px;
+}
+
+.mission .para {
+  font-family: "system-ui";
+  padding-left: 100px;
 }
 
 .mission .missiontext_container .left {
@@ -180,7 +185,7 @@
   margin: 10px 20px 0 100px;
   padding: 0 50px 0 0;
   text-align: left;
-  font-size: 35px;
+  font-size: 40px;
   text-transform: uppercase;
   font-family: "Roboto";
   font-weight: 100;
@@ -190,7 +195,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  margin: 350px 50px 100px 100px;
+  margin: 300px 50px 100px 100px;
   text-align: left;
   font-size: 19px;
   font-family: "Roboto", sans-serif;

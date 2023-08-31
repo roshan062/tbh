@@ -65,7 +65,7 @@ const ImageTextCarousel = ({ slides }) => {
                             />
                             <blockquote className={styles.carousel__quote}>
                                 <h1 className={styles.heading}>{heading}</h1>
-                                <p>"{description}"</p>
+                                <p className={styles.description}>"{description}"</p>
                                 <Link to={link} className={styles.link}>
                                     <h3>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
                                 </Link>
