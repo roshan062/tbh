@@ -36,7 +36,7 @@
   font-size: 20px;
   color: rgb(242, 241, 241);
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .box2 {
@@ -53,11 +53,11 @@
 .box2:before {
   content: "";
   position: absolute;
-  top: -67px;
-  left: 45%;
+  top: 27px;
+  left: -28%;
   transform: translateX(-50%);
-  width: 1px;
-  height: 65px;
+  width: 121px;
+  height: 2px;
   background-color: rgb(230, 223, 223);
 }
 
@@ -192,6 +192,10 @@
 
 .link {
   color: white;
+}
+
+.link:hover h3 {
+  text-transform: capitalize;
 }
 
 @media (max-width: 900px) {

@@ -57,14 +57,14 @@
 .image_text_container {
   position: absolute;
   top: 150px;
-  left: 50%;
+  left: 49%;
   transform: translate(-50%, 0%);
   text-align: center;
   z-index: 1;
-  max-width: 500px;
+  max-width: 600px;
   text-transform: uppercase;
   color: white;
-  font-size: 4.375em;
+  font-size: clamp(16px, 9vw, 600%);
   font-family: "uni-sans-heavy", sans-serif;
   font-weight: 800;
 }
@@ -73,12 +73,13 @@
   color: #ffffff;
   margin: 0 auto 0 auto;
   display: inline-block;
+  line-height: 1;
 }
 
 .image_text span {
   position: relative;
   display: inline-block;
-  padding: 0 10px 0 10px;
+  padding: 0 20px 0 10px;
 }
 
 .image_text span:before {
@@ -88,9 +89,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(12, 12, 12, 0.502);
+  background-color: rgba(12, 12, 12, 0.628);
   z-index: -1;
-  transform: scaleY(1.1);
 }
 
 .image_text :nth-child(2) {
@@ -106,7 +106,8 @@
 .mission {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 120vh;
+  /* height: 120vh; */
+  max-height: none;
   min-height: 850px;
   width: 100%;
   color: white;
@@ -171,7 +172,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   grid-template-rows: auto;
-  padding-top: 100px;
+  padding-top: 1px;
 }
 
 .mission .para {
@@ -191,24 +192,38 @@
   font-weight: 100;
 }
 .mission .missiontext_container .right {
-  grid-column: 2/3;
+  /* grid-column: 2/3; */
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  margin: 300px 50px 100px 100px;
+  margin: 400px 50px 100px 100px;
   text-align: left;
-  font-size: 19px;
+  font-size: 17px;
   font-family: "Roboto", sans-serif;
 }
 .mission .missiontext_container .right ul {
-  list-style-type: square;
+  list-style-type: none;
   padding-left: 0;
   line-height: 1.2;
 }
-.mission .missiontext_container .right ul ::marker {
-  color: #e6007e;
-  border: 2px solid #e6007e;
-  font-size: 30px;
+
+.mission .missiontext_container .right ul li {
+  position: relative;
+  padding-left: 20px;
+  padding-bottom: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid #00e6d4;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
 }
 
 .mission .container {
@@ -279,6 +294,10 @@
   max-width: 750px;
 }
 
+.become_a_member {
+  text-decoration: underline;
+}
+
 .do_it .item h2 {
   font-size: 30px;
   font-family: "Roboto", sans-serif;
@@ -332,9 +351,9 @@
   position: absolute;
   top: -13px;
   left: -15px;
-  height: 125%;
+  height: 128%;
   max-height: 38vw;
-  width: 127%;
+  width: 129%;
   max-width: 520px;
 }
 
@@ -349,11 +368,11 @@
 
 .img_item .rectangle_overlay_image_blue {
   position: absolute;
-  top: 2px;
-  left: 5px;
-  height: 125%;
+  top: 22px;
+  left: 25px;
+  height: 126%;
   max-height: 38vw;
-  width: 125%;
+  width: 127%;
   max-width: 520px;
 }
 
@@ -378,6 +397,7 @@
     text-align: center;
     z-index: 1;
     max-width: 300px;
+    /* max-width: 50vw; */
     text-transform: uppercase;
     color: white;
     font-size: 5vw;
@@ -472,12 +492,11 @@
     margin-left: 20px;
   }
   .mission .missiontext_container .right {
-    grid-row: 2/3;
     row-gap: 0px;
     text-align: left;
     font-size: 14px;
     list-style-type: square;
-    margin-left: -480px;
+    margin: 00px 0px 00px 25px;
   }
   .mission .missiontext_container .right ::marker {
     color: rgb(241, 33, 168);
@@ -570,8 +589,8 @@
 
   .img_item .rectangle_overlay_image_red {
     position: absolute;
-    top: -12px;
-    left: -16px;
+    top: -7px;
+    left: -10px;
     height: 125%;
     min-height: 300px;
     width: 140%;
@@ -579,11 +598,12 @@
 
   .img_item .rectangle_overlay_image_blue {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     height: 122%;
     min-height: 300px;
     width: 135%;
+    z-index: 2;
   }
 
   .both_carousel_container {
@@ -624,7 +644,27 @@
     text-align: left;
     font-size: medium;
     display: grid;
-    grid-template-rows: 200px 300px;
+    grid-template-rows: auto auto;
+    row-gap: 40px;
+  }
+
+  .mission .missiontext_container .right ul li {
+    position: relative;
+    padding-left: 20px;
+    padding-bottom: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 30%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border: 2px solid #00e6d4;
+      background-color: transparent;
+      box-sizing: border-box;
+    }
   }
 
   .mission .missiontext_container .left {
@@ -632,8 +672,7 @@
     justify-content: left;
     width: 160%;
     padding-top: 50px;
-    margin-left: 18px;
-    margin-right: 20px;
+    margin-left: -20px;
     font-size: 20px;
   }
   .mission .missiontext_container .right {
@@ -641,29 +680,7 @@
     width: 90vw;
     text-align: left;
     font-size: 14px;
-    list-style-type: square;
-    margin: 40px 50px 100px -44%;
-  }
-
-  @media (max-width: 450px) {
-    .mission .missiontext_container .right {
-      grid-row: 2/3;
-      width: 90vw;
-      text-align: left;
-      font-size: 14px;
-      list-style-type: square;
-      margin: 40px 50px 100px -50%;
-    }
-  }
-  @media (max-width: 420px) {
-    .mission .missiontext_container .right {
-      grid-row: 2/3;
-      width: 90vw;
-      text-align: left;
-      font-size: 14px;
-      list-style-type: square;
-      margin: 40px 50px 100px -55%;
-    }
+    margin: 00px 0px 100px -15px;
   }
 
   .do_it {
@@ -709,43 +726,6 @@
     font-size: clamp(16px, 4vw, 24px);
   }
 
-  .mission {
-    height: 100vh;
-    width: 100%;
-    color: white;
-    display: grid;
-    grid-template-rows: 1fr 10fr;
-    grid-template-columns: 1fr auto;
-    background-color: black;
-    position: relative;
-  }
-
-  .mission .missiontext_container {
-    grid-row: 2/3;
-    text-align: left;
-    font-size: medium;
-    display: grid;
-    grid-template-rows: 150px 250px;
-  }
-
-  .mission .missiontext_container .left {
-    grid-row: 1/2;
-    justify-content: left;
-    width: 150%;
-    padding-top: 50px;
-    margin-left: 10px;
-    font-size: clamp(8px, 4vw, 24px);
-  }
-
-  .mission .missiontext_container .right {
-    grid-row: 2/3;
-    width: 90vw;
-    text-align: left;
-    font-size: 14px;
-    list-style-type: square;
-    margin: 50px 50px 100px -46%;
-  }
-
   .do_it .img_item .selfimg {
     height: 70vw;
     width: 60vw;
@@ -777,17 +757,19 @@
     width: 90vw;
     padding-top: 50px;
     margin-left: 10px;
-    font-size: clamp(8px, 4vw, 24px);
+    /* font-size: clamp(8px, 4vw, 24px); */
+    font-size: 10px;
   }
 
   .mission .missiontext_container .right {
     grid-row: 2/3;
     width: 80vw;
     text-align: left;
-    font-size: clamp(12px, 4vw, 24px);
-    list-style-type: square;
-    margin: 0px 80px 100px 50px;
-    margin-left: -100%;
+    /* font-size: clamp(12px, 4vw, 24px); */
+    /* list-style-type: square; */
+    /* margin: 0px 80px 100px 50px; */
+    font-size: 10px;
+    margin-left: 30px;
   }
 
   .do_it {

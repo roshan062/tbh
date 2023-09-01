@@ -1,0 +1,27 @@
+.arrow {
+  display: inline;
+}
+
+/* .arrow_container:hover .arrow_top {
+  transform: translate(3px, -3px);
+} */
+
+h4:hover .arrow_top {
+  transform: translate(3px, -3px);
+}
+
+h3:hover .arrow_top {
+  transform: translate(3px, -3px);
+}
+
+.arrow_line {
+  height: 15px;
+  width: 15px;
+  transform: translate(13px, 2.2px);
+}
+
+.arrow_top {
+  height: 14px;
+  width: 14px;
+  transition: transform 0.2s ease;
+}

@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import styles from './HomeOne.module.css';
 import styless from '../App.module.css'
-import { BsArrowUpRight } from 'react-icons/bs';
+// import { BsArrowUpRight } from 'react-icons/bs';
 import QuoteCarousel from '../components/QuoteCarousel';
 import ImageTextCarousel from '../components/ImageTextCarousel';
 import SuggestionArticle from '../components/SuggestionArticle';
 import { ColorRing } from 'react-loader-spinner'
 import { useLocation } from 'react-router-dom';
+import ArrowAnimation from '../components/Arrow';
 
 const HomeOne = () => {
     const [data, setData] = useState('');
@@ -86,6 +87,19 @@ const HomeOne = () => {
         }
     }
 
+
+    //Adding line breaks in Mission text 
+    // const words = apiSentence.split(" ");
+    // for (let i = 0; i < words.length; i++) {
+    //     if (i === 2) {
+    //         words[i] += "<br><br>";
+    //     } else if (i === 5) {
+    //         words[i] += "<br><br>";
+    //     }
+    // }
+    // const modifiedSentence = words.join(" ");
+
+
     return (
         <main className={styles.home_container}>
             {data ? (<>
@@ -132,7 +146,8 @@ const HomeOne = () => {
                             <p>{data.homepage_elements[0].description1}</p>
                             {
                                 (data.homepage_elements[0].link1) && <a href={data.homepage_elements[0].link1}>
-                                    <h4> Become A Member<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h4></a>
+                                    {/* <h4> Become A Member<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h4> */}
+                                </a>
                             }
                         </div>
                         <div className={styles.img_item}>
@@ -149,14 +164,21 @@ const HomeOne = () => {
                             <h2>{data.homepage_elements[0].heading2}</h2>
                             <p>{data.homepage_elements[0].description2}</p>
                             {(data.homepage_elements[0].link2) && <a href={data.homepage_elements[0].link2}>
-                                <h4> Become A Member<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h4></a>
+                                <h4 className={styles.become_a_member}> Become a member
+                                    {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                    <ArrowAnimation />
+                                </h4>
+                            </a>
                             }
                         </div>
                         <div className={styles.item}>
                             <h2>{data.homepage_elements[0].heading3}</h2>
                             <p>{data.homepage_elements[0].description3}</p>
                             {data.homepage_elements[0].link3 && <a href={data.homepage_elements[0].link3}>
-                                <h4>Get Involved <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h4></a>
+                                <h4>Get involved
+                                    {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                    <ArrowAnimation />
+                                </h4></a>
                             }
                         </div>
                         <div className={styles.img_item}>

@@ -130,11 +130,22 @@
   position: absolute;
   right: 20px;
   bottom: 10px;
-  transition: transform 0.4s ease;
 }
 
-.article_cards:hover .arrow_icon {
-  transform: scaleX(1.1) translateX(6px);
+.article_cards:hover .arrow_top {
+  transform: translateX(6px);
+}
+
+.arrow_line {
+  height: 25px;
+  width: 25px;
+  transform: translate(23px, 1.2px);
+}
+
+.arrow_top {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.4s ease;
 }
 
 .show_more {
@@ -147,10 +158,43 @@
 }
 
 .show_more span {
-  color: #11ebeb;
-  font-size: 50px;
-  cursor: pointer;
   padding-left: 20px;
+}
+
+.plus_image {
+  height: 40px;
+  width: 40px;
+  padding-bottom: 10px;
+}
+
+.show_more .vee {
+  transform: translate(-47px, 15px);
+  /* visibility: hidden; */
+  opacity: 0;
+  /* transition: visibility 0.2s ease-in-out; */
+  transition: opacity 0.2s linear;
+}
+
+/* .color_change:hover path {
+  fill: #00e6d4;
+} */
+
+.show_more:hover .color_change path {
+  fill: #00e6d4;
+}
+
+.show_more:hover .vee {
+  /* visibility: visible; */
+  opacity: 1;
+}
+
+@keyframes draw {
+}
+from {
+  stroke-dashoffset: 1000;
+}
+to {
+  stroke-dashoffset: 0;
 }
 
 @media (max-width: 900px) {

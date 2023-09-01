@@ -3,6 +3,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import styles from './ImageTextCarousel.module.css'
 import styless from '../App.module.css'
 import { Link } from 'react-router-dom'
+import ArrowAnimation from '../components/Arrow';
 
 const ImageTextCarousel = ({ slides }) => {
     const [activeSlide, setActiveSlide] = useState(1);
@@ -44,7 +45,7 @@ const ImageTextCarousel = ({ slides }) => {
     return (
         <div className={styles.container}>
             <div className={styles.hanging_container}>
-                <div className={styles.box}><p>WHAT'S GOING DOWN</p></div>
+                <div className={styles.box}><p>WHAT'S HAPPENING</p></div>
                 <div className={styles.box2}></div>
             </div>
 
@@ -67,11 +68,17 @@ const ImageTextCarousel = ({ slides }) => {
                                 <h1 className={styles.heading}>{heading}</h1>
                                 <p className={styles.description}>"{description}"</p>
                                 <Link to={link} className={styles.link}>
-                                    <h3>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
+                                    <h3>More info
+                                        {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                        <ArrowAnimation />
+                                    </h3>
                                 </Link>
-                                <Link to={link} className={styles.link}>
-                                    <h3>Book Now <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
-                                </Link>
+                                {/* <Link to={link} className={styles.link}>
+                                    <h3>Book Now
+                                        <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} />
+                                        <ArrowAnimation />
+                                    </h3>
+                                </Link> */}
 
                             </blockquote>
                             <div className={styles.carousel_img}>

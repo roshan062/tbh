@@ -1,0 +1,31 @@
+/* Icon.module.css */
+
+/* Icon container styles */
+.iconContainer {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.iconContainer:hover #PLUS {
+  color: aqua;
+  stroke: red;
+}
+
+.plusImage {
+  transition: transform 0.2s ease;
+}
+
+.iconContainer:hover .plusImage {
+  transform: rotate(45deg);
+}
+
+/* Vertical lines (initially hidden) */
+.verticalLine {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Show the vertical lines when the plus icon is hovered */
+.iconContainer:hover .verticalLine {
+  opacity: 1;
+}
