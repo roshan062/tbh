@@ -124,11 +124,30 @@
   top: 31%;
   left: 49%;
   z-index: 0;
-  transition: visibility 0.1s linear;
+  /* transition: visibility 0.1s linear; */
 }
 
 .home_news_content:hover .hit {
-  visibility: hidden;
+  /* visibility: hidden; */
+  animation: hideAfterFiveSeconds 5s;
+}
+
+@keyframes hideAfterFiveSeconds {
+  0% {
+    visibility: visible;
+  }
+
+  10% {
+    visibility: hidden;
+  }
+
+  99.9% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
 }
 
 .home_news_element {

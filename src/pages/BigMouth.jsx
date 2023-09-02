@@ -97,21 +97,24 @@ const BigMouth = () => {
 
     const changeText = () => {
         setIsHovered(true);
+        let i = 0;
+        if (isHovered) {
+            const intervalId = setInterval(() => {
+                // clearInterval(intervalId)
+                setText(words[i]);
 
-        const intervalId = setInterval(() => {
-            const newIndex = (currentIndex + 1) % words.length;
-            setCurrentIndex(newIndex);
-            setText(words[newIndex]);
+                if (i < 7) {
 
-            if (newIndex === words.length - 1) {
-                clearInterval(intervalId);
-                setTimeout(() => {
-                    setIsHovered(false);
-                    setCurrentIndex(0);
-                    setText('NEWS');
-                }, 500);
-            }
-        }, 500);
+                    i = i + 1;
+                } else if (i == 7) {
+                    setText("NEWS")
+                    clearInterval(intervalId);
+                    setIsHovered(false)
+
+                }
+
+            }, 500);
+        }
     };
 
 
@@ -134,8 +137,8 @@ const BigMouth = () => {
             </section>
 
             <section className={styles.home_news}>
-                <div className={styles.home_news_content}>
-                    <h1>THE HOME OF OUR <span className={styles.word} onMouseOver={changeText}>
+                <div className={styles.home_news_content} onMouseOver={changeText}>
+                    <h1>THE HOME OF OUR <span className={styles.word}>
                         {/* NEWS  */}
                         {isHovered ? text : "NEWS"}
                     </span> CONTENT</h1>
