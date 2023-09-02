@@ -90,35 +90,6 @@ const BigMouth = () => {
     }
 
 
-    const words = ["ORGINIAL", "DIGITAL", "MUSIC", "FILM", "PODCAST", "BTS", "REALNESS"];
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [text, setText] = useState('NEWS');
-    const [isHovered, setIsHovered] = useState(false);
-
-    const changeText = () => {
-        setIsHovered(true);
-        let i = 0;
-        if (isHovered) {
-            const intervalId = setInterval(() => {
-                // clearInterval(intervalId)
-                setText(words[i]);
-
-                if (i < 7) {
-
-                    i = i + 1;
-                } else if (i == 7) {
-                    setText("NEWS")
-                    clearInterval(intervalId);
-                    setIsHovered(false)
-
-                }
-
-            }, 500);
-        }
-    };
-
-
-
 
     return (
         <main className={styles.home_container}>
@@ -137,12 +108,15 @@ const BigMouth = () => {
             </section>
 
             <section className={styles.home_news}>
-                <div className={styles.home_news_content} onMouseOver={changeText}>
+                <div className={styles.home_news_content}
+                // onMouseOver={changeText}
+                >
                     <h1>THE HOME OF OUR <span className={styles.word}>
                         {/* NEWS  */}
-                        {isHovered ? text : "NEWS"}
+                        {/* {isHovered ? text : "NEWS"} */}
+                        NEWS HIT
                     </span> CONTENT</h1>
-                    <h1 className={styles.hit}>   S HIT</h1>
+                    {/* <h1 className={styles.hit}>   S HIT</h1> */}
                 </div>
                 <div className={styles.home_news_element}>
                     {/* <img src='./blank.jpeg' alt='img' className={styles.selfimg} /> */}

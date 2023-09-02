@@ -79,10 +79,6 @@ const SuggestionArticle = () => {
 
             <div className={styles.show_more}>
                 <p onClick={() => setTotalArticles(totalArticles + 4)}><span className={styles.plus}>
-                    {/* <img className={styles.plus_image} src='./PLUS.png' alt='plus' /> */}
-                    {/* <img className={styles.plus_image} src='./PLUS.svg' alt='plus' /> */}
-
-                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 256 256"><g fill="currentColor"><path d="m200 144l-72 72l-72-72Z" opacity=".2" /><path d="M207.39 140.94A8 8 0 0 0 200 136h-64V40a8 8 0 0 0-16 0v96H56a8 8 0 0 0-5.66 13.66l72 72a8 8 0 0 0 11.32 0l72-72a8 8 0 0 0 1.73-8.72ZM128 204.69L75.31 152h105.38Z" /></g></svg> */}
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41.979" viewBox="0 0 60 61.979" className={styles.color_change}>
                         <g id="PLUS" transform="translate(-897.5 -3715.5)">

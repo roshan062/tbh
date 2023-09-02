@@ -107,32 +107,110 @@
 }
 
 .home_news_content span {
-  color: rgb(235, 15, 147);
+  color: rgba(145, 31, 99, 0.74);
   /* text-shadow: 27px 2px 0px rgb(172, 55, 125); */
   position: relative;
   z-index: 5;
+  padding-left: 20px;
 }
 
-.word {
-  cursor: pointer;
-  /* transition: color 0.3s ease; */
+.home_news_content span::after {
+  content: "NEWS";
+  position: absolute;
+  color: rgb(235, 15, 147);
+  left: 0;
+  top: 20px;
 }
 
-.hit {
+@keyframes spin {
+  0% {
+    filter: brightness(100%);
+    content: "ORIGINAL";
+  }
+  5% {
+    filter: brightness(50%);
+  }
+  10% {
+    filter: brightness(100%);
+  }
+  15% {
+    content: "DIGITAL";
+    filter: brightness(50%);
+  }
+  20% {
+    filter: brightness(100%);
+  }
+  25% {
+    filter: brightness(50%);
+  }
+  30% {
+    filter: brightness(100%);
+    content: "MUSIC";
+  }
+  45% {
+    content: "FILM";
+    filter: brightness(50%);
+  }
+  50% {
+    filter: brightness(100%);
+  }
+  55% {
+    filter: brightness(50%);
+  }
+  60% {
+    filter: brightness(100%);
+    content: "PODCAST";
+  }
+  65% {
+    filter: brightness(50%);
+  }
+  70% {
+    filter: brightness(100%);
+  }
+  75% {
+    content: "BTS";
+    filter: brightness(50%);
+  }
+  80% {
+    filter: brightness(100%);
+  }
+  85% {
+    filter: brightness(50%);
+  }
+  90% {
+    filter: brightness(100%);
+    content: "REALNESS";
+  }
+  95% {
+    filter: brightness(50%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+.home_news:hover span {
+  visibility: hidden;
+}
+
+.home_news:hover span::after {
+  visibility: visible;
+  animation: spin 2s linear 0.5s;
+}
+
+/* .hit {
   color: rgb(155, 90, 129);
   position: absolute;
   top: 31%;
   left: 49%;
   z-index: 0;
-  /* transition: visibility 0.1s linear; */
-}
+} */
 
-.home_news_content:hover .hit {
-  /* visibility: hidden; */
+/* .home_news_content:hover .hit {
   animation: hideAfterFiveSeconds 5s;
-}
+} */
 
-@keyframes hideAfterFiveSeconds {
+/* @keyframes hideAfterFiveSeconds {
   0% {
     visibility: visible;
   }
@@ -148,7 +226,7 @@
   100% {
     visibility: visible;
   }
-}
+} */
 
 .home_news_element {
 }

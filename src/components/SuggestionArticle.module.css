@@ -180,7 +180,7 @@
 .show_more:hover .vee {
   opacity: 1;
 }
-
+/* 
 @keyframes draw {
 }
 from {
@@ -188,7 +188,7 @@ from {
 }
 to {
   stroke-dashoffset: 0;
-}
+} */
 
 @media (max-width: 900px) {
   .suggestion_article {
