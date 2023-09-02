@@ -88,18 +88,6 @@ const HomeOne = () => {
     }
 
 
-    //Adding line breaks in Mission text 
-    // const words = apiSentence.split(" ");
-    // for (let i = 0; i < words.length; i++) {
-    //     if (i === 2) {
-    //         words[i] += "<br><br>";
-    //     } else if (i === 5) {
-    //         words[i] += "<br><br>";
-    //     }
-    // }
-    // const modifiedSentence = words.join(" ");
-
-
     return (
         <main className={styles.home_container}>
             {data ? (<>

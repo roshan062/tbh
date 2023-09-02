@@ -57,7 +57,7 @@
 .image_text_container {
   position: absolute;
   top: 150px;
-  left: 49%;
+  left: 47%;
   transform: translate(-50%, 0%);
   text-align: center;
   z-index: 1;
@@ -106,7 +106,6 @@
 .mission {
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 120vh; */
   max-height: none;
   min-height: 850px;
   width: 100%;
@@ -192,7 +191,6 @@
   font-weight: 100;
 }
 .mission .missiontext_container .right {
-  /* grid-column: 2/3; */
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -354,7 +352,7 @@
   height: 128%;
   max-height: 38vw;
   width: 129%;
-  max-width: 520px;
+  max-width: 540px;
 }
 
 @media (min-width: 900px) {
