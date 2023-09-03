@@ -5,6 +5,7 @@ import { ColorRing } from 'react-loader-spinner'
 // import { BsArrowUpRight } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
 import BigMouthCards from '../components/BigMouthCards';
+import { BsTriangleFill } from 'react-icons/bs';
 
 const BigMouth = () => {
 
@@ -108,25 +109,16 @@ const BigMouth = () => {
             </section>
 
             <section className={styles.home_news}>
-                <div className={styles.home_news_content}
-                // onMouseOver={changeText}
-                >
-                    <h1>THE HOME OF OUR <span className={styles.word}>
-                        {/* NEWS  */}
-                        {/* {isHovered ? text : "NEWS"} */}
-                        NEWS HIT
-                    </span> CONTENT</h1>
-                    {/* <h1 className={styles.hit}>   S HIT</h1> */}
+                <div className={styles.home_news_content}>
+                    <h1>THE HOME <br /> OF OUR <br /><span className={styles.word}>NEWS HIT</span><br /> CONTENT</h1>
                 </div>
                 <div className={styles.home_news_element}>
-                    {/* <img src='./blank.jpeg' alt='img' className={styles.selfimg} /> */}
-                    {/* <img className={styles.red_square} src='./Rectangle 1620.png' alt='square_element' /> */}
                     <p className={styles.news_para}>
                         Welcome to The Big Mouth, the place where The Big House’s digital content lives.
                         It’s still early days and this is just the start of some big things to come.
                         Read more about what we’ve got planned or take a look below at what we have for you right now.
                     </p>
-                    <div className={styles.red_square}></div>
+                    {/* <div className={styles.red_square}></div> */}
                 </div>
             </section>
 
@@ -144,7 +136,10 @@ const BigMouth = () => {
                 </video>
                 {!isPlaying && (
                     <button className={styles.content_video_play_button} >
-                        <img src='play-btn.png' onClick={togglePlay} />
+                        <img src='y-p.png' onClick={togglePlay} />
+                        <img src='p-c.png' className={styles.red_circle} onClick={togglePlay} />
+                        <img src='ics.png' className={styles.red_triangle} onClick={togglePlay} />
+                        {/* <BsTriangleFill className={styles.triangle_icon} /> */}
                     </button>
                 )}
             </section>
