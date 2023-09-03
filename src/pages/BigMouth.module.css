@@ -330,14 +330,27 @@
   top: 47%;
   left: 53.4%;
   transform: translate(-150%, -50%);
+  visibility: hidden;
 }
 
-/* .content_video_play_button .triangle_icon {
+.content_video_play_button .triangle_icon {
+  height: 41px;
+  width: 42px;
+  position: absolute;
+  top: 43.5%;
+  left: 47.4%;
+  transform: translate(-150%, -50%);
+  transition: top 0.2s linear;
+  transform: rotate(-30deg);
   color: #c3006b;
-  height: 100px;
-  width: 100px;
-  transform: translateY(-400px);
-} */
+  z-index: 2;
+  visibility: hidden;
+  transition: visibility 0.1s ease;
+}
+
+.content_video_play_button:hover .triangle_icon {
+  visibility: visible;
+}
 
 @media (max-width: 900px) {
   .bigmouth_cards_section {
@@ -509,6 +522,10 @@
     left: 50.3%;
     transform: translate(-50%, 0%);
     transition: height 0.2s linear;
+  }
+
+  .content_video_play_button:hover .triangle_icon {
+    visibility: hidden;
   }
 }
 

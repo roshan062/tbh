@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
 
+
 const BigMouth = () => {
 
     const [data, setData] = useState('');
@@ -139,7 +140,8 @@ const BigMouth = () => {
                         <img src='y-p.png' onClick={togglePlay} />
                         <img src='p-c.png' className={styles.red_circle} onClick={togglePlay} />
                         <img src='ics.png' className={styles.red_triangle} onClick={togglePlay} />
-                        {/* <BsTriangleFill className={styles.triangle_icon} /> */}
+                        <BsTriangleFill className={styles.triangle_icon} />
+
                     </button>
                 )}
             </section>
