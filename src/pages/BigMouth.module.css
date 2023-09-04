@@ -382,9 +382,15 @@
 .show_more p {
   text-align: center;
   margin-bottom: 100px;
+  margin: 0 auto 0 auto;
+  width: 200px;
 }
 
-.plus:hover {
+.show_more p:hover {
+  color: #00e6d4;
+}
+
+.show_more p:hover .plus {
   color: #00e6d4;
 }
 
@@ -404,11 +410,11 @@
   transition: opacity 0.2s linear;
 }
 
-.plus:hover .color_change path {
+.show_more p:hover .color_change path {
   fill: #00e6d4;
 }
 
-.plus:hover .vee {
+.show_more p:hover .vee {
   opacity: 1;
 }
 

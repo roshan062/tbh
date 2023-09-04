@@ -4,7 +4,7 @@ import styles from './BigMouth.module.css';
 import { ColorRing } from 'react-loader-spinner'
 // import { BsArrowUpRight } from 'react-icons/bs';
 import { useLocation } from 'react-router-dom';
-import BigMouthCards from '../components/BigMouthCards';
+// import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
 import BigMouthCaraousel from '../components/BigMouthCaraousel';
 
@@ -148,7 +148,6 @@ const BigMouth = () => {
             </section>
 
             <section className={styles.bigmouth_cards_section}>
-                {/* <BigMouthCards /> */}
                 <p className={styles.carousel_heading}>new to the big mouth</p>
                 <BigMouthCaraousel />
                 <p className={styles.carousel_heading}>behind the scenes</p>

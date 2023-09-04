@@ -38,7 +38,7 @@ const BigMouthCaraousel = () => {
             slidesToSlide: 2 // optional, default to 1.
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
+            breakpoint: { max: 664, min: 0 },
             items: 1,
             slidesToSlide: 1 // optional, default to 1.
         }
@@ -73,21 +73,19 @@ const BigMouthCaraousel = () => {
                 <>
                     <Carousel
                         arrows={false}
-                        // partialVisbile
-                        // deviceType={deviceType}
-                        // itemClass="image-item"
+
                         responsive={responsive}
                         className={styles.carousel_container}
                     >
                         {images.slice(0, 4).map((image, i) => {
-                            return (<>
+                            return (<div className={styles.image_container}>
                                 <img key={i}
                                     draggable={false}
                                     src={image}
                                     className={styles.carousel_images}
                                 />
                                 <p className={styles.overlay_title}>{title[i]}</p>
-                            </>
+                            </div>
                             );
                         })}
                     </Carousel>

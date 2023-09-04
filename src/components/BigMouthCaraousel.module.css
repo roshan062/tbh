@@ -6,14 +6,34 @@
 
 .carousel_images {
   height: 100%;
-  min-height: 250px;
+  min-height: 150px;
   width: 90%;
-  min-width: 300px;
+  min-width: 100px;
   margin: 0 0 0 0px;
   border-radius: 5%;
   padding-left: 50px;
   position: relative;
   cursor: pointer;
+}
+
+.image_container::after {
+  content: "";
+  height: 100%;
+  width: 90%;
+  display: block;
+  color: white;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  border-radius: 5%;
+  transition: background-color 0.4s ease, opacity 0.4s ease;
+}
+
+.image_container:hover::after {
+  opacity: 0.7;
+  background-color: #c3006b;
+  z-index: 0;
 }
 
 .overlay_title {
@@ -24,6 +44,8 @@
   font-size: clamp(16px, 3vw, 50px);
   font-family: "system-ui";
   cursor: pointer;
+  z-index: 1;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
@@ -35,5 +57,19 @@
     margin: 0 0 0 0px;
     border-radius: 5%;
     padding-left: 10px;
+  }
+
+  .image_container::after {
+    content: "";
+    height: 100%;
+    width: 90%;
+    display: block;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    border-radius: 5%;
+    transition: background-color 0.4s ease, opacity 0.4s ease;
   }
 }
