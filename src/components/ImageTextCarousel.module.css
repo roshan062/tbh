@@ -46,7 +46,7 @@
   width: 80%;
   height: 70px;
   background-color: transparent;
-  border: 1.5px solid #11ebeb;
+  border: 1.5px solid #00e6d4;
   box-sizing: border-box;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .left_arrow:hover {
-  background-color: #00e4d6;
+  background-color: #00e6d4;
 }
 
 .right_arrow {
@@ -114,7 +114,7 @@
 }
 
 .right_arrow:hover {
-  background-color: #00e4d6;
+  background-color: #00e6d4;
 }
 
 .carousel__item.active {
@@ -244,7 +244,7 @@
     width: 80%;
     height: 50px;
     background-color: transparent;
-    border: 1.5px solid #11ebeb;
+    border: 1.5px solid #00e6d4;
     box-sizing: border-box;
   }
 

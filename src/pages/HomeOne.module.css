@@ -94,7 +94,7 @@
 }
 
 .image_text :nth-child(2) {
-  color: #11ebeb;
+  color: #00e6d4;
 }
 
 .b_design {
@@ -256,7 +256,7 @@
   width: 115%;
   height: 70px;
   background-color: transparent;
-  border: 1.5px solid #11ebeb;
+  border: 1.5px solid #00e6d4;
   box-sizing: border-box;
 }
 
