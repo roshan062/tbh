@@ -117,7 +117,7 @@ const BigMouth = () => {
                     <p className={styles.news_para}>
                         Welcome to The Big Mouth, the place where The Big House’s digital content lives.
                         It’s still early days and this is just the start of some big things to come.
-                        Read more about what we’ve got planned or take a look below at what we have for you right now.
+                        Read more about what we’ve <span className={styles.inbetween_plan}> got planned </span>  or take a look below at what we have for you right now.
                     </p>
                     {/* <div className={styles.red_square}></div> */}
                 </div>

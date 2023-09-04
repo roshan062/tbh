@@ -601,8 +601,8 @@
     position: absolute;
     top: -7px;
     left: -10px;
-    height: 125%;
-    min-height: 300px;
+    height: 130%;
+    min-height: 315px;
     width: 140%;
   }
 
@@ -694,7 +694,7 @@
   }
 
   .do_it {
-    row-gap: 50px;
+    row-gap: 100px;
     padding-bottom: 150px;
   }
 
@@ -705,8 +705,8 @@
 
   .img_item .rectangle_overlay_image_red {
     position: absolute;
-    top: -12px;
-    left: -16px;
+    top: -8px;
+    left: -6px;
     height: 100%;
     min-height: 275px;
     width: 110%;
@@ -714,8 +714,8 @@
 
   .img_item .rectangle_overlay_image_blue {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     height: 56%;
     min-height: 265px;
     width: 106%;
@@ -752,8 +752,8 @@
 
   .img_item .rectangle_overlay_image_blue {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 18px;
+    left: 18px;
     height: 75vw;
     min-height: 75vw;
     width: 65vw;
