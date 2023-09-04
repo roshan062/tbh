@@ -91,6 +91,7 @@
 
 .image_container {
   height: 210px;
+  width: 250px;
   max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;

@@ -6,6 +6,7 @@ import { ColorRing } from 'react-loader-spinner'
 import { useLocation } from 'react-router-dom';
 import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
+import BigMouthCaraousel from '../components/BigMouthCaraousel';
 
 
 const BigMouth = () => {
@@ -147,7 +148,8 @@ const BigMouth = () => {
             </section>
 
             <section className={styles.bigmouth_cards_section}>
-                <BigMouthCards />
+                {/* <BigMouthCards /> */}
+                <BigMouthCaraousel />
             </section>
 
             {/* </>
