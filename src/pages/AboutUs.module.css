@@ -355,7 +355,7 @@
   width: 50%;
   height: 50px;
   background-color: transparent;
-  border: 1.5px solid #11ebeb;
+  border: 1.5px solid var(--skyblue);
   box-sizing: border-box;
 }
 
@@ -479,6 +479,7 @@
   width: 50%;
   z-index: 11;
   transform: scaleY(110%);
+  pointer-events: none;
 }
 
 .role_grid_container {

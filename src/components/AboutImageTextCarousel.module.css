@@ -150,6 +150,10 @@
   cursor: pointer;
 }
 
+.carousel__dot:hover {
+  border: 0.0625rem solid var(--skyblue);
+}
+
 .carousel__dot.active {
   background-color: var(--skyblue);
 }

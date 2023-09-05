@@ -99,6 +99,11 @@
   height: 0.5rem;
   width: 0.5rem;
   cursor: pointer;
+  z-index: 2;
+}
+
+.carousel__dot:hover {
+  border: 0.0625rem solid var(--skyblue);
 }
 
 .carousel__dot.active {
