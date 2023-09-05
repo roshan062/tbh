@@ -4,11 +4,12 @@ import styless from '../App.module.css'
 import AboutImageTextCarousel from '../components/AboutImageTextCarousel';
 import { ColorRing } from 'react-loader-spinner'
 import Pie from '../components/Pie'
-import { BsArrowUpRight } from 'react-icons/bs';
+// import { BsArrowUpRight } from 'react-icons/bs';
 import FullImageCarousel from '../components/FullImageCarousel';
 import TabbedMultiCarousel from '../components/TabbedMultiCarousel';
 import { useLocation } from 'react-router-dom';
-
+import { BsTriangleFill } from 'react-icons/bs';
+import ArrowAnimation from '../components/Arrow';
 
 const AboutUs = () => {
     const [data, setData] = useState('');
@@ -139,7 +140,7 @@ const AboutUs = () => {
                         {imageUrl(data.aboutus_elements[0].video_link_embed)}
                     </div> */}
                     <video ref={videoref} onClick={togglePlay} height='' width=''
-                        poster='./about-video-thumbnail.jpg'
+                        poster='./images/about/poster.png'
                         className={styles.self_video}>
                         <source
                             src={Vsource}
@@ -148,7 +149,11 @@ const AboutUs = () => {
                     </video>
                     {!isPlaying && (
                         <button className={styles.content_video_play_button} >
-                            <img src='play-btn.png' onClick={togglePlay} />
+                            <img src='./images/about/y-p.png' onClick={togglePlay} />
+                            <img src='./images/about/circle.png' className={styles.red_circle} onClick={togglePlay} />
+                            <img src='./images/about/triangle.png' className={styles.red_triangle} onClick={togglePlay} />
+                            <BsTriangleFill className={styles.triangle_icon} />
+
                         </button>
                     )}
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
@@ -231,8 +236,8 @@ const AboutUs = () => {
                 <section>
                     <div className={styles.role_grid_container}>
                         <div className={styles.item1}>
-                            <p>{data.aboutus_elements[0].data_slide_heading}</p>
-                            <h1>{data.aboutus_elements[0].links_sec_heading}</h1>
+                            <p className={styles.para}>{data.aboutus_elements[0].data_slide_heading}</p>
+                            <h1 className={styles.title}>{data.aboutus_elements[0].links_sec_heading}</h1>
                         </div>
                         <div className={styles.item2}>
                             <img src='' alt='image' className={styles.role_grid_container_img}
@@ -241,10 +246,18 @@ const AboutUs = () => {
                                 }}
                             />
                             <div className={styles.links}>
-                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
-                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
-                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
-                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}<BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3></a>
+                                <a href={data.aboutus_elements[0].link1}><h3>{data.aboutus_elements[0].link1_title}
+                                    <ArrowAnimation />
+                                </h3></a>
+                                <a href={data.aboutus_elements[0].link2}><h3>{data.aboutus_elements[0].link2_title}
+                                    <ArrowAnimation />
+                                </h3></a>
+                                <a href={data.aboutus_elements[0].link3}><h3>{data.aboutus_elements[0].link3_title}
+                                    <ArrowAnimation />
+                                </h3></a>
+                                <a href={data.aboutus_elements[0].link4}><h3>{data.aboutus_elements[0].link4_title}
+                                    <ArrowAnimation />
+                                </h3></a>
                             </div>
                         </div>
                     </div>

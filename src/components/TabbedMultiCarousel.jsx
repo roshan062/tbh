@@ -24,8 +24,9 @@ const TabbedMultiCarousel = ({ slides }) => {
 
     return (
         <div className={styles.product_carousel}>
-            <button className={styles.pre_btn} onClick={btnpressprev}><p>&lt;</p></button>
-            <button className={styles.next_btn} onClick={btnpressnext}><p>&gt;</p></button>
+            <img src="./la.png" alt="left_arrow_img" className={styles.left_arrow}
+                onClick={() => handleLeftClick(index + 1)}
+            />
             <div className={styles.product_container} ref={elementRef}>
                 {slides.map((item, index) => {
                     const { name, description, image } = item;
@@ -42,7 +43,9 @@ const TabbedMultiCarousel = ({ slides }) => {
                     )
                 })}
             </div>
-
+            <img src="./ra.png" alt="right_arrow_img" className={styles.right_arrow}
+                onClick={() => handleRightClick(index + 1)}
+            />
         </div>
     )
 }

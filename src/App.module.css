@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --skyblue: #00e6d4;
+}
+
 .icon_color {
   color: #00e6d4;
   padding: 0 0 0 5px;

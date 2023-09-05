@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { BsArrowUpRight } from 'react-icons/bs';
+// import { BsArrowUpRight } from 'react-icons/bs';
 import styles from './AboutImageTextCarousel.module.css'
 import styless from '../App.module.css'
 import { Link } from 'react-router-dom'
+import ArrowAnimation from '../components/Arrow';
 
 const AboutImageTextCarousel = ({ slides }) => {
     const [activeSlide, setActiveSlide] = useState(1);
@@ -27,7 +28,7 @@ const AboutImageTextCarousel = ({ slides }) => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 2000);
+        }, 10000);
 
         return () => clearInterval(intervalId);
     }, []);
@@ -70,7 +71,10 @@ const AboutImageTextCarousel = ({ slides }) => {
                                 <h2 className={styles.heading}>{heading}</h2>
                                 <p className={styles.desc}>{description}</p>
                                 <Link to={link} className={styles.link}>
-                                    <h3>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
+                                    <h3>More Info
+                                        {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                        <ArrowAnimation />
+                                    </h3>
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>

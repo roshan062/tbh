@@ -17,6 +17,7 @@
   z-index: 11;
   position: absolute;
   top: 0;
+  left: 25px;
   width: 300px;
 }
 
@@ -45,7 +46,7 @@
   width: 70%;
   height: 60px;
   background-color: transparent;
-  border: 1.5px solid #11ebeb;
+  border: 1.5px solid var(--skyblue);
   box-sizing: border-box;
 }
 
@@ -90,14 +91,14 @@
   left: 0px;
   height: 30px;
   width: 30px;
-  padding: 10px 0 10px 10px;
+  padding: 25px 10px 25px 20px;
   background-color: #1c2222e9;
   transition: background-color 0.4s ease;
   cursor: pointer;
 }
 
 .left_arrow:hover {
-  background-color: #00e4d6;
+  background-color: var(--skyblue);
 }
 
 .right_arrow {
@@ -106,14 +107,14 @@
   right: 0;
   height: 30px;
   width: 30px;
-  padding: 10px 10px 10px 0px;
+  padding: 25px 15px 25px 10px;
   transition: background-color 0.4s ease;
   cursor: pointer;
   background-color: #1c2222ed;
 }
 
 .right_arrow:hover {
-  background-color: #00e4d6;
+  background-color: var(--skyblue);
 }
 
 .carousel__item.active {
@@ -150,15 +151,19 @@
 }
 
 .carousel__dot.active {
-  background-color: #00e4d6;
+  background-color: var(--skyblue);
 }
 
 .carousel__quote {
   line-height: 1.5;
-  padding: 10px 0 0 150px;
+  padding: 50px 0 0 150px;
   text-align: left;
   font-family: "Roboto";
   width: 70%;
+}
+
+.desc {
+  width: 75%;
 }
 
 .carousel__quote .heading {
@@ -173,8 +178,9 @@
 }
 
 .carousel_img img {
-  max-height: 400px;
+  max-height: 420px;
   width: auto;
+  padding-right: 80px;
 }
 
 .link {
@@ -183,10 +189,6 @@
 
 .link:hover {
   color: #00e4d6;
-}
-
-.link:hover .arrow_icon {
-  transform: translateX(5px) translateY(-5px);
 }
 
 @media (max-width: 900px) {
@@ -205,6 +207,7 @@
     z-index: 11;
     position: absolute;
     top: 0;
+    left: -80px;
     width: 300px;
   }
 
@@ -233,7 +236,7 @@
     width: 60%;
     height: 50px;
     background-color: transparent;
-    border: 1.5px solid #11ebeb;
+    border: 1.5px solid var(--skyblue);
     box-sizing: border-box;
   }
 
@@ -322,7 +325,7 @@
   }
 
   .carousel__dot.active {
-    background-color: #00e4d6;
+    background-color: var(--skyblue);
   }
 
   .carousel__quote {
@@ -357,11 +360,12 @@
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
   .hanging_container {
     z-index: 11;
     position: absolute;
     top: 0;
+    left: 0;
     max-width: 200px;
   }
 
@@ -390,7 +394,7 @@
     width: 50vw;
     height: 60px;
     background-color: transparent;
-    border: 1.5px solid #11ebeb;
+    border: 1.5px solid var(--skyblue);
     box-sizing: border-box;
   }
 
