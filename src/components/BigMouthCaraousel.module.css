@@ -72,4 +72,30 @@
     border-radius: 5%;
     transition: background-color 0.4s ease, opacity 0.4s ease;
   }
+
+  .overlay_title {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: white;
+    font-size: clamp(16px, 5vw, 50px);
+    font-family: "system-ui";
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 664px) {
+  .overlay_title {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color: white;
+    font-size: clamp(16px, 9vw, 80px);
+    font-family: "system-ui";
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 600;
+  }
 }
