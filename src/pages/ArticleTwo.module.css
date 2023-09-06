@@ -223,6 +223,14 @@
     height: auto;
     margin: 0px 0px 0px 0px;
   }
+
+  .direct {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 10px 100px 10px;
+  }
 }
 
 @media (max-width: 500px) {
