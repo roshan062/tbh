@@ -5,6 +5,8 @@ import { ColorRing } from 'react-loader-spinner'
 import { BsArrowUpRight } from 'react-icons/bs';
 import BrandCarousel from '../components/BrandCarousel';
 import { useLocation } from 'react-router-dom';
+import ArrowAnimation from '../components/Arrow';
+
 
 const GetInvolved = () => {
     const [data, setData] = useState('');

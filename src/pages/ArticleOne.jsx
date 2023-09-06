@@ -3,7 +3,9 @@ import styles from './ArticleOne.module.css';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
 import { useLocation } from 'react-router-dom';
-
+import { BsTriangleFill } from 'react-icons/bs';
+import ArticleOneCarousel from '../components/ArticleOneCarousel';
+import ArrowAnimation from '../components/Arrow';
 
 const ArticleOne = () => {
     const [data, setData] = useState('');
@@ -30,6 +32,11 @@ const ArticleOne = () => {
         }
     };
 
+    let Vsource;
+    if (data) {
+        Vsource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+    }
+
     const videoref = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const status = videoref.current;
@@ -52,7 +59,7 @@ const ArticleOne = () => {
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
             if (isImage) {
-                return <img src={modifiedUrl} className={styles['article_imagee']} />;
+                return <img src={modifiedUrl} className={styles['article_image']} />;
             } else {
                 return (
                     <div>
@@ -64,6 +71,7 @@ const ArticleOne = () => {
                                 ▶️
                             </button>
                         )}
+
                     </div>
                 )
             }
@@ -83,29 +91,40 @@ const ArticleOne = () => {
                 {imageUrl(data.image)
                 }
                 <div className={styles['image_textt']}>
+
+                    <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
+
+                </div>
+
+                <section className={styles['title_section']}>
                     <div className={styles['containerr']}>
                         <div className={styles['boxx']}>
                             <p>NEWS</p>
                         </div>
                         <div className={styles['boxx2']}></div>
                     </div>
-                    <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
-                    <p className={styles['para_text']}>
-                        By <span>The Big House</span> | Posted in: NEWSLETTER | 1st June 2023
-                    </p>
-                </div>
-
-                <section className={styles['title_section']}>
-                    <h1>{data?.title}</h1>
-                    <p>
-                        By <span>The Big House</span> | Posted in: NEWSLETTER | 1st June 2023
+                    <h1 className={styles.title_section_title}>{data.title}</h1>
+                    <p className={styles.title_section_para}>
+                        By <span>The Big House</span> | in NEWS | 1st May 2023
                     </p>
                     <p className={styles.desc_text}>
                         {descriptionText}
                     </p>
+                    <h1 className={styles.title_section_subheading}>Sub Heading H3</h1>
+                    <p className={styles.desc_text}>
+                        Paragraph: The magic of theatre can be healing for many people. Participating in theatre can
+                        help to reduce feelings of anxiety, depression, and other mental health issues. It can be a
+                        great way to find a creative outlet, manage stress, and find a source of joy. Theatre can help
+                        to improve focus and concentration, as well as to boost your confidence.
+                        The power of theatre to make people think, feel, and reflect on the world deeply is a great
+                        tool to make positive changes in people’s lives. Through theatre, you can gain insight into
+                        yourself, learn more about the world, and practice empathy while engaging your emotions in the
+                        process. If this content block is longer or shorter - the container adapts and the padding is
+                        retained between sections.
+                    </p>
                 </section>
 
-                <section className={styles['middle_section']}>
+                {/* <section className={styles['middle_section']}>
 
                     {imageUrl(data.subheadings[0].image)}
 
@@ -145,26 +164,79 @@ const ArticleOne = () => {
 
                     {imageUrl(data.subheadings[3].image)}
 
+                </section> */}
+
+                <section className={styles.video_image_container}>
+
+                    <video ref={videoref} onClick={togglePlay} height='' width=''
+                        poster='./images/article1/article_1_video.png'
+                        className={styles.self_video}>
+                        <source
+                            src={Vsource}
+                            type="video/mp4"
+                        />
+                    </video>
+                    {!isPlaying && (
+                        <div className={styles.content_video_play_button} >
+                            <img src='./images/about/y-p.png' onClick={togglePlay} />
+                            <img src='./images/about/circle.png' className={styles.red_circle} onClick={togglePlay} />
+                            <img src='./images/about/triangle.png' className={styles.red_triangle} onClick={togglePlay} />
+                            {/* <BsTriangleFill className={styles.triangle_icon} /> */}
+
+                        </div>
+                    )}
+                </section>
+                <section className={styles.another_section}>
+                    <h1 className={styles.another_title}>
+                        Another sub section title
+                    </h1>
+                    <p className={styles.another_para}>
+                        The magic of theatre can be healing for many people. Participating in theatre can help to reduce feelings of
+                        anxiety, depression, and other mental health issues. It can be a great way to find a creative outlet, manage stress,
+                        and find a source of joy. Theatre can help to improve focus and concentration, as well as to boost your confidence.
+                        <br /><br />
+                        The theatre can help you to build a sense of community, which can be especially important if you need a group
+                        of supportive people to lean on. Being a part of a theatrical group can also be great for networking. New directors,
+                        producers, and other theatre professionals can be easier to connect with by being part of the theatre world.
+                    </p>
                 </section>
 
-                <section className={styles['quote_section']}>
-
-                    <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-
+                <section>
+                    {imageUrl(data.image)
+                    }
                 </section>
 
                 <section className={styles['prologue']}>
-
                     <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
-
-
-                    <h2 className={styles['l_arrow']}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 512 512" id="left_arrow">
-                            <path d="M189.8 349.7c3.1-3.1 3-8 0-11.3L123.4 264H408c4.4 0 8-3.6 8-8s-3.6-8-8-8H123.4l66.3-74.4c2.9-3.4 3.2-8.1.1-11.2-3.1-3.1-8.5-3.3-11.4-.1 0 0-79.2 87-80 88S96 253.1 96 256s1.6 4.9 2.4 5.7 80 88 80 88c1.5 1.5 3.6 2.3 5.7 2.3s4.1-.8 5.7-2.3z"></path>
-                        </svg>
-                        Back To News
-                    </h2>
                 </section>
+
+
+                <section className={styles.another_section}>
+                    <h1 className={styles.another_title}>
+                        Another sub section title
+                    </h1>
+                    <p className={styles.another_para}>
+                        The magic of theatre can be healing for many people. Participating in theatre can help to reduce feelings of
+                        anxiety, depression, and other mental health issues. It can be a great way to find a creative outlet, manage stress,
+                        and find a source of joy. Theatre can help to improve focus and concentration, as well as to boost your confidence.
+                        <br /><br />
+                        The theatre can help you to build a sense of community, which can be especially important if you need a group
+                        of supportive people to lean on. Being a part of a theatrical group can also be great for networking. New directors,
+                        producers, and other theatre professionals can be easier to connect with by being part of the theatre world.
+                    </p>
+                </section>
+
+                <section className={styles['quote_section']}>
+                    <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
+                </section>
+
+                <section className={styles.carousel}>
+                    <ArticleOneCarousel images={data.subheadings} />
+                </section>
+
+                <p className={styles.more_news}>More News
+                    <ArrowAnimation />
+                </p>
             </>
             ) : (
                 <div className={styless.spinner}>

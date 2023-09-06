@@ -7,7 +7,7 @@ import ShowMore from './ShowMore';
 
 const SuggestionArticle = () => {
     const [data, setData] = useState('');
-    const [totalArticles, setTotalArticles] = useState(4);
+    const [totalArticles, setTotalArticles] = useState(6);
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/articles";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
@@ -39,6 +39,7 @@ const SuggestionArticle = () => {
                             {data.map((api, index) => {
                                 if (index > totalArticles) return
                                 if (api.type == 0) return
+                                if (api.type > 3) return
                                 const ref = `/${api.type}`;
                                 let url = api.image.replace("localhost/", imageIP)
                                 let newDescription = api.description.substring(0, 200)

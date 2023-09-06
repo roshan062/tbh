@@ -3,6 +3,7 @@ import styles from './ArticleThree.module.css'
 import { useLocation } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
+import { BsArrowLeft } from 'react-icons/bs'
 
 const ArticleThree = () => {
     const [data, setData] = useState('');
@@ -85,45 +86,43 @@ const ArticleThree = () => {
                     <h1 className={styles.heading_text}>
                         {data.head_title}
                     </h1>
-                    <p dangerouslySetInnerHTML={{ __html: data.title }}></p>
+                    {/* <p dangerouslySetInnerHTML={{ __html: data.title }}></p> */}
                 </div>
 
                 <section className={styles.title_section}>
                     <h1>{data.head_title}</h1>
+                    <p className={styles.title_section_para}>By <span>The Big House Means Business | </span> Workshop Focus: Diversity Inclusion</p>
                 </section>
 
                 <section className={styles.middletext}>
-
                     <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
-
                 </section>
 
                 <section className={styles.quote_section}>
-
                     <div dangerouslySetInnerHTML={{ __html: data.quote_2 }}></div>
-
+                    <p className={styles.publisher_name}>SAGE Publishing Employee</p>
                 </section>
 
                 <section>
-
                     {imageUrl(data.media)}
-
                 </section>
 
                 <section className={styles.quote_section}>
-
                     <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-
+                    <p className={styles.publisher_name}>SAGE Publishing Employee</p>
                 </section>
 
-                <section className={styles.prologue}>
+                <section className={styles.inquiry}>
+                    <span className={styles.bold}>To Book or make an enquiry </span> about how this workshop can be tailored to your needs
+                    <span className={styles.blue_underline}> contact The Big House Means Business team today </span> or check out our
+                    <span className={styles.blue_underline}> other workshops</span>
+                </section>
 
-                    <h2 className='l-arrow'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 512 512" id="left-arrow"><path d="M189.8 349.7c3.1-3.1 3-8 0-11.3L123.4 264H408c4.4 
-        0 8-3.6 8-8s-3.6-8-8-8H123.4l66.3-74.4c2.9-3.4 3.2-8.1.1-11.2-3.1-3.1-8.5-3.3-11.4-.1 0 0-79.2 87-80 88S96 253.
-        1 96 256s1.6 4.9 2.4 5.7 80 88 80 88c1.5 1.5 3.6 2.3 5.7 2.3s4.1-.8 5.7-2.3z"></path></svg>
-
-                        All Workshops</h2>
+                <section className={styles.workshop}>
+                    <div className={styles.iconWrapper}>
+                        <BsArrowLeft className={styles.arrow_icon} />
+                    </div>
+                    <span>All Workshops</span>
                 </section>
             </>
             ) : (

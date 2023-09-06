@@ -4,6 +4,8 @@ import Carousel from '../components/Carousel';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
 import { useLocation } from 'react-router-dom';
+import { BsArrowLeft } from 'react-icons/bs'
+import { BsArrowRight } from 'react-icons/bs'
 
 const ArticleTwo = () => {
     const [data, setData] = useState('');
@@ -119,12 +121,14 @@ const ArticleTwo = () => {
             </section>
 
             <section className={styles.carousel}>
-
                 <Carousel images={data.images} />
-
-
             </section>
 
+            <section className={styles.direct}>
+                <p> <span><BsArrowLeft /></span> Previous</p>
+                <p>All Productions</p>
+                <p>Next <span><BsArrowRight /></span></p>
+            </section>
         </>
         ) : (
             <div className={styless.spinner}>
