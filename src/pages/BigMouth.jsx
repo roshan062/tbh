@@ -7,12 +7,10 @@ import { useLocation } from 'react-router-dom';
 // import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
 import BigMouthCaraousel from '../components/BigMouthCaraousel';
-
+import VideoImage from '../components/VideoImage';
 
 const BigMouth = () => {
-
     const [data, setData] = useState('');
-
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/big-mouth";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
@@ -93,7 +91,6 @@ const BigMouth = () => {
     }
 
 
-
     return (
         <main className={styles.home_container}>
             {/* {data ? (<> */}
@@ -125,26 +122,8 @@ const BigMouth = () => {
             </section>
 
 
-            <section className={styles.video_image_container}>
-                {/* <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} /> */}
-                {/* {imageUrl('http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4')} */}
-                <video ref={videoref} onClick={togglePlay} height='' width=''
-                    // poster='https://mannyadmin.bechocar.com/uploads/people_image.jpg'
-                    poster='./images/bigmouth/video-banner.png'
-                    className={styles.self_video}>
-                    <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-                        type="video/mp4"
-                    />
-                </video>
-                {!isPlaying && (
-                    <button className={styles.content_video_play_button} >
-                        <img src='y-p.png' onClick={togglePlay} />
-                        <img src='p-c.png' className={styles.red_circle} onClick={togglePlay} />
-                        <img src='ics.png' className={styles.red_triangle} onClick={togglePlay} />
-                        <BsTriangleFill className={styles.triangle_icon} />
-
-                    </button>
-                )}
+            <section>
+                <VideoImage videoimageurl='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' />
             </section>
 
             <section className={styles.bigmouth_cards_section}>

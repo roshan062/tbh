@@ -1,0 +1,230 @@
+.article_image {
+  width: 100%;
+  height: 50vw;
+  max-height: 650px;
+  display: block;
+}
+
+.video_image_container {
+  min-height: 700px;
+  background-color: black;
+  text-align: center;
+  position: relative;
+  max-height: 800px;
+}
+
+.self_video:hover {
+  cursor: pointer;
+  filter: brightness(50%);
+}
+
+.self_video {
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+  transition: filter 0.2s ease;
+}
+
+.content_video_play_button img {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  top: 47%;
+  left: 57%;
+  transform: translate(-150%, -50%);
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  font-size: x-large;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.content_video_play_button .red_circle {
+  height: 105px;
+  width: 105px;
+  position: absolute;
+  top: 47%;
+  left: 58.1%;
+  transform: translate(-150%, -50%);
+  transition: height 0.2s linear;
+}
+
+.content_video_play_button:hover .red_circle {
+  height: 84px;
+  width: 84px;
+  position: absolute;
+  top: 47%;
+  left: 56.5%;
+  transform: translate(-150%, -50%);
+}
+
+.content_video_play_button .red_triangle {
+  height: 40px;
+  width: 36px;
+  position: absolute;
+  top: 46.4%;
+  left: 53%;
+  transform: translate(-150%, -50%);
+  transition: top 0.2s linear;
+}
+
+.content_video_play_button:hover .red_triangle {
+  height: 40px;
+  width: 38px;
+  position: absolute;
+  top: 47%;
+  left: 53.4%;
+  transform: translate(-150%, -50%);
+  visibility: hidden;
+}
+
+.content_video_play_button .triangle_icon {
+  height: 41px;
+  width: 42px;
+  position: absolute;
+  top: 43.5%;
+  left: 47.4%;
+  transform: translate(-150%, -50%);
+  transition: top 0.2s linear;
+  transform: rotate(-30deg);
+  color: #c3006b;
+  z-index: 2;
+  visibility: hidden;
+  transition: visibility 0.1s ease;
+}
+
+.content_video_play_button:hover .triangle_icon {
+  visibility: visible;
+}
+
+@media (max-width: 900px) {
+  .article_image {
+    width: 100%;
+    height: 50vw;
+    /* max-height: 400px; */
+    display: block;
+    background-color: black;
+  }
+
+  .video_image_container {
+    min-height: 100px;
+    background-color: black;
+    text-align: center;
+  }
+
+  .self_video {
+    height: 120%;
+    width: 100%;
+  }
+
+  .content_video_play_button img {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    font-size: x-large;
+    cursor: pointer;
+  }
+
+  .content_video_play_button .red_circle {
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    top: 39.6%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+
+  .content_video_play_button:hover .red_circle {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 40.2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+
+  .content_video_play_button .red_triangle {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 42%;
+    left: 50.3%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+    transition: top 0.2s linear;
+  }
+
+  .content_video_play_button:hover .red_triangle {
+    height: 18px;
+    width: 16px;
+    position: absolute;
+    top: 42.4%;
+    left: 50.3%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+
+  .content_video_play_button:hover .triangle_icon {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+  .article_image {
+    width: 100%;
+    height: 50vw;
+    display: block;
+    background-color: black;
+  }
+
+  .content_video_play_button .red_circle {
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    top: 39.2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+
+  .content_video_play_button:hover .red_circle {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 40.2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+
+  .content_video_play_button .red_triangle {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 42%;
+    left: 50.3%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+    transition: top 0.2s linear;
+  }
+
+  .content_video_play_button:hover .red_triangle {
+    height: 18px;
+    width: 16px;
+    position: absolute;
+    top: 43.7%;
+    left: 50.3%;
+    transform: translate(-50%, 0%);
+    transition: height 0.2s linear;
+  }
+}

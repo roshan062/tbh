@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { BsTriangleFill } from 'react-icons/bs';
 import ArticleOneCarousel from '../components/ArticleOneCarousel';
 import ArrowAnimation from '../components/Arrow';
+import VideoImage from '../components/VideoImage';
 
 const ArticleOne = () => {
     const [data, setData] = useState('');
@@ -32,51 +33,51 @@ const ArticleOne = () => {
         }
     };
 
-    let Vsource;
-    if (data) {
-        Vsource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-    }
+    // let Vsource;
+    // if (data) {
+    //     Vsource = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+    // }
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
-    function togglePlay() {
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
-    }
+    // const videoref = useRef(null);
+    // const [isPlaying, setIsPlaying] = useState(false);
+    // const status = videoref.current;
+    // function togglePlay() {
+    //     if (isPlaying) {
+    //         status.pause();
+    //         setIsPlaying(false);
+    //     }
+    //     else {
+    //         status.play();
+    //         setIsPlaying(true);
+    //     }
+    // }
 
-    function imageUrl(url) {
-        let modifiedUrl;
-        if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
+    // function imageUrl(url) {
+    //     let modifiedUrl;
+    //     if (data) {
+    //         modifiedUrl = imageIP + url.replace("localhost/", "");
+    //         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
+    //         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
-            if (isImage) {
-                return <img src={modifiedUrl} className={styles['article_image']} />;
-            } else {
-                return (
-                    <div>
-                        <video className={styles.video_playerr} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
+    //         if (isImage) {
+    //             return <img src={modifiedUrl} className={styles['article_image']} />;
+    //         } else {
+    //             return (
+    //                 <div>
+    //                     <video className={styles.video_playerr} ref={videoref} onClick={togglePlay}>
+    //                         <source src={modifiedUrl} type="video/mp4" />
+    //                     </video>
+    //                     {!isPlaying && (
+    //                         <button className={styles.play_button} onClick={togglePlay}>
+    //                             ▶
+    //                         </button>
+    //                     )}
 
-                    </div>
-                )
-            }
-        }
-    }
+    //                 </div>
+    //             )
+    //         }
+    //     }
+    // }
 
     const fetchedString = data?.description;
     const div = document.createElement('div');
@@ -88,8 +89,12 @@ const ArticleOne = () => {
     return (
         <main className={styles.home_container}>
             {data ? (<>
-                {imageUrl(data.image)
-                }
+                {/* {imageUrl(data.image)
+                } */}
+
+                <section>
+                    <VideoImage videoimageurl={data.image} />
+                </section>
                 <div className={styles['image_textt']}>
 
                     <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
@@ -166,7 +171,7 @@ const ArticleOne = () => {
 
                 </section> */}
 
-                <section className={styles.video_image_container}>
+                {/* <section className={styles.video_image_container}>
 
                     <video ref={videoref} onClick={togglePlay} height='' width=''
                         poster='./images/article1/article_1_video.png'
@@ -181,11 +186,16 @@ const ArticleOne = () => {
                             <img src='./images/about/y-p.png' onClick={togglePlay} />
                             <img src='./images/about/circle.png' className={styles.red_circle} onClick={togglePlay} />
                             <img src='./images/about/triangle.png' className={styles.red_triangle} onClick={togglePlay} />
-                            {/* <BsTriangleFill className={styles.triangle_icon} /> */}
 
                         </div>
                     )}
+                </section> */}
+
+                <section>
+                    <VideoImage videoimageurl="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
                 </section>
+
+
                 <section className={styles.another_section}>
                     <h1 className={styles.another_title}>
                         Another sub section title
@@ -202,8 +212,7 @@ const ArticleOne = () => {
                 </section>
 
                 <section>
-                    {imageUrl(data.image)
-                    }
+                    <VideoImage videoimageurl={data.image} />
                 </section>
 
                 <section className={styles['prologue']}>

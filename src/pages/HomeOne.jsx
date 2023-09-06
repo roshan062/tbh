@@ -8,6 +8,8 @@ import SuggestionArticle from '../components/SuggestionArticle';
 import { ColorRing } from 'react-loader-spinner'
 import { useLocation } from 'react-router-dom';
 import ArrowAnimation from '../components/Arrow';
+import VideoImage from '../components/VideoImage';
+
 
 const HomeOne = () => {
     const [data, setData] = useState('');
@@ -45,54 +47,57 @@ const HomeOne = () => {
     }
 
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
-    function togglePlay() {
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
-    }
+    // const videoref = useRef(null);
+    // const [isPlaying, setIsPlaying] = useState(false);
+    // const status = videoref.current;
+    // function togglePlay() {
+    //     if (isPlaying) {
+    //         status.pause();
+    //         setIsPlaying(false);
+    //     }
+    //     else {
+    //         status.play();
+    //         setIsPlaying(true);
+    //     }
+    // }
 
     //Returning image/video element after verifying the url extension
-    function imageUrl(url) {
-        let modifiedUrl;
-        if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
+    // function imageUrl(url) {
+    //     let modifiedUrl;
+    //     if (data) {
+    //         modifiedUrl = imageIP + url.replace("localhost/", "");
+    //         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
+    //         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
-            if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image} />)
-            }
-            else {
-                return (
-                    <div>
-                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
-                    </div>
-                )
-            }
-        }
-    }
+    //         if (isImage) {
+    //             return (<img src={modifiedUrl} className={styles.article_image} />)
+    //         }
+    //         else {
+    //             return (
+    //                 <div>
+    //                     <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
+    //                         <source src={modifiedUrl} type="video/mp4" />
+    //                     </video>
+    //                     {!isPlaying && (
+    //                         <button className={styles.play_button} onClick={togglePlay}>
+    //                             ▶
+    //                         </button>
+    //                     )}
+    //                 </div>
+    //             )
+    //         }
+    //     }
+    // }
 
 
     return (
         <main className={styles.home_container}>
             {data ? (<>
-                <section>
+                {/* <section>
                     {imageUrl(data.homepage_elements[0].image)}
+                </section> */}
+                <section>
+                    <VideoImage videoimageurl={data.homepage_elements[0].image} />
                 </section>
 
                 <section>
