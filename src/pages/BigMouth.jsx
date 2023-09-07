@@ -6,6 +6,7 @@ import { ColorRing } from 'react-loader-spinner'
 import { useLocation } from 'react-router-dom';
 // import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
+import BigMouthCaraouselOne from '../components/BigMouthCaraouselOne';
 import BigMouthCaraousel from '../components/BigMouthCaraousel';
 import VideoImage from '../components/VideoImage';
 
@@ -128,7 +129,7 @@ const BigMouth = () => {
 
             <section className={styles.bigmouth_cards_section}>
                 <p className={styles.carousel_heading}>new to the big mouth</p>
-                <BigMouthCaraousel />
+                <BigMouthCaraouselOne />
                 <p className={styles.carousel_heading}>behind the scenes</p>
                 <BigMouthCaraousel />
                 <p className={styles.carousel_heading}>shorts</p>

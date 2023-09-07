@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 import ArrowAnimation from '../components/Arrow';
 import VideoImage from '../components/VideoImage';
 
-
 const HomeOne = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';

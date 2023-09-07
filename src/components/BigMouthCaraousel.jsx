@@ -78,13 +78,15 @@ const BigMouthCaraousel = () => {
                         className={styles.carousel_container}
                     >
                         {images.slice(0, 4).map((image, i) => {
-                            return (<div className={styles.image_container}>
-                                <img key={i}
+                            return (<div className={styles.image_container} key={i}>
+
+                                <img
                                     draggable={false}
                                     src={image}
                                     className={styles.carousel_images}
                                 />
                                 <p className={styles.overlay_title}>{title[i]}</p>
+
                             </div>
                             );
                         })}

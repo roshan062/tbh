@@ -96,9 +96,7 @@ const ArticleOne = () => {
                     <VideoImage videoimageurl={data.image} />
                 </section>
                 <div className={styles['image_textt']}>
-
                     <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
-
                 </div>
 
                 <section className={styles['title_section']}>

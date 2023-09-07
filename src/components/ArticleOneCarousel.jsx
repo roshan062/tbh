@@ -5,8 +5,14 @@ const ArticleOneCarousel = ({ images }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const updatedImageUrls = images.map((obj) => {
-        const updatedUrl = obj.image.replace('localhost/', imageIP);
-        return updatedUrl;
+        if (obj.image.includes("localhost")) {
+
+            const updatedUrl = obj.image.replace('localhost/', imageIP);
+            return updatedUrl;
+        }
+        else {
+            return obj.image;
+        }
     });
 
 

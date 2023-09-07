@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
+import ArticleOneCarousel from '../components/ArticleOneCarousel';
 import { useLocation } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
+import VideoImage from '../components/VideoImage';
+import BigMouthCaraousel from '../components/BigMouthCaraousel';
+
 
 const ArticleFour = () => {
     const [data, setData] = useState('');
@@ -30,59 +34,17 @@ const ArticleFour = () => {
         }
     };
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
-    function togglePlay() {
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
-    }
-
-    function imageUrl(url) {
-        let modifiedUrl;
-        if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
-
-            if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image} />)
-            } else {
-                return (
-                    <div>
-                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
-                    </div>
-                )
-            }
-
-        }
-    }
 
     return (
         <main className={styles.home_container}>
             {data ? (
                 <>
 
-                    {imageUrl(data.image)}
+                    <section>
+                        <VideoImage videoimageurl={data.image} />
+                    </section>
 
                     <div className={styles.image_text}>
-                        <div className={styles.container}>
-                            <div className={styles.box}><p>THE BIG MOUTH</p></div>
-                            <div className={styles.box2}></div>
-                        </div>
                         <h1 className={styles.heading_text}>
                             {data.head_title}
                         </h1>
@@ -90,36 +52,56 @@ const ArticleFour = () => {
                     </div>
 
                     <section className={styles.subtitle}>
-
                         <div dangerouslySetInnerHTML={{ __html: data.title }}></div>
-
                     </section>
+
                     <section className={styles.middletext}>
-
                         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
-
                     </section>
 
                     <section>
-
-                        {imageUrl(data.media)}
-
-                    </section>
-
-                    <section className={styles.quote_section}>
-
-                        <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-
+                        <VideoImage videoimageurl={data.media} />
                     </section>
 
                     <section className={styles.lowertext}>
-
                         <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
+                    </section>
 
+                    <section>
+                        <VideoImage videoimageurl="./blank-carousel.png" />
+                    </section>
+
+                    <section className={styles.another_section}>
+                        <h1 className={styles.another_title}>
+                            Another sub section title
+                        </h1>
+                        <p className={styles.another_para}>
+                            The magic of theatre can be healing for many people. Participating in theatre can help to reduce feelings of
+                            anxiety, depression, and other mental health issues. It can be a great way to find a creative outlet, manage stress,
+                            and find a source of joy. Theatre can help to improve focus and concentration, as well as to boost your confidence.
+                            <br /><br />
+                            The theatre can help you to build a sense of community, which can be especially important if you need a group
+                            of supportive people to lean on. Being a part of a theatrical group can also be great for networking. New directors,
+                            producers, and other theatre professionals can be easier to connect with by being part of the theatre world.
+                        </p>
+                    </section>
+
+                    <section className={styles.quote_section}>
+                        <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
                     </section>
 
                     <section className={styles.carousel}>
-                        <Carousel images={data.images} />
+                        <ArticleOneCarousel images={data.images} />
+                    </section>
+
+                    <section className={styles.you_may_like_container}>
+                        <div className={styles['containerr']}>
+                            <div className={styles['boxx']}>
+                                <p>YOU MAY ALSO LIKE</p>
+                            </div>
+                            <div className={styles['boxx2']}></div>
+                        </div>
+                        <BigMouthCaraousel />
                     </section>
                 </>
             ) : (

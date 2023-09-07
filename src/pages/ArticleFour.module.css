@@ -29,103 +29,30 @@
   position: relative;
 }
 
-.article_image {
-  width: 100%;
-  height: 650px;
-  display: block;
-}
-
-.video_player {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-.play_button {
-  position: absolute;
-  top: 47%;
-  left: 53%;
-  transform: translate(-150%, -50%);
-  z-index: 1;
-  background-color: transparent;
-  border: 0;
-  font-size: x-large;
-}
-
 .image_text {
   position: absolute;
-  top: 0px;
+  top: 250px;
   left: 0%;
-  transform: translate(10%, 0%);
   z-index: 1;
   text-align: left;
-  width: 80%;
-  color: white;
-}
-
-.container {
-  position: relative;
-  width: 300px;
-  top: 0px;
-}
-
-.box {
-  position: relative;
-  top: 25px;
-  left: 10px;
-  width: 80%;
-  height: 70px;
-  background-color: transparent;
-  border: 1px solid #fbf8f8;
-  box-sizing: border-box;
-}
-
-.box p {
-  margin: 12px 0 0 15px;
-  font-size: x-large;
-  color: white;
-  font-family: "system-ui";
-}
-
-.box2 {
-  position: relative;
-  top: -55px;
-  left: 0px;
-  width: 80%;
-  height: 70px;
-  background-color: transparent;
-  border: 1px solid #e6007e;
-  box-sizing: border-box;
-}
-
-.box2:before {
-  content: "";
-  position: absolute;
-  top: -31px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 30px;
-  background-color: rgb(237, 233, 233);
+  width: 100vw;
+  max-width: 500px;
 }
 
 .heading_text {
-  font-size: 80px;
+  font-size: clamp(10px, 5vw, 60px);
   line-height: 0.8;
   color: white;
   text-align: left;
-  margin: 0 0 10px 0px;
-  width: 50%;
-
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0 0 0 50px;
+  width: 80%;
+  font-family: "uni-sans-heavy", sans-serif;
 }
 
-.heading_text + p {
+/* .heading_text + p {
   margin: 0 0 10px 0px;
   padding: 10px 0 0 0;
-}
+} */
 
 .subtitle {
   width: 48%;
@@ -137,127 +64,155 @@
 }
 
 .middletext {
-  width: 70%;
-  margin: 30px 0 100px 200px;
+  width: 60%;
+  margin: 0px 0 100px 200px;
   text-align: left;
+  font-family: "system-ui";
+}
+
+.lowertext {
+  width: 60%;
+  margin: 100px 0 100px 200px;
+  text-align: left;
+  font-family: "system-ui";
+}
+
+.another_section {
+  max-width: 60%;
+  min-height: 300px;
+  margin: 100px 0 100px 200px;
+  text-align: left;
+}
+
+.another_title {
+  font-size: 20px;
+  font-family: "system-ui";
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
+.another_para {
+  padding: 10px 30px 10px 5px;
+  width: 90%;
+  font-size: 16px;
   font-family: "system-ui";
 }
 
 .quote_section {
   width: 30%;
-  margin: 50px 16% 50px auto;
+  margin: 00px 200px 00px 700px;
+  padding-bottom: 100px;
   text-align: right;
-  font-size: 26px;
+  font-size: 18px;
+  font-family: "system-ui";
+  font-style: italic;
 }
 
-.lowertext {
-  width: 70%;
-  margin: 30px 0 100px 200px;
-  text-align: left;
-  font-family: "system-ui";
+.quote_section h3 {
+  font-weight: 400;
 }
 
 .carousel {
-  width: 100%;
-  height: auto;
-  margin: auto;
+  width: 100vw;
+  max-width: 1500px;
+  background-color: white;
+  padding-bottom: 100px;
+}
+
+.you_may_like_container {
+  min-height: 300px;
+  height: 400px;
+  width: 100vw;
+  max-width: 1500px;
+  background-color: rgb(19, 18, 18);
+  padding: 100px 0 100px 0;
+}
+
+.you_may_like_container .containerr {
+  position: relative;
+  width: 300px;
+  left: -230px;
+  top: -40px;
+}
+
+.you_may_like_container .boxx {
+  position: relative;
+  top: 10px;
+  left: 300px;
+  width: 80%;
+  height: 70px;
+  background-color: transparent;
+  border: 1px solid #fbf8f8;
+  box-sizing: border-box;
+}
+
+.you_may_like_container .boxx p {
+  margin: 12px 0 0 10px;
+  font-size: clamp(12px, 1.5vw, 24px);
+  color: white;
+  font-family: "system-ui";
+  font-weight: 500;
+}
+
+.you_may_like_container .boxx2 {
+  position: relative;
+  top: -70px;
+  left: 290px;
+  width: 80%;
+  height: 70px;
+  background-color: transparent;
+  border: 1px solid #c3006b;
+  box-sizing: border-box;
+}
+
+.you_may_like_container .boxx2:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background-color: rgb(237, 233, 233);
 }
 
 /* For mobile screens */
 @media (max-width: 900px) {
-  .article_image {
-    height: auto;
-    max-height: 50vw;
-    min-height: 300px;
-  }
-
   .image_text {
     position: absolute;
-    top: 2vw;
-    left: -4%;
-    transform: translate(10%, 0%);
+    top: 1%;
+    left: 0%;
+    transform: translate(10%, 20%);
     z-index: 1;
     text-align: left;
-    width: 80%;
-    color: white;
-  }
-
-  .video_player {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container {
-    position: relative;
-    width: 300px;
-    max-width: 90vw;
-  }
-
-  .box {
-    position: relative;
-    top: 20px;
-    left: 10px;
-    width: 60%;
-    height: 60px;
-    background-color: transparent;
-    border: 1px solid #fbf8f8;
-    box-sizing: border-box;
-  }
-
-  .box p {
-    margin: 14px 0 0 15px;
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    font-family: "system-ui";
-  }
-
-  .box2 {
-    position: relative;
-    top: -29px;
-    left: 20px;
-    width: 60%;
-    height: 60px;
-    background-color: transparent;
-    border: 1px solid #e6007e;
-    box-sizing: border-box;
-  }
-
-  .box2:before {
-    content: "";
-    position: absolute;
-    top: -42px;
-    left: 37%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 30px;
-    background-color: rgb(237, 233, 233);
+    width: 50%;
+    max-width: 70vw;
   }
 
   .heading_text {
-    /* font-size: 60px; */
-    font-size: 8vw;
-    line-height: 0.8;
+    font-size: clamp(10px, 5vw, 60px);
+    line-height: 1;
     color: white;
     text-align: left;
-    margin: 0 0 10px 0px;
+    margin: 10% 0 0 00px;
     width: 60%;
+    font-family: "uni-sans-heavy", sans-serif;
   }
 
-  .heading_text + p {
+  /* .heading_text + p {
     margin: 0 0 10px 0px;
     padding: 10px 0 0 0;
-  }
+  } */
 
   .subtitle {
-    width: 70%;
+    width: 90%;
     margin: 30px 0 30px 32px;
     text-align: left;
+    font-size: clamp(16px, 6vw, 70px);
   }
 
   .middletext {
-    width: 70%;
+    width: 90%;
     margin: 0px 0 100px 32px;
     text-align: left;
   }
@@ -269,19 +224,90 @@
   }
 
   .lowertext {
-    width: 70%;
-    margin: 0px 0 100px 32px;
+    width: 90%;
+    margin: 50px 0 100px 32px;
     text-align: left;
   }
 
-  /* .carousel {
-    width: 100%;
-    height: auto;
-    margin: 10px 0px 50px 0px;
-  } */
-  .carousel {
-    width: 100%;
-    height: 80vh;
-    margin: 0px auto 100px auto;
+  .another_section {
+    max-width: 90%;
+    min-height: 300px;
+    margin: 100px 20px;
+    text-align: left;
+  }
+
+  .another_title {
+    font-size: 20px;
+    font-family: "system-ui";
+    padding-left: 5px;
+    padding-top: 10px;
+  }
+
+  .another_para {
+    padding: 10px 30px 10px 5px;
+    width: 90%;
+    font-size: 16px;
+    font-family: "system-ui";
+  }
+
+  .quote_section {
+    max-width: 50%;
+    margin: 50px 0 50px 30px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .you_may_like_container .containerr {
+    position: relative;
+    width: 300px;
+    left: -300px;
+    top: -75px;
+  }
+
+  .you_may_like_container .boxx {
+    position: relative;
+    top: 10px;
+    left: 330px;
+    width: 50%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #fbf8f8;
+    box-sizing: border-box;
+  }
+
+  .you_may_like_container .boxx p {
+    margin: 14px 0 0 25px;
+    font-size: 12px;
+    color: white;
+  }
+
+  .you_may_like_container .boxx2 {
+    position: relative;
+    top: -23px;
+    left: 338px;
+    width: 50%;
+    height: 40px;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+
+  .you_may_like_container .boxx2:before {
+    content: "";
+    position: absolute;
+    top: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 30px;
+    background-color: rgb(237, 233, 233);
+  }
+}
+
+@media (max-width: 750px) {
+  .quote_section {
+    max-width: 90%;
+    margin: 50px 30px;
+    text-align: left;
+    font-size: 16px;
   }
 }
