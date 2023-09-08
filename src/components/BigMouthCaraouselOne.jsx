@@ -80,7 +80,7 @@ const BigMouthCaraouselOne = () => {
                                             <Link to={ref} className={styles.link}>
                                                 <img
                                                     draggable={false}
-                                                    // src={image}
+                                                    // src={images[0]}
                                                     src={url}
                                                     className={styles.carousel_images}
                                                 />
