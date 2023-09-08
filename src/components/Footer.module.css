@@ -156,6 +156,7 @@
     margin: 30px 0 10px 0;
     font-size: 20px;
     font-weight: 300;
+    text-align: center;
   }
 
   .subscribe {
@@ -199,11 +200,11 @@
 }
 
 @media (max-width: 450px) {
-  .news_letter {
+  /* .news_letter {
     color: white;
     padding-right: 10px;
     display: none;
-  }
+  } */
 
   .footer_area {
     display: grid;
