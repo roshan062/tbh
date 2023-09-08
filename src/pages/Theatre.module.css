@@ -17,6 +17,10 @@
   top: 3%;
 }
 
+.thumbnail_container {
+  overflow: hidden;
+}
+
 .image_textt {
   position: absolute;
   height: auto;
@@ -141,17 +145,30 @@
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 500px) {
+  .top {
+    top: 2%;
+  }
+
   .image_textt {
     position: absolute;
     top: 6%;
     left: 6%;
     transform: translate(0%, 8%);
     z-index: 1;
+    width: 95vw;
+  }
+
+  .book_now {
+    color: white;
+    font-size: clamp(16px, 8.5vw, 70px);
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 400;
   }
 
   .heading_text {
-    font-size: clamp(12px, 6vw, 54px);
+    font-size: clamp(12px, 13vw, 84px);
     line-height: 0.8;
     color: white;
     text-align: left;
@@ -162,11 +179,18 @@
   .description {
     color: white;
     font-weight: 300;
-    font-size: 12px;
+    font-size: clamp(12px, 10vw, 84px);
     width: 60%;
     text-align: left;
     padding: 35px 0 0 0;
     display: none;
+  }
+
+  .more_info {
+    font-size: clamp(16px, 6.5vw, 70px);
+    font-weight: 400;
+    padding-top: 10px;
+    text-decoration: underline;
   }
 }
 

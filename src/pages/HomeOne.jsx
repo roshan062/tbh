@@ -95,7 +95,7 @@ const HomeOne = () => {
                 {/* <section>
                     {imageUrl(data.homepage_elements[0].image)}
                 </section> */}
-                <section>
+                <section className={styles.thumbnail_container}>
                     <VideoImage videoimageurl={data.homepage_elements[0].image} />
                 </section>
 

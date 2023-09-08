@@ -40,7 +40,7 @@ const Theatre = () => {
     return (
         <main className={styles.home_container}>
             {data ? (<>
-                <section>
+                <section className={styles.thumbnail_container}>
                     <VideoImage videoimageurl={data.image} />
                 </section>
 
