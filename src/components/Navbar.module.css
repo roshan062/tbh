@@ -42,18 +42,10 @@ header {
   display: inline-block;
   margin: -4px 0 0 50px;
   padding: 0;
-  transform: rotate(-50deg);
 }
 
-.logo p {
-  font-weight: 700;
-  line-height: 0.9;
-  color: white;
-}
-
-.logo p span {
-  font-weight: 100;
-  color: grey;
+.logo img {
+  height: 36px;
 }
 
 .menu_icon {
@@ -84,7 +76,7 @@ header {
   display: flex;
   gap: 40px;
   margin: 0;
-  padding: 0;
+  padding: 5px 0 0 0;
 }
 
 .nav_items li {

@@ -12,9 +12,9 @@ const Footer = () => {
             <footer className={styles.footer}>
                 <div className={styles.footer_logo}>
                     <div>
-                        <h2>The <br />Big <br />House</h2>
+                        <img src='./tbh-footer-logo.png' alt='tbh-footer-logo' />
                     </div>
-                    <div className={styles.news_letter}>SUBSCRIBE TO OUR NEWS LETTER</div>
+                    <div className={styles.letter}>SUBSCRIBE TO OUR NEWS LETTER</div>
                     <div className={styles.subscribe}>
                         <input type='text' placeholder='Enter your email address' />
                         <button>Subscribe</button>

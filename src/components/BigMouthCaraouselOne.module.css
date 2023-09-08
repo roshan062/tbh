@@ -58,6 +58,12 @@
 }
 
 @media (max-width: 900px) {
+  .carousel_container {
+    width: 100%;
+    margin: 40px 0 0px 0;
+    padding: 0 0 100px 0px;
+  }
+
   .image_container::after {
     content: "";
     height: 100%;
@@ -84,7 +90,7 @@
 
   .overlay_title {
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 10%;
     color: white;
     font-size: clamp(16px, 5vw, 50px);

@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Theatre.module.css';
 import { ColorRing } from 'react-loader-spinner'
-import { BsArrowUpRight } from 'react-icons/bs';
+// import { BsArrowUpRight } from 'react-icons/bs';
 import styless from '../App.module.css'
 import TheatrePreviousShows from '../components/TheatrePreviousShows';
 import { useLocation } from 'react-router-dom';
+import VideoImage from '../components/VideoImage';
+import ArrowAnimation from '../components/Arrow';
 
 const Theatre = () => {
     const [data, setData] = useState('');
@@ -34,77 +36,28 @@ const Theatre = () => {
         }
     };
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const status = videoref.current;
-    function togglePlay() {
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
-    }
-
-    function imageUrl(url) {
-        let modifiedUrl;
-        if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/", "");
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
-
-            if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image}
-                />)
-            }
-            else {
-                return (
-                    <div>
-                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
-                    </div>
-                )
-            }
-        }
-    }
-
-    const scrollToSection = (whereTo) => {
-        if (whereTo == "shows") {
-            const section = document.getElementById('shows');
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
 
     return (
         <main className={styles.home_container}>
             {data ? (<>
                 <section>
-                    {imageUrl(data.image)}
+                    <VideoImage videoimageurl={data.image} />
                 </section>
 
                 <section className={styles.top}>
                     <div className={styles['image_textt']}>
-                        <div className={styles['containerr']}>
-                            <div className={styles['boxx']}>
-                                <p>BOOKING NOW...</p>
-                            </div>
-                            <div className={styles['boxx2']}></div>
-                        </div>
+
+                        <p className={styles.book_now}>Booking Now...</p>
                         <h1 className={styles['heading_text']}>{data?.head_title}!!</h1>
                         <div className={styles.description} dangerouslySetInnerHTML={{ __html: data.description }} />
-                        <p className={styles.more_info}>More Info <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></p>
+                        <p className={styles.more_info}>More Info
+                            {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                            <ArrowAnimation />
+                        </p>
                     </div>
                 </section>
 
-                <section id='shows'>
+                <section className={styles.shows}>
                     <TheatrePreviousShows />
                 </section>
             </>

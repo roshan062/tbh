@@ -88,7 +88,7 @@ const GetInvolved = () => {
     return (
         <main className={styles.home_container}>
             {data ? (<>
-                <section>
+                <section className={styles.thumbnail_container}>
                     {imageUrl(data['get_involved_elements'][0]['bg_image'])}
                 </section>
 
