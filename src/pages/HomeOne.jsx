@@ -9,6 +9,7 @@ import { ColorRing } from 'react-loader-spinner'
 import { useLocation } from 'react-router-dom';
 import ArrowAnimation from '../components/Arrow';
 import VideoImage from '../components/VideoImage';
+import MoveDownArrow from '../components/MoveDownArrow';
 
 const HomeOne = () => {
     const [data, setData] = useState('');
@@ -88,7 +89,6 @@ const HomeOne = () => {
     //     }
     // }
 
-
     return (
         <main className={styles.home_container}>
             {data ? (<>
@@ -109,16 +109,17 @@ const HomeOne = () => {
                             ))}
                         </div>
                     </div>
+                    <MoveDownArrow />
                 </section>
 
-                <section className={styles.b_design} id='mission'>
+                <section className={styles.b_design} id='arrow'>
                     <div className={styles.mission}>
                         <div className={styles.container}>
                             <div className={styles.box}><p>OUR MISSION</p></div>
                             <div className={styles.box2}></div>
                         </div>
                         <div className={styles.missiontext_container}>
-                            {/* <p className={styles.para}>The Big House has a mission:</p> */}
+                            <p className={styles.para}>The Big House has a mission:</p>
                             <div className={styles.left} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_text }}>
                             </div>
                             <div className={styles.right} dangerouslySetInnerHTML={{ __html: data.homepage_elements[0].mission_list }}>

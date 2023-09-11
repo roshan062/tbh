@@ -17,7 +17,7 @@ const QuoteCarousel = ({ testimonial }) => {
 
         const intervalId = setInterval(() => {
             cycleReviews();
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(intervalId);
     }, []);

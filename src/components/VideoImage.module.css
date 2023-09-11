@@ -3,6 +3,7 @@
   height: 50vw;
   max-height: 650px;
   display: block;
+  object-fit: cover;
 }
 
 .video_image_container {

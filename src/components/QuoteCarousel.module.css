@@ -5,10 +5,10 @@
   display: grid;
   grid-template-rows: 3fr 1fr;
   height: 80vh;
-  max-height: 900px;
+  max-height: 600px;
   font-family: system-ui;
   justify-content: center;
-  background-color: #00e6d4;
+  background-color: var(--skyblue);
   background-image: url("./Mask Group 28.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -24,7 +24,7 @@
   max-width: 100%;
   overflow: hidden;
   list-style-type: none;
-  padding-top: 80px;
+  padding-top: 180px;
 }
 
 .carousel__item {
@@ -83,11 +83,13 @@
 .carousel__quote {
   font-style: italic;
   line-height: 1.5;
-  padding: 0 190px 0 190px;
+  /* padding: 0 190px 0 190px; */
+  margin: 0 auto 0 auto;
+  width: 60%;
 }
 
 .carousel__quote p {
-  font-family: "Roboto";
+  font-family: "system-ui";
   font-size: 20px;
 }
 
