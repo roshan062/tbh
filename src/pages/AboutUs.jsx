@@ -127,7 +127,15 @@ const AboutUs = () => {
 
                 <section>
                     <div className={styles.image_text_container}>
-                        <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
+                        <div className={styles.image_text}>
+                            {/* {data.aboutus_elements[0].hero_content} */}
+                            {data.aboutus_elements[0].hero_content.split(' ').map((word, index) => (
+                                <span key={index} >
+                                    {word}
+                                </span>
+                            ))}
+                        </div>
+
                         <div className={styles.spanText}>
                             <span onClick={() => scrollToSection("arrow")}>HISTORY</span>
                             <span onClick={() => scrollToSection("impact")}>IMPACT</span>
