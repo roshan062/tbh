@@ -154,6 +154,7 @@
 .show_more {
   margin: 0 auto 0 auto;
   transition: color 0.2s ease;
+  color: white;
 }
 
 .show_more:hover {
