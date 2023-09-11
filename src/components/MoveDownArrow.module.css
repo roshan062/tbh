@@ -7,12 +7,14 @@
   height: 40px;
   width: 40px;
   margin: 40px auto 0 auto;
+  padding-left: 45%;
   cursor: pointer;
   transition: transform 0.4s ease;
+  transform: translateY(-140px);
 }
 
 .down_arrow:hover {
-  transform: translateY(-10px);
+  transform: translateY(-130px);
 }
 
 @media (max-width: 900px) {
@@ -20,11 +22,12 @@
     height: 20px;
     width: 20px;
     margin: 0px auto 0 auto;
+    padding-left: 49%;
     transform: translateY(-20px);
   }
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .down_arrow {
     height: 20px;
     width: 20px;
@@ -32,7 +35,7 @@
     padding-left: 45%;
     transform: translateY(-20px);
   }
-}
+} */
 
 @media (max-width: 500px) {
   .down_arrow {
