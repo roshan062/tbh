@@ -266,6 +266,7 @@
     padding: 6rem 0 0 0rem;
     list-style-type: none;
     position: relative;
+    pointer-events: none;
   }
 
   .carousel__item {
@@ -281,7 +282,7 @@
   .left_arrow {
     position: absolute;
     top: 50%;
-    left: 5px;
+    left: 0px;
     height: 20px;
     width: 20px;
     cursor: pointer;
@@ -290,7 +291,7 @@
   .right_arrow {
     position: absolute;
     top: 50%;
-    right: 5px;
+    right: 0px;
     height: 20px;
     width: 20px;
     cursor: pointer;
@@ -355,12 +356,15 @@
   }
 
   .carousel_img {
+    /* margin: 30px auto 10px 20vw; */
     margin: 30px auto 10px auto;
+    text-align: center;
   }
 
   .carousel_img img {
     height: 50%;
     max-width: 400px;
+    padding-right: 0;
   }
 }
 

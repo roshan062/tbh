@@ -1,6 +1,7 @@
 .container {
   background-color: black;
   border: none;
+  z-index: 2;
 }
 
 .down_arrow {
@@ -23,7 +24,11 @@
     width: 20px;
     margin: 0px auto 0 auto;
     padding-left: 49%;
-    transform: translateY(-20px);
+    transform: translateY(-50px);
+  }
+
+  .down_arrow:hover {
+    transform: translateY(-40px);
   }
 }
 
@@ -42,6 +47,7 @@
     height: 40px;
     width: 40px;
     padding-left: 45%;
+    margin: 0px auto 0 auto;
     transform: translateY(-80px);
   }
 
