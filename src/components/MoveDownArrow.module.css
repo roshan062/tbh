@@ -7,7 +7,7 @@
   height: 40px;
   width: 40px;
   margin: 40px auto 0 auto;
-  padding-left: 45%;
+  padding-left: 48%;
   cursor: pointer;
   transition: transform 0.4s ease;
   transform: translateY(-140px);
@@ -41,6 +41,7 @@
   .down_arrow {
     height: 40px;
     width: 40px;
+    padding-left: 45%;
     transform: translateY(-80px);
   }
 

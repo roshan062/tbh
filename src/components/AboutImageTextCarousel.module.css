@@ -8,7 +8,7 @@
   min-height: 650px;
   font-family: system-ui;
   justify-content: center;
-  background-color: rgb(14, 14, 1);
+  background-color: black;
   color: white;
   position: relative;
 }
@@ -160,7 +160,7 @@
 
 .carousel__quote {
   line-height: 1.5;
-  padding: 50px 0 0 150px;
+  padding: 50px 0 0 220px;
   text-align: left;
   font-family: "Roboto";
   width: 70%;
@@ -182,9 +182,9 @@
 }
 
 .carousel_img img {
-  max-height: 420px;
+  max-height: 400px;
   width: auto;
-  padding-right: 80px;
+  padding-right: 100px;
 }
 
 .link {

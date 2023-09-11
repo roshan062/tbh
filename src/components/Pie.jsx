@@ -45,7 +45,7 @@ const Pie = ({ percentage, colour }) => {
     return (
         <svg width={200} height={200}>
             <g transform={`rotate(-90 ${"100 100"})`}>
-                <Circle colour="lightgrey" />
+                <Circle colour="#009FE3" />
                 <Circle colour={colour} pct={pct} />
             </g>
             <Text percentage={pct} />

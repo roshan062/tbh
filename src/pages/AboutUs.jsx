@@ -10,6 +10,8 @@ import TabbedMultiCarousel from '../components/TabbedMultiCarousel';
 import { useLocation } from 'react-router-dom';
 import { BsTriangleFill } from 'react-icons/bs';
 import ArrowAnimation from '../components/Arrow';
+import VideoImage from '../components/VideoImage';
+import MoveDownArrow from '../components/MoveDownArrow';
 
 const AboutUs = () => {
     const [data, setData] = useState('');
@@ -65,32 +67,32 @@ const AboutUs = () => {
     }
 
 
-    function imageUrl(url) {
-        let modifiedUrl;
-        if (data) {
-            modifiedUrl = imageIP + url.replace("localhost/", "");
+    // function imageUrl(url) {
+    //     let modifiedUrl;
+    //     if (data) {
+    //         modifiedUrl = imageIP + url.replace("localhost/", "");
 
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
+    //         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
+    //         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
-            if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image} />)
-            } else {
-                return (
-                    <div>
-                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
-                    </div>
-                )
-            }
-        }
-    }
+    //         if (isImage) {
+    //             return (<img src={modifiedUrl} className={styles.article_image} />)
+    //         } else {
+    //             return (
+    //                 <div>
+    //                     <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
+    //                         <source src={modifiedUrl} type="video/mp4" />
+    //                     </video>
+    //                     {!isPlaying && (
+    //                         <button className={styles.play_button} onClick={togglePlay}>
+    //                             ▶
+    //                         </button>
+    //                     )}
+    //                 </div>
+    //             )
+    //         }
+    //     }
+    // }
 
     function percentageParsing(value) {
         const percentageValue = parseFloat(value);
@@ -98,8 +100,8 @@ const AboutUs = () => {
     }
 
     const scrollToSection = (whereTo) => {
-        if (whereTo == "history") {
-            const section = document.getElementById('history');
+        if (whereTo == "arrow") {
+            const section = document.getElementById('arrow');
             section.scrollIntoView({ behavior: 'smooth' });
         }
         if (whereTo === "impact") {
@@ -115,30 +117,34 @@ const AboutUs = () => {
     return (
         <main className={styles.home_container}>
             {data ? (<>
-                <section>
+                {/* <section>
                     {imageUrl(data['aboutus_elements'][0]['image'])}
+                </section> */}
+
+                <section className={styles.thumbnail_container}>
+                    <VideoImage videoimageurl={data.aboutus_elements[0].image} />
                 </section>
+
                 <section>
                     <div className={styles.image_text_container}>
                         <div className={styles.image_text}>{data.aboutus_elements[0].hero_content}</div>
                         <div className={styles.spanText}>
-                            <span onClick={() => scrollToSection("history")}>HISTORY</span>
+                            <span onClick={() => scrollToSection("arrow")}>HISTORY</span>
                             <span onClick={() => scrollToSection("impact")}>IMPACT</span>
                             <span onClick={() => scrollToSection("people")}>PEOPLE</span>
                         </div>
                     </div>
+                    <MoveDownArrow />
+
                 </section>
 
-                <section className={styles.img_text_carousel_section} id='history'>
+                <section className={styles.img_text_carousel_section} id="arrow">
                     <AboutImageTextCarousel slides={data.history_slides} />
                 </section>
 
 
-                <section className={styles.video_image_container}>
-                    {/* <div dangerouslySetInnerHTML={{ __html: data.aboutus_elements[0].video_link_embed }} /> */}
-                    {/* <div>
-                        {imageUrl(data.aboutus_elements[0].video_link_embed)}
-                    </div> */}
+                <section className={styles.video_image_container} >
+
                     <video ref={videoref} onClick={togglePlay} height='' width=''
                         poster='./images/about/poster.png'
                         className={styles.self_video}>
@@ -159,6 +165,9 @@ const AboutUs = () => {
                     <p className={styles.video_image_desc}>{data.aboutus_elements[0].video_desc}</p>
                 </section>
 
+                {/* <section className={styles.thumbnail_container}>
+                    <VideoImage videoimageurl={data.aboutus_elements[0].video_link_embed} />
+                </section> */}
 
 
                 <section className={styles.work} id='impact'>
@@ -179,15 +188,15 @@ const AboutUs = () => {
                         </div>
                         <div className={`${styles.item} ${styles.item4}`}>
                             <div>
-                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data1)} colour="#009FE3" />
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data1)} colour="white" />
                                 <p>{data.aboutus_elements[0].data_desc1}</p>
                             </div>
                             <div>
-                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data2)} colour="#009FE3" />
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data2)} colour="white" />
                                 <p>{data.aboutus_elements[0].data_desc2}</p>
                             </div>
                             <div>
-                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data3)} colour="#009FE3" />
+                                <Pie percentage={percentageParsing(data.aboutus_elements[0].data3)} colour="white" />
                                 <p>{data.aboutus_elements[0].data_desc3}</p>
                             </div>
                         </div>
