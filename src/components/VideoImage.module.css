@@ -9,6 +9,7 @@
 .video_image_container {
   min-height: 700px;
   background-color: black;
+  /* background-color: inherit; */
   text-align: center;
   position: relative;
   max-height: 800px;
@@ -21,9 +22,14 @@
 
 .self_video {
   height: 90%;
+  /* max-height: 90vh; */
   width: 100%;
   object-fit: cover;
   transition: filter 0.2s ease;
+  transform: scaleY(1.1);
+}
+
+.content_video_play_button {
 }
 
 .content_video_play_button img {

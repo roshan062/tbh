@@ -1,5 +1,5 @@
 .container {
-  background-color: black;
+  background-color: inherit;
   border: none;
   z-index: 2;
 }
@@ -44,14 +44,14 @@
 
 @media (max-width: 500px) {
   .down_arrow {
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     padding-left: 45%;
     margin: 0px auto 0 auto;
-    transform: translateY(-80px);
+    transform: translateY(-60px);
   }
 
   .down_arrow:hover {
-    transform: translateY(-90px);
+    transform: translateY(-50px);
   }
 }

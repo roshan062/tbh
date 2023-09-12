@@ -23,6 +23,10 @@
   }
 }
 
+.thumbnail_container {
+  overflow: hidden;
+}
+
 .home_container {
   max-width: 1500px;
   background-color: white;

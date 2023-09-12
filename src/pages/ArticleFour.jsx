@@ -40,7 +40,7 @@ const ArticleFour = () => {
             {data ? (
                 <>
 
-                    <section>
+                    <section className={styles.thumbnail_container}>
                         <VideoImage videoimageurl={data.image} />
                     </section>
 
@@ -59,7 +59,7 @@ const ArticleFour = () => {
                         <div dangerouslySetInnerHTML={{ __html: data.description }}></div>
                     </section>
 
-                    <section>
+                    <section className={styles.thumbnail_container}>
                         <VideoImage videoimageurl={data.media} />
                     </section>
 
@@ -67,7 +67,7 @@ const ArticleFour = () => {
                         <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
                     </section>
 
-                    <section>
+                    <section className={styles.thumbnail_container}>
                         <VideoImage videoimageurl="./blank-carousel.png" />
                     </section>
 

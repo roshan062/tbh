@@ -23,38 +23,44 @@
   }
 }
 
+.thumbnail_container {
+  overflow: hidden;
+}
+
 .home_container {
   max-width: 1500px;
   position: relative;
 }
 
-.article_image {
+/* .article_image {
   width: 100%;
   height: 50vw;
   max-height: 600px;
   display: block;
-}
+  pointer-events: none;
+} */
 
 .mouth_image {
   position: absolute;
   top: 10%;
-  left: 53%;
+  left: 52%;
   transform: translate(-50%, -50%);
   height: 12%;
   max-height: 530px;
-  width: 28%;
+  width: 31%;
+  pointer-events: none;
 }
 
-.video_player {
+/* .video_player {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
-.play_button {
+/* .play_button {
   position: absolute;
   top: 47%;
   left: 53%;
@@ -64,11 +70,11 @@
   border: 0;
   font-size: x-large;
   cursor: pointer;
-}
+} */
 
 .image_text_container {
   position: absolute;
-  top: 260px;
+  top: 7%;
   left: 50%;
   transform: translate(-50%, 0%);
   text-transform: uppercase;
@@ -138,8 +144,81 @@
 
 @keyframes spin {
   0% {
-    filter: brightness(100%);
+    /* filter: brightness(100%); */
     content: "ORIGINAL";
+  }
+  5% {
+    /* filter: brightness(50%); */
+  }
+  10% {
+    /* filter: brightness(100%); */
+  }
+  15% {
+    content: "DIGITAL";
+    /* filter: brightness(50%); */
+  }
+  20% {
+    /* filter: brightness(100%); */
+  }
+  25% {
+    /* filter: brightness(50%); */
+  }
+  30% {
+    /* filter: brightness(100%); */
+    content: "MUSIC";
+  }
+  35% {
+    /* filter: brightness(50%); */
+  }
+  40% {
+    /* filter: brightness(100%); */
+  }
+  45% {
+    content: "FILM";
+    /* filter: brightness(50%); */
+  }
+  50% {
+    /* filter: brightness(100%); */
+  }
+  55% {
+    /* filter: brightness(50%); */
+  }
+  60% {
+    /* filter: brightness(100%); */
+    content: "PODCAST";
+  }
+  65% {
+    /* filter: brightness(50%); */
+  }
+  70% {
+    /* filter: brightness(100%); */
+  }
+  75% {
+    content: "BTS";
+    /* filter: brightness(50%); */
+  }
+  80% {
+    /* filter: brightness(100%); */
+  }
+  85% {
+    /* filter: brightness(50%); */
+  }
+  90% {
+    /* filter: brightness(100%); */
+    content: "REALNESS";
+  }
+  95% {
+    /* filter: brightness(50%); */
+  }
+  100% {
+    /* filter: brightness(100%); */
+  }
+}
+
+@keyframes brightness {
+  0% {
+    filter: brightness(100%);
+    /* opacity: 1; */
   }
   5% {
     filter: brightness(50%);
@@ -148,7 +227,6 @@
     filter: brightness(100%);
   }
   15% {
-    content: "DIGITAL";
     filter: brightness(50%);
   }
   20% {
@@ -159,7 +237,6 @@
   }
   30% {
     filter: brightness(100%);
-    content: "MUSIC";
   }
   35% {
     filter: brightness(50%);
@@ -168,7 +245,6 @@
     filter: brightness(100%);
   }
   45% {
-    content: "FILM";
     filter: brightness(50%);
   }
   50% {
@@ -179,7 +255,6 @@
   }
   60% {
     filter: brightness(100%);
-    content: "PODCAST";
   }
   65% {
     filter: brightness(50%);
@@ -188,7 +263,6 @@
     filter: brightness(100%);
   }
   75% {
-    content: "BTS";
     filter: brightness(50%);
   }
   80% {
@@ -199,23 +273,51 @@
   }
   90% {
     filter: brightness(100%);
-    content: "REALNESS";
+    /* opacity: 1; */
   }
   95% {
     filter: brightness(50%);
+    /* opacity: 0; */
+  }
+  99% {
   }
   100% {
     filter: brightness(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  88% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .home_news:hover .word {
-  animation: visible 2.1s linear 0.5s;
+  animation: visible 2.1s linear 0.5s infinite;
+}
+
+.home_news:hover .home_news_content {
+  animation: brightness 4s linear 0.5s infinite;
+  /* animation: blink 4s linear 0.5s infinite, brightness 4s linear 0.5s infinite; */
+  /* visibility: hidden; */
 }
 
 .home_news:hover span::after {
   visibility: visible;
-  animation: spin 2s linear 0.5s;
+  animation: spin 2.5s linear 0.5s infinite;
 }
 
 .home_news_element {
@@ -398,22 +500,34 @@
   opacity: 1;
 }
 
+@media (max-width: 1050px) {
+  .mouth_image {
+    position: absolute;
+    top: 8.5%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    height: 9.5%;
+    max-height: 530px;
+    width: 28%;
+  }
+}
+
 @media (max-width: 900px) {
   .bigmouth_cards_section {
   }
 
-  .article_image {
+  /* .article_image {
     width: 100%;
     height: 400px;
     display: block;
     background-color: black;
-  }
+  } */
 
   .mouth_image {
     position: absolute;
-    top: 0%;
+    top: 5%;
     left: 53%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
     height: 47vw;
     max-height: 530px;
     width: 32%;
@@ -421,19 +535,13 @@
 
   .image_text_container {
     position: absolute;
-    top: 3.4%;
+    top: 4%;
     left: 50%;
     transform: translate(-50%, 0%);
     text-transform: uppercase;
     font-family: "uni-sans-heavy", sans-serif;
     z-index: 1;
     width: 78%;
-  }
-
-  @media (max-width: 500px) {
-    .image_text_container {
-      transform: translate(-50%, 100%);
-    }
   }
 
   .image_text {
@@ -585,28 +693,38 @@
   }
 }
 
+@media (max-width: 650px) {
+  .mouth_image {
+    position: absolute;
+    top: 4.4%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    height: 47vw;
+    max-height: 530px;
+    width: 32%;
+  }
+}
+
 @media (max-width: 500px) {
   .image_text_container {
     position: absolute;
-    /* top: 260px; */
+    top: 7%;
     left: 50%;
-    transform: translate(-50%, 110%);
+    transform: translate(-50%, 0%);
     text-transform: uppercase;
     font-family: "uni-sans-heavy", sans-serif;
     z-index: 1;
     width: 78%;
   }
 
-  .image_text {
-    background-color: rgba(225, 18, 135, 0.514);
-    color: #ffffff;
-    padding: 10px;
-    font-size: clamp(8px, 8vw, 8em);
-    text-align: center;
-  }
-
   .mouth_image {
-    transform: translate(-50%, 50%);
+    position: absolute;
+    top: 8%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    height: 47vw;
+    max-height: 530px;
+    width: 32%;
   }
 
   .home_news {

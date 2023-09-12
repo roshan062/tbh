@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './VideoImage.module.css';
 import { BsTriangleFill } from 'react-icons/bs';
 
-const VideoImage = ({ videoimageurl }) => {
+const VideoImage = ({ videoimageurl, posterurl }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
@@ -30,7 +30,7 @@ const VideoImage = ({ videoimageurl }) => {
         else {
             modifiedUrl = url;
         }
-        console.log("modified url: ", modifiedUrl)
+        // console.log("modified url: ", modifiedUrl)
         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png') || modifiedUrl.endsWith('.jpeg');
         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
@@ -41,21 +41,24 @@ const VideoImage = ({ videoimageurl }) => {
                 <section className={styles.video_image_container}>
                     <video ref={videoref} onClick={togglePlay} height='' width=''
                         // poster='https://mannyadmin.bechocar.com/uploads/people_image.jpg'
-                        poster='./images/bigmouth/video-banner.png'
+                        // poster='./images/bigmouth/video-banner.png'
+                        poster={`${posterurl ? posterurl : '/images/bigmouth/video-banner.png'}`}
                         className={styles.self_video}>
                         <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
                             type="video/mp4"
                         />
                     </video>
-                    {!isPlaying && (
-                        <button className={styles.content_video_play_button} >
-                            <img src='y-p.png' onClick={togglePlay} />
-                            <img src='p-c.png' className={styles.red_circle} onClick={togglePlay} />
-                            <img src='ics.png' className={styles.red_triangle} onClick={togglePlay} />
-                            <BsTriangleFill className={styles.triangle_icon} />
-                        </button>
-                    )}
-                </section>
+                    {
+                        !isPlaying && (
+                            <button className={styles.content_video_play_button} >
+                                <img src='y-p.png' onClick={togglePlay} />
+                                <img src='p-c.png' className={styles.red_circle} onClick={togglePlay} />
+                                <img src='ics.png' className={styles.red_triangle} onClick={togglePlay} />
+                                <BsTriangleFill className={styles.triangle_icon} />
+                            </button>
+                        )
+                    }
+                </section >
             )
         }
     }

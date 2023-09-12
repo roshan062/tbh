@@ -9,6 +9,7 @@ import { BsTriangleFill } from 'react-icons/bs';
 import BigMouthCaraouselOne from '../components/BigMouthCaraouselOne';
 import BigMouthCaraousel from '../components/BigMouthCaraousel';
 import VideoImage from '../components/VideoImage';
+import MoveDownArrow from '../components/MoveDownArrow';
 
 const BigMouth = () => {
     const [data, setData] = useState('');
@@ -38,77 +39,80 @@ const BigMouth = () => {
     };
 
 
-    const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
-        return modifiedUrl;
-    }
+    // const cleanImgUrl = function (fetchedUrl) {
+    //     const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
+    //     return modifiedUrl;
+    // }
 
-    const videoref = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    function togglePlay() {
-        const status = videoref.current;
-        if (isPlaying) {
-            status.pause();
-            setIsPlaying(false);
-        }
-        else {
-            status.play();
-            setIsPlaying(true);
-        }
-    }
+    // const videoref = useRef(null);
+    // const [isPlaying, setIsPlaying] = useState(false);
+    // function togglePlay() {
+    //     const status = videoref.current;
+    //     if (isPlaying) {
+    //         status.pause();
+    //         setIsPlaying(false);
+    //     }
+    //     else {
+    //         status.play();
+    //         setIsPlaying(true);
+    //     }
+    // }
 
 
-    function imageUrl(url) {
-        let modifiedUrl;
-        console.log(url)
-        if (data) {
-            if (url.includes('localhost')) {
-                modifiedUrl = imageIP + url.replace("localhost/", "");
-            }
-            else {
-                modifiedUrl = url;
-            }
-            console.log("modified url: ", modifiedUrl)
-            const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
-            const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
+    // function imageUrl(url) {
+    //     let modifiedUrl;
+    //     console.log(url)
+    //     if (data) {
+    //         if (url.includes('localhost')) {
+    //             modifiedUrl = imageIP + url.replace("localhost/", "");
+    //         }
+    //         else {
+    //             modifiedUrl = url;
+    //         }
+    //         console.log("modified url: ", modifiedUrl)
+    //         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
+    //         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
-            if (isImage) {
-                return (<img src={modifiedUrl} className={styles.article_image} />)
-            } else {
-                return (
-                    <div>
-                        <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
-                            <source src={modifiedUrl} type="video/mp4" />
-                        </video>
-                        {!isPlaying && (
-                            <button className={styles.play_button} onClick={togglePlay}>
-                                ▶️
-                            </button>
-                        )}
-                    </div>
-                )
-            }
-        }
-    }
+    //         if (isImage) {
+    //             return (<img src={modifiedUrl} className={styles.article_image} />)
+    //         } else {
+    //             return (
+    //                 <div>
+    //                     <video className={styles.video_player} ref={videoref} onClick={togglePlay}>
+    //                         <source src={modifiedUrl} type="video/mp4" />
+    //                     </video>
+    //                     {!isPlaying && (
+    //                         <button className={styles.play_button} onClick={togglePlay}>
+    //                             ▶
+    //                         </button>
+    //                     )}
+    //                 </div>
+    //             )
+    //         }
+    //     }
+    // }
 
 
     return (
         <main className={styles.home_container}>
             {/* {data ? (<> */}
 
-            <section>
+            <section className={styles.thumbnail_container}>
                 {/* {imageUrl(data[''][0][''])} */}
-                <img src='./images/bigmouth/header.png' className={styles.article_image} />
+                {/* <img src='./images/bigmouth/header.png' className={styles.article_image} /> */}
+                <VideoImage videoimageurl="./images/bigmouth/header.png" />
                 <img src='./images/bigmouth/big-mouth.png' className={styles.mouth_image} />
+                <MoveDownArrow icon="./bm-down-arrow.png" />
+
             </section>
 
             <section>
-                <div className={styles.image_text_container}>
+                <div className={styles.image_text_container} >
                     <div className={styles.image_text}>The Big Mouth</div>
                 </div>
             </section>
 
-            <section className={styles.home_news}>
+            <section className={styles.home_news} id='arrow'>
                 <div className={styles.home_news_content}>
                     <h1>THE HOME <br /> OF OUR <br /><span className={styles.word}>NEWS HIT</span><br /> CONTENT</h1>
                 </div>
