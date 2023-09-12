@@ -732,6 +732,16 @@
     max-height: 530px;
     width: 32%;
   }
+  .image_text_container {
+    position: absolute;
+    top: 3.2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-transform: uppercase;
+    font-family: "uni-sans-heavy", sans-serif;
+    z-index: 1;
+    width: 78%;
+  }
 }
 
 @media (max-width: 500px) {
