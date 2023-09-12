@@ -91,7 +91,12 @@ const BigMouth = () => {
     //         }
     //     }
     // }
-
+    const scrollToSection = (whereTo) => {
+        if (whereTo == "arrow") {
+            const section = document.getElementById('arrow');
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     return (
         <main className={styles.home_container}>
@@ -102,8 +107,8 @@ const BigMouth = () => {
                 {/* <img src='./images/bigmouth/header.png' className={styles.article_image} /> */}
                 <VideoImage videoimageurl="./images/bigmouth/header.png" />
                 <img src='./images/bigmouth/big-mouth.png' className={styles.mouth_image} />
-                <MoveDownArrow icon="./bm-down-arrow.png" />
-
+                {/* <MoveDownArrow icon="./bm-down-arrow.png" /> */}
+                <img onClick={() => scrollToSection("arrow")} className={styles.down_arrow} src='./bm-down-arrow.png' />
             </section>
 
             <section>

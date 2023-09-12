@@ -9,22 +9,22 @@ import "react-multi-carousel/lib/styles.css";
 const BigMouthCaraousel = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    // const api = ip + "/articles";
+    const api = ip + "/tbm_article5/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    // const fetchData = async () => {
-    //     try {
-    //         const response = await fetch(api);
-    //         const jsonData = await response.json();
-    //         setData(jsonData);
-    //     } catch (error) {
-    //         console.error('Error fetching data:', error);
-    //     }
-    // };
+    const fetchData = async () => {
+        try {
+            const response = await fetch(api);
+            const jsonData = await response.json();
+            setData(jsonData);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     const responsive = {
         desktop: {
@@ -68,32 +68,35 @@ const BigMouthCaraousel = () => {
     return (
         <div className={styles.suggestion_article}>
             <div className={styles.grid_container}>
-                {/* {
-                    data ? ( */}
-                <>
-                    <Carousel
-                        arrows={false}
+                {
+                    data ? (
+                        <>
+                            <Carousel
+                                arrows={false}
 
-                        responsive={responsive}
-                        className={styles.carousel_container}
-                    >
-                        {images.slice(0, 4).map((image, i) => {
-                            return (<div className={styles.image_container} key={i}>
+                                responsive={responsive}
+                                className={styles.carousel_container}
+                            >
+                                {/* {images.slice(0, 4).map((image, i) => { */}
+                                {data.elements.map((item, i) => {
+                                    return (<div className={styles.image_container} key={i}>
 
-                                <img
-                                    draggable={false}
-                                    src={image}
-                                    className={styles.carousel_images}
-                                />
-                                <p className={styles.overlay_title}>{title[i]}</p>
+                                        <img
+                                            draggable={false}
+                                            // src={image}
+                                            src={item.video_image_link}
+                                            className={styles.carousel_images}
+                                        />
+                                        {/* <p className={styles.overlay_title}>{title[i]}</p> */}
+                                        <p className={styles.overlay_title}>{item.heading_text}</p>
 
-                            </div>
-                            );
-                        })}
-                    </Carousel>
-                </>
+                                    </div>
+                                    );
+                                })}
+                            </Carousel>
+                        </>
 
-                {/* ) : (
+                    ) : (
                         <div className={styless.spinner}>
                             <ColorRing
                                 className={styless.spinner}
@@ -107,7 +110,7 @@ const BigMouthCaraousel = () => {
                             />
                         </div>
                     )
-                } */}
+                }
             </div>
 
         </div>

@@ -86,16 +86,16 @@
   padding-left: 6px;
 }
 
-.info {
+/* .info {
   font-family: "system-ui";
   color: white;
   font-size: clamp(16px, 1vw, 40px);
   font-weight: 400;
   background-color: #2b2b2b;
   padding: 70px 0 70px 50px;
-}
+} */
 
-.border {
+/* .border {
   width: 100vw;
   max-width: 1300px;
   margin: 0px auto;
@@ -103,7 +103,7 @@
   color: white;
   background-color: #e0e0e0;
   border: 0.1px solid #e0e0e0;
-}
+} */
 
 .bigmouth_cards_section {
   width: 100vw;
@@ -145,14 +145,14 @@
     background-color: #2b2b2b;
   }
 
-  .info {
+  /* .info {
     font-family: "system-ui";
     color: white;
     font-size: clamp(16px, 1vw, 40px);
     font-weight: 400;
     background-color: #2b2b2b;
     padding-left: 10px;
-  }
+  } */
 
   .carousel_heading {
     text-transform: uppercase;

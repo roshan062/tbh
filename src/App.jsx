@@ -38,8 +38,8 @@ function App() {
           <Route path='/2' element={<ArticleTwo />} />
           <Route path='/3' element={<ArticleThree />} />
           <Route path='/4' element={<ArticleFour />} />
-          <Route path='/5' element={<ArticleFive />} />
-          {/* <Route path='/5' element={<BigMouthArticle />} /> */}
+          {/* <Route path='/5' element={<ArticleFive />} /> */}
+          <Route path='/5' element={<BigMouthArticle />} />
           <Route path='/about' element={<AboutUs />} />
           <Route path='/get-involved' element={<GetInvolved />} />
           <Route path='/business' element={<Business />} />
