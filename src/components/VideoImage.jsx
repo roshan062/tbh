@@ -35,7 +35,11 @@ const VideoImage = ({ videoimageurl, posterurl }) => {
         const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 
         if (isImage) {
-            return (<img src={modifiedUrl} className={styles.article_image} />)
+            return (<img src={modifiedUrl} className={styles.article_image}
+                onError={(e) => {
+                    e.target.src = "./md-img1.png";
+                }}
+            />)
         } else {
             return (
                 <section className={styles.video_image_container}>

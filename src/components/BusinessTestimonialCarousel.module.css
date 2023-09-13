@@ -2,7 +2,7 @@
   align-items: center;
   display: grid;
   grid-template-rows: 3fr 1fr;
-  min-height: 750px;
+  min-height: 550px;
   max-height: 800px;
   font-family: system-ui;
   justify-content: center;
@@ -81,6 +81,8 @@
 .carousel__quote {
   font-style: italic;
   line-height: 1.5;
+  margin: 0 auto;
+  width: 60%;
 }
 
 @media (max-width: 900px) {
@@ -112,7 +114,7 @@
     grid-row: 1;
     line-height: 1.2;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 1.2s;
     width: 100vw;
     z-index: 10;
     margin: 10px 0px 10px 20px;
@@ -149,6 +151,15 @@
   .carousel__quote {
     font-style: italic;
     line-height: 1.5;
-    margin: 0 50px 0 0;
+    /* margin: 0 50px 0 0; */
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel__quote {
+    text-align: center;
   }
 }

@@ -38,6 +38,19 @@ const BigMouthArticle = () => {
         }
     };
 
+    const styleLastWord = (text) => {
+        const lastSpaceIndex = text.lastIndexOf('placeholder');
+        const beforeText = text.slice(0, lastSpaceIndex);
+        const afterText = text.slice(lastSpaceIndex + 12, lastSpaceIndex + 100);
+        const lastWord = text.slice(lastSpaceIndex, lastSpaceIndex + 12);
+        return (
+            <>
+                {beforeText}{' '}
+                <a href='www.example.com' style={{ color: '#e6007e', fontWeight: 'bold', textDecoration: 'none' }}>{lastWord}</a>
+                {afterText}
+            </>
+        );
+    };
 
 
     return (
@@ -58,7 +71,10 @@ const BigMouthArticle = () => {
 
                 <section className={styles.middletext} id='arrow'>
                     <h6 className={styles.heading}>ABOUT</h6>
-                    <p className={styles.para}>{data.elements[0].about_us_para}</p>
+                    <p className={styles.para}>
+                        {/* {data.elements[0].about_us_para} */}
+                        {styleLastWord(data.elements[0].about_us_para)}
+                    </p>
                     <p className={styles.more}>more
                         <img src='./da.png' alt='down-arrow' className={styles.da} />
                     </p>

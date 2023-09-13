@@ -114,9 +114,9 @@ header {
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-  * {
+  /* * {
     text-align: left;
-  }
+  } */
   .navbar {
     position: sticky;
     top: 0;

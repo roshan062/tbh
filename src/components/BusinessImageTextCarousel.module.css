@@ -1,11 +1,11 @@
 .container {
   align-items: center;
   display: grid;
-  min-height: 700px;
+  min-height: 600px;
   max-height: 900px;
   font-family: system-ui;
   justify-content: center;
-  background-color: rgb(14, 14, 1);
+  background-color: black;
   color: white;
   position: relative;
   padding-bottom: 50px;
@@ -65,9 +65,11 @@
   grid-row-gap: 1.25rem;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
-  max-width: 70rem;
+  /* max-width: 70rem; */
+  max-width: 1500px;
   overflow: hidden;
-  padding: 10rem 0 0 0rem;
+  /* padding: 10rem 0 0 0rem; */
+  padding: 8rem 0 0 0rem;
   list-style-type: none;
   position: relative;
 }
