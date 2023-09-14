@@ -97,6 +97,7 @@ const HomeOne = () => {
                 </section> */}
                 <section className={styles.thumbnail_container}>
                     <VideoImage videoimageurl={data.homepage_elements[0].image} />
+                    <MoveDownArrow />
                 </section>
 
                 <section>
@@ -109,7 +110,7 @@ const HomeOne = () => {
                             ))}
                         </div>
                     </div>
-                    <MoveDownArrow />
+                    {/* <MoveDownArrow /> */}
                 </section>
 
                 <section className={styles.b_design} id='arrow'>

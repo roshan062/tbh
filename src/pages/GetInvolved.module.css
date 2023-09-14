@@ -70,11 +70,35 @@
 }
 
 .image_text {
-  background-color: rgba(0, 0, 0, 0.518);
+  /* background-color: rgba(0, 0, 0, 0.518);
   color: #ffffff;
   padding: 30px;
   display: inline-block;
-  font-size: 70px;
+  font-size: 70px; */
+  color: #ffffff;
+  padding: 30px;
+  display: inline-block;
+  font-size: clamp(24px, 5vw, 70px);
+  width: 30%;
+}
+
+.image_text span {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px 0 10px;
+}
+
+.image_text span:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.502);
+  z-index: -1;
+  transform: scaleY(1.1);
+  backdrop-filter: blur(2px);
 }
 
 .spanText {

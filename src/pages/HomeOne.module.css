@@ -29,6 +29,7 @@
 
 .thumbnail_container {
   overflow: hidden;
+  background-color: black;
 }
 
 /* .article_image {
@@ -95,6 +96,7 @@
   height: 100%;
   background-color: rgba(12, 12, 12, 0.628);
   z-index: -1;
+  backdrop-filter: blur(2px);
 }
 
 .image_text :nth-child(2) {
@@ -131,6 +133,12 @@
 
 .three_xb_img {
   display: none;
+  position: absolute;
+  transition: transform 1s ease;
+  top: 0%;
+  left: -20%;
+  height: 100%;
+  width: 80%;
 }
 
 .blue_img {
@@ -443,7 +451,7 @@
     transform: scaleY(1.2);
   }
 
-  .blue_img {
+  /* .blue_img {
     top: 0%;
     left: 10%;
     height: 60%;
@@ -452,9 +460,9 @@
 
   .b_design:hover .blue_img {
     transform: translateX(-150px);
-  }
+  } */
 
-  .white_img {
+  /* .white_img {
     top: -50%;
     left: -30%;
     height: 80%;
@@ -464,9 +472,9 @@
 
   .b_design:hover .white_img {
     transform: translate(300px, 450px);
-  }
+  } */
 
-  .red_img {
+  /* .red_img {
     top: 10%;
     right: 24%;
     height: 60%;
@@ -475,6 +483,21 @@
 
   .b_design:hover .red_img {
     transform: translateX(170px);
+  } */
+
+  .red_img,
+  .blue_img,
+  .white_img {
+    display: none;
+  }
+
+  .three_xb_img {
+    display: block;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .mission .container .box p {
@@ -664,20 +687,6 @@
     grid-template-columns: 1fr auto;
     background-color: black;
     position: relative;
-  }
-
-  .red_img,
-  .blue_img,
-  .white_img {
-    display: none;
-  }
-
-  .three_xb_img {
-    top: 0%;
-    left: 0%;
-    height: 70%;
-    width: 100%;
-    display: block;
   }
 
   .mission .missiontext_container {

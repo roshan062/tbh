@@ -83,6 +83,7 @@
   line-height: 1.5;
   margin: 0 auto;
   width: 60%;
+  font-size: clamp(12px, 1.5vw, 24px);
 }
 
 @media (max-width: 900px) {
@@ -117,7 +118,7 @@
     transition: transform 1.2s;
     width: 100vw;
     z-index: 10;
-    margin: 10px 0px 10px 20px;
+    margin: 10px 0px 10px 0px;
   }
 
   .carousel__item.active {

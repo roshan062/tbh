@@ -124,7 +124,6 @@ const Business = () => {
                             {data.get_involved_elements[0].hero_content.split(' ').map((word, index) => (
                                 <span key={index} >
                                     {word + " "}
-                                    {/* {console.log(word)} */}
                                 </span>
                             ))}
                         </div>
@@ -176,7 +175,7 @@ const Business = () => {
                     <img src='./b-animate-img/blue-b.png' alt='pic' className={styles.blue_img} />
                     <img src='./b-animate-img/white-b.png' alt='pic' className={styles.white_img} />
                     <img src='./b-animate-img/red-b.png' alt='pic' className={styles.red_img} />
-                    <img src='./b-animate-img/3xb.png' alt='pic' className={styles.three_xb_img} />
+                    <img src='./b-animate-img/b-design-mobile.png' alt='pic' className={styles.three_xb_img} />
                 </section>
 
                 <section>

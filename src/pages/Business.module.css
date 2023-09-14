@@ -106,6 +106,7 @@
   background-color: rgba(12, 12, 12, 0.502);
   z-index: -1;
   transform: scaleY(1.1);
+  backdrop-filter: blur(2px);
 }
 
 .spanText {
@@ -280,14 +281,19 @@
 
 .blue_img,
 .white_img,
-.red_img,
-.three_xb_img {
+.red_img {
   position: absolute;
   transition: transform 1s ease;
 }
 
 .three_xb_img {
   display: none;
+  position: absolute;
+  transition: transform 1s ease;
+  top: 0%;
+  left: -20%;
+  height: 100%;
+  width: 80%;
 }
 
 .blue_img {
@@ -579,5 +585,19 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px 0px 10px 0px;
+  }
+
+  .blue_img,
+  .white_img,
+  .red_img {
+    display: none;
+  }
+
+  .three_xb_img {
+    display: block;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
   }
 }
