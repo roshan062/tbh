@@ -70,7 +70,13 @@ const BusinessImageTextCarousel = ({ slides, enquiry }) => {
                                 <h2 className={styles.heading}>{heading}</h2>
                                 <p>{content}</p>
                                 <Link to={enquiry} className={styles.link}>
-                                    <h3>Make Enquiry <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /></h3>
+                                    <h3>Make Enquiry
+                                        {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                        <div className={styles.arrow}>
+                                            <img src='./b-arrow-line.png' alt='arrow-line' className={styles.arrow_line} />
+                                            <img src='./b-arrow-top.png' alt='arrow-top' className={styles.arrow_top} />
+                                        </div>
+                                    </h3>
                                 </Link>
                             </blockquote>
                             <div className={styles.carousel_img}>

@@ -79,7 +79,8 @@
   padding: 30px;
   display: inline-block;
   font-size: clamp(24px, 5vw, 70px);
-  width: 40vw;
+  width: 40%;
+  /* max-width: 1400px; */
 }
 
 /* @media (max-width: 1270px) {
@@ -204,7 +205,7 @@
 }
 
 .venuehire {
-  min-height: 750px;
+  min-height: 650px;
   max-height: 800px;
   background-color: black;
   padding: 50px 300px 50px 300px;
@@ -303,9 +304,9 @@
 .white_img {
   top: -50%;
   left: -25%;
-  height: 120%;
+  height: 150%;
   width: 80%;
-  transform: rotate(+5deg);
+  transform: rotate(-10deg);
 }
 
 .venuehire_container:hover .white_img {
@@ -347,7 +348,8 @@
 }
 
 .partnership_text .content {
-  padding: 20px 0 100px 0;
+  padding: 120px 20px 100px 0;
+  font-weight: 400;
 }
 
 .partnership_container .hanging_container {
@@ -399,18 +401,38 @@
   background-color: rgb(230, 223, 223);
 }
 
-.partnership_text .arrow_icon {
+/* .partnership_text .arrow_icon {
   color: #009fe3;
-}
+} */
 
 .get_link span {
   font-size: 20px;
   cursor: pointer;
 }
 
-.get_link span:hover .arrow_icon {
-  transform: translateX(5px) translateY(-5px);
+.arrow {
+  display: inline;
 }
+
+.get_link span:hover .arrow_top {
+  transform: translate(3px, -3px);
+}
+
+.arrow_line {
+  height: 15px;
+  width: 15px;
+  transform: translate(13px, 2.2px);
+}
+
+.arrow_top {
+  height: 14px;
+  width: 14px;
+  transition: transform 0.2s ease;
+}
+
+/* .get_link span:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
+} */
 
 @media (max-width: 900px) {
   .article_image {

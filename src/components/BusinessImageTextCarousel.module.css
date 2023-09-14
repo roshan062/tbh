@@ -15,6 +15,7 @@
   z-index: 11;
   position: absolute;
   top: 0;
+  left: 25px;
   width: 300px;
 }
 
@@ -87,7 +88,7 @@
 
 .left_arrow {
   position: absolute;
-  top: 120px;
+  top: 180px;
   left: 0px;
   height: 30px;
   width: 30px;
@@ -102,7 +103,7 @@
 
 .right_arrow {
   position: absolute;
-  top: 120px;
+  top: 180px;
   right: 0;
   height: 30px;
   width: 30px;
@@ -119,13 +120,33 @@
   color: #009fe3;
 }
 
-.arrow_icon {
+/* .arrow_icon {
   color: #009fe3;
+} */
+
+.arrow {
+  display: inline;
 }
 
-.link:hover .arrow_icon {
-  transform: translateX(5px) translateY(-5px);
+h3:hover .arrow_top {
+  transform: translate(3px, -3px);
 }
+
+.arrow_line {
+  height: 15px;
+  width: 15px;
+  transform: translate(13px, 2.2px);
+}
+
+.arrow_top {
+  height: 14px;
+  width: 14px;
+  transition: transform 0.2s ease;
+}
+
+/* .link:hover .arrow_icon {
+  transform: translateX(5px) translateY(-5px);
+} */
 
 .carousel__item.active {
   transform: translateX(0);
@@ -140,7 +161,7 @@
 }
 
 .carousel_img img {
-  height: 420px;
+  height: 450px;
   width: 450px;
 }
 
@@ -172,12 +193,18 @@
   line-height: 1.5;
   padding: 10px 0 0 50px;
   text-align: left;
-  margin: auto 0 auto 40px;
+  margin: auto 50px auto 20%;
 }
 
 .carousel__quote .heading {
-  font-size: 55px;
+  /* font-size: 55px; */
+  font-size: clamp(24px, 4vw, 55px);
   line-height: 1;
+  padding-bottom: 10px;
+}
+
+.carousel__quote p {
+  font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .carousel__quote h3 {

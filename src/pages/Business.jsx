@@ -103,8 +103,8 @@ const Business = () => {
         const lastWord = text.slice(lastSpaceIndex);
         return (
             <>
-                {restOfText}{' '}
-                <a href='www.example.com' style={{ color: '#009FE3', fontWeight: 'bold', textDecoration: 'none' }}>{lastWord}</a>
+                {restOfText}{''}
+                <a href='www.example.com' style={{ color: '#009FE3', fontWeight: '400', textDecoration: 'none' }}>{lastWord}</a>
             </>
         );
     };
@@ -206,7 +206,12 @@ const Business = () => {
                             </p>
                             <h2 className={styles.get_link}>
                                 <span>
-                                    Get Involved <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} />
+                                    Get Involved
+                                    {/* <BsArrowUpRight className={`${styless.icon_color} ${styles.arrow_icon}`} /> */}
+                                    <div className={styles.arrow}>
+                                        <img src='./b-arrow-line.png' alt='arrow-line' className={styles.arrow_line} />
+                                        <img src='./b-arrow-top.png' alt='arrow-top' className={styles.arrow_top} />
+                                    </div>
                                 </span></h2>
                         </div>
                     </div>

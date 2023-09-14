@@ -42,11 +42,11 @@ const WorkshopCards = () => {
                                             <p className={styles.title}>{item.title}</p>
                                             <p className={styles.focus}>{item.workshop_focus}</p>
                                             <Link to={item.link} className={styles.link}>
-                                                <BsArrowUpRight className={styles.up_arrow} />
-                                                {/* <div className={styles.arrow}>
-                                                    <img src='./arrow-line.png' alt='arrow-line' className={styles.arrow_line} />
-                                                    <img src='./arrow-top.png' alt='arrow-top' className={styles.arrow_top} />
-                                                </div> */}
+                                                {/* <BsArrowUpRight className={styles.up_arrow} /> */}
+                                                <div className={styles.arrow}>
+                                                    <img src='./b-arrow-line.png' alt='arrow-line' className={styles.arrow_line} />
+                                                    <img src='./b-arrow-top.png' alt='arrow-top' className={styles.arrow_top} />
+                                                </div>
                                             </Link>
                                         </div>
                                         <img className={styles.rectangle_overlay_image_blue} src='./Path 507.png' alt="Overlay Image 1" />
