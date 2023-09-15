@@ -136,8 +136,11 @@ const BigMouth = () => {
                 </section>
 
                 <section className={styles.home_news} id='arrow'>
-                    <div className={styles.home_news_content}>
+                    {/* <div className={styles.home_news_content}>
                         <h1>THE HOME <br /> OF OUR <br /><span className={styles.word}>NEWS HIT</span><br /> CONTENT</h1>
+                    </div> */}
+
+                    <div className={styles.home_news_content} dangerouslySetInnerHTML={{ __html: data.elements[0].heading }}>
                     </div>
                     <div className={styles.home_news_element}>
                         <p className={styles.news_para}>

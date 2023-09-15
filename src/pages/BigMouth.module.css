@@ -323,7 +323,10 @@
   }
 }
 
-.home_news:hover .word {
+/* .home_news:hover .word {
+  animation: visible 2.1s linear 0.5s infinite;
+} */
+.home_news:hover .home_news_content h1 span {
   animation: visible 2.1s linear 0.5s infinite;
 }
 
