@@ -26,6 +26,7 @@
 .thumbnail_container {
   overflow: hidden;
   background-color: black;
+  position: relative;
 }
 
 .home_container {
@@ -43,10 +44,10 @@
 
 .mouth_image {
   position: absolute;
-  top: 9.3%;
-  left: 51.5%;
+  top: 45.3%;
+  left: 51%;
   transform: translate(-50%, -50%);
-  height: 13%;
+  height: 63%;
   max-height: 530px;
   width: 32%;
   pointer-events: none;
@@ -75,7 +76,7 @@
 
 .image_text_container {
   position: absolute;
-  top: 7%;
+  top: 9%;
   left: 50%;
   transform: translate(-50%, 0%);
   text-transform: uppercase;
@@ -98,7 +99,7 @@
   height: 40px;
   width: 40px;
   margin: 40px auto 0 auto;
-  padding-left: 50%;
+  padding-left: 49%;
   cursor: pointer;
   transition: transform 0.4s ease;
   transform: translateY(-190px);
@@ -517,18 +518,6 @@
   opacity: 1;
 }
 
-@media (max-width: 1050px) {
-  .mouth_image {
-    position: absolute;
-    top: 8.5%;
-    left: 53%;
-    transform: translate(-50%, -50%);
-    height: 9.5%;
-    max-height: 530px;
-    width: 28%;
-  }
-}
-
 @media (max-width: 900px) {
   .bigmouth_cards_section {
   }
@@ -542,10 +531,10 @@
 
   .mouth_image {
     position: absolute;
-    top: 5%;
+    top: 40%;
     left: 53%;
     transform: translate(-50%, -50%);
-    height: 45vw;
+    height: 40vw;
     max-height: 530px;
     width: 32%;
   }
@@ -723,7 +712,7 @@
 }
 
 @media (max-width: 650px) {
-  .mouth_image {
+  /* .mouth_image {
     position: absolute;
     top: 4.4%;
     left: 53%;
@@ -731,7 +720,7 @@
     height: 47vw;
     max-height: 530px;
     width: 32%;
-  }
+  } */
   .image_text_container {
     position: absolute;
     top: 3.2%;
@@ -758,12 +747,12 @@
 
   .mouth_image {
     position: absolute;
-    top: 8%;
+    top: 35%;
     left: 53%;
     transform: translate(-50%, -50%);
     height: 47vw;
     max-height: 530px;
-    width: 32%;
+    width: 36%;
   }
 
   .down_arrow {

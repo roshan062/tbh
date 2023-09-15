@@ -14,7 +14,7 @@ import MoveDownArrow from '../components/MoveDownArrow';
 const BigMouthArticle = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + "/tbm_article5/";
+    const api = ip + "/article/5/149/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
 
@@ -57,7 +57,7 @@ const BigMouthArticle = () => {
         <main className={styles.home_container}>
             {data ? (<>
                 <section className={styles.thumbnail_container}>
-                    <VideoImage videoimageurl={data.elements[0].video_image_link} />
+                    <VideoImage videoimageurl={data.image} />
                     {/* <VideoImage videoimageurl='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
                     posterurl="./images/bigmouth/poster.png" /> */}
                     <MoveDownArrow icon="./bm-down-arrow.png" />
@@ -65,15 +65,18 @@ const BigMouthArticle = () => {
 
                 <section>
                     <div className={styles.image_text_container} >
-                        <div className={styles.image_text}>{data.elements[0].heading_text}</div>
+                        {/* <div className={styles.image_text}>{data.title}</div> */}
+                        <div className={styles.image_text} dangerouslySetInnerHTML={{ __html: data.title }}>
+                        </div>
                     </div>
                 </section>
 
                 <section className={styles.middletext} id='arrow'>
                     <h6 className={styles.heading}>ABOUT</h6>
-                    <p className={styles.para}>
-                        {/* {data.elements[0].about_us_para} */}
+                    {/* <p className={styles.para}>
                         {styleLastWord(data.elements[0].about_us_para)}
+                    </p> */}
+                    <p className={styles.para} dangerouslySetInnerHTML={{ __html: data.description }}>
                     </p>
                     <p className={styles.more}>more
                         <img src='./da.png' alt='down-arrow' className={styles.da} />
@@ -91,7 +94,7 @@ const BigMouthArticle = () => {
 
                 <section className={styles.bigmouth_cards_section}>
                     <p className={styles.carousel_heading}>Related</p>
-                    <BigMouthCaraousel />
+                    <BigMouthCaraouselOne />
                 </section>
 
             </>

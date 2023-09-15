@@ -6,8 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
 import VideoImage from '../components/VideoImage';
-import BigMouthCaraousel from '../components/BigMouthCaraousel';
-
+import BigMouthArticleFourCaraousel from '../components/BigMouthArticleFourCarousel';
 
 const ArticleFour = () => {
     const [data, setData] = useState('');
@@ -71,20 +70,16 @@ const ArticleFour = () => {
                         <VideoImage videoimageurl="./blank-carousel.png" />
                     </section>
 
-                    <section className={styles.another_section}>
+                    {/* <section className={styles.another_section}>
                         <h1 className={styles.another_title}>
-                            Another sub section title
+                           
+                            {data.sub_desc_title}
                         </h1>
                         <p className={styles.another_para}>
-                            The magic of theatre can be healing for many people. Participating in theatre can help to reduce feelings of
-                            anxiety, depression, and other mental health issues. It can be a great way to find a creative outlet, manage stress,
-                            and find a source of joy. Theatre can help to improve focus and concentration, as well as to boost your confidence.
-                            <br /><br />
-                            The theatre can help you to build a sense of community, which can be especially important if you need a group
-                            of supportive people to lean on. Being a part of a theatrical group can also be great for networking. New directors,
-                            producers, and other theatre professionals can be easier to connect with by being part of the theatre world.
+                          
+                            {data.sub_desc}
                         </p>
-                    </section>
+                    </section> */}
 
                     <section className={styles.quote_section}>
                         <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
@@ -101,7 +96,7 @@ const ArticleFour = () => {
                             </div>
                             <div className={styles['boxx2']}></div>
                         </div>
-                        <BigMouthCaraousel />
+                        <BigMouthArticleFourCaraousel />
                     </section>
                 </>
             ) : (

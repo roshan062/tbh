@@ -35,7 +35,7 @@
 
 .image_text_container {
   position: absolute;
-  top: 19%;
+  top: 14%;
   left: 20%;
   transform: translate(-50%, 0%);
   text-transform: uppercase;
@@ -47,7 +47,7 @@
 .image_text {
   color: #ffffff;
   padding: 10px;
-  font-size: clamp(30px, 8vw, 8em);
+  font-size: clamp(30px, 7vw, 8em);
   text-align: left;
   font-family: "system-ui";
   font-weight: 700;

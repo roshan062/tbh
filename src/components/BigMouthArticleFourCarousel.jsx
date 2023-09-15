@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import styles from './BigMouthCaraousel.module.css'
+import styles from './BigMouthArticleFourCarousel.module.css'
 import styless from '../App.module.css'
 import { Link, Outlet } from 'react-router-dom'
 import { ColorRing } from 'react-loader-spinner'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const BigMouthCaraousel = () => {
+const BigMouthArticleFourCarousel = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + "/tbm_article5/";
+    const api = ip + "/articles/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
@@ -68,33 +68,40 @@ const BigMouthCaraousel = () => {
     return (
         <div className={styles.suggestion_article}>
             <div className={styles.grid_container}>
-                {/* {
+                {
                     data ? (
-                        <> */}
-                <Carousel
-                    arrows={false}
+                        <>
+                            <Carousel
+                                arrows={false}
 
-                    responsive={responsive}
-                    className={styles.carousel_container}
-                >
-                    {images.slice(0, 4).map((image, i) => {
-                        {/* {data.elements.map((item, i) => { */ }
-                        return (<div className={styles.image_container} key={i}>
+                                responsive={responsive}
+                                className={styles.carousel_container}
+                            >
+                                {/* {images.slice(0, 4).map((image, i) => { */}
+                                {/* {data.elements.map((item, i) => { */}
+                                {data.map((api, index) => {
+                                    {/* if (api.type !== 4) return */ }
+                                    let num = 0;
+                                    if (api.type === 4) {
+                                        num = num + 1;
+                                        return (<div className={styles.image_container} key={index}>
 
-                            <img
-                                draggable={false}
-                                src={image}
-                                // src={item.video_image_link}
-                                className={styles.carousel_images}
-                            />
-                            <p className={styles.overlay_title}>{title[i]}</p>
-                            {/* <p className={styles.overlay_title}>{item.heading_text}</p> */}
+                                            <img
+                                                draggable={false}
+                                                src={images[num]}
+                                                // src={item.video_image_link}
+                                                className={styles.carousel_images}
+                                            />
+                                            <p className={styles.overlay_title}>{title[num]}</p>
+                                            {/* <p className={styles.overlay_title}>{item.heading_text}</p> */}
 
-                        </div>
-                        );
-                    })}
-                </Carousel>
-                {/* </>
+                                        </div>
+                                        );
+                                    }
+
+                                })}
+                            </Carousel>
+                        </>
 
                     ) : (
                         <div className={styless.spinner}>
@@ -110,11 +117,11 @@ const BigMouthCaraousel = () => {
                             />
                         </div>
                     )
-                } */}
+                }
             </div>
 
         </div>
     )
 }
 
-export default BigMouthCaraousel
+export default BigMouthArticleFourCarousel
