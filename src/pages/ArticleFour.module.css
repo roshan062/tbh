@@ -194,7 +194,7 @@
   }
 
   .heading_text {
-    font-size: clamp(10px, 5vw, 60px);
+    font-size: clamp(10px, 7vw, 60px);
     line-height: 1;
     color: white;
     text-align: left;
