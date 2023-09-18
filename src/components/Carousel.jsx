@@ -6,7 +6,8 @@ const Carousel = ({ images }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const updatedImageUrls = images.map((obj) => {
-        const updatedUrl = obj.image.replace('localhost/', imageIP);
+        // const updatedUrl = obj.image.replace('localhost/', imageIP);
+        const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/Http");
         return updatedUrl;
     });
 
@@ -37,7 +38,11 @@ const Carousel = ({ images }) => {
             <div className={styles.product_container}>
                 {updatedImageUrls.map((slideImage, index) => (
                     <div key={index}>
-                        <img src={slideImage} className={styles.article_image} alt='carousel-img' />
+                        <img src={slideImage} className={styles.article_image} alt='carousel-img'
+                            onError={(e) => {
+                                e.target.src = "./md-img1.png";
+                            }}
+                        />
                     </div>
                 ))}
             </div>

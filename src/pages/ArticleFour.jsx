@@ -62,13 +62,17 @@ const ArticleFour = () => {
                         <VideoImage videoimageurl={data.media} />
                     </section>
 
+                    <section className={styles.quote_section}>
+                        <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
+                    </section>
+
                     <section className={styles.lowertext}>
                         <div dangerouslySetInnerHTML={{ __html: data.subheader }}></div>
                     </section>
 
-                    <section className={styles.thumbnail_container}>
+                    {/* <section className={styles.thumbnail_container}>
                         <VideoImage videoimageurl="./blank-carousel.png" />
-                    </section>
+                    </section> */}
 
                     {/* <section className={styles.another_section}>
                         <h1 className={styles.another_title}>
@@ -80,10 +84,6 @@ const ArticleFour = () => {
                             {data.sub_desc}
                         </p>
                     </section> */}
-
-                    <section className={styles.quote_section}>
-                        <div dangerouslySetInnerHTML={{ __html: data.quote }}></div>
-                    </section>
 
                     <section className={styles.carousel}>
                         <ArticleOneCarousel images={data.images} />

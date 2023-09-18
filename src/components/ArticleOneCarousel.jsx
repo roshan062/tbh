@@ -57,7 +57,8 @@ const ArticleOneCarousel = ({ images }) => {
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value';
     const updatedImageUrls = images.map((obj) => {
         if (obj.image.includes("localhost")) {
-            const updatedUrl = obj.image.replace('localhost/', imageIP);
+            // const updatedUrl = obj.image.replace('localhost/', imageIP);
+            const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/Http");
             return updatedUrl;
         } else {
             return obj.image;
@@ -71,7 +72,7 @@ const ArticleOneCarousel = ({ images }) => {
         const box = boxRef.current;
         if (box) {
             const width = box.clientWidth;
-            console.log(width);
+            // console.log(width);
         }
     }, []);
 
@@ -96,7 +97,11 @@ const ArticleOneCarousel = ({ images }) => {
             <div className={styles.product_container} ref={boxRef}>
                 {updatedImageUrls.map((slideImage, index) => (
                     <div key={index}>
-                        <img src={slideImage} className={styles.article_image} alt='carousel-img' />
+                        <img src={slideImage} className={styles.article_image} alt='carousel-img'
+                            onError={(e) => {
+                                e.target.src = "./md-img1.png";
+                            }}
+                        />
                     </div>
                 ))}
             </div>

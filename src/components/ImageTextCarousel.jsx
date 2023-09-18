@@ -52,7 +52,7 @@ const ImageTextCarousel = ({ slides }) => {
             <ul className={styles.carousel__list}>
                 {slides.map((review, index) => {
                     let { heading, description, link, image } = review;
-                    image = image.replace('localhost/', imageIP)
+                    image = imageIP + image.replace("localhost/Admin_panel/uploads/", "/app/Http");
                     const count = index + 1;
                     return (
                         <li

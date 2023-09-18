@@ -8,7 +8,8 @@ const BrandCarousel = ({ images }) => {
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
+        // const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/Http");
         return modifiedUrl;
     }
 

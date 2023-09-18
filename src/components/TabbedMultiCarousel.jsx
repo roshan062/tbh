@@ -8,7 +8,7 @@ const TabbedMultiCarousel = ({ slides }) => {
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value';
 
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/", "");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/Http");
         return modifiedUrl;
     }
 
@@ -42,9 +42,9 @@ const TabbedMultiCarousel = ({ slides }) => {
                                 src={cleanImgUrl(image)}
                                 className={styles.article_image}
                                 alt='carousel-img'
-                                onError={(e) => {
-                                    e.target.src = "./images/about/ziyad marar.jpg";
-                                }}
+                            // onError={(e) => {
+                            //     e.target.src = "./images/about/ziyad marar.jpg";
+                            // }}
                             />
                             <h3 className={styles.title}>{name}</h3>
                             <p className={styles.desc}>{description}</p>
