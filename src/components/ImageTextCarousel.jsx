@@ -52,6 +52,7 @@ const ImageTextCarousel = ({ slides }) => {
             <ul className={styles.carousel__list}>
                 {slides.map((review, index) => {
                     let { heading, description, link, image } = review;
+                    { image ? image = image : image = "./md-img1.png" } //default image if image value is null
                     image = imageIP + image.replace("localhost/Admin_panel/uploads/", "/app/");
                     const count = index + 1;
                     return (
@@ -82,7 +83,11 @@ const ImageTextCarousel = ({ slides }) => {
 
                             </blockquote>
                             <div className={styles.carousel_img}>
-                                <img src={image} alt="Image of Carousel" className={styles.selfimg} />
+                                <img src={image} alt="Image of Carousel" className={styles.selfimg}
+                                    onError={(e) => {
+                                        e.target.src = "./md-img1.png";
+                                    }}
+                                />
                             </div>
                             <img src="./ra.png" alt="right_arrow_img" className={styles.right_arrow}
                                 onClick={() => handleRightClick(index + 1)}
