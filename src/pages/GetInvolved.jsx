@@ -46,7 +46,7 @@ const GetInvolved = () => {
         let modifiedUrl;
         if (data) {
             // modifiedUrl = imageIP + url.replace("localhost/", "");
-            modifiedUrl = imageIP + url.replace("localhost/Admin_panel/uploads/", "/app/Http");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel/uploads/", "/app/");
             const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg');
             const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
 

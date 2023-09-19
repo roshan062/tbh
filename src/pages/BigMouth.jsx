@@ -55,7 +55,7 @@ const BigMouth = () => {
 
 
     // const cleanImgUrl = function (fetchedUrl) {
-    // const modifiedUrl = imageIP + fetcheUrl.replace("localhost/Admin_panel/uploads/", "/app/Http");
+    // const modifiedUrl = imageIP + fetcheUrl.replace("localhost/Admin_panel/uploads/", "/app/");
 
     //     return modifiedUrl;
     // }

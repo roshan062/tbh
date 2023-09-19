@@ -42,7 +42,7 @@ const SuggestionArticle = () => {
                                 if (api.type > 3) return
                                 const ref = `/${api.type}`;
                                 {/* let url = api.image.replace("localhost/", imageIP) */ }
-                                let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/Http")
+                                let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/")
                                 let newDescription = api.description.substring(0, 200)
                                 return (
                                     <div key={index} className={styles.article_cards}>

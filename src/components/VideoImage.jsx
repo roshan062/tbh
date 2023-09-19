@@ -25,7 +25,7 @@ const VideoImage = ({ videoimageurl, posterurl }) => {
     function imageUrl(url) {
         let modifiedUrl;
         if (url.includes('localhost')) {
-            modifiedUrl = imageIP + url.replace("localhost/Admin_panel/uploads/", "/app/Http");
+            modifiedUrl = imageIP + url.replace("localhost/Admin_panel/uploads/", "/app/");
         }
         else {
             modifiedUrl = url;

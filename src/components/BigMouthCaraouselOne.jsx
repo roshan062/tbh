@@ -75,7 +75,7 @@ const BigMouthCaraouselOne = () => {
                                     if (api.type < 4) return
                                     const ref = `/${api.type}`;
                                     {/* let url = api.image.replace("localhost/", imageIP) */ }
-                                    let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/Http");
+                                    let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/");
 
                                     return (
                                         <div className={styles.image_container} key={i}>

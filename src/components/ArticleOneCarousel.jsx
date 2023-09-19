@@ -58,7 +58,7 @@ const ArticleOneCarousel = ({ images }) => {
     const updatedImageUrls = images.map((obj) => {
         if (obj.image.includes("localhost")) {
             // const updatedUrl = obj.image.replace('localhost/', imageIP);
-            const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/Http");
+            const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/");
             return updatedUrl;
         } else {
             return obj.image;

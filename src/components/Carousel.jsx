@@ -7,7 +7,7 @@ const Carousel = ({ images }) => {
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const updatedImageUrls = images.map((obj) => {
         // const updatedUrl = obj.image.replace('localhost/', imageIP);
-        const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/Http");
+        const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/");
         return updatedUrl;
     });
 

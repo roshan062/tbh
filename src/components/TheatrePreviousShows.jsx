@@ -41,7 +41,7 @@ const TheatrePreviousShows = () => {
                                 if (api.type == 0) return
                                 const ref = `/${api.type}`;
                                 {/* let url = api.image.replace("localhost/", imageIP) */ }
-                                let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/Http")
+                                let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/")
                                 return (
                                     <div key={index} className={styles.article_cards} data-title={api.head_title}>
                                         <Link to={ref} className={styles.link}>

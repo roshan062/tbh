@@ -42,7 +42,7 @@ const HomeOne = () => {
 
     // Getting Image url after replacing localhost by ip
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/Http");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/");
         return modifiedUrl;
     }
 

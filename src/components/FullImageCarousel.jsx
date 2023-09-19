@@ -39,7 +39,7 @@ const FullImageCarousel = ({ slides }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
     const cleanImgUrl = function (fetchedUrl) {
-        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/Http");
+        const modifiedUrl = imageIP + fetchedUrl.replace("localhost/Admin_panel/uploads/", "/app/");
         return modifiedUrl;
     }
 
