@@ -32,7 +32,7 @@ const VideoImage = ({ videoimageurl, posterurl }) => {
         }
         // console.log("modified url: ", modifiedUrl)
         const isImage = modifiedUrl && modifiedUrl.endsWith('.jpg') || modifiedUrl.endsWith('.png') || modifiedUrl.endsWith('.jpeg');
-        const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4');
+        const isVideo = modifiedUrl && modifiedUrl.endsWith('.mp4') || modifiedUrl.endsWith('.mkv');
 
         if (isImage) {
             return (<img src={modifiedUrl} className={styles.article_image}
@@ -48,7 +48,8 @@ const VideoImage = ({ videoimageurl, posterurl }) => {
                         // poster='./images/bigmouth/video-banner.png'
                         poster={`${posterurl ? posterurl : '/images/bigmouth/video-banner.png'}`}
                         className={styles.self_video}>
-                        <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+                        {/* <source src='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' */}
+                        <source src={modifiedUrl}
                             type="video/mp4"
                         />
                     </video>
