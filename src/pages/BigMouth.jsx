@@ -160,18 +160,13 @@ const BigMouth = () => {
                 <section className={styles.bigmouth_cards_section}>
                     <p className={styles.carousel_heading}>new to the big mouth</p>
                     <BigMouthCaraouselOne />
-                    {
+                    {/* {
                         (data2.category == "Behing The Scenes" ?
 
                             <BigMouthCaraouselOne /> : ""
                         )
-                    }
-                    {
-                        (data2.category == "Shorts" ?
+                    } */}
 
-                            <BigMouthCaraouselOne /> : ""
-                        )
-                    }
                     {/* <p className={styles.carousel_heading}>behind the scenes</p>
                     <BigMouthCaraousel />
                     <p className={styles.carousel_heading}>shorts</p>

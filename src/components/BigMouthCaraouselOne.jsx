@@ -8,12 +8,22 @@ import "react-multi-carousel/lib/styles.css";
 
 const BigMouthCaraouselOne = () => {
     const [data, setData] = useState('');
+    const [data2, setData2] = useState('');
+    const [data3, setData3] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/articles";
+    const art4 = ip + "/article/4/150";
+    const art5 = ip + "/article/5/149/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
+    }, []);
+    useEffect(() => {
+        fetchData2();
+    }, []);
+    useEffect(() => {
+        fetchData3();
     }, []);
 
     const fetchData = async () => {
@@ -21,6 +31,26 @@ const BigMouthCaraouselOne = () => {
             const response = await fetch(api);
             const jsonData = await response.json();
             setData(jsonData);
+            // console.log(jsonData)
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+    const fetchData2 = async () => {
+        try {
+            const response = await fetch(art4);
+            const jsonData = await response.json();
+            setData2(jsonData);
+            // console.log(jsonData)
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+    const fetchData3 = async () => {
+        try {
+            const response = await fetch(art5);
+            const jsonData = await response.json();
+            setData3(jsonData);
             // console.log(jsonData)
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -45,25 +75,26 @@ const BigMouthCaraouselOne = () => {
         }
     };
 
-    const images = [
-        "./images/bigmouth/c1.png",
-        "./images/bigmouth/c2.png",
-        "./images/bigmouth/c3.png",
-        "./images/bigmouth/c4.png",
-    ];
+    // const images = [
+    //     "./images/bigmouth/c1.png",
+    //     "./images/bigmouth/c2.png",
+    //     "./images/bigmouth/c3.png",
+    //     "./images/bigmouth/c4.png",
+    // ];
 
-    const title = [
-        "GET IN",
-        "BIG UP",
-        "A ONE OFF",
-        "TITLE"
-    ]
+    // const title = [
+    //     "GET IN",
+    //     "BIG UP",
+    //     "A ONE OFF",
+    //     "TITLE"
+    // ]
 
+    // { console.log(data3) }
     return (
         <div className={styles.suggestion_article}>
             <div className={styles.grid_container}>
                 {
-                    data ? (
+                    data3 && data3 ? (
                         <>
                             <Carousel
                                 arrows={false}
@@ -73,20 +104,36 @@ const BigMouthCaraouselOne = () => {
                                 {/* {images.slice(0, 4).map((image, i) => { */}
                                 {data.map((api, i) => {
                                     if (api.type < 4) return
+                                    let url = ''
                                     const ref = `/${api.type}`;
-                                    {/* let url = api.image.replace("localhost/", imageIP) */ }
-                                    let url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/");
+                                    {/* console.log(data3) */ }
+                                    {/* console.log(api.type) */ }
+                                    if (api.type === 4) {
+                                        url = imageIP + data2.thumbnail.replace("localhost/Admin_panel/uploads/", "/app/");
+                                        {/* url = "./md-img1.png"; */ }
+                                    }
+                                    else if (api.type === 5) {
+                                        url = imageIP + data3.thumbnail.replace("localhost/Admin_panel/uploads/", "/app/");
+
+                                    }
+                                    else {
+                                        url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/");
+                                    }
 
                                     return (
                                         <div className={styles.image_container} key={i}>
                                             <Link to={ref} className={styles.link}>
+                                                {console.log(api.type)}
                                                 <img
                                                     draggable={false}
                                                     // src={images[0]}
                                                     src={url}
                                                     className={styles.carousel_images}
+                                                    onError={(e) => {
+                                                        e.target.src = "./md-img1.png";
+                                                    }}
                                                 />
-                                                <p className={styles.overlay_title}>{api.head_title}</p>
+                                                {/* <p className={styles.overlay_title}>{api.head_title}</p> */}
                                             </Link>
                                             <Outlet />
                                         </div>

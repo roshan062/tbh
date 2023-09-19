@@ -35,7 +35,7 @@
 
 .image_text_container {
   position: absolute;
-  top: 14%;
+  top: 10%;
   left: 20%;
   transform: translate(-50%, 0%);
   text-transform: uppercase;
@@ -122,13 +122,13 @@
 @media (max-width: 900px) {
   .image_text_container {
     position: absolute;
-    top: 10%;
+    top: 8%;
     left: 20%;
     transform: translate(-50%, 0%);
     text-transform: uppercase;
     font-family: "uni-sans-heavy", sans-serif;
     z-index: 1;
-    width: 30%;
+    width: 40%;
   }
 
   .image_text {
@@ -187,7 +187,7 @@
   .image_text {
     color: #ffffff;
     padding: 10px;
-    font-size: clamp(12px, 5vw, 6em);
+    font-size: clamp(12px, 10vw, 6em);
     text-align: left;
   }
 }
