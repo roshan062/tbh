@@ -144,12 +144,9 @@ const BigMouth = () => {
                     <div className={styles.home_news_content} dangerouslySetInnerHTML={{ __html: data.elements[0].heading }}>
                     </div>
                     <div className={styles.home_news_element}>
-                        <p className={styles.news_para}>
-                            {/* Welcome to The Big Mouth, the place where The Big House’s digital content lives.
-                        It’s still early days and this is just the start of some big things to come.
-                        Read more about what we’ve <span className={styles.inbetween_plan}> got planned </span> 
-                         or take a look below at what we have for you right now. */}
-                            {data.elements[0].description}
+                        <p className={styles.news_para} dangerouslySetInnerHTML={{ __html: data.elements[0].description }}>
+
+                            {/* {data.elements[0].description} */}
                         </p>
                         {/* <div className={styles.red_square}></div> */}
                     </div>
