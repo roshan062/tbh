@@ -56,13 +56,18 @@ const ArticleOneCarousel = ({ images }) => {
     const ip = import.meta.env.VITE_IP || 'default value';
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value';
     const updatedImageUrls = images.map((obj) => {
-        if (obj.image.includes("localhost")) {
-            // const updatedUrl = obj.image.replace('localhost/', imageIP);
-            const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/");
-            return updatedUrl;
-        } else {
-            return obj.image;
+
+        if (obj.image) {
+
+            if (obj.image.includes("localhost")) {
+                // const updatedUrl = obj.image.replace('localhost/', imageIP);
+                const updatedUrl = imageIP + obj.image.replace("localhost/Admin_panel/uploads/", "/app/");
+                return updatedUrl;
+            } else {
+                return obj.image;
+            }
         }
+
     });
 
     const boxRef = useRef(null);

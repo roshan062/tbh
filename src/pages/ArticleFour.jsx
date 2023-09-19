@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
 import ArticleOneCarousel from '../components/ArticleOneCarousel';
+import ArticleFourCarousel from '../components/ArticleFourCarousel';
 import { useLocation } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
@@ -33,6 +34,14 @@ const ArticleFour = () => {
         }
     };
 
+    //array for carousel images
+    // let imagess = [];
+    // if (data) {
+    //     for (let i = 1; i <= 8; i++) {
+    //         imagess.push(`${data.slider_image}${i}`);
+    //     }
+    //     console.log(imagess)
+    // }
 
     return (
         <main className={styles.home_container}>
@@ -86,7 +95,8 @@ const ArticleFour = () => {
                     </section> */}
 
                     <section className={styles.carousel}>
-                        <ArticleOneCarousel images={data.images} />
+                        {/* <ArticleOneCarousel images={imagess} /> */}
+                        <ArticleFourCarousel />
                     </section>
 
                     <section className={styles.you_may_like_container}>
