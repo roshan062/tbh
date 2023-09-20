@@ -161,11 +161,11 @@ const BigMouth = () => {
                     <p className={styles.carousel_heading}>new to the big mouth</p>
                     <BigMouthCaraouselOne category="new to big mouth" />
 
-                    <p className={styles.carousel_heading}>behind the scenes</p>
+                    {/* <p className={styles.carousel_heading}>behind the scenes</p>
                     <BigMouthCaraouselOne category="behind the scenes" />
 
                     <p className={styles.carousel_heading}>shorts</p>
-                    <BigMouthCaraouselOne category="shorts" />
+                    <BigMouthCaraouselOne category="shorts" /> */}
 
 
                     {/* <p className={styles.carousel_heading}>behind the scenes</p>
