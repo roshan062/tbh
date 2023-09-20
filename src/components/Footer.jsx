@@ -12,7 +12,7 @@ const Footer = () => {
             <footer className={styles.footer}>
                 <div className={styles.footer_logo}>
                     <div className={styles.logo_div}>
-                        <img src='./tbh-footer-logo.png' alt='tbh-footer-logo' />
+                        <img src='../../tbh-footer-logo.png' alt='tbh-footer-logo' />
                     </div>
                     <div className={styles.letter}>SUBSCRIBE TO OUR NEWS LETTER</div>
                     <div className={styles.subscribe}>

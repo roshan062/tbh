@@ -6,25 +6,25 @@ import { ColorRing } from 'react-loader-spinner'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const BigMouthCaraouselOne = () => {
+const BigMouthCaraouselOne = ({ category }) => {
     const [data, setData] = useState('');
-    const [data2, setData2] = useState('');
-    const [data3, setData3] = useState('');
+    // const [data2, setData2] = useState('');
+    // const [data3, setData3] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/articles";
-    const art4 = ip + "/article/4/150";
-    const art5 = ip + "/article/5/149/";
+    // const art4 = ip + "/article/4/150";
+    // const art5 = ip + "/article/5/149/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
     useEffect(() => {
         fetchData();
     }, []);
-    useEffect(() => {
-        fetchData2();
-    }, []);
-    useEffect(() => {
-        fetchData3();
-    }, []);
+    // useEffect(() => {
+    //     fetchData2();
+    // }, []);
+    // useEffect(() => {
+    //     fetchData3();
+    // }, []);
 
     const fetchData = async () => {
         try {
@@ -36,26 +36,26 @@ const BigMouthCaraouselOne = () => {
             console.error('Error fetching data:', error);
         }
     };
-    const fetchData2 = async () => {
-        try {
-            const response = await fetch(art4);
-            const jsonData = await response.json();
-            setData2(jsonData);
-            // console.log(jsonData)
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-    const fetchData3 = async () => {
-        try {
-            const response = await fetch(art5);
-            const jsonData = await response.json();
-            setData3(jsonData);
-            // console.log(jsonData)
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+    // const fetchData2 = async () => {
+    //     try {
+    //         const response = await fetch(art4);
+    //         const jsonData = await response.json();
+    //         setData2(jsonData);
+    //         // console.log(jsonData)
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //     }
+    // };
+    // const fetchData3 = async () => {
+    //     try {
+    //         const response = await fetch(art5);
+    //         const jsonData = await response.json();
+    //         setData3(jsonData);
+    //         // console.log(jsonData)
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //     }
+    // };
 
     const responsive = {
         desktop: {
@@ -94,7 +94,7 @@ const BigMouthCaraouselOne = () => {
         <div className={styles.suggestion_article}>
             <div className={styles.grid_container}>
                 {
-                    data3 && data3 ? (
+                    data ? ( // data && data3 && data2 ? (
                         <>
                             <Carousel
                                 arrows={false}
@@ -103,14 +103,15 @@ const BigMouthCaraouselOne = () => {
                             >
                                 {/* {images.slice(0, 4).map((image, i) => { */}
                                 {data.map((api, i) => {
-                                    if (api.type < 4) return
-                                    let url = ''
-                                    const ref = `/${api.type}`;
-                                    {/* console.log(data3) */ }
-                                    {/* console.log(api.type) */ }
+                                    if (api.category?.toLowerCase() === category) {
+
+                                        if (api.type < 4) return
+                                        const ref = `/${api.type}/${api.id}`;
+                                        let url = imageIP + api.thumbnail?.replace("localhost/Admin_panel/uploads/", "/app/")
+                                        {/* let url = ''
                                     if (api.type === 4) {
                                         url = imageIP + data2.thumbnail.replace("localhost/Admin_panel/uploads/", "/app/");
-                                        {/* url = "./md-img1.png"; */ }
+                                      
                                     }
                                     else if (api.type === 5) {
                                         url = imageIP + data3.thumbnail.replace("localhost/Admin_panel/uploads/", "/app/");
@@ -118,27 +119,26 @@ const BigMouthCaraouselOne = () => {
                                     }
                                     else {
                                         url = imageIP + api.image.replace("localhost/Admin_panel/uploads/", "/app/");
-                                    }
+                                    } */}
 
-                                    return (
-                                        <div className={styles.image_container} key={i}>
-                                            <Link to={ref} className={styles.link}>
-                                                {console.log(api.type)}
-                                                <img
-                                                    draggable={false}
-                                                    // src={images[0]}
-                                                    src={url}
-                                                    className={styles.carousel_images}
-                                                    onError={(e) => {
-                                                        e.target.src = "./md-img1.png";
-                                                    }}
-                                                />
-                                                {/* <p className={styles.overlay_title}>{api.head_title}</p> */}
-                                            </Link>
-                                            <Outlet />
-                                        </div>
-                                    );
+                                        return (
+                                            <div className={styles.image_container} key={i}>
+                                                <Link to={ref} className={styles.link}>
+                                                    <img
+                                                        draggable={false}
+                                                        src={url}
+                                                        className={styles.carousel_images}
+                                                        onError={(e) => {
+                                                            e.target.src = "./md-img1.png";
+                                                        }}
+                                                    />
+                                                </Link>
+                                                <Outlet />
+                                            </div>
+                                        );
+                                    }
                                 })}
+
                             </Carousel>
                         </>
 

@@ -37,7 +37,8 @@ const VideoImage = ({ videoimageurl, posterurl }) => {
         if (isImage) {
             return (<img src={modifiedUrl} className={styles.article_image}
                 onError={(e) => {
-                    e.target.src = "./md-img1.png";
+                    // e.target.src = "./md-img1.png";
+                    e.target.src = "../../md-img1.png";
                 }}
             />)
         } else {

@@ -3,7 +3,7 @@ import styles from './BigMouthArticle.module.css';
 import styless from '../App.module.css'
 import { ColorRing } from 'react-loader-spinner'
 // import { BsArrowUpRight } from 'react-icons/bs';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 // import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
 import BigMouthCaraouselOne from '../components/BigMouthCaraouselOne';
@@ -14,9 +14,9 @@ import MoveDownArrow from '../components/MoveDownArrow';
 const BigMouthArticle = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + "/article/5/149/";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
-
+    const { id: routePath } = useParams();
+    const api = ip + `/article/5/${routePath}/`;
 
     const location = useLocation();
     useEffect(() => {
@@ -60,7 +60,7 @@ const BigMouthArticle = () => {
                     <VideoImage videoimageurl={data.image} />
                     {/* <VideoImage videoimageurl='http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
                     posterurl="./images/bigmouth/poster.png" /> */}
-                    <MoveDownArrow icon="./bm-down-arrow.png" />
+                    <MoveDownArrow icon="../../bm-down-arrow.png" />
                 </section>
 
                 <section>
@@ -78,9 +78,9 @@ const BigMouthArticle = () => {
                     </p> */}
                     <p className={styles.para} dangerouslySetInnerHTML={{ __html: data.description }}>
                     </p>
-                    <p className={styles.more}>more
-                        <img src='./da.png' alt='down-arrow' className={styles.da} />
-                    </p>
+                    {/* <p className={styles.more}>more
+                        <img src='../../da.png' alt='down-arrow' className={styles.da} />
+                    </p> */}
                 </section>
 
                 {/* <div className={styles.border}> </div>
@@ -94,7 +94,7 @@ const BigMouthArticle = () => {
 
                 <section className={styles.bigmouth_cards_section}>
                     <p className={styles.carousel_heading}>Related</p>
-                    <BigMouthCaraouselOne />
+                    {/* <BigMouthCaraouselOne /> */}
                 </section>
 
             </>

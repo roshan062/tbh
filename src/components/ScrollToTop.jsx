@@ -8,7 +8,7 @@ const ScrollToTop = () => {
 
     return (
         <div>
-            <img onClick={scrollToTop} src='./scroll-to-top.png' alt='scroll-to-top-img' className={styles.img} />
+            <img onClick={scrollToTop} src='../../scroll-to-top.png' alt='scroll-to-top-img' className={styles.img} />
         </div>
     )
 }

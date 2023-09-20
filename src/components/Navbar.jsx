@@ -27,7 +27,7 @@ const Navbar = () => {
         <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
             <div className={styles.logo}>
                 <Link to='/'>
-                    <img src='./tbh-logo.png' alt='tbh-logo' />
+                    <img src='../../tbh-logo.png' alt='tbh-logo' />
                 </Link>
 
             </div>

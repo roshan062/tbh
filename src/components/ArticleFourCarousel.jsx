@@ -70,8 +70,8 @@ const ArticleFourCarousel = () => {
         <div className={styles.product_carousel}>
             {data ? (
                 <>
-                    <img src="./la.png" alt="left_arrow_img" className={styles.pre_btn} onClick={btnpressprev} />
-                    <img src="./ra.png" alt="left_arrow_img" className={styles.next_btn} onClick={btnpressnext} />
+                    <img src="../../la.png" alt="left_arrow_img" className={styles.pre_btn} onClick={btnpressprev} />
+                    <img src="../../ra.png" alt="left_arrow_img" className={styles.next_btn} onClick={btnpressnext} />
                     <div className={styles.product_container} ref={boxRef}>
                         {/* {updatedImageUrls.map((slideImage, index) => (
                     <div key={index}> */}

@@ -13,10 +13,10 @@ import MoveDownArrow from '../components/MoveDownArrow';
 
 const BigMouth = () => {
     const [data, setData] = useState('');
-    const [data2, setData2] = useState('');
+    // const [data2, setData2] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
     const api = ip + "/the-big-mouth";
-    const api2 = ip + "/article/5/149";
+    // const api2 = ip + "/article/5/149";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
 
 
@@ -30,9 +30,9 @@ const BigMouth = () => {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        fetchData2();
-    }, []);
+    // useEffect(() => {
+    //     fetchData2();
+    // }, []);
 
     const fetchData = async () => {
         try {
@@ -43,15 +43,15 @@ const BigMouth = () => {
             console.error('Error fetching data:', error);
         }
     };
-    const fetchData2 = async () => {
-        try {
-            const response = await fetch(api2);
-            const jsonData = await response.json();
-            setData2(jsonData);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+    // const fetchData2 = async () => {
+    //     try {
+    //         const response = await fetch(api2);
+    //         const jsonData = await response.json();
+    //         setData2(jsonData);
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //     }
+    // };
 
 
     // const cleanImgUrl = function (fetchedUrl) {
@@ -159,13 +159,14 @@ const BigMouth = () => {
 
                 <section className={styles.bigmouth_cards_section}>
                     <p className={styles.carousel_heading}>new to the big mouth</p>
-                    <BigMouthCaraouselOne />
-                    {/* {
-                        (data2.category == "Behing The Scenes" ?
+                    <BigMouthCaraouselOne category="new to big mouth" />
 
-                            <BigMouthCaraouselOne /> : ""
-                        )
-                    } */}
+                    <p className={styles.carousel_heading}>behind the scenes</p>
+                    <BigMouthCaraouselOne category="behind the scenes" />
+
+                    <p className={styles.carousel_heading}>shorts</p>
+                    <BigMouthCaraouselOne category="shorts" />
+
 
                     {/* <p className={styles.carousel_heading}>behind the scenes</p>
                     <BigMouthCaraousel />

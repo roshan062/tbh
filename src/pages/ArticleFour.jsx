@@ -3,7 +3,7 @@ import styles from './ArticleFour.module.css';
 import Carousel from '../components/Carousel';
 import ArticleOneCarousel from '../components/ArticleOneCarousel';
 import ArticleFourCarousel from '../components/ArticleFourCarousel';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
 import VideoImage from '../components/VideoImage';
@@ -12,8 +12,10 @@ import BigMouthArticleFourCaraousel from '../components/BigMouthArticleFourCarou
 const ArticleFour = () => {
     const [data, setData] = useState('');
     const ip = import.meta.env.VITE_IP || 'default value';
-    const api = ip + "/article/4/150";
     const imageIP = import.meta.env.VITE_IMAGE_IP || 'default value'
+    // const api = ip + "/article/4/150";
+    const { id: routePath } = useParams();
+    const api = ip + `/article/4/${routePath}/`;
 
     useEffect(() => {
         fetchData();
