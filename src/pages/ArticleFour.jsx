@@ -8,6 +8,8 @@ import { ColorRing } from 'react-loader-spinner'
 import styless from '../App.module.css'
 import VideoImage from '../components/VideoImage';
 import BigMouthArticleFourCaraousel from '../components/BigMouthArticleFourCarousel';
+import BigMouthArticlesRelatedCarousel from '../components/BigMouthArticlesRelatedCarousel';
+
 
 const ArticleFour = () => {
     const [data, setData] = useState('');
@@ -108,7 +110,7 @@ const ArticleFour = () => {
                             </div>
                             <div className={styles['boxx2']}></div>
                         </div>
-                        <BigMouthArticleFourCaraousel />
+                        <BigMouthArticlesRelatedCarousel articlenum="4" />
                     </section>
                 </>
             ) : (

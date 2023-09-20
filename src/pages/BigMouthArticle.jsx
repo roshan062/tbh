@@ -7,7 +7,7 @@ import { useLocation, useParams } from 'react-router-dom';
 // import BigMouthCards from '../components/BigMouthCards';
 import { BsTriangleFill } from 'react-icons/bs';
 import BigMouthCaraouselOne from '../components/BigMouthCaraouselOne';
-import BigMouthCaraousel from '../components/BigMouthCaraousel';
+import BigMouthArticlesRelatedCarousel from '../components/BigMouthArticlesRelatedCarousel';
 import VideoImage from '../components/VideoImage';
 import MoveDownArrow from '../components/MoveDownArrow';
 
@@ -94,7 +94,7 @@ const BigMouthArticle = () => {
 
                 <section className={styles.bigmouth_cards_section}>
                     <p className={styles.carousel_heading}>Related</p>
-                    {/* <BigMouthCaraouselOne /> */}
+                    <BigMouthArticlesRelatedCarousel articlenum="5" />
                 </section>
 
             </>
